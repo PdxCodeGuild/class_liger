@@ -25,7 +25,7 @@ Weeks 16, 17, 18: Capstone project
 
 ## Submitting your work
 
-Make sure all labs are located within `class_liger/Code/<YourName>`
+Make sure all labs are located within `class_liger/code/<YOUR_NAME>`, where `<YOUR_NAME>` is your first name in all lowercase letters.
 
 To emulate a more professional Git workflow, we're going to start creating new branches for each lab starting in the HTML/CSS section.
 <h2>Creating a new branch:</h2>
