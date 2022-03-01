@@ -34,7 +34,7 @@ To emulate a more professional Git workflow, we're going to start creating new b
 
 
 
-- `git branch` to check that you're on the master branch, use `git checkout master` to go to the master branch if needed.
+- `git branch` to check that you're on the master branch, use `git checkout main` to go to the master branch if needed.
 
 - `git status` to check if your local master branch is up to date with origin/master on Github.
   
