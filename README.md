@@ -101,7 +101,9 @@ To emulate a more professional Git workflow, we're going to start creating new b
 ## Updating a branch
 <details>
 <summary>Click to expand</summary>
-After a Pull Request is submitted, the code on that branch will be checked. Necessary corrections or adjustments will be posted as comments on the Pull Request on Github.
+After a Pull Request is submitted, the code on that branch will be checked. 
+
+Necessary corrections or adjustments will be posted as comments on the Pull Request on Github and the Pull Request will be closed. When the corrections are made, submit the Pull Request again for checking.
 
 Corrections will be made only to that particular branch.
 
