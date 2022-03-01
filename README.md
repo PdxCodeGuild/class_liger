@@ -34,9 +34,9 @@ To emulate a more professional Git workflow, we're going to start creating new b
 
 
 
-- `git branch` to check that you're on the master branch, use `git checkout main` to go to the master branch if needed.
+- `git branch` to check that you're on the main branch, use `git checkout main` to go to the main branch if needed.
 
-- `git status` to check if your local master branch is up to date with origin/master on Github.
+- `git status` to check if your local main branch is up to date with origin/main on Github.
   
 - `git pull` if needed to pull any recent changes to your local repository
 
@@ -105,21 +105,18 @@ After a Pull Request is submitted, the code on that branch will be checked. Nece
 
 Corrections will be made only to that particular branch.
 
-- `git checkout master` to switch to the master branch
-
-- `git pull` to add the changes from the master branch into your branch.
-
 - `git checkout <YOUR_NAME-SECTION-LAB_NUMBER>`
-
-- `git merge master` to pull any updates from the master branch into your branch
 
 - Add and commit updated files.
 
 - `git push` to push your changes up to the remote repository on GitHub
 
-- Only one Pull Request is allowed per branch. A message will be added to the current Pull Request for the new commits.
+- Only one Pull Request is allowed per branch.
+  
+  - If a Pull Request is already open for the branch, a message will be added to the current Pull Request for the new commits.
+  - If a Pull Request is not already open for the branch a new Pull Request will need to be created.
 
-- Once a lab is complete, its branch will be merged into master.
+- Once a lab is complete, its branch will be merged into the `main` branch.
 </details>
 
 ---
