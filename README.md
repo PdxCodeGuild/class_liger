@@ -1,4 +1,4 @@
-# Class Raven
+# Class Liger
 
 ### Rough Timeline
 
@@ -69,32 +69,32 @@ To emulate a more professional Git workflow, we're going to start creating new b
   
   <details>
     <summary>Screenshot</summary>
-    <img src="screenshots/set_upstream_message.png" width=800>
+    <img src="images/screenshots/set_upstream_message.png" width=800>
   </details>
 
 - After successfully pushing your new branch to Github, you should see the option to create a Pull Request for your branch on the main repo page.
 
   <details>
     <summary>Screenshot</summary>
-    <img src="screenshots/pull_request_button.png" width=800>
+    <img src="images/screenshots/pull_request_button.png" width=800>
   </details>
 
 - If you don't see that message, you'll have to navigate to your new remote branch
   <details>
     <summary>Screenshot</summary>
-    <img src="screenshots/switch_branch.gif" width=800>
+    <img src="images/screenshots/switch_branch.gif" width=800>
   </details>
 
 - Once you've navigated to your individual branch, you'll find the option to create a Pull Request in the "Contribute" dropdown.
   <details>
     <summary>Screenshot</summary>
-    <img src="screenshots/open_pull_request_alternative.gif" width=800>
+    <img src="images/screenshots/open_pull_request_alternative.gif" width=800>
   </details>
 
 - Click the "Open Pull Request" button. Add a comment to your Pull Request like "Submitting Lab 00" and click "Create Pull request"
   <details>
     <summary>Screenshot</summary>
-    <img src="screenshots/create_pull_request.png" width=800>
+    <img src="images/screenshots/create_pull_request.png" width=800>
   </details>
 </details>
 
