@@ -19,7 +19,8 @@ Weeks 16, 17, 18: Capstone project
 <details>
   <summary>Python</summary>
   <ul>
-    
+    <li>Lab 02a - Madlib (due 03/15)</li>
+    <li>Lab 02b - Make Change (due 03/16)</li>
   </ul>
 </details>
 
