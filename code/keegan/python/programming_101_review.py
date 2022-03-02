@@ -1,6 +1,9 @@
 # = is the assignment operator. Assigns the value on the right to the variable on the left.
 # define a variable 'animal' and assign the string 'dog' to it using =
 
+animal = 'dog'
+# print(animal) # dog
+
 # ------------------------------------------------------------------------------------- #
 
 # a "function" is a named code block that performs a specific task
@@ -8,14 +11,20 @@
 # data can be passed into the function by placing it within the parentheses
 # functions will always return a value as well
 
-
 # type(object) - return the datatype of the object
+animal_datatype = type(animal)
+# print(animal_datatype) # <class 'str'>
+
+# print('The datatype of the animal variable is ' + str(type(animal)))
 
 
 # string (str) - sequence of textual characters surrounded by quotes
 # --------------------------------------------------------------------------------------- #
 
 # change the value within the variable 'animal' to 'cat'
+animal = 'cat'
+# print(animal) # cat
+
 
 # --------------------------------------------------------------------------------------- #
 
@@ -23,6 +32,8 @@
 
 # add the string 'fish' to the value within the variable 'animal'
 # redefined 'animal' with the result
+animal = animal + 'fish'
+# print(animal) # catfish
 
 # --------------------------------------------------------------------------------------- #
 
@@ -31,9 +42,22 @@
 
 # .upper() - return an uppercase version of the string
 
+# print(animal).upper() # NoneType object has no attribute upper (only strings have .upper())
+# print(animal.upper()) # CATFISH (.upper() doesn't change the value in the variable)
+# print(animal) # catfish
+
 # .replace(old, new) - return a copy of the string with the old replaced with the new within it
+# print(animal.replace('c', 'b')) # batfish
+# print('abcabc'.replace('a', 'z')) # zbczbc
+
+# the third argument is how many instance of the old we want to replace
+# print('abcabc'.replace('a', 'z', 1)) # abczbc
 
 # methods can be chained. Each one operates on the return value of the previous
+# print(animal.replace('c', 'b').upper()) # BATFISH
+
+# print('a-b-c'.split('-')) # ['a', 'b', 'c']
+# print('a-b-c'.split('-').upper()) # AttributeError: 'list' object has no attribute 'upper'
 
 # ---------------------------------------------------------------------------------------------- #
 
@@ -47,14 +71,15 @@ Escape Characters
 # print("hello "world"") # Error! Quotes cancel each other
 
 # Solution 1 - printing quotes with mismatched sets:
-# print("hello "world"")
+# print('hello "world"') # hello "world"
+# print(f"{'hello'.replace('h', 'j')}") # jello
 
 # Solution 2 - printing quotes with escape characters
-# print("hello "world"")
+# print("hello \"world\"") # hello "world"
 
 # formatting string with escape characters
-# print("ABC") # \n - new line character
-# print("ABC") # \t - horizontal
+# print("A\nB\nC") # \n - new line character
+# print("A\tB\tC") # \t - horizontal tab character
 
 # ------------------------------------------------------------------------------------------- #
 
@@ -83,8 +108,13 @@ Python Variable Names
 # note: concatenation only works with strings
 # other datatypes will need to be "typecast" using str() before concatenation
 
-# f-strings don't care about datatype
+number = 99.5
+output = 'The number is ' + str(number) + '!'
+# print(output) # The number is 99.5!
 
+# f-strings don't care about datatype
+output = f"The number is {number}!"
+# print(output) # The number is 99.5!
 
 # ----------------------------------------------------------------------------------------- #
 '''
@@ -95,6 +125,9 @@ Once the user hits enter, anything they typed in the terminal will be returned.
 Return value can be saved in a variable such as 'user_string'
 '''
 
+# name = input('Enter your name: ')
+# print(f"Hello, {name}!") # Hello, Keegan!
+
 # ------------------------------------------------------------------------------------------ #
 '''
 # input() always returns a string
@@ -103,26 +136,36 @@ Return value can be saved in a variable such as 'user_string'
 # int(object) - return the object as an integer, if possible
 # float(object) - return the object as a float, if possible
 
-# convert the number string to float
 
+number = input('Enter a number: ')
+print(number, type(number)) # 9 <class 'str'>
+print(number * 10) # 9999999999
+
+# convert the number string to float
+number = float(number)
+print(number, type(number)) # 9.0 <class 'float'>
+print(number * 10) # 90.0
 '''
+
 # ----------------------------------------------------------------------------------------- #
 
 # integer (int) - whole numbers
 # float (float) - decimal numbers
 
 # arithmetic operators
+x = 5
+y = 3
 
-# addition +
-# subtraction -
+# print(x + y) # addition +
+# print(x - y) # subtraction -
 
-# multiplication *
-# exponentiation ** (x^y)
+# print(x * y) # multiplication *
+# print(x ** y) # exponentiation ** (x^y)
 
-# 'regular' division / (results in a float)
-# 'floor' division // (rounds down to the nearest integer)
+# print(x / y) # 'regular' division / (results in a float)
+# print(x // y) # 'floor' division // (rounds down to the nearest integer)
 
-# modulus % (remainder after division)
+# print(x % y) # modulus % (remainder after division)
 
 # ----------------------------------------------------------------------------------- #
 
@@ -130,24 +173,10 @@ Return value can be saved in a variable such as 'user_string'
 
 x = 4
 
+# print(x + 3) # 7 - uses x but doesn't change x
+# print(x) # 4
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-# multiply x by 2 and redefine x with the result
-
-# ReAssignment Operators - combine the arithmetic and assignment operators
-# x = x + 2
+x = x + 3
 # print(x)
 
 # ReAssignment operators exist for each arithmetic operators
@@ -156,17 +185,22 @@ x = 4
 # ----------------------------------------------------------------------------------------- #
 
 '''
-Unit 3 - booleans, comparisons, logical statements, conditionals
+booleans, comparisons, logical statements, conditionals
 '''
 
 # datatype - boolean
 # True / False
 
+a = True
+b = False
+
+# print(a, type(a)) # True <class 'bool'>
+# print(b, type(b)) # False <class 'bool'>
+
 # booleans in Python are Capitalized
+# a = false # NameError: name 'false' is not defined. Did you mean: 'False'?
 
 # -------------------------------------------------------------------------------------- #
-
-# THIS CAN BE SKIPPED, IF NEEDED
 
 # typecast to boolean
 # bool(object) - return a boolean representation of the object
@@ -174,6 +208,10 @@ Unit 3 - booleans, comparisons, logical statements, conditionals
 # Truthy/Falsey
 # if an object has value, it will convert to True
 # if an object has no value, it will convert to False
+
+# print(bool([])) # False
+# print(bool(['a'])) # True
+
 '''
 # Falsey values
 ''    # blank string has no value
@@ -189,16 +227,17 @@ etc...
 
 # All comparisons need two sides
 
+x = 5
+y = 5
 
+# print(x == y) # == check equality - True
+# print(x != y) # != check inequality - False
 
-# == check equality - True
-# != check inequality - False
+# print(x < y)  # < 'strictly' less than - False
+# print(x <= y) # <= less than or equal to - True
 
-# < 'strictly' less than - False
-# <= less than or equal to - True
-
-# > 'strictly' greater than - False
-# >= greater than or equal to - True
+# print(x > y) # > 'strictly' greater than - False
+# print(x >= y ) # >= greater than or equal to - True
 
 # ---------------------------------------------------------------------------------------- #
 
@@ -207,18 +246,24 @@ etc...
 
 # logical statements need two comparisons
 
+x = 5
+y = 5
 
 # and - True only if BOTH comparisons are True
-# True - both comparisons are True
-# False - left comparison (x == 2) is False
+# print(x == 5 and y == 5) # True - both comparisons are True
+# print(x == 5 and y == 2) # False - left comparison (x == 2) is False
 
 # or - True if at least ONE comparison is True
-# True - right comparison (x < 10) is True
-# False - both comparisons are False
+# print(x == 5 or y == 2) # True - left comparison (x == 5) is True
+# print(x == 10 or y == 2) # False - both comparisons are False
 
 # not - flip a boolean
+# print(not True) # False
+# print(not False) # True
 
 # 'not' is often used with the keyword 'in' to check if an item is in a sequence
+# print(33 in [11, 22, 33]) # True
+# print(44 not in [11, 22, 33]) # True
 
 # ---------------------------------------------------------------------------------------- #
 
@@ -252,6 +297,17 @@ Conditional Statements Will Always Have:
 - 0 or 1 else
 
 '''
+
+x = 5
+
+if x > 5:
+    print(f"{x} is greater than 5")
+
+elif x < 5:
+    print(f"{x} is less than 5.")
+
+else:
+    print('x is 5')
 
 # ------------------------------------------------------------------------------------------- #
 
