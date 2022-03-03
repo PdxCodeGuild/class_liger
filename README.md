@@ -21,6 +21,7 @@ Weeks 16, 17, 18: Capstone project
   <ul>
     <li>Lab 02a - Madlib (due 03/15)</li>
     <li>Lab 02b - Make Change (due 03/16)</li>
+    <li>Lab 03b - Average Number (due 03/17)</li>
   </ul>
 </details>
 
@@ -128,3 +129,24 @@ Corrections will be made only to that particular branch.
 
 
 ## Additional Resources
+<details>
+<summary>Click to expand</summary>
+After a Pull Request is submitted, the code on that branch will be checked. 
+
+Necessary corrections or adjustments will be posted as comments on the Pull Request on Github and the Pull Request will be closed. When the corrections are made, submit the Pull Request again for checking.
+
+Corrections will be made only to that particular branch.
+
+- `git checkout <YOUR_NAME-SECTION-LAB_NUMBER>`
+
+- Add and commit updated files.
+
+- `git push` to push your changes up to the remote repository on GitHub
+
+- Only one Pull Request is allowed per branch.
+  
+  - If a Pull Request is already open for the branch, a message will be added to the current Pull Request for the new commits.
+  - If a Pull Request is not already open for the branch a new Pull Request will need to be created.
+
+- Once a lab is complete, its branch will be merged into the `main` branch.
+</details>
