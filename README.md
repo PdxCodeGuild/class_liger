@@ -16,10 +16,12 @@ Weeks 16, 17, 18: Capstone project
 
 ### Assigned Labs:
 
-<details>
+<details open>
   <summary>Python</summary>
   <ul>
-    
+    <li>Lab 02a - Madlib (due 03/15)</li>
+    <li>Lab 02b - Make Change (due 03/16)</li>
+    <li>Lab 03b - Average Number (due 03/17)</li>
   </ul>
 </details>
 
@@ -127,3 +129,12 @@ Corrections will be made only to that particular branch.
 
 
 ## Additional Resources
+<details>
+<summary>Git</summary>
+
+
+<ul>
+<li><a href="https://juristr.com/blog/2013/04/git-explained/">Git Explained: For Beginners</a></li>
+<li><a href="https://learngitbranching.js.org/?locale=en_US">Learn Git Branching Game</a></li>
+</ul>
+</details>
