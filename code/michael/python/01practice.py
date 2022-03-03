@@ -1,7 +1,6 @@
 # animal = 'dog'
 # print(animal)
 # print(type(animal))
-# print(animal + '-dick')
 # animal += 'fish'
 # print(animal)
 # # animal = animal.capitalize()
