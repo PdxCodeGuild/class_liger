@@ -18,11 +18,15 @@ Weeks 16, 17, 18: Capstone project
 
 <details open>
   <summary>Python</summary>
-  <ul>
-    <li>Lab 02a - Madlib (due 03/15)</li>
-    <li>Lab 02b - Make Change (due 03/16)</li>
-    <li>Lab 03b - Average Number (due 03/17)</li>
-  </ul>
+
+|Lab Number|Title|Due Date|
+|-|-|-|
+|Lab 02a | Madlib | 03/15
+|Lab 02b | Make Change | 03/16
+|Lab 03b | Average Number | 03/17
+|Lab 05 | Palindrome Checker | 03/18
+|Lab 06b | Credit Card Validation | 03/21
+
 </details>
 
 ## Submitting your work
@@ -129,10 +133,16 @@ Corrections will be made only to that particular branch.
 
 
 ## Additional Resources
+
+<details>
+<summary>General</summary>
+<ul>
+<li><a href="https://medium.com/@JeffLombardJr/for-new-devs-how-to-ask-intelligent-questions-be1c70a0128f">How to Ask Intelligent Questions as a New Developer</a></li>
+</ul>
+</details>
+
 <details>
 <summary>Git</summary>
-
-
 <ul>
 <li><a href="https://juristr.com/blog/2013/04/git-explained/">Git Explained: For Beginners</a></li>
 <li><a href="https://learngitbranching.js.org/?locale=en_US">Learn Git Branching Game</a></li>
