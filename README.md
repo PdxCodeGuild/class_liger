@@ -18,12 +18,15 @@ Weeks 16, 17, 18: Capstone project
 
 <details open>
   <summary>Python</summary>
-  <ul>
-    <li>Lab 02a - Madlib (due 03/15)</li>
-    <li>Lab 02b - Make Change (due 03/16)</li>
-    <li>Lab 03b - Average Number (due 03/17)</li>
-    <li>Lab 5 - Palindrome Checker(due 03/18)</li>
-  </ul>
+
+|Lab Number|Title|Due Date|
+|-|-|-|
+|Lab 02a | Madlib | 03/15
+|Lab 02b | Make Change | 03/16
+|Lab 03b | Average Number | 03/17
+|Lab 05 | Palindrome Checker | 03/18
+|Lab 06b | Credit Card Validation | 03/21
+
 </details>
 
 ## Submitting your work
