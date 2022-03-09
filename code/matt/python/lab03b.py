@@ -6,7 +6,6 @@ nums1 = [5, 0, 8, 3, 4, 1, 6]
 
 
 def avg_num_v1(nums: list) -> float:
-    pass
     running_total = 0
     for num in nums:
         running_total += num
@@ -15,8 +14,30 @@ def avg_num_v1(nums: list) -> float:
     return the_average
 
 
-print(avg_num_v1(nums1))
+avg_num_v1(nums1)
+
+# Ask the user to enter the numbers one at a time, putting them into a list. If the user enters 'done', then calculate and display the average.
 
 
-def avg_num_v2():
-    pass
+def avg_num_v2(nums: list) -> float:
+
+    nums = []
+    num_entered = []
+
+    while num_entered != "done":
+        num_entered = input("> enter a number, or 'done': ")
+        if num_entered == "done":
+            answer = avg_num_v1(nums)
+        else:
+            num_entered = int(num_entered)
+            nums.append(num_entered)
+
+    print(
+        f"""
+    You entered: {nums}
+    Average: {answer}
+    """
+    )
+
+
+avg_num_v2(nums1)
