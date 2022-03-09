@@ -138,6 +138,7 @@ Corrections will be made only to that particular branch.
 <summary>General</summary>
 <ul>
 <li><a href="https://medium.com/@JeffLombardJr/for-new-devs-how-to-ask-intelligent-questions-be1c70a0128f">How to Ask Intelligent Questions as a New Developer</a></li>
+<li><a href="https://github.com/PdxCodeGuild/Programming101/tree/master/docs/flowcharts">Flowcharts</a></li>
 </ul>
 </details>
 
