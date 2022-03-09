@@ -1,13 +1,5 @@
 '''CreditCardValidationLab'''
 
-
-
-
-
-
-from tabnanny import check
-
-
 credit_card = "4556 7375 8689 9855"
 credit_card = credit_card.replace(" ", "")
 
