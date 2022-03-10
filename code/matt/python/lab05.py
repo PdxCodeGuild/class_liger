@@ -14,11 +14,15 @@ Write a function check_palindrome which takes a string, and returns True if the 
 # - if equal says its a palindrome
 # - if not equal say its not a palindrome
 
-x = "test"
+user_word = input(">>> enter a word: ")
 
 
 def check_palindrome(word: str) -> str:
-    print(x)
+    if word == word[::-1]:
+        result = f">>> '{word}' is a palindrome"
+    else:
+        result = f">>> '{word}' is not a palindrome"
+    return result
 
 
-check_palindrome(x)
+print(check_palindrome(user_word))
