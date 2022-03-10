@@ -1,5 +1,8 @@
 # Class Liger
 
+Instructor: 
+Keegan Good
+keegan@pdxcodeguild.com
 ### Rough Timeline
 
 **Weeks 1, 2, 3, 4: Python**
