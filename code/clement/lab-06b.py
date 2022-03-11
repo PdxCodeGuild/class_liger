@@ -1,28 +1,28 @@
 
-card_num = list(input("Please enter your credit card number:\n").strip())
+card_number = list(input("Please enter your credit card number:\n").strip())
 
-check_digit = card_num.pop()
+check_digit = card_number.pop()
 
-card_num.reverse()
-double_digits = []
+card_number.reverse()
+doubled_digits = []
 
-for num1 in range(len(card_num)):
+for index in range(len(card_number)):
+    credits = card_number[index]
+    if index % 2 == 0:
+        doubled_check = int(credits) * 2
+        if doubled_check > 9:
+            doubled_check = doubled_check - 9
 
-    if num1 % 2 == 0:
-        double_digits.append(int(num1) * 2)
+        doubled_digits.append(doubled_check)
 
-        print(double_digits)
+    else:
+        doubled_digits.append(int(credits))
 
-    # else:
-    #     if num2 % 2 != 0:
-    #     double_digits.append(int(num2))
+second_digit_total = sum(doubled_digits)
+total_1 = second_digit_total % 10
 
+if total_1 == int(check_digit):
+    print("Yous credit card number is valid")
 
-#     if num_1 % 2 == 0:
-#         double_digits.append(int(num_2) * 2)
-
-#     else:
-#         double_digits.append(int(num_2))
-
-#     print(double_digits)
-# print(check_digit)
+else:
+    print("Sorry your credit card number is invalid")
