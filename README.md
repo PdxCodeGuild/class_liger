@@ -1,5 +1,8 @@
 # Class Liger
 
+Instructor: 
+Keegan Good
+keegan@pdxcodeguild.com
 ### Rough Timeline
 
 **Weeks 1, 2, 3, 4: Python**
@@ -21,11 +24,12 @@ Weeks 16, 17, 18: Capstone project
 
 |Lab Number|Title|Due Date|
 |-|-|-|
-|Lab 02a | Madlib | 03/15
-|Lab 02b | Make Change | 03/16
-|Lab 03b | Average Number | 03/17
-|Lab 05 | Palindrome Checker | 03/18
-|Lab 06b | Credit Card Validation | 03/21
+|Lab 02a | Madlib | 03/15 |
+|Lab 02b | Make Change | 03/16 |
+|Lab 03b | Average Number | 03/17 |
+|Lab 05 | Palindrome Checker | 03/18 |
+|Lab 06b | Credit Card Validation | 03/21 |
+|Lab 07 | Peaks and Valleys | 03/23 |
 
 </details>
 
@@ -138,6 +142,9 @@ Corrections will be made only to that particular branch.
 <summary>General</summary>
 <ul>
 <li><a href="https://medium.com/@JeffLombardJr/for-new-devs-how-to-ask-intelligent-questions-be1c70a0128f">How to Ask Intelligent Questions as a New Developer</a></li>
+<li><a href="https://github.com/PdxCodeGuild/Programming101/tree/master/docs/flowcharts">Flowcharts</a></li>
+<li><a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf">VS Code Keyboard Shortcuts - Windows</a></li>
+<li><a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf">VS Code Keyboard Shortcuts - Mac</a></li>
 </ul>
 </details>
 
