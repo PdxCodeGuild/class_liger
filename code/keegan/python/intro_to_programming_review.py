@@ -300,6 +300,7 @@ Conditional Statements Will Always Have:
 
 x = 5
 
+'''
 if x > 5:
     print(f"{x} is greater than 5")
 
@@ -308,11 +309,37 @@ elif x < 5:
 
 else:
     print('x is 5')
+'''
+
+
+# -------------------------------------------- #
+
+
+x = 8
+
+if x < 10:
+    output = f"{x} is less than 10"
+
+    if x == 5:
+        output += ' and x is 5'
+
+    elif x < 5:
+        output += f" and {x} is less than 5"
+
+    elif x > 5:
+        output += f" and {x} is greater than 5"
+
+
+else:
+    output = f"{x} is greater than or equal to 10"
+
+# print(output)
+
 
 # ------------------------------------------------------------------------------------------- #
 
 '''
-Unit 4 - lists / for loops
+lists / loops
 ------
 
 Datatype: list
@@ -323,8 +350,15 @@ List items are separated with commas ,
 '''
 
 # define a list of colors
+colors = ['red', 'green', 'blue'] # list of strings
 
 # organized vertically
+colors = [
+    'blue',
+    'green',
+    'red',
+]
+
 
 # ------------------------------------------------------------------------------------------- #
 
@@ -335,47 +369,101 @@ List items are separated with commas ,
 # after the list's variable name to retrieve the item
 # list indices always start at 0
 
+# print(colors[0]) # blue
+# print(colors[1]) # green
+# print(colors[2]) # red
 
 # can't use non-existent indices
+# print(colors[3]) # IndexError: list index out of range
 
 # In Python, negative indices are allowed
 # -1 will always be the last index
+# print(colors[-1]) # red
+# print(colors[-2]) # green
+# print(colors[-3]) # blue
 
 # # can't use non-existent indices
+# print(colors[-4]) # IndexError: list index out of range
+
+last_index = len(colors) - 1
+# print(last_index)
+# print(colors[last_index]) # red
 
 # ------------------------------------------------------------------------------------ #
 
 # strings are ordered sequences as well
+ABCs = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+# print(ABCs[10]) # K
 
 # strings are NOT 'changeable'
+# ABCs[0] = 'Z' # TypeError: 'str' object does not support item assignment
+
+# ABCs = ABCs.replace('A', 'Z') # returns a copy of the string with the desired changes
+# print(ABCs) # ZBCDEFGHIJKLMNOPQRSTUVWXYZ
 
 # lists ARE changable
+colors[1] = 'yellow'
+# print(colors) # ['blue', 'yellow', 'red']
 
 # ------------------------------------------------------------------------------------- #
 
 # cannot add values this way
+# colors[3] = 'purple' # IndexError: list assignment index out of range
 
 # items can be added using list methods
 
 # .append(item) - add a single item to the end of the list
+colors.append('purple')
+# print(colors) # ['blue', 'yellow', 'red', 'purple']
 
 # .insert(index, item) - add the item at the index
+colors.insert(1, 'magenta')
+# print(colors) # ['blue', 'magenta', 'yellow', 'red', 'purple']
 
 # .extend(sequence) - add the items from the sequence to the end of the list
+colors.extend(['orange', 'yellow', 'cyan']) 
+# print(colors) # ['blue', 'magenta', 'yellow', 'red', 'purple', 'orange', 'yellow', 'cyan']
 
 # -------------------------------------------------------------------------------------- #
 
 # items can be removed with list methods as well
 
 # .remove(item) - remove the first occurrence of the item from the list
+colors.remove('yellow')
+# print(colors) # ['blue', 'magenta', 'red', 'purple', 'orange', 'yellow', 'cyan']
 
 # .pop(index) - remove the item at the index and return it. index defaults to -1 if not provided
+# colors.pop()
+# print(colors) # ['blue', 'magenta', 'red', 'purple', 'orange', 'yellow']
+
+# popped_color = colors.pop(1)
+# print(popped_color, colors) # magenta, ['blue', 'red', 'purple', 'orange', 'yellow']
+# ------------------------------------------------------------------------------------------- #
+
+# list slicing
+# list_name[start:stop:step]
+# start - beginning index
+# stop - ending index
+# step - how many to count by
+
+# print(colors[2:5]) # ['red', 'purple', 'orange']
+# print(colors[0:2]) # ['blue', 'magenta']
 
 # ------------------------------------------------------------------------------------------- #
 
 # .sort() - sort a list in ascending order (returns None)
+# colors.sort()
+# print(colors) # ['blue', 'cyan', 'magenta', 'orange', 'purple', 'red', 'yellow']
+
+# colors.sort(reverse=True)
+# print(colors) # ['yellow', 'red', 'purple', 'orange', 'magenta', 'cyan', 'blue']
+
 
 # .sort() returns None
+# colors = colors.sort()
+# print(colors) # None
+# print(colors[0]) # TypeError: 'NoneType' object is not subscriptable
+
 
 # ---------------------------------------------------------------------------------------------- #
 
@@ -388,12 +476,43 @@ List items are separated with commas ,
 # item - arbitrary variable name to store each item as the loop visits it
 # sequence - string, list or other 'iterable' (loopable) object
 
+# for color in colors:
+#     print(color)
+
+# ---------------------------------------------------------------------------------------------- # 
+
+numbers = [2, 4, 6]
+numbers_squared = []
+
+for number in numbers:
+    numbers_squared.append(number ** 2)
+
+# print(numbers_squared) # [4, 16, 36]
+
 # ---------------------------------------------------------------------------------------------- # 
 # for x in range() - loop a certiain number of times
 
 # range(stop) - return a range of numbers from 0 to stop-1
+# print(list(range(10))) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# for x in range(10):
+#     print(x)
+#     print('hello')
 
 # range(start, stop, step)
+# for x in range(10, 21):
+#     print(x)
+
+# for x in range(0, 100, 10):
+#     print(x)
+
+
+# loop through the indices of a list
+for index in range(len(colors) - 1):
+    color = colors[index]
+    next_color = colors[index + 1]
+
+    # print(color, next_color)
 
 # -------------------------------------------------------------------------------------- #
 
@@ -405,7 +524,36 @@ while some_condition == True:
     # code block
 '''
 
+# for x in range(10) with a while loop
+
+x = 0
+while x < 10:
+    # print(x)
+
+    x += 1 # change x so the loop will eventually end
+# -------------------------------------------------------------------------------------- #
+
+while colors: # != []:
+    color = colors.pop()
+    # print(color, colors)
+
 # -------------------------------------------------------------------------------------- #
 
 # loop controls
 # continue, break, else
+
+for x in range(10):
+    if x == 8:
+        print('goodbye')
+        break # end the loop immediately
+    
+    elif x == 3 or x == 5:
+        print(x * '.')
+        continue # end this iteration and begin the next
+
+    print(x)
+
+else:
+    # else will be run if the loop makes it all the way through
+    # i.e. if the loop's condition becomes False
+    print("The loop ran all the way through")
