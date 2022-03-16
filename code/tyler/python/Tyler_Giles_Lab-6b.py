@@ -15,20 +15,18 @@ elif len(user_credit_input) > 16:
 elif len(user_credit_input) == 16:
 
     # slice off last digit to become the "check digit"
-    check_digit = user_credit_input.pop(-1)
-    print(check_digit)
+    check_digit = user_credit_input.pop(-1)                                                                # check_digit = 5
 
-    user_credit_input.reverse()
-    print(user_credit_input)
+    user_credit_input.reverse()                                                                             # number is now [5, 8, 9, 9, 8, 6, 8, 5, 7, 3, 7, 6, 5, 5, 4]
 
-    user_credit_input[::2] = [i * 2 for i in user_credit_input[::2]]
-    print(user_credit_input)
+    user_credit_input[::2] = [i * 2 for i in user_credit_input[::2]]                                        # number is now [10, 8, 18, 9, 16, 6, 16, 5, 14, 3, 14, 6, 10, 5, 8]
 
-    user_credit_input = [i - 9 if i > 9 else i for i in user_credit_input]
-    print(user_credit_input)
-
-    print(sum(user_credit_input))
+    user_credit_input = [i - 9 if i > 9 else i for i in user_credit_input]                                  # number is now [1, 8, 9, 9, 7, 6, 7, 5, 5, 3, 5, 6, 1, 5, 8]
+    
+    # final validity check comparing modulus to check_digit
     if sum(user_credit_input) % 10 == check_digit:
-        print("Valid")
+        print("Valid number. Thank you for your cooperation.")
+    elif sum(user_credit_input) % 10 != check_digit:
+        print("Invalid number. Nice try scammer.")
 
 
