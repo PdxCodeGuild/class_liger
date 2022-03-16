@@ -11,10 +11,21 @@ for number in range(len(data)):
 # print(indexList)
 
 
+# for place in indexList:
+#     print(place)
+ 
+for index in range(1, len(data) -1): 
+    right_one = data[index + 1]   
+    left_one = data[index - 1]
+    one = data[index]
 
-for x in range(1, len(data) -1): 
-    if x > data[x]-1 and x > data[x]+1: 
-        print(x)
-        peaksList.append(x)
+    if  left_one < one > right_one:
+        # print(index)
+        peaksList.append(index)
 
-# print(peaksList)``
+    if data[index] < data[index - 1] and data[index] < data[index + 1]:
+        # print(index)
+        valleyList.append(index)
+
+print(f'''\nPeaks: {peaksList}
+Valleys: {valleyList} ''')
