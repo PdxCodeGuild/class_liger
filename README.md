@@ -24,12 +24,15 @@ Weeks 16, 17, 18: Capstone project
 
 |Lab Number|Title|Due Date|
 |-|-|-|
-|Lab 02a | Madlib | 03/15 |
-|Lab 02b | Make Change | 03/16 |
-|Lab 03b | Average Number | 03/17 |
-|Lab 05 | Palindrome Checker | 03/18 |
-|Lab 06b | Credit Card Validation | 03/21 |
-|Lab 07 | Peaks and Valleys | 03/23 |
+|Lab 02a | <a href="1 Python/labs/02a Mad Lib.md">Madlib</a> | 03/15 |
+|Lab 02b | <a href="1 Python/labs/02b Make Change.md">Make Change</a> | 03/16 |
+|Lab 03b | <a href="1 Python/labs/03b AverageNum.md">Average Number</a> | 03/17 |
+|Lab 05 | <a href="1 Python/labs/05 Palindrome Checker.md">Palindrome Checker</a> | 03/18 |
+|Lab 06b | <a href="1 Python/labs/06b Credit Card Validation.md">Credit Card Validation</a> | 03/21 |
+|Lab 07 | <a href="1 Python/labs/07 Peaks and Valleys.md">Peaks and Valleys</a>  | 03/23 |
+|Lab 08 | <a href="1 Python/labs/08 Pick6.md">Pick 6</a>  | 03/25 |
+|Lab 09 | <a href="1 Python/labs/09 Blackjack Advice.md">Blackjack Advice</a>  | 03/28 |
+|Lab 10 | <a href="1 Python/labs/10 Dad Joke API.md">Dad Joke API</a>  | 03/29 |
 
 </details>
 
