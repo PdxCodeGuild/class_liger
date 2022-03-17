@@ -32,6 +32,7 @@ Weeks 16, 17, 18: Capstone project
 |Lab 07 | <a href="1 Python/labs/07 Peaks and Valleys.md">Peaks and Valleys</a>  | 03/23 |
 |Lab 08 | <a href="1 Python/labs/08 Pick6.md">Pick 6</a>  | 03/25 |
 |Lab 09 | <a href="1 Python/labs/09 Blackjack Advice.md">Blackjack Advice</a>  | 03/28 |
+|Lab 10 | <a href="1 Python/labs/10 Dad Joke API.md">Dad Joke API</a>  | 03/29 |
 
 </details>
 
