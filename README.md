@@ -1,12 +1,15 @@
 # Class Liger
 
+Instructor: 
+Keegan Good
+keegan@pdxcodeguild.com
 ### Rough Timeline
 
 **Weeks 1, 2, 3, 4: Python**
 
-Weeks 5, 6, 7, 8: HTML/CSS/Flask
+Weeks 5, 6, 7: HTML/CSS/Flask
 
-Weeks 9, 10, 11: Javascript
+Weeks 8, 9, 10, 11: Javascript
 
 Weeks 12, 13, 14, 15: Django
 
@@ -16,11 +19,21 @@ Weeks 16, 17, 18: Capstone project
 
 ### Assigned Labs:
 
-<details>
+<details open>
   <summary>Python</summary>
-  <ul>
-    
-  </ul>
+
+|Lab Number|Title|Due Date|
+|-|-|-|
+|Lab 02a | <a href="1 Python/labs/02a Mad Lib.md">Madlib</a> | 03/15 |
+|Lab 02b | <a href="1 Python/labs/02b Make Change.md">Make Change</a> | 03/16 |
+|Lab 03b | <a href="1 Python/labs/03b AverageNum.md">Average Number</a> | 03/17 |
+|Lab 05 | <a href="1 Python/labs/05 Palindrome Checker.md">Palindrome Checker</a> | 03/18 |
+|Lab 06b | <a href="1 Python/labs/06b Credit Card Validation.md">Credit Card Validation</a> | 03/21 |
+|Lab 07 | <a href="1 Python/labs/07 Peaks and Valleys.md">Peaks and Valleys</a>  | 03/23 |
+|Lab 08 | <a href="1 Python/labs/08 Pick6.md">Pick 6</a>  | 03/25 |
+|Lab 09 | <a href="1 Python/labs/09 Blackjack Advice.md">Blackjack Advice</a>  | 03/28 |
+|Lab 10 | <a href="1 Python/labs/10 Dad Joke API.md">Dad Joke API</a>  | 03/29 |
+
 </details>
 
 ## Submitting your work
@@ -127,3 +140,21 @@ Corrections will be made only to that particular branch.
 
 
 ## Additional Resources
+
+<details>
+<summary>General</summary>
+<ul>
+<li><a href="https://medium.com/@JeffLombardJr/for-new-devs-how-to-ask-intelligent-questions-be1c70a0128f">How to Ask Intelligent Questions as a New Developer</a></li>
+<li><a href="https://github.com/PdxCodeGuild/Programming101/tree/master/docs/flowcharts">Flowcharts</a></li>
+<li><a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf">VS Code Keyboard Shortcuts - Windows</a></li>
+<li><a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf">VS Code Keyboard Shortcuts - Mac</a></li>
+</ul>
+</details>
+
+<details>
+<summary>Git</summary>
+<ul>
+<li><a href="https://juristr.com/blog/2013/04/git-explained/">Git Explained: For Beginners</a></li>
+<li><a href="https://learngitbranching.js.org/?locale=en_US">Learn Git Branching Game</a></li>
+</ul>
+</details>
