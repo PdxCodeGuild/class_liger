@@ -7,33 +7,20 @@ indexList = []
 for number in range(len(data)):
     dataIndex = data[number]
     indexList.append(number)
-# print(data)
-# print(indexList)
 
-
-
-for x in range(1, len(data) -1): 
-    if x > data.index(x)-1 and x > data.index(x)+1: 
-        print(x)
-        peaksList.append(x)
-
-# print(peaksList)
  
-        
+for index in range(1, len(data) -1): 
+    right_one = data[index + 1]   
+    left_one = data[index - 1]
+    one = data[index]
 
-#         peaksList.append(number)
-
-# print(peaksList)
-
-
-# def peaks(x):
-#     rightPeak = index(x += 1)
-#     leftPeak = 
+    if  left_one < one > right_one:
     
-#     while True:
-        
+        peaksList.append(index)
 
-
+    if data[index] < data[index - 1] and data[index] < data[index + 1]:
     
+        valleyList.append(index)
 
-
+print(f'''\nPeaks: {peaksList}
+Valleys: {valleyList} ''')
