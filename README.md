@@ -1,13 +1,15 @@
 # Class Liger
 
 Instructor: 
+
 Keegan Good
+
 keegan@pdxcodeguild.com
 ### Rough Timeline
 
-**Weeks 1, 2, 3, 4: Python**
+**Weeks 1, 2, 3, 4, 5: Python**
 
-Weeks 5, 6, 7: HTML/CSS/Flask
+Weeks 6, 7: HTML/CSS/Flask
 
 Weeks 8, 9, 10, 11: Javascript
 
@@ -33,6 +35,7 @@ Weeks 16, 17, 18: Capstone project
 |Lab 08 | <a href="1 Python/labs/08 Pick6.md">Pick 6</a>  | 03/25 |
 |Lab 09 | <a href="1 Python/labs/09 Blackjack Advice.md">Blackjack Advice</a>  | 03/28 |
 |Lab 10 | <a href="1 Python/labs/10 Dad Joke API.md">Dad Joke API</a>  | 03/29 |
+|Lab 11 | <a href="1 Python/labs/11 Rot Cipher.md">Rot 13</a>  | 03/31 |
 
 </details>
 
@@ -140,6 +143,14 @@ Corrections will be made only to that particular branch.
 
 
 ## Additional Resources
+
+<details>
+<summary>Python</summary>
+<ul>
+<li><a href="https://pep8.org/">Python Style Guide (PEP8)</a></li>
+</ul>
+</details>
+
 
 <details>
 <summary>General</summary>
