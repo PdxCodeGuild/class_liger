@@ -42,15 +42,14 @@ Exactly 21, advise "Blackjack!"
 Over 21, advise "Already Busted"
 """
 
-if total >= 17 and total <= 21:
+if total >= 17 and total < 21:
     print("'Stay'")
 elif total < 17:
     print("'Hit'")
 
+
 elif total > 21:
         print("Busted!")   
-elif total == 17 and total < 21:
-        print("You don't want to choose another card Stay!")
 elif total == 21:
     print("Blackjack!")
 
