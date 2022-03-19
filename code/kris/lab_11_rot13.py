@@ -6,8 +6,8 @@ coded_word = ''
 a_index = 0
 print(alphabet[a_index + 13])
     
-# for indexed_letters in range(len(alphabet)):
-#     print(indexed_letters)
+for index in range(len(alphabet)):
+    print(index)
 # for charcater in needs_code:
 #     if charcater in alphabet:
 #         coded_word = coded_word + alphabet[charcater + 13]
