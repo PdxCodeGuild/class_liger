@@ -259,6 +259,10 @@ class Student(Person): # inheritance - each Student object gets all the qualitie
 
     def __str__(self):
         return f"{self.get_full_name()} - subjects: {self.subjects}"
+    
+    def __repr__(self):
+        '''The return value will be used when the object needs to represented in the code'''
+        return f"{self.get_full_name()} - subjects: {self.subjects}"
 
 class Instructor(Person):
     def __init__(self, first_name:str, last_name:str, age:int, subject:str, students:list=[]):
@@ -294,5 +298,5 @@ student_3 = Student('Frodo', 'Baggins', 75, ['burglary', 'adventuring'])
 # print(person_1.say_hello()) # Hello
 # print(student_1.say_hello()) # Hey, what's up?
 
-instructor_1 = Instructor('Keegan', 'Good', 33, 'Python', [student_1.first_name, student_2.first_name, student_3.first_name])
-# print(instructor_1)
+instructor_1 = Instructor('Keegan', 'Good', 33, 'Python', students=[student_1, student_2, student_3])
+print(instructor_1)
