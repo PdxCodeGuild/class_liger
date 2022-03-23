@@ -55,18 +55,25 @@ def num_matches(winner: list, ticket: list) -> int:
             # print(f"winner: {winners} = {winnings}")
             balance = balance + winnings
 
-    print(f"{match_count} match(es) in round {counter +1}. Winnings & balance for the round: {winnings}, {balance}")
+    print(f"{match_count} match(es) in round {COUNTER +1}. Winnings & balance for the round: {winnings}, {balance}")
     return balance
 
 
 if __name__ == "__main__":
 
     rounds = input(">>> Enter the number of rounds to play: ")
-    counter = 0
-    ending_balance = 0
-    while counter < int(rounds):
+    COUNTER = 0
+    ENDING_BALANCE = 0
+    while COUNTER < int(rounds):
         house_ticket = pick6(6)
         player_ticket = pick6(6)
-        ending_balance += num_matches(house_ticket, player_ticket)
-        counter += 1
-    print(f"\nYour total ending balance is: {ending_balance}\n")
+        ENDING_BALANCE += num_matches(house_ticket, player_ticket)
+        COUNTER += 1
+        EXPENSES = COUNTER * -2
+        earnings = EXPENSES - ENDING_BALANCE
+        roi = ((earnings - EXPENSES) / EXPENSES) * 100
+    print(f"\nYour final balance is: {ENDING_BALANCE}\n")
+    print(f"Earnings: {abs(ENDING_BALANCE - EXPENSES)}")
+    print(f"Expenses: {EXPENSES}")
+    print(f"Return on Investment: {roi}%")
+    print(f"\nYour ending balance is: {ENDING_BALANCE}\n")
