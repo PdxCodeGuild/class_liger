@@ -1,75 +1,63 @@
-data = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7, 8, 9, 8, 7, 6, 7, 8, 9]
 
-"""
-first and last elements are not part of peak/valley values
-peak = prev_num < curr_num > next_num
-list()
-while loop
-"""
+import random
 
+def pick_six():
+    ticket = []
 
-def peak_element(data: list[int]) -> list[int]:
-    index = 0
-    final_list = []
-
-
-    while index < len(data):
-        if index == 0 or index == (len(data) - 1):
-            index += 1
-            continue
-
-
-        if data[index - 1] < data[index] and data[index] > data[index + 1]:
-            final_list.append(index)
-        index += 1
-    return final_list
-
+    for number in range(6):
+        pick_nums = random.randint(1, 100)
+        ticket.append(pick_nums)
+    return ticket
     
-all_peaks = peak_element(data)
-print(all_peaks)
+def investment_return(ticket_winning, expenses):
+    return ((ticket_winning - expenses) / expenses)
 
-# valley = prev_num > curr_num < next_num
+winn_numbers = pick_six()
+ticket_winning = 0
+cost_ticket = 2
+num_of_tickets = 100000
 
+"""
+loop through the indices of the list, print each
+use each index to print the value at that index (from both lists)
+compare the values at each index and count how many match
+"""
 
-def valley_values(data: list[int]) -> list[int]:
-    index = 0
-    final_valeus = []
+for game in range(num_of_tickets):
+    matches_num = pick_six()
+    lott_count = 0
+    for i in range(6):
+        if winn_numbers[i] == matches_num[i]:
+            lott_count += 1
+      
 
+    if lott_count == 1:
+        ticket_winning = ticket_winning + 4
+    elif lott_count == 2:
+        ticket_winning = ticket_winning + 7
+    elif lott_count == 3: 
+        ticket_winning = ticket_winning + 100
+    elif lott_count == 4:
+        ticket_winning = ticket_winning + 50000
+    elif lott_count == 5:
+        ticket_winning = ticket_winning + 1000000
+    elif lott_count == 6:
+        ticket_winning = ticket_winning + 25000000
+    # print(f"You have {lott_count} matches")
+   
 
-    while index < len(data):
-        if index == 0 or index == (len(data) - 1):
-            index += 1
-            continue
+    # ticket_winning = ticket_winning  - 2
 
-        if data[index - 1] > data[index] and data[index] < data[index + 1]:
-            final_valeus.append(index)
-        index += 1
-    return final_valeus
-
-
-valley_elements = valley_values(data)
-print(valley_elements)
-
-# peak + valley into one list
-# how do l know the length of the finale list
-# algorithm to use
-# data structure ->list()
-# looping index > next
-
-
-def peak_valley(data: list[int]) -> list[int]:
-    final_values = []
-    final_values += peak_element(data)  
-    final_values += valley_values(data) 
-
-
-    final_values.sort()
-    return final_values
-
-
-total_final_result = peak_valley(data)
-print(total_final_result)
+# option 2 on pick6 lab............................
 
 
 
+expenses = cost_ticket * num_of_tickets
+earnings = investment_return(ticket_winning, expenses)
 
+
+
+print(winn_numbers)
+print(matches_num)
+
+print(f"Your final returns on investments is: ${earnings}")
