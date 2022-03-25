@@ -38,7 +38,7 @@ base_url = "https://icanhazdadjoke.com/"
 headers = {"accept": "application/json"}
 activity_choices = "js"
 
-page_selection = "1"
+page_selection = ""
 activity_selection = input("Enter 'j' for a random dad Joke or 's' to Search for joke topics\n>>> [j/s] ").lower()
 
 while activity_selection not in activity_choices:
@@ -64,14 +64,13 @@ if activity_selection == "j":
 else:
 
     term = input("\nEnter the subject to search for (e.g. dog)\n>>> ").lower()
-
     params_dict = {"page": page_selection, "term": term}
     response = requests.get("https://icanhazdadjoke.com/search", headers=headers, params=params_dict)
     data = response.json()
     limit = data["limit"]
     number_of_jokes = data["total_jokes"]
     number_of_pages = data["total_pages"]
-    print(f"This search returned: {number_of_jokes} joke(s) on {number_of_pages} page(s)\n")
+    print(f"\nThis search returned: {number_of_jokes} joke(s) on {number_of_pages} page(s)\n")
     results = data["results"]
 
     while number_of_jokes == 0:
@@ -83,24 +82,31 @@ else:
         limit = data["limit"]
         number_of_jokes = data["total_jokes"]
         number_of_pages = data["total_pages"]
-        print(f"This search returned: {number_of_jokes} joke(s) on {number_of_pages} page(s)")
+        print(f"\nThis search returned: {number_of_jokes} joke(s) on {number_of_pages} page(s)")
         results = data["results"]
 
     jokes_viewed = []
     user_choice = "y"
     while user_choice == "y":
         if number_of_pages > 1:
-            print(f"Your search returned {number_of_pages} pages of jokes.")
-            page_selection = input(f"Enter a number from 1 to {number_of_pages} to read the jokes on that page\n>>> ")
+            page_selection = input(
+                f"Enter a number from 1 to {number_of_pages} to read the jokes on the desired page\n>>> "
+            )
             params_dict = {"page": page_selection, "term": term}
             response = requests.get("https://icanhazdadjoke.com/search", headers=headers, params=params_dict)
             data = response.json()
             limit = data["limit"]
-            number_of_jokes = data["total_jokes"] - limit
-            number_of_pages = data["total_pages"]
-            print(f"This search returned: {number_of_jokes} jokes on {number_of_pages} page(s)\n")
-            results = data["results"]
-        selection = input(f"Enter a number from 1 to {number_of_jokes} to read the joke(s)\n>>> ")
+            if int(page_selection) > 1:
+                number_of_jokes = data["total_jokes"] - limit
+                number_of_pages = data["total_pages"]
+                print(f"This search returned: {number_of_jokes} jokes on {number_of_pages} page(s)\n")
+                results = data["results"]
+            else:
+                number_of_jokes = limit
+                results = data["results"]
+        selection = input(
+            f"\nEnter a number from 1 to {number_of_jokes} to read the joke(s) on page {page_selection}\n>>> "
+        )
         selection = int(selection)
         jokes_viewed.append(selection)
         joke_index = selection - 1
