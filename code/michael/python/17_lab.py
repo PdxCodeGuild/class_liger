@@ -62,6 +62,7 @@ class ContactList:
                 print(f'{name} and all associated info has been removed from the contact list.\nInfo removed:')
                 print(self.contacts.pop(i))
                 in_list = True
+                break
         if in_list != True:
             print(f'{name} not found in contact list and couldn\'t be removed')
     
