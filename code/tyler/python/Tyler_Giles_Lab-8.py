@@ -8,7 +8,8 @@ winning_ticket = []
 playing_ticket = []
 tickets_bought = 0
 ticket_matches = 0
-match_payout_prices = {1 : 4,
+match_payout_prices = { 
+1 : 4,
 2 : 7,
 3 : 100,
 4 : 50000,
@@ -16,9 +17,9 @@ match_payout_prices = {1 : 4,
 6 : 25000000}
 
 
-# while len(winning_ticket) < 6:
-#     winning_ticket.append(random.randint(1, 99))
-#     playing_ticket.append(random.randint(1, 99))
+while len(winning_ticket) < 6:
+    winning_ticket.append(random.randint(1, 99))
+    playing_ticket.append(random.randint(1, 99))
 
 
 
