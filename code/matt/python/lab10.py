@@ -1,31 +1,110 @@
 """
 Lab 10
 
-version 1 
+versions 1 & 2 
 
 """
-
 
 import requests
 
 
-BASE_URL = "https://icanhazdadjoke.com/"
+def version_1():
+    base_url = "https://icanhazdadjoke.com/"
+
+    headers = {"accept": "application/json"}
+
+    response = requests.get(base_url, headers=headers)
+    data = response.json()
+
+    print("\n>>> Here's a dad joke for you; enjoy...")
+
+    user_choice = "y"
+    while user_choice == "y":
+        response = requests.get(base_url, headers=headers)
+        data = response.json()
+        your_joke = f'\n\t{data["joke"]}\n'
+        print(your_joke)
+        user_choice = input(">>> A real knee-slapper! Would you like another? [y/n]: ")
+
+    print("\nTo borrow a line from 'NSYNC: Bye, Bye, Bye!")
+
+
+# version_1()
+
+""" version 2"""
+
+base_url = "https://icanhazdadjoke.com/"
 
 headers = {"accept": "application/json"}
+activity_choices = "js"
 
+page_selection = "1"
+activity_selection = input("Enter 'j' for a random dad Joke or 's' to Search for joke topics\n>>> [j/s] ").lower()
 
-response = requests.get(BASE_URL, headers=headers)
-data = response.json()
+while activity_selection not in activity_choices:
+    print("\n\tInvalid input!\n")
+    activity_selection = input("Only enter 'j' for a random dad Joke or 's' to Search joke topics\n>>> [j/s] ").lower()
 
-print("\n>>> Here's a dad joke for you; enjoy...")
+if activity_selection == "j":
 
-
-USER_CHOICE = "y"
-while USER_CHOICE == "y":
-    response = requests.get(BASE_URL, headers=headers)
-    # USER_CHOICE == "n"
+    response = requests.get(base_url, headers=headers)
     data = response.json()
-    print(f'\n\t{data["joke"]}\n')
-    USER_CHOICE = input(">>> A real knee-slapper! Would you like another? [y/n]: ")
 
-print("\nTo borrow a line from 'NSYNC: Bye, Bye, Bye!")
+    print("\n>>> Here's a dad joke for you; enjoy...")
+
+    user_choice = "y"
+    while user_choice == "y":
+        response = requests.get(base_url, headers=headers)
+        data = response.json()
+        print(f'\n\t{data["joke"]}\n')
+        user_choice = input("A real knee-slapper! Would you like another?\n>>> [y/n] ")
+
+    print("\nTo borrow from 'NSYNC: Bye, Bye, Bye!")
+
+else:
+
+    term = input("\nEnter the subject to search for (e.g. dog)\n>>> ").lower()
+
+    params_dict = {"page": page_selection, "term": term}
+    response = requests.get("https://icanhazdadjoke.com/search", headers=headers, params=params_dict)
+    data = response.json()
+    limit = data["limit"]
+    number_of_jokes = data["total_jokes"]
+    number_of_pages = data["total_pages"]
+    print(f"This search returned: {number_of_jokes} joke(s) on {number_of_pages} page(s)\n")
+    results = data["results"]
+
+    while number_of_jokes == 0:
+        print("The joke's on you! No results returned; please try again.\n")
+        term = input("Enter the subject to search for (e.g. dog)\n>>> ").lower()
+        params_dict = {"page": page_selection, "term": term}
+        response = requests.get("https://icanhazdadjoke.com/search", headers=headers, params=params_dict)
+        data = response.json()
+        limit = data["limit"]
+        number_of_jokes = data["total_jokes"]
+        number_of_pages = data["total_pages"]
+        print(f"This search returned: {number_of_jokes} joke(s) on {number_of_pages} page(s)")
+        results = data["results"]
+
+    jokes_viewed = []
+    user_choice = "y"
+    while user_choice == "y":
+        if number_of_pages > 1:
+            print(f"Your search returned {number_of_pages} pages of jokes.")
+            page_selection = input(f"Enter a number from 1 to {number_of_pages} to read the jokes on that page\n>>> ")
+            params_dict = {"page": page_selection, "term": term}
+            response = requests.get("https://icanhazdadjoke.com/search", headers=headers, params=params_dict)
+            data = response.json()
+            limit = data["limit"]
+            number_of_jokes = data["total_jokes"] - limit
+            number_of_pages = data["total_pages"]
+            print(f"This search returned: {number_of_jokes} jokes on {number_of_pages} page(s)\n")
+            results = data["results"]
+        selection = input(f"Enter a number from 1 to {number_of_jokes} to read the joke(s)\n>>> ")
+        selection = int(selection)
+        jokes_viewed.append(selection)
+        joke_index = selection - 1
+        print(f'\n{results[joke_index]["joke"]}')
+        user_choice = input(f"\nYou've seen joke #(s) {jokes_viewed}; would you like another?\n>>> [y/n] ")
+
+    print("\nTo borrow from 'NSYNC: Bye, Bye, Bye!")
