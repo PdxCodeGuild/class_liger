@@ -1,5 +1,11 @@
 import requests
 
+# Never commit API keys to Github. 
+# They will get stolen and any charges accrued will be your responsibility.
+# instead, store the keys as strings and import them as such:
+# from secrets import MY_API_KEY
+
+
 def display_menu(menu):
     for key in menu.keys():
         print(f"{key}. {menu[key]}")
