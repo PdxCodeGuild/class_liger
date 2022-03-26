@@ -36,6 +36,8 @@ Weeks 16, 17, 18: Capstone project
 |Lab 09 | <a href="1 Python/labs/09 Blackjack Advice.md">Blackjack Advice</a>  | 03/28 |
 |Lab 10 | <a href="1 Python/labs/10 Dad Joke API.md">Dad Joke API</a>  | 03/29 |
 |Lab 11 | <a href="1 Python/labs/11 Rot Cipher.md">Rot 13</a>  | 03/31 |
+|Lab 14 | <a href="1 Python/labs/14 ATM.md">ATM</a>  | 04/04 |
+|Lab 17 | <a href="1 Python/labs/17 Contact List.md">Contact List</a>  | 04/06 |
 
 </details>
 
@@ -151,6 +153,24 @@ Corrections will be made only to that particular branch.
 </ul>
 </details>
 
+
+<details>
+<summary>Data</summary>
+<ul>
+<li><a href="https://corgis-edu.github.io/corgis/json/">CORGIS: The Collection of Really Great, Interesting, Situated Datasets</a></li>
+</ul>
+</details>
+
+
+
+<details>
+<summary>Regex</summary>
+<ul>
+<li><a href="https://www.regex101.com/">Regex101.com</a> - Explore regular expressions and save useful patterns for later</li>
+<li><a href="https://learngitbranching.js.org/?locale=en_US">Learn Git Branching Game</a></li>
+<li><a href="https://www.youtube.com/watch?v=sa-TUpSx1JA">Corey Schafer - Regex</a></li>
+</ul>
+</details>
 
 <details>
 <summary>General</summary>
