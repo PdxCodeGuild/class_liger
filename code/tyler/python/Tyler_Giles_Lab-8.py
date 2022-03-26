@@ -16,22 +16,38 @@ match_payout_prices = {
 5 : 1000000,
 6 : 25000000}
 
-
+# Generates Winning ticket
 while len(winning_ticket) < 6:
     winning_ticket.append(random.randint(1, 99))
-    playing_ticket.append(random.randint(1, 99))
 
 
+# buys a ticket 10x
+while tickets_bought < 10:
+    tickets_bought += 1
+    # print(tickets_bought)
+# generates random playing ticket
+    while len(playing_ticket) < 6:
+        playing_ticket.append(random.randint(1, 99))
+    # print(playing_ticket)
 
 
 for i in range(len(winning_ticket)):
     if playing_ticket[i] == winning_ticket[i]:
         ticket_matches += 1
+        
+
+# comparing matches and increasing match variable
+
+
+print(winning_ticket)
+print()
+# print(playing_ticket)
+print(ticket_matches)
+
 
 
         
-
-print(ticket_matches)
+# print(tickets_bought)
 # print(winning_balance)
 # print(playing_ticket)
 # print(winning_ticket)
