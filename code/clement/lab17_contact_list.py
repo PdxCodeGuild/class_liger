@@ -17,7 +17,7 @@ class ContactList:
         contents = f.read()
         contacts = json.loads(contents)
         self.contacts = contacts['contacts']
-        print("load method ran")
+        
 
         
     
