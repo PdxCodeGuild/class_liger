@@ -25,10 +25,9 @@ class ATM:
         self.balance += amount
         return self.deposit
 
-    def check_deposit(self, amount):
+    def check_deposit(self):
         if self.deposit < 0:
-            self.deposit -= amount
-            return self.balance
+            print("Oops, you can't deposit a negative amount")
 
     def check_withdraw (self, amount):
         if self.balance >= amount:
