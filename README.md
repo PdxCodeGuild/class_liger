@@ -1,13 +1,15 @@
 # Class Liger
 
 Instructor: 
+
 Keegan Good
+
 keegan@pdxcodeguild.com
 ### Rough Timeline
 
-**Weeks 1, 2, 3, 4: Python**
+**Weeks 1, 2, 3, 4, 5: Python**
 
-Weeks 5, 6, 7: HTML/CSS/Flask
+Weeks 6, 7: HTML/CSS/Flask
 
 Weeks 8, 9, 10, 11: Javascript
 
@@ -24,12 +26,18 @@ Weeks 16, 17, 18: Capstone project
 
 |Lab Number|Title|Due Date|
 |-|-|-|
-|Lab 02a | Madlib | 03/15 |
-|Lab 02b | Make Change | 03/16 |
-|Lab 03b | Average Number | 03/17 |
-|Lab 05 | Palindrome Checker | 03/18 |
-|Lab 06b | Credit Card Validation | 03/21 |
-|Lab 07 | Peaks and Valleys | 03/23 |
+|Lab 02a | <a href="1 Python/labs/02a Mad Lib.md">Madlib</a> | 03/15 |
+|Lab 02b | <a href="1 Python/labs/02b Make Change.md">Make Change</a> | 03/16 |
+|Lab 03b | <a href="1 Python/labs/03b AverageNum.md">Average Number</a> | 03/17 |
+|Lab 05 | <a href="1 Python/labs/05 Palindrome Checker.md">Palindrome Checker</a> | 03/18 |
+|Lab 06b | <a href="1 Python/labs/06b Credit Card Validation.md">Credit Card Validation</a> | 03/21 |
+|Lab 07 | <a href="1 Python/labs/07 Peaks and Valleys.md">Peaks and Valleys</a>  | 03/23 |
+|Lab 08 | <a href="1 Python/labs/08 Pick6.md">Pick 6</a>  | 03/25 |
+|Lab 09 | <a href="1 Python/labs/09 Blackjack Advice.md">Blackjack Advice</a>  | 03/28 |
+|Lab 10 | <a href="1 Python/labs/10 Dad Joke API.md">Dad Joke API</a>  | 03/29 |
+|Lab 11 | <a href="1 Python/labs/11 Rot Cipher.md">Rot 13</a>  | 03/31 |
+|Lab 14 | <a href="1 Python/labs/14 ATM.md">ATM</a>  | 04/04 |
+|Lab 17 | <a href="1 Python/labs/17 Contact List.md">Contact List</a>  | 04/06 |
 
 </details>
 
@@ -137,6 +145,32 @@ Corrections will be made only to that particular branch.
 
 
 ## Additional Resources
+
+<details>
+<summary>Python</summary>
+<ul>
+<li><a href="https://pep8.org/">Python Style Guide (PEP8)</a></li>
+</ul>
+</details>
+
+
+<details>
+<summary>Data</summary>
+<ul>
+<li><a href="https://corgis-edu.github.io/corgis/json/">CORGIS: The Collection of Really Great, Interesting, Situated Datasets</a></li>
+</ul>
+</details>
+
+
+
+<details>
+<summary>Regex</summary>
+<ul>
+<li><a href="https://www.regex101.com/">Regex101.com</a> - Explore regular expressions and save useful patterns for later</li>
+<li><a href="https://learngitbranching.js.org/?locale=en_US">Learn Git Branching Game</a></li>
+<li><a href="https://www.youtube.com/watch?v=sa-TUpSx1JA">Corey Schafer - Regex</a></li>
+</ul>
+</details>
 
 <details>
 <summary>General</summary>
