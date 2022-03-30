@@ -5,8 +5,10 @@
 from colorama import init
 init()
 from colorama import Fore, Back, Style
-print(Fore.RED + 'some red text')
-print(Back.GREEN + 'and with a green background')
-print(Style.DIM + 'and in dim text')
+
+print(Back.GREEN, Fore.BLACK + 'File is pretty small ')
 print(Style.RESET_ALL)
-print('back to normal now')
+print(Back.YELLOW, Fore.BLACK + 'File is pretty big ')
+print(Style.RESET_ALL)
+print(Back.RED, Fore.BLACK + 'File is very big ')
+print(Style.RESET_ALL)
