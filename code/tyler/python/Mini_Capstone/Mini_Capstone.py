@@ -2,6 +2,10 @@
 # Figure out how to loop through the filenames in a directory. os.listdir()
 # Figure out how to read the filesize of the file and apply color appropriately
 
+# 3 file sizes for minimum viable product are 1KB, 3KB, and 5+KB
+
+
+
 from colorama import init
 init()
 from colorama import Fore, Back, Style
