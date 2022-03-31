@@ -12,23 +12,24 @@ from colorama import Fore, Back, Style
 import os
 
 current_directory = os.getcwd()
-
-folder_path = "/code/tyler/python/Mini_Capstone/data"
+folder_path = "\data"
 folder_path = os.getcwd() + folder_path
 
 for file_name in os.listdir(folder_path):
     if file_name.endswith('.txt'):
         file_path = os.path.join(folder_path, file_name)
-        with open(file_path, 'r') as f:
-            print(Back.GREEN, Fore.BLACK +'ez clap ' + Style.RESET_ALL)
 
 
-print(Back.GREEN, Fore.BLACK + 'File is very small ')
-print(Style.RESET_ALL)
-print(Back.YELLOW, Fore.BLACK + 'File is pretty big ')
-print(Style.RESET_ALL)
-print(Back.RED, Fore.BLACK + 'File is very big ')
-print(Style.RESET_ALL)
+size = os.path.getsize(file_name)
+for root, dirs, files in os.walk(folder_path):
+	for filename in files:
+		# print(os.path.join(root, filename))
+            if size < 1000:
+                print(f" {Back.GREEN} {Fore.BLACK} The file size is {size} bytes. " + Style.RESET_ALL)
 
-size = os.path.getsize('C:/Users/user/Documents/PDX_Code/class_liger/code/tyler/python/Mini_Capstone/data') 
-print('Size of file is', size, 'bytes')
+            if size < 5000:
+                print(f" {Back.YELLOW} {Fore.BLACK} The file size is {size} bytes. " + Style.RESET_ALL)
+
+            if size < 10000:
+                print(f" {Back.RED} {Fore.BLACK} The file size is {size} bytes. " + Style.RESET_ALL)
+
