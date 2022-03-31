@@ -4,7 +4,8 @@
 
 # 3 file sizes for minimum viable product are 1KB, 3KB, and 5+KB
 
-
+# sys.argv
+# os.path.isdir()
 
 from colorama import init
 init()
@@ -18,18 +19,18 @@ folder_path = os.getcwd() + folder_path
 for file_name in os.listdir(folder_path):
     if file_name.endswith('.txt'):
         file_path = os.path.join(folder_path, file_name)
+        size = os.path.getsize(file_path)
+        # print(file_path)
+        if size < 1000:
+            print(f" {Back.GREEN} {Fore.BLACK} The file size is {size} bytes. " + Style.RESET_ALL)
+
+        elif size < 5000:
+            print(f" {Back.YELLOW} {Fore.BLACK} The file size is {size} bytes. " + Style.RESET_ALL)
+
+        else:
+            print(f" {Back.RED} {Fore.BLACK} The file size is {size} bytes. " + Style.RESET_ALL)
 
 
-size = os.path.getsize(file_name)
-for root, dirs, files in os.walk(folder_path):
-	for filename in files:
-		# print(os.path.join(root, filename))
-            if size < 1000:
-                print(f" {Back.GREEN} {Fore.BLACK} The file size is {size} bytes. " + Style.RESET_ALL)
 
-            if size < 5000:
-                print(f" {Back.YELLOW} {Fore.BLACK} The file size is {size} bytes. " + Style.RESET_ALL)
-
-            if size < 10000:
-                print(f" {Back.RED} {Fore.BLACK} The file size is {size} bytes. " + Style.RESET_ALL)
+# print(file_path)
 
