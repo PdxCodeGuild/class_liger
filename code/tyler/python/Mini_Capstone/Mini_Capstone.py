@@ -2,7 +2,7 @@
 # Figure out how to loop through the filenames in a directory. os.listdir()
 # Figure out how to read the filesize of the file and apply color appropriately
 
-# 3 file sizes for minimum viable product are 1KB, 3KB, and 5+KB
+# 3 file sizes for minimum viable product are 1KB, 5KB, and 10KB
 
 # sys.argv
 # os.path.isdir()
@@ -29,8 +29,3 @@ for file_name in os.listdir(folder_path):
 
         else:
             print(f" {Back.RED} {Fore.BLACK} The file size is {size} bytes. " + Style.RESET_ALL)
-
-
-
-# print(file_path)
-
