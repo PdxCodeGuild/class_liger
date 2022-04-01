@@ -8,19 +8,34 @@
 # os.path.isdir()
 
 from colorama import init
+# Import colorama library
+# Python library that allows output of color in the terminal
+
 init()
+# Initialize colorama lib
+
 from colorama import Fore, Back, Style
+# Import text styling
+
 import os
+# Import os utility module
 
 current_directory = os.getcwd()
+# os.getcwd() is starting at the base directory (class_liger for this product state)
+
 folder_path = "\data"
+# create a variable 
+
 folder_path = os.getcwd() + folder_path
+# Combine the cwd with folder_path
 
 for file_name in os.listdir(folder_path):
+    
+
     if file_name.endswith('.txt'):
         file_path = os.path.join(folder_path, file_name)
         size = os.path.getsize(file_path)
-        # print(file_path)
+
         if size < 1000:
             print(f" {Back.GREEN} {Fore.BLACK} The file size is {size} bytes. " + Style.RESET_ALL)
 
