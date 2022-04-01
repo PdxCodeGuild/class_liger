@@ -24,9 +24,8 @@ current_directory = os.getcwd()
 # os.getcwd() is starting at the base directory (class_liger for this product state)
 
 folder_path = "\data"
-# create a variable 
-
 folder_path = os.getcwd() + folder_path
+# create a variable 
 # Combine the cwd with folder_path
 
 for file_name in os.listdir(folder_path):
