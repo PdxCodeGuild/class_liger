@@ -30,17 +30,22 @@ folder_path = os.getcwd() + folder_path
 # Combine the cwd with folder_path
 
 for file_name in os.listdir(folder_path):
-    
+    # os.listdir is the list of all files and directories in the specified directory
 
     if file_name.endswith('.txt'):
         file_path = os.path.join(folder_path, file_name)
         size = os.path.getsize(file_path)
+        # Looping through only text files for now
+        # If the file path ends with .txt it gets added to file_path
+        # os.path.getsize scans and returns the file size in bytes
 
         if size < 1000:
-            print(f" {Back.GREEN} {Fore.BLACK} The file size is {size} bytes. " + Style.RESET_ALL)
+            print(f" {Back.GREEN} {Fore.BLACK} {file_name} is {size} bytes. " + Style.RESET_ALL)
+        # Use ints to represent the bytes
+        # Style.RESET_ALL after every print statement to end the color after the string
 
         elif size < 5000:
-            print(f" {Back.YELLOW} {Fore.BLACK} The file size is {size} bytes. " + Style.RESET_ALL)
+            print(f" {Back.YELLOW} {Fore.BLACK} {file_name} is {size} bytes. " + Style.RESET_ALL)
 
         else:
-            print(f" {Back.RED} {Fore.BLACK} The file size is {size} bytes. " + Style.RESET_ALL)
+            print(f" {Back.RED} {Fore.BLACK} {file_name} is {size} bytes. " + Style.RESET_ALL)
