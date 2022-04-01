@@ -46,5 +46,5 @@ for file_name in os.listdir(folder_path):
         elif size < 5000:
             print(f" {Back.YELLOW} {Fore.BLACK} {file_name} is {size} bytes. " + Style.RESET_ALL)
 
-        else:
+        elif size < 10000:
             print(f" {Back.RED} {Fore.BLACK} {file_name} is {size} bytes. " + Style.RESET_ALL)
