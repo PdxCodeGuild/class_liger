@@ -11,14 +11,19 @@ app = Flask(__name__)
 #         </div>
 #     """
 
+# context is data to be used on the template
+# @app.route('/') # home page
+# def index():
+
+#     # define some data to pass as the 'context' data for the template
+#     context = {
+#         'name': 'Keegan',
+#         'city': 'Portland'
+#     }
+
+#     return render_template('index.html', context=context)
+
 
 @app.route('/') # home page
 def index():
-
-    # define some data to pass as the 'context' data for the template
-    context = {
-        'name': 'Keegan',
-        'city': 'Portland'
-    }
-
-    return render_template('index.html', context=context)
+    return render_template('index.html')
