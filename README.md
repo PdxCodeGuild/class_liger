@@ -7,13 +7,13 @@ Keegan Good
 keegan@pdxcodeguild.com
 ### Rough Timeline
 
-**Weeks 1, 2, 3, 4, 5: Python**
+Weeks 1, 2, 3, 4, 5: Python
 
-Weeks 6, 7: HTML/CSS/Flask
+**Weeks 6, 7: HTML/CSS/Flask**
 
-Weeks 8, 9, 10, 11: Javascript
+Weeks 8, 9, 10, 11: Django
 
-Weeks 12, 13, 14, 15: Django
+Weeks 12, 13, 14, 15: Javascript
 
 Weeks 16, 17, 18: Capstone project
 
