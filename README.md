@@ -21,7 +21,7 @@ Weeks 16, 17, 18: Capstone project
 
 ### Assigned Labs:
 
-<details open>
+<details>
   <summary>Python</summary>
 
 |Lab Number|Title|Due Date|
@@ -41,11 +41,12 @@ Weeks 16, 17, 18: Capstone project
 | N/A | <a href="1 Python/labs/MiniCapstone.md">Mini Capstone</a>  | 04/01 |
 
 </details>
-<details>
+<details open>
   <summary>HTML/CSS/Flask</summary>
 
 |Lab Number|Title|Due Date|
 |-|-|-|
+|01|<a href="2 Flask + HTML + CSS\labs\01 Bio.md">Bio</a>|04/19|
 
 
 </details>
