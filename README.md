@@ -1,12 +1,17 @@
 # Class Liger
 
+Instructor: 
+
+Keegan Good
+
+keegan@pdxcodeguild.com
 ### Rough Timeline
 
-**Weeks 1, 2, 3, 4: Python**
+**Weeks 1, 2, 3, 4, 5: Python**
 
-Weeks 5, 6, 7, 8: HTML/CSS/Flask
+Weeks 6, 7: HTML/CSS/Flask
 
-Weeks 9, 10, 11: Javascript
+Weeks 8, 9, 10, 11: Javascript
 
 Weeks 12, 13, 14, 15: Django
 
@@ -16,11 +21,33 @@ Weeks 16, 17, 18: Capstone project
 
 ### Assigned Labs:
 
-<details>
+<details open>
   <summary>Python</summary>
-  <ul>
-    
-  </ul>
+
+|Lab Number|Title|Due Date|
+|-|-|-|
+|Lab 02a | <a href="1 Python/labs/02a Mad Lib.md">Madlib</a> | 03/15 |
+|Lab 02b | <a href="1 Python/labs/02b Make Change.md">Make Change</a> | 03/16 |
+|Lab 03b | <a href="1 Python/labs/03b AverageNum.md">Average Number</a> | 03/17 |
+|Lab 05 | <a href="1 Python/labs/05 Palindrome Checker.md">Palindrome Checker</a> | 03/18 |
+|Lab 06b | <a href="1 Python/labs/06b Credit Card Validation.md">Credit Card Validation</a> | 03/21 |
+|Lab 07 | <a href="1 Python/labs/07 Peaks and Valleys.md">Peaks and Valleys</a>  | 03/23 |
+|Lab 08 | <a href="1 Python/labs/08 Pick6.md">Pick 6</a>  | 03/25 |
+|Lab 09 | <a href="1 Python/labs/09 Blackjack Advice.md">Blackjack Advice</a>  | 03/28 |
+|Lab 10 | <a href="1 Python/labs/10 Dad Joke API.md">Dad Joke API</a>  | 03/29 |
+|Lab 11 | <a href="1 Python/labs/11 Rot Cipher.md">Rot 13</a>  | 03/31 |
+|Lab 14 | <a href="1 Python/labs/14 ATM.md">ATM</a>  | 04/04 |
+|Lab 17 | <a href="1 Python/labs/17 Contact List.md">Contact List</a>  | 04/06 |
+| N/A | <a href="1 Python/labs/MiniCapstone.md">Mini Capstone</a>  | 04/01 |
+
+</details>
+<details>
+  <summary>HTML/CSS/Flask</summary>
+
+|Lab Number|Title|Due Date|
+|-|-|-|
+
+
 </details>
 
 ## Submitting your work
@@ -127,3 +154,47 @@ Corrections will be made only to that particular branch.
 
 
 ## Additional Resources
+
+<details>
+<summary>Python</summary>
+<ul>
+<li><a href="https://pep8.org/">Python Style Guide (PEP8)</a></li>
+</ul>
+</details>
+
+
+<details>
+<summary>Data</summary>
+<ul>
+<li><a href="https://corgis-edu.github.io/corgis/json/">CORGIS: The Collection of Really Great, Interesting, Situated Datasets</a></li>
+</ul>
+</details>
+
+
+
+<details>
+<summary>Regex</summary>
+<ul>
+<li><a href="https://www.regex101.com/">Regex101.com</a> - Explore regular expressions and save useful patterns for later</li>
+<li><a href="https://learngitbranching.js.org/?locale=en_US">Learn Git Branching Game</a></li>
+<li><a href="https://www.youtube.com/watch?v=sa-TUpSx1JA">Corey Schafer - Regex</a></li>
+</ul>
+</details>
+
+<details>
+<summary>General</summary>
+<ul>
+<li><a href="https://medium.com/@JeffLombardJr/for-new-devs-how-to-ask-intelligent-questions-be1c70a0128f">How to Ask Intelligent Questions as a New Developer</a></li>
+<li><a href="https://github.com/PdxCodeGuild/Programming101/tree/master/docs/flowcharts">Flowcharts</a></li>
+<li><a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf">VS Code Keyboard Shortcuts - Windows</a></li>
+<li><a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf">VS Code Keyboard Shortcuts - Mac</a></li>
+</ul>
+</details>
+
+<details>
+<summary>Git</summary>
+<ul>
+<li><a href="https://juristr.com/blog/2013/04/git-explained/">Git Explained: For Beginners</a></li>
+<li><a href="https://learngitbranching.js.org/?locale=en_US">Learn Git Branching Game</a></li>
+</ul>
+</details>
