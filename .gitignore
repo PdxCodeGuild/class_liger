@@ -1,4 +1,8 @@
 __pycache__/
 __pycache__/*
-# .vscode/
-# .DS_Store
+.vscode/
+.DS_Store
+
+secrets.*
+
+code/michael/Ignored

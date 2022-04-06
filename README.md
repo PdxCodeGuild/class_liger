@@ -7,13 +7,13 @@ Keegan Good
 keegan@pdxcodeguild.com
 ### Rough Timeline
 
-**Weeks 1, 2, 3, 4, 5: Python**
+Weeks 1, 2, 3, 4, 5: Python
 
-Weeks 6, 7: HTML/CSS/Flask
+**Weeks 6, 7: HTML/CSS/Flask**
 
-Weeks 8, 9, 10, 11: Javascript
+Weeks 8, 9, 10, 11: Django
 
-Weeks 12, 13, 14, 15: Django
+Weeks 12, 13, 14, 15: Javascript
 
 Weeks 16, 17, 18: Capstone project
 
@@ -21,7 +21,7 @@ Weeks 16, 17, 18: Capstone project
 
 ### Assigned Labs:
 
-<details open>
+<details>
   <summary>Python</summary>
 
 |Lab Number|Title|Due Date|
@@ -38,6 +38,16 @@ Weeks 16, 17, 18: Capstone project
 |Lab 11 | <a href="1 Python/labs/11 Rot Cipher.md">Rot 13</a>  | 03/31 |
 |Lab 14 | <a href="1 Python/labs/14 ATM.md">ATM</a>  | 04/04 |
 |Lab 17 | <a href="1 Python/labs/17 Contact List.md">Contact List</a>  | 04/06 |
+| N/A | <a href="1 Python/labs/MiniCapstone.md">Mini Capstone</a>  | 04/01 |
+
+</details>
+<details open>
+  <summary>HTML/CSS/Flask</summary>
+
+|Lab Number|Title|Due Date|
+|-|-|-|
+|01|<a href="2 Flask + HTML + CSS\labs\01 Bio.md">Bio</a>|04/19|
+
 
 </details>
 
