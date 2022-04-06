@@ -13,7 +13,7 @@ def encrypt(user_string, user_strength):
     encrypted_message = ''      # empty list too add message to
     for letter in user_string:
          # the letters in the string are passed into the alphabet var and then getting the index associated with it
-         # then adding 
+         # then adding the user defined 'strength' and modulus 26 for the index of the new letter
         encrypted_letter = (alphabet.index(letter) + user_strength) % 26          
         encrypted_message += alphabet[encrypted_letter]
 
