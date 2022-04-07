@@ -123,7 +123,7 @@ a {
 
 #top-nav {
     background-color: lightblue;
-    padding: 20px;
+    padding: 20px 0px;
     width: 90%;
 
     display: flex;
