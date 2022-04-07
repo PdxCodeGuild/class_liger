@@ -203,5 +203,7 @@ Corrections will be made only to that particular branch.
 <li><a href="https://flukeout.github.io/">CSS Diner game</a></li>
 <li><a href="https://flexboxfroggy.com/">Flexbox Froggy game</a></li>
 <li><a href="https://codingfantasy.com/games/flexboxadventure">Flexbox Adventure game</a></li>
+<li><a href="http://coolors.co/">coolors.co Color Picker</a></li>
+<li><a href="http://color.adobe.com/">Adobe.com Color Picker</a></li>
 </ul>
 </details>
