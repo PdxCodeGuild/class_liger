@@ -71,7 +71,7 @@ class ContactList:
                 self.contacts.remove(contact)
                 updated_dict = {"name": new_name, "email": new_email, "phone_number": new_phone_number}
                 self.contacts.append(updated_dict)
-        ...
+        print(f">>> {contact['name']} has been updated\n")
 
 
 contact_list = ContactList()  # create an instance of our class

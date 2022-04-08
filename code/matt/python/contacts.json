@@ -17,7 +17,7 @@
     },
     {
       "name": "Matthew Santorsola",
-      "email": "matt@awesomesauce.com", 
+      "email": "matt@awesomesauce.com",
       "phone_number": "914-888-2828"
     },
     {
@@ -26,9 +26,9 @@
       "phone_number": "914-444-6464s"
     },
     {
-      "name": "Dom DeVito",
-      "email": "dom@eatmyshorts.com",
-      "phone_number": "206-555-1212"
+      "name": "Dominic DeVito",
+      "email": "503-999-1212",
+      "phone_number": "dom@funkytown.com"
     }
   ]
 }
