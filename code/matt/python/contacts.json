@@ -1,15 +1,34 @@
 {
-  "contacts": [{
+  "contacts": [
+    {
       "name": "Dora M. Smith",
       "phone_number": "919-781-7129",
       "email": "doramsmith@hotmail.com"
-  },{
+    },
+    {
       "name": "Annette D. Berube",
       "phone_number": "662-319-6954",
       "email": "annette@gmail.com"
-  },{
+    },
+    {
       "name": "Austin M. Pigott",
       "phone_number": "478-777-8878",
       "email": "austin@aol.com"
-  }]
+    },
+    {
+      "name": "Matt Santorsola",
+      "email": "914-588-2869",
+      "phone_number": "matt@awesomesauce.com"
+    },
+    {
+      "name": "Jeff Santorsola",
+      "email": "914-484-6405",
+      "phone_number": "jeff@sillysongs.com"
+    },
+    {
+      "name": "Dom DeVito",
+      "email": "206-555-1212",
+      "phone_number": "dom@eatmyshorts.com"
+    }
+  ]
 }
