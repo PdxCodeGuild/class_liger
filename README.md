@@ -158,7 +158,7 @@ Corrections will be made only to that particular branch.
 <summary>Python</summary>
 <ul>
 <li><a href="https://pep8.org/">Python Style Guide (PEP8)</a></li>
-<li><a href="https://peps.python.org/pep-0020/">The Zen of Python</a></li>
+<li><a href="https://peps.python.org/pep-0020/">The Zen of Python (PEP20)</a></li>
 </ul>
 </details>
 
