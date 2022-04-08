@@ -16,19 +16,19 @@
       "email": "austin@aol.com"
     },
     {
-      "name": "Matt Santorsola",
-      "email": "914-588-2869",
-      "phone_number": "matt@awesomesauce.com"
+      "name": "Matthew Santorsola",
+      "email": "matt@awesomesauce.com", 
+      "phone_number": "914-888-2828"
     },
     {
-      "name": "Jeff Santorsola",
-      "email": "914-484-6405",
-      "phone_number": "jeff@sillysongs.com"
+      "name": "Jeff Ranilla",
+      "email": "jeff@sillysongs.com",
+      "phone_number": "914-444-6464s"
     },
     {
       "name": "Dom DeVito",
-      "email": "206-555-1212",
-      "phone_number": "dom@eatmyshorts.com"
+      "email": "dom@eatmyshorts.com",
+      "phone_number": "206-555-1212"
     }
   ]
 }
