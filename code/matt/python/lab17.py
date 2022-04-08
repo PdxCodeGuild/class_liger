@@ -51,7 +51,6 @@ class ContactList:
         new_contact_dict = {"name": name, "email": email, "phone_number": phone_number}
         self.contacts.append(new_contact_dict)
         print(f">>> Added {self.contacts[-1]['name']} to contacts")
-        # return self.contacts[-1]
         ...
 
     def remove(self, name):
@@ -61,13 +60,17 @@ class ContactList:
             if name.lower() == contact["name"].lower():
                 self.contacts.remove(contact)
         print(f">>> {contact['name']} has been removed\n")
-
         ...
 
-    def update(self, old_name, new_name, new_phone_number, new_email):
+    def update(self, old_name, new_name, new_email, new_phone_number):
         # find the contact in self.contacts with the given old_name
         # set that contacts' name, phone number, etc to the given values
         # for contact in self.contacts:
+        for contact in self.contacts:
+            if old_name.lower() == contact["name"].lower():
+                self.contacts.remove(contact)
+                updated_dict = {"name": new_name, "email": new_email, "phone_number": new_phone_number}
+                self.contacts.append(updated_dict)
         ...
 
 
