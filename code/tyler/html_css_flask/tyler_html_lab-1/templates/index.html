@@ -1,3 +1,21 @@
+<!-- Part 1
+A written introduction /
+A link to a Wikipedia article /
+A picture of them /
+A list of places where they've lived /
+A quote from them /
+Part 2
+Center the entire content of the body
+Modify the padding and margins on your paragraphs to look better
+Use a custom font
+Add a background image
+Part 3
+Pick a color scheme and modify the background, body text, and link text color.
+Change the typeface of the quote.
+Add a rounded border to the picture.
+Change the bullet points on the list of places. -->
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,6 +28,13 @@
         
 </head>
 <body>
-      <h1> Hello Doom! </h1>
+      <h1> The Doomslayer Bio </h1>
+      <a href="https://doom.fandom.com/wiki/Doom_Slayer">"Rip and tear!" -Doomguy</a>
+      <h2> Places The Doomslayer has been </h2>
+      <ol>Earth</ol>
+      <ol>Hell</ol>
+      <img src="{{ url_for('static', filename='images/Doomguy_render.png') }}">
+      <img src="{{url_for('static', filename='images/head_rip.gif') }}">
+
   </body>
 </html>
