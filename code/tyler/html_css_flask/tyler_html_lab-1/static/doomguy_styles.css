@@ -2,10 +2,10 @@
 
 body { 
     text-align: center;
-    background-color: #a61717;
+    background: #761300;
     font-family: 'Special Elite', cursive;
     background-image: url("images/Doomguy_render.png");
-    color: bisque;
+    color: #f6f191;
     
 }
 img {
@@ -16,7 +16,7 @@ ul {
     max-width: 40vw;
     padding: 15px;
     margin: 0 auto;
-    background-color: rgba(30, 94, 35, 0.5);
+    background-color: rgb(148 124 36 / 0.5);
 
 }
 
