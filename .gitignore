@@ -1,4 +1,12 @@
 __pycache__/
 __pycache__/*
 .vscode/
+<<<<<<< HEAD
 .DS_Store
+=======
+.DS_Store
+
+secrets.*
+
+code/michael/Ignored
+>>>>>>> main

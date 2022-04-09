@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- use special Flask syntax to link stylesheet -->
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <section class="container" id="section-1">
+        <h1>Welcome!</h1>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quidem sint iste consequatur vel aliquid est odit enim, totam deserunt
+            fugiat labore cupiditate ratione praesentium animi excepturi assumenda,
+            accusantium quo ipsum.
+        </p>
+    </section>
+
+    <section class="container" id="section-2">
+
+        <div class="card">
+            <div class="image-container">
+                <img src="https://picsum.photos/200" alt="My Image">
+                <h2 class="caption">Look, a picture!</h2>
+            </div>
+
+            <blockquote>
+                You're entirely bonkers. But I'll tell you a secret... All the best people are!
+                <br/>
+                <cite>- Lewis Carroll</cite>
+            </blockquote>
+
+        </div>
+
+    </section>
+
+</body>
+</html>
