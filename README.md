@@ -49,6 +49,7 @@ Weeks 16, 17, 18: Capstone project
 | ---------- | ------------------------------------------------------- | -------- |
 | 01         | <a href="2 Flask + HTML + CSS\labs\01 Bio.md">Bio</a>   | 04/19    |
 | 02         | <a href="2 Flask + HTML + CSS\labs\02 Blog.md">Blog</a> | 04/20    |
+| 03         | <a href="2 Flask + HTML + CSS\labs\03 Company.md">Blog</a> | 04/22 |
 
 </details>
 
