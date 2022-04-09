@@ -1,0 +1,95 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cuprum:wght@500&family=Vazirmatn&display=swap');
+
+*{
+    margin: 0;
+    padding: 20;
+    /* width: 100%; */
+    height: auto;
+}
+body{
+    margin: 0;
+    font-family: Vazirmatn, sans-serif;
+    font-weight: 200;
+
+    /* align-items: center; */
+    background-image: url(https://wallpaperaccess.com/full/187161.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1, h3, h5{
+    font-family: Cuprum, sans-serif;
+    font-weight: 600;
+}
+
+/* A dot(.) targeting a class in html file */
+.container{
+    height: 100vh;
+    width: 80%;
+    padding: 18px;
+    margin: 0 auto;
+
+    /* Center the entire content of the body */
+    text-align: center;
+}
+
+/* Add a background image and use # to target an id on section-1*/
+#section-1 p {
+    background-color: rgb(197, 213, 207);
+    padding: 40px;
+    line-height: 20px;
+    border-radius: 25px;
+    
+    max-width: 80;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card {
+    background-color: linear-gradient(rgba(4, 9, 30, 0.7));
+    /* max-width: 80%; */
+    /* margin: 0 90px; */
+    padding: 10px 10px;
+    /* Add a rounded border to the picture. */
+    border-radius: 50px;
+    text-align: center;
+}
+img {
+    border-radius: 25px;
+   
+}
+.caption {
+    color: rgb(12, 16, 15);
+}
+blockquote {
+    font-weight: 600;
+}
+blockquote cite {
+    font-weight: 100;
+    float: left;
+    padding-left: 170px;
+   
+}
+.cont {
+    border-radius: 30%;
+    background: rgb(197, 213, 207);
+    padding: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+.list {
+    background-color: rgba(208, 224, 214, 0.2);
+    width: 40%;
+    border-style: groove;
+    text-align: center;
+    margin-left: 25%;
+   
+}
+ul.a {
+    list-style-type: circle;
+
+}

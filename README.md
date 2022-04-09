@@ -45,9 +45,11 @@ Weeks 16, 17, 18: Capstone project
 <details open>
   <summary>HTML/CSS/Flask</summary>
 
-| Lab Number | Title                                                 | Due Date |
-| ---------- | ----------------------------------------------------- | -------- |
-| 01         | <a href="2 Flask + HTML + CSS\labs\01 Bio.md">Bio</a> | 04/19    |
+| Lab Number | Title                                                              | Due Date |
+| ---------- | ------------------------------------------------------------------ | -------- |
+| 01         | <a href="2 Flask + HTML + CSS\labs\01 Bio.md">Bio</a>              | 04/19    |
+| 02         | <a href="2 Flask + HTML + CSS\labs\02 Blog.md">Blog</a>            | 04/20    |
+| 03         | <a href="2 Flask + HTML + CSS\labs\03 Company.md">Company Home</a> | 04/22    |
 
 </details>
 
@@ -157,6 +159,7 @@ Corrections will be made only to that particular branch.
 <summary>Python</summary>
 <ul>
 <li><a href="https://pep8.org/">Python Style Guide (PEP8)</a></li>
+<li><a href="https://peps.python.org/pep-0020/">The Zen of Python (PEP20)</a></li>
 </ul>
 </details>
 
@@ -203,5 +206,7 @@ Corrections will be made only to that particular branch.
 <li><a href="https://flukeout.github.io/">CSS Diner game</a></li>
 <li><a href="https://flexboxfroggy.com/">Flexbox Froggy game</a></li>
 <li><a href="https://codingfantasy.com/games/flexboxadventure">Flexbox Adventure game</a></li>
+<li><a href="http://coolors.co/">coolors.co Color Picker</a></li>
+<li><a href="http://color.adobe.com/">Adobe.com Color Picker</a></li>
 </ul>
 </details>
