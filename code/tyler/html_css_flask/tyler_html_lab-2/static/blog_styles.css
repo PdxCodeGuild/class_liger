@@ -1,0 +1,23 @@
+h1 {
+    border-color: brown;
+    border-style: groove;
+}
+
+.container{
+    display: flex;
+}
+
+.left-column {
+    height: stretch;
+    width: 20%;
+    background-color: blueviolet;
+    
+}
+
+.right-column {
+    
+    height: stretch;
+    background-color: aqua;
+    
+    border-style: dashed;
+}
