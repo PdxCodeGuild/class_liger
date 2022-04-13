@@ -20,9 +20,10 @@ body {
 
 }
 .left-column {
-    width: 20%;
+    width: 40vw;
     margin: 1px;
-    height: stretch;
+    padding: 25px;
+    /* height: stretch; */
     font-family: 'Cairo', sans-serif;
     border-style: groove;
     border-color: brown;
@@ -32,16 +33,17 @@ body {
 }
 
 .right-column {
-    height: stretch;
+    /* height: stretch; */
     display: flex;
-    flex: wrap;
+    flex-wrap: wrap ;
     /* align-items: top; */
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 #right-side .post {
-    height: fit-content;
-    max-width: 50%;
+    height: 300px;
+    overflow-y: scroll;
+    max-width: 25%;
     margin: 5px;
     padding: 15px;
     font-family: 'M PLUS 1', sans-serif;
@@ -52,5 +54,5 @@ body {
 footer {
     font-family: 'Raleway', sans-serif;
     color: bisque;
-    align-items: center;
+    /* align-items: center; */
 }
