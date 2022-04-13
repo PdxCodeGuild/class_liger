@@ -1,0 +1,54 @@
+body {
+    background-image: 
+    url(space_background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+div {
+    text-align: center;
+    background-color: rgb(255,153,255);
+    border-style: solid;
+    border-color: rgb(255, 204, 153);
+    border-width: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+h1, h2, h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+ul {
+    list-style-type: square;
+    
+}
+
+.main {
+    float: left;
+    width: 66%;
+}
+
+.sidebar {
+    float: right;
+    width: 15%;
+}
+
+footer {
+    clear:left ;
+    color:rgb(255,153,255)
+}
+
+img {
+    border-radius: 2%;
+}
+
+.side_img {
+    width: 200px;
+}
+
+.sprinkle {
+    color: rgb(255, 51, 153);
+}
