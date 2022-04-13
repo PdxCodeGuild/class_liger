@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Walk the dog",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "title": "Plant onions",
+    "completed": true
+  },
+  {
+    "id": 3,
+    "title": "Water the garden",
+    "completed": true
+  }
+]

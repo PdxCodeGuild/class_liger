@@ -1,0 +1,34 @@
+{
+  "contacts": [
+    {
+      "name": "Dora M. Smith",
+      "phone_number": "919-781-7129",
+      "email": "doramsmith@hotmail.com"
+    },
+    {
+      "name": "Annette D. Berube",
+      "phone_number": "662-319-6954",
+      "email": "annette@gmail.com"
+    },
+    {
+      "name": "Austin M. Pigott",
+      "phone_number": "478-777-8878",
+      "email": "austin@aol.com"
+    },
+    {
+      "name": "Matthew Santorsola",
+      "email": "matt@awesomesauce.com",
+      "phone_number": "914-888-2828"
+    },
+    {
+      "name": "Jeff Ranilla",
+      "email": "jeff@sillysongs.com",
+      "phone_number": "914-444-6464s"
+    },
+    {
+      "name": "Dominic DeVito",
+      "email": "503-999-1212",
+      "phone_number": "dom@funkytown.com"
+    }
+  ]
+}

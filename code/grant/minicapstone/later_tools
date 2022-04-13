@@ -1,0 +1,47 @@
+Image.getbbox()[source]¶
+Calculates the bounding box of the non-zero regions in the image.
+
+Returns
+The bounding box is returned as a 4-tuple defining the left, upper, right, and lower pixel coordinate. See Coordinate System. If the image is completely empty, this method returns None.
+
+This helps to get the bounding box coordinates of the input image:
+
+from PIL import Image
+
+with Image.open("hopper.jpg") as im:
+    print(im.getbbox())
+
+
+
+
+    # length = int(input(f'\nchoose the length: \n'))                     #input length     (secondary)
+
+# width = int(input(f'\nchoose the width: \n'))                       #input width      (secondary)
+
+# resize_file = (width, height) 
+
+
+    # Returns four coordinates in the format (left, upper, right, lower)
+
+
+
+    # image.thumbnail(resize_file)                                #resize file      (secondary)
+
+        # plt.imshow(image)         
+                                          #show manipulated files
+        # plt.show()
+
+jpeg = ImageTk.PhotoImage(filename)
+
+            img = Label(self, image=jpeg)
+
+            img.image = jpeg
+
+            img.place(x=0, y=0)
+
+
+# fn, fext = os.path.splitext(files)                        #splits the file name from the file extension
+
+        # image.save('new_pics/{}_new.png'.format(fn, fext))        #saves file to new directory in .png format
+
+        # image = Image.open(files)               #open file
