@@ -1,0 +1,53 @@
+<!-- 
+
+Part 1
+
+A written introduction /
+A link to a Wikipedia article /
+A picture of them /
+A list of places where they've lived /
+A quote from them /
+
+Part 2
+
+Center the entire content of the body /
+Modify the padding and margins on your paragraphs to look better /
+Use a custom font /
+Add a background image /
+
+Part 3
+
+Pick a color scheme and modify the background, body text, and link text color. /
+Change the typeface of the quote. /
+Add a rounded border to the picture. /
+Change the bullet points on the list of places. /
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DoomGuy Bio</title>
+    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='doomguy_styles.css') }}"/>    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&family=Special+Elite&display=swap');
+      </style>
+</head>
+<body>
+      <h1> The Doomslayer Bio </h1>
+      <a href="https://doom.fandom.com/wiki/Doom_Slayer"><img src="{{url_for('static', filename='images/head_rip.gif') }}"></a>
+      
+      <p>"Rip and Tear!" -Doomguy</p>
+      <p>Places The Doomslayer has been</p>
+      <ul>
+        <li>Earth</li>
+        <li>Hell (and back)</li>
+        <li>Mars</li>
+      </ul>
+        
+  </body>
+</html>

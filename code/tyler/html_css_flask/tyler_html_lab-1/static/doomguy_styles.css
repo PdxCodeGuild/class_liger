@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&family=Special+Elite&display=swap');
+
+body { 
+    text-align: center;
+    background: #761300;
+    font-family: 'Special Elite', cursive;
+    background-image: url("images/Doomguy_render.png");
+    color: #f6f191;
+    
+}
+img {
+    border-radius: 25px;
+}
+
+ul {
+    max-width: 40vw;
+    padding: 15px;
+    margin: 0 auto;
+    background-color: rgb(148 124 36 / 0.5);
+
+}
+
+h1 {
+    padding: 25px;
+    font-family: 'Rubik Wet Paint', cursive;
+
+}
