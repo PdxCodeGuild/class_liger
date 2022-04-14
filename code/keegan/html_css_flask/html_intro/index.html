@@ -4,25 +4,14 @@
         <meta charset="UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Document</title>
-        <!-- 
-        <style>
-            h2 {
-                color: teal;
-            }
-        </style> 
-        -->
-
-        <!-- link our custom css file -->
-        <link rel="stylesheet" href="styles.css">
-
+                
+        <title>My First HTML Page</title>
     </head>
     <body>
-        <!-- this h1 has inline styling -->
-        <!-- <h1 style="color: purple; text-transform: uppercase;">Hello world!</h1> -->
-        <h1>Hello world!</h1>
-        <h2>Hello world!</h2>
+        
+        <!-- HTML Comment -->
 
+        <!-- NAVBAR -->
         <nav>
             <!-- UNORDERED LIST -->
             <ul>
@@ -39,5 +28,122 @@
             </ol>
         </nav>
 
+        <!-- Section is a 'semantic' html element -->
+        <section>
+            <!-- HEADERS -->
+            <header><h1>Header 1</h1></header>
+            <header><h2>Header 2</h2></header>
+            <header><h3>Header 3</h3></header>
+            <header><h4>Header 4</h4></header>
+            <header><h5>Header 5</h5></header>
+            <header><h6>Header 6</h6></header>
+
+            <!-- divs are 'block' elements (built-in line breaks) -->
+            <div>Div 1</div>
+            <div>Div 2</div>
+
+            <!-- p tags are also 'block' -->
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p>
+
+            <!-- span tags are 'inline' tags (no line breaks) -->
+            <span>span 1</span><span>span 2</span>
+
+            <br/>
+
+            <span>S</span><span>p</span><span>a</span><span>n</span><span>s</span>
+
+        </section>
+        
+        <!-- LINE BREAK -->
+        <br/>
+        <br/>
+
+        <section>
+            <details open>
+                <summary>My Dropdown</summary>
+
+                <!-- sup - superscript -->
+                E = mc<sup>2</sup> <br/>
+                <!-- sub - subscript -->
+                O(nlog<sub>n</sub>)
+
+                
+                <p>
+                    <!-- b - BOLD -->
+                    <b>Lorem</b> ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
+                <p>
+                    <!-- i - ITALIC -->
+                    <i>Nam earum magnam</i> aperiam amet fugiat maiores repellendus
+                </p>
+                <p>
+                    <small>vero odio ad eius?</small> Velit quam numquam repudiandae quide
+                </p> 
+                <p>
+                    <strong>
+                        sapiente natus alias in fuga!
+                    </strong>
+                </p>
+                <p>
+                    <time>
+                        12:36:45
+                    </time>
+                </p>
+
+            </details>
+        </section>
+
+        <br/><br/>
+
+        <section>
+            <!-- pre - FORMAT IN MONOSPACE -->
+            <pre>
+def add(a,b):
+    return a + b
+            </pre>
+
+            <table>
+                <tr>
+                    <th>Letter 1</th>
+                    <th>Letter 2</th>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>D</td>
+                </tr>
+            </table>
+
+            <br>
+            
+            <button>Submit</button>
+            <input type="text">
+            
+            <br>
+            
+            <!-- a stands for 'anchor' and will link to a file or url -->
+            <a href="https://www.pdxcodeguild.com">PDX Code Guild</a>
+            
+            <br>
+            
+            <!-- image as a link -->
+            <a href="https://www.google.com">
+                <img src="https://via.placeholder.com/600/92c952" alt="Some Random Image" width=200/>
+            </a>
+
+        </section>
+
+        <!-- LINE BREAK -->
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+        <footer>Footer</footer>
     </body>
 </html>

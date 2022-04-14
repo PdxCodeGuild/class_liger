@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap');
+
+body {
+    font-family: Raleway, sans-serif;
+}
+
+.container-fluid {
+    min-height: 100vh;
+    background-color: #46351D;
+}
+
+.card {
+    background-color: #839D9A;
+}
+
+.card-icon {
+    background-color: #25597E;
+    width: 80px;
+    height: 80px;
+    
+    font-size: 3rem;
+}
+
+.card-footer {
+    background-color: #738D8A;
+}
+
+a {
+    text-decoration: none;
+}
