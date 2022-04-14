@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Fredericka+the+Great&family=Raleway:wght@200;400;800&family=BIZ+UDPMincho&family=Raleway:wght@400;500&display=swap");
+/*
+font-family: 'Amatic SC', cursive;
+font-family: 'Fredericka the Great', cursive;
+font-family: 'Raleway', sans-serif; 
+font-family: 'BIZ UDPMincho', serif;
+*/
+
+body {
+    margin: 0;
+    font-family: Raleway, sans-serif;
+    background-color: #E9EDF6;
+}
+
+.cta {
+    background-color: #FFB182;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 40px;
+    margin-top: 50px;
+
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    box-shadow: 0 5px 5px rgba(49, 70, 75, 0.3)
+}
+
+
+/* NAVBAR */
+#navbar {
+    width: 100%;
+    background-color: rgba(49, 70, 75, 0.8);
+
+    display:flex;
+    justify-content: center;
+
+    position: fixed;
+    z-index: 10;
+}
+
+#navbar ul {
+    width: 50%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    color: #E9EDF6;
+}
+
+#navbar .nav-item {
+    padding: 15px;
+
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+
+    /* set up a hover transition */
+    transition: color .2s ease-in-out;
+}
+
+/* Define what happens when the .nav-item is hovered */
+#navbar .nav-item:hover {
+    cursor: pointer;
+    color: #FFB182;
+}
+
+
+/* HERO SECTION */
+
+#hero {
+    background-image: url(https://images.unsplash.com/photo-1551404287-b7c87654a3a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 50%;
+    background-attachment: fixed;
+
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: inset 0 -120px 40px -35px #E9EDF6;
+}
+
+#hero .logo {
+    position: relative;
+
+    text-align: center;
+    text-shadow: 0 -3px 10px #395058;
+
+}
+
+#hero .logo i{
+    font-size: 20rem;
+    color: rgba(49, 70, 75, 0.9);
+
+}
+
+#hero .logo-text {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    /* shift halfway left and up to make up for width and height offset */
+    transform: translate(-50%, -50%);
+
+    color: #E9EDF6;
+}
+
+#hero .main-text {
+    font-size: 4rem;
+    font-family: Fredericka the Great, cursive;
+    letter-spacing: 2px;
+}
+
+#hero .sub-text {
+    font-size: 2rem;
+    font-family: Amatic SC, cursive;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* THREE CARDS */
+#three-cards {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#three-cards .card {
+    padding: 25px;
+}
+
+#three-cards .card i {
+    color: #478B8C;
+    font-size: 3rem;
+}
+
+#three-cards h3 {
+    font-family: Amatic SC, cursive;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+#three-cards .card:nth-child(even){
+    text-align: right;
+}
+
+@media screen and (min-width: 768px){
+    #three-cards .card {
+        max-width: 50vw;
+    }
+}
+
+/* TESTIMONIAL */
+
+#testimonial {
+    background-color: #478B8C;
+    padding: 25px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#testimonial blockquote {
+    text-align: center;
+    color: #E9EDF6;
+
+    position: relative;
+    z-index: 2;
+}
+
+#testimonial .quotation-mark {
+    height: 40px;
+    
+    font-family: 'BIZ UDPMincho', serif;
+    font-size: 250px;
+    color: #69ADAE;
+
+
+    position: relative;
+
+    left: -50%;
+    z-index: -4;
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    padding-bottom: 50px;
+}
+
+footer h1 {
+    font-family: 'Fredericka the Great', cursive;
+    text-align: center;
+}
+
+footer .columns {
+    display: flex;
+    gap: 20px;
+}
+
+footer .contact-info {
+    display:flex; 
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+footer .social-links {
+    display:flex; 
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+footer .site-links {
+    display:flex; 
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+footer a {
+    color: black;
+    text-decoration: none;
+}
+
+footer .social-link {
+    font-size: 1.5rem;
+    color: rgba(49, 70, 75)
+}
+
+footer .company-links {
+    margin: 50px;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+}
