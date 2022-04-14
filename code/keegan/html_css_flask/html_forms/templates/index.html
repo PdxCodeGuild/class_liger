@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <title>HTML Forms</title>
+</head>
+
+<body>
+
+    <!-- CONTACT FORM -->
+    <section class="container" id="contact-form">
+        <form action="">
+            <label for="first-name">
+                First Name
+                <input type="text" name="first-name" id="first-name">
+            </label>
+            <label for="last-name">
+                Last Name
+                <input type="text" name="last-name" id="last-name">
+            </label>
+            <label for="phone-number">
+                Phone
+                <input
+                    type="text"
+                    name="phone-number"
+                    id="phone-number"
+                    placeholder="###-###-####"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                />
+            </label>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+
+    <!-- LOGIN FORM -->
+    <section class="container" id="login-form">
+        <!-- <form action="www.somewebsite.com/login" method="POST" id="login-form"> -->
+        <form action="#" method="POST">
+            <h1>Log In</h1>
+            <!-- a label's 'for' attribute points to the 'id' attribute of the field its labelling -->
+            <label for="username">
+                Username
+                <input type="text" id="username" name="username" required>
+            </label>
+            <label for="password">
+                Password
+                <input type="password" id="password" name="password" required>
+            </label>
+
+            <!-- <input type="submit" value="Log In"> -->
+            <button type="submit">Log In</button>
+        </form>
+    </section>
+
+
+    <!-- INTRO FORM -->
+    <section class="container">
+        <form action="" id="intro-form">
+            <input type="text" placeholder="Enter something">
+            <input type="number" value="5" min=0 max=10 step="2" disabled/>
+
+            <textarea cols="30" rows="10"></textarea>
+
+            <fieldset>
+                <input type="radio" name="choice-1"> Option 1
+                <input type="radio" name="choice-1" checked> Option 2
+                <input type="radio" name="choice-1"> Option 3
+            </fieldset>
+
+            <fieldset>
+                <input type="checkbox" name="choice-2"> Option 1
+                <input type="checkbox" name="choice-2" checked> Option 2
+                <input type="checkbox" name="choice-2"> Option 3
+            </fieldset>
+
+            <fieldset>
+                <input type="color" name="color">
+                <input type="file">
+            </fieldset>
+
+            <select name="choice-3">
+                <option value="option-1">Option 1</option>
+                <option value="option-2">Option 2</option>
+                <option value="option-3">Option 3</option>
+            </select>
+
+            <select name="choice-4">
+                <optgroup label="Group A">
+                    <option value="option-1">Option 1A</option>
+                    <option value="option-2">Option 2A</option>
+                    <option value="option-3">Option 3A</option>
+                </optgroup>
+                <optgroup label="Group B">
+                    <option value="option-1">Option 1B</option>
+                    <option value="option-2">Option 2B</option>
+                    <option value="option-3">Option 3B</option>
+                </optgroup>
+            </select>
+
+            <fieldset>
+                <input type="date">
+                <input type="time">
+            </fieldset>
+
+            <input type="range" min="0" max="100">
+
+            <input type="range" min="0" max="100" list="range-labels">
+            <datalist id="range-labels">
+                <option value="0" label="0%"></option>
+                <option value="100" label="100%"></option>
+            </datalist>
+
+            <input type="submit" value="Submit">
+
+
+        </form>
+    </section>
+
+    <script>
+
+        // target the <input> tag with the id of phone number
+        let phoneNumberInput = document.querySelector("#phone-number")
+
+        // add an event listener which will trigger a function to log the
+        //value of the phone number input field in the browser console
+        phoneNumberInput.addEventListener('input', function(){
+            console.log(phoneNumberInput.value)
+        })
+    </script>
+
+</body>
+
+</html>
