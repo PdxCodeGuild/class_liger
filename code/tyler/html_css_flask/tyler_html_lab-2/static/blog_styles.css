@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=M+PLUS+1:wght@700&family=Raleway:wght@200&display=swap');
+/* font-family: 'Cairo', sans-serif;
+font-family: 'M PLUS 1', sans-serif;
+font-family: 'Raleway', sans-serif; */
+
+h1 {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    border-color: brown;
+    color: bisque;
+    border-style: groove;
+    background-color: rgba(188, 131, 131, 0.4);
+}
+
+.container{
+    display: flex;
+}
+body {
+    background-image: url('images/purple_nature.jpg');
+
+}
+.left-column {
+    width: 40vw;
+    margin: 1px;
+    padding: 25px;
+    /* height: stretch; */
+    font-family: 'Cairo', sans-serif;
+    border-style: groove;
+    border-color: brown;
+    color: bisque;
+    /* background-color: blueviolet; */
+    
+}
+
+.right-column {
+    /* height: stretch; */
+    display: flex;
+    flex-wrap: wrap ;
+    /* align-items: top; */
+    /* justify-content: space-between; */
+}
+
+#right-side .post {
+    height: 300px;
+    overflow-y: scroll;
+    max-width: 25%;
+    margin: 5px;
+    padding: 15px;
+    font-family: 'M PLUS 1', sans-serif;
+    border-style: dashed;
+    background-color: rgba(250, 235, 215, 0.4);
+
+}
+footer {
+    font-family: 'Raleway', sans-serif;
+    color: bisque;
+    /* align-items: center; */
+}
