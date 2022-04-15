@@ -24,6 +24,14 @@ header {
     
 }
 
+.topnav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: black;
+    color: rgb(255, 37, 226);
+}
+
 .title {
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
@@ -36,7 +44,7 @@ header {
     
 }
 
-.content {
+article {
     flex-grow: 3;
     flex-flow: column;
     flex-direction: column;
