@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&family=Poppins:wght@100;200;400;500;700&family=Raleway:wght@100;200;300;400;500&display=swap');
+
+body {
+    background-image: url(https://images.unsplash.com/photo-1609686767534-fc9092275c72?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
+    margin: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ...........Top-Nav................................. */
+.topnav {
+    background: red;
+    font-size: 20px;
+}
+
+.topnav nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.topnav a {
+    color: aqua;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 7em sans-serif;  
+}
+
+/* --------------------Side-Nav--------------------------- */
+
+.sidenav {
+    background-color: #5bbace;
+    width: 120px;
+    height: 100%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.sidenav ul {
+    list-style: none;
+    align-items: center;
+}
+
+.sidenav ul a  {
+    display: block;
+    color: black;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    text-decoration: none;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* ..........Row.......................................... */
+.row {
+    display: flex;
+    justify-content: column;
+    flex-direction: column;
+   
+}
+.posts-container {
+    display: flex;
+} 
+/* -----------------Headers-> h1, h2 & h3------------- */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    text-align: left;
+    margin-inline-start: 38.6%; 
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    background: lawngreen; 
+    border-radius: 50px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin: 0px; 
+    color: rgb(0, 0, 0); 
+}
+/* ----------------Post Contents-------------------- */
+.post-contents {
+    border-radius: 25px;
+    background: mediumspringgreen;
+    min-height: 200px;
+    max-width: 900px;
+    font-size: 15px;
+    margin-top: 60px;
+    margin-left: 150px;
+    margin-right: 20px;
+    
+}
+
+div {
+    margin: auto;
+    width: 100%;
+}
+/* ----------Footer------------------- */
+.footer {
+    background: #41569f;
+    min-height: 25vh; 
+    border-radius: 25px;
+    font-size: 15px;
+    width: 90%;
+    padding-top: 2px;
+    margin-left: 150; 
+    margin-top: 50px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+/* Container contain all flexbox---------------------- */
+.container {
+    display: flex;
+   
+}
