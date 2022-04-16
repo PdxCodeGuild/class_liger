@@ -1,4 +1,4 @@
-# Class Liger
+a# Class Liger
 
 Instructor:
 
@@ -45,13 +45,14 @@ Weeks 16, 17, 18: Capstone project
 <details open>
   <summary>HTML/CSS/Flask</summary>
 
-| Lab Number | Title                                                              | Due Date |
-| ---------- | ------------------------------------------------------------------ | -------- |
-| 01         | <a href="2 Flask + HTML + CSS\labs\01 Bio.md">Bio</a>              | 04/19    |
-| 02         | <a href="2 Flask + HTML + CSS\labs\02 Blog.md">Blog</a>            | 04/20    |
-| 03         | <a href="2 Flask + HTML + CSS\labs\03 Company.md">Company Home</a> | 04/22    |
+| Lab Number | Title                                                                               | Due Date |
+| ---------- | ----------------------------------------------------------------------------------- | -------- |
+| 01         | <a href="2 Flask + HTML + CSS\labs\01 Bio.md">Bio</a>                               | 04/19    |
+| 02         | <a href="2 Flask + HTML + CSS\labs\02 Blog.md">Blog</a>                             | 04/20    |
+| 03         | <a href="2 Flask + HTML + CSS\labs\03 Company.md">Company Home</a>                  | 04/22    |
 | 04         | <a href="2 Flask + HTML + CSS\labs\04 Personal Portfolio.md">Personal Portfolio</a> | 04/22    |
-| 05         | <a href="2 Flask + HTML + CSS\labs\05 Burrito Order Form.md">Personal Portfolio</a> | 04/28    |
+| 05         | <a href="2 Flask + HTML + CSS\labs\05 Burrito Order Form.md">Burrito Order Form</a> | 04/28    |
+
 </details>
 
 ## Submitting your work
@@ -187,6 +188,7 @@ Corrections will be made only to that particular branch.
 <li><a href="https://github.com/PdxCodeGuild/Programming101/tree/master/docs/flowcharts">Flowcharts</a></li>
 <li><a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf">VS Code Keyboard Shortcuts - Windows</a></li>
 <li><a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf">VS Code Keyboard Shortcuts - Mac</a></li>
+<li><a href="https://codepen.io">Codepen</a></li>
 </ul>
 </details>
 
