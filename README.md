@@ -213,3 +213,10 @@ Corrections will be made only to that particular branch.
 <li><a href="http://color.adobe.com/">Adobe.com Color Picker</a></li>
 </ul>
 </details>
+
+<details>
+<summary>Djagno<summary>
+<ul>
+<li><img src="images/screenshots/django_file_structure.png" width=800>Django Folder Structure</image><li>
+</ul>
+</details>
