@@ -217,6 +217,6 @@ Corrections will be made only to that particular branch.
 <details>
 <summary>Djagno<summary>
 <ul>
-<li><img src="images/screenshots/django_file_structure.png" width=800>Django Folder Structure</image><li>
+<li><details><summary>Django Folder Structure</summary><img src="images/screenshots/django_file_structure.png" width=800></details><li>
 </ul>
 </details>
