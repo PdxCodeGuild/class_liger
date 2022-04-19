@@ -12,7 +12,7 @@ Weeks 1, 2, 3, 4, 5: Python
 
 Weeks 6, 7: HTML/CSS/Flask
 
-#### Weeks 8, 9, 10, 11: Django
+**Weeks 8, 9, 10, 11: Django**
 
 Weeks 12, 13, 14, 15: Javascript
 
