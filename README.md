@@ -223,6 +223,7 @@ Corrections will be made only to that particular branch.
       <summary>Folder Structure</summary>
       <p>
       <img src="images/screenshots/django_file_structure.png" width=800>
+        [![Folder Structure](images/screenshots/django_file_structure.png "Folder Structure")](images/screenshots/django_file_structure.png "Folder Structure")
       </p>
     </details>
     </li>
