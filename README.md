@@ -215,8 +215,9 @@ Corrections will be made only to that particular branch.
 </details>
 
 <details>
-<summary>Django</summary>
-
-<details><summary>Folder Structure</summary><img src="images/screenshots/django_file_structure.png" width=800></details>
-
+  <summary>Django</summary>
+    <details>
+      <summary>Folder Structure</summary>
+        ![Django Folder Structure]("images/screenshots/django_file_structure.png" "Folder Structure")
+    </details>
 </details>
