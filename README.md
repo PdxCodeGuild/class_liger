@@ -10,9 +10,9 @@ keegan@pdxcodeguild.com
 
 Weeks 1, 2, 3, 4, 5: Python
 
-**Weeks 6, 7: HTML/CSS/Flask**
+Weeks 6, 7: HTML/CSS/Flask
 
-Weeks 8, 9, 10, 11: Django
+#### Weeks 8, 9, 10, 11: Django
 
 Weeks 12, 13, 14, 15: Javascript
 
@@ -223,7 +223,6 @@ Corrections will be made only to that particular branch.
       <summary>Folder Structure</summary>
       <p>
       <img src="images/screenshots/django_file_structure.png" width=800>
-        [![Folder Structure](images/screenshots/django_file_structure.png "Folder Structure")](images/screenshots/django_file_structure.png "Folder Structure")
       </p>
     </details>
     </li>
