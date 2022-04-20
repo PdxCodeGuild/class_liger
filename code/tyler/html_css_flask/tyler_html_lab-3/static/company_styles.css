@@ -1,7 +1,13 @@
-body {
-    background-color: brown;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-.container {
-    
+.bg-img {
+    background-image: url("images/skatepark.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    /* background-position:0vh; */
+}
+h1 {
+    font-family: 'Poppins', sans-serif;
+    -webkit-text-stroke: 1px #3E3222;
+    color: #D7D2BF;
 }
