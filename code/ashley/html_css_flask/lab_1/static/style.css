@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Roboto:wght@300&display=swap');
+
+body{
+    margin: 0;
+    font-family: Roboto,sans-serif;
+}
+
+h1  {
+    font-size: 80px;
+}
+
+h2  {
+    font-size: 40px;
+}
+
+
+h1, h2{
+    font-family: Grape Nuts;
+    text-align: center;
+}
+
+.container  {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+#section-1  {
+    background-image: url(./images/simpsons_clouds.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#section-2  {
+    background-image: url(./images/simpsons_clouds.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#section-1 p {
+    max-width: 45%;
+    float: left;
+    background-color: white;
+    padding: 20px;
+    line-height: 25px;
+    border-radius: 25px;
+    font-weight: 550;
+}
+
+#card-1 {
+    background-color: white;
+    max-width: 45%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 25px;
+    float: right;
+    font-weight: 550;
+    line-height: 25px;
+
+}
+#card-2 {
+    background-color: white;
+    max-width: 45%;
+    margin-left: 150px;
+    padding: 20px;
+    border-radius: 25px;
+    float: left;
+}
+
+#card-3 {
+    background-color: white;
+    max-width: 45%;
+    margin-right: 50px;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 25px;
+    float: right;
+    font-weight: 550;
+    line-height: 25px;
+
+}
+
+blockquote {
+    font-weight: 500;
+}
+
+blockquote cite {
+    font-weight: 300;
+    float: right;
+    margin-top: 30px;
+}
+
+ul {
+    list-style-type: square;
+    list-style-position: inside;
+    list-style-image: url('/code/ashley/html_css_flask/lab_1/static/images/donut.png');
+}
