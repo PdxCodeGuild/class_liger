@@ -1,0 +1,66 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;500&family=PT+Sans&family=Raleway:wght@400;500&display=swap');
+
+body {
+    background-color: aqua;
+    height: 100vh;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+.navbar-brand img {
+    width: 100px;
+   
+} 
+
+.container, .container-fluid, 
+.container-lg, .container-md, 
+.container-sm, .container-xl, 
+.container-xxl {
+    margin-right: unset;
+    width: unset;
+}
+
+.cb-image img {
+    width: 50vh;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid whitesmoke;
+    display: flex;
+    align-items: center;
+}
+.name {
+    font-size: 35px;
+}
+
+.job-tittle {
+    font-size: 80px;
+    font-family: 'oswald' sans-serif;
+    align-items: center;
+    color: blue;
+}
+.location {
+    font-size: 50px;
+    font-family: 'Raleway' sans-serif;
+    align-items: center;
+    color: blue;
+}
+
+.work-exp {
+    align-items: center;
+    color: rgba(1, 11, 20, 0.725);
+    font-size: 30px;
+    font-family: 'Raleway' sans-serif;
+}
+@media (min-width: 414px) {
+    .job-tittle {
+        font-size: 30px;
+    }
+
+    .location {
+        font-size: 20px;
+    }
+    
+}
