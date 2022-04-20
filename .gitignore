@@ -9,3 +9,4 @@ code/michael/Ignored
 
 env/
 *.sqlite3
+*.sqlite3-journal
