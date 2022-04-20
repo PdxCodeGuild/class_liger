@@ -4,10 +4,21 @@
     background-image: url("images/skatepark.jpg");
     background-size:cover;
     background-repeat: no-repeat;
-    /* background-position:0vh; */
+    background-position: fixed;
 }
 h1 {
     font-family: 'Poppins', sans-serif;
     -webkit-text-stroke: 1px #3E3222;
     color: #D7D2BF;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    /* -webkit-text-stroke: 1px black; */
+    color: white;
+}
+p {
+    font-family: 'Poppins', sans-serif;
+    /* -webkit-text-stroke: 1px black; */
+    color: white;
 }

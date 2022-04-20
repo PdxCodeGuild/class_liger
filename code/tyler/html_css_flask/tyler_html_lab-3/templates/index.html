@@ -24,29 +24,63 @@
     <title>Bootstrap Company</title>
   </head>
   <body class="bg-img">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#">Schedule</a>
+            <a
+              class="nav-link disabled"
+              href="#"
+              tabindex="-1"
+              aria-disabled="true"
+              >Disabled</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
     <h1>Indoor skatepark is here!</h1>
     <section class="container">
       <div class="row">
-        <div class="col-12 bg-warning d-flex justify-content-start">
-          About Calender Sponsors
+        <div class="col-12 col-lg-4 col-md-4" style="background-color: rgba(197,146,57, 0.8)">
+          <h3>Teams and Pros</h3>
+          <p>
+            olor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Est placerat in egestas
+            erat imperdiet sed. Ac orci phasellus egestas tellus rutrum. Sed augue
+            lacu
+          </p>
+        </div>
+        <div
+          class="col-12 col-lg-4 offset-lg-4 col-md-4 offset-md-4" style="background-color: rgba(197,146,57, 0.8)">
+          <h3>Skate Park Info</h3>
+          <p>
+            olor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Est placerat in egestas
+            erat imperdiet sed. Ac orci phasellus egestas tellus rutrum. Sed augue
+            lacu
+          </p>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12 col-lg-4 col-md-4 bg-primary">
-          <h3>Teams and Pros</h3>
-          olor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Est placerat in egestas
-          erat imperdiet sed. Ac orci phasellus egestas tellus rutrum. Sed augue
-          lacu
-        </div>
-        <div class="col-12 col-lg-4 offset-lg-4 col-md-4 bg-secondary">
-          <h3>Skate Park Info</h3>
-          olor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Est placerat in egestas
-          erat imperdiet sed. Ac orci phasellus egestas tellus rutrum. Sed augue
-          lacu
-        </div>
-        <div class="col-12 bg-success">hello world</div>
+      <div class="row min-vh-50"></div>
+      <div class="row position-fixed bottom-0 w-100">
+        <div class="col-6 bg-dark" style="color:aliceblue">FAQ</div>
+        <div class="col-6 bg-dark" style="color:aliceblue">Waiver</div>
       </div>
     </section>
   </body>
