@@ -1,21 +1,12 @@
 body {
     background-image: url(https://c.tenor.com/AJBv6U1rfkQAAAAC/background-image-galaxy.gif);
-    margin: 0px;
 }
-
-/* -----------------Container contain all-----------------  */
-.container {
-    /* display: flex; */
-    /* margin-left: 90px; */
-    padding-right: 0px;
-}
-
-
 /* -----------Nasa Logo----------------  */
 .logo img {
-    width: 10%;
     height: 100px;
-    /* margin: 0px 0px 0px 0px; */
+}
+.image img {
+    height: 70px;
 }
 
 .container .row {
@@ -30,37 +21,15 @@ body {
 .layout-image {
     width: 100%;
 }
-.navbar {
-    /* width: 1200px;
-    margin-right: 0px;
-    margin-left: 0px; */
-}
 
-.nav-item .nav-link {
-    color: aliceblue;
-}
 /* ----------Paragraph Pages--------------------- */
 
 .page {
     color: black;
     background: white;
 }
-
-/* ----------------Responsive Breakpoint--------- */
-/* 
-class="col-md-auto col-sm-3 col-xl-12"
-
-class="col"
-@media screen and (min-width: 300px){
-    .row {
-        max-width: 70vw;
-        justify-content: column;
-    }
+@media (min-width: 768px) {
+    .col-md-4{
+        width: unset;
+    }  
 }
-
-@media screen and (max-width: 1200px){
-    .container {
-        flex-direction: row;
-        padding: 15px;
-    }      
-} */
