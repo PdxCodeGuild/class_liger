@@ -1,0 +1,72 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row mt-3">
+
+        <!-- JOKE COUNT -->
+        <h5 class="text-center">
+            <span class="fw-bold">
+                {{ context['joke_count'] }}
+            </span>
+            jokes found
+
+            <!-- IF A SEARCH QUERY EXISTS, DISPLAY IT -->
+            {% if context['search_query'] != '' %}
+                for "{{ context['search_query'] }}"
+            {% endif %}
+
+        </h5>
+
+
+        <!-- SEARCH FORM -->
+        <div class="col-10 offset-1 col-lg-6 offset-lg-3">
+            <form action="{{ url_for('search') }}" method="POST">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="search-query">
+                    <button type="submit" class="btn btn-sm btn-success">Search</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- TABLE OF JOKES -->
+        <div class="col-12 col-lg-8 offset-lg-2">
+
+            <table class="table table-striped">
+
+                <!-- TABLE LABELS -->
+                <thead>
+                    <tr>
+                        <th scope="col">Joke</th>
+                    </tr>
+                </thead>
+
+                <!-- TABLE BODY -->
+                <tbody>
+
+                    <!-- ADD A TABLE ROW FOR EACH JOKE IN THE LIST -->
+                    {% for joke_data in context['jokes'] %}
+                    <tr>
+                        <td>
+                            {{ joke_data['joke'] }}
+                        </td>
+                        <td>
+                            <a href="" class="link-primary text-decoration-none">
+                                <i class="bi bi-link-45deg"></i>
+                                Permalink
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}

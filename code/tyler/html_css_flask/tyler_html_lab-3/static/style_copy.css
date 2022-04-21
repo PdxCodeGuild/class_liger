@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+body {
+    background-color: aquamarine;
+}
+
+h1 {
+    border-style: dotted;
+    border-color: black;
+}
+
+#main-page .info {
+    height: 300px;
+    overflow-y: scroll;
+    
+    margin: 5px;
+    padding: 15px;
+    border-style: dashed;
+    background-color: rgba(250, 235, 215, 0.4);
+    flex-direction:column ;
+}

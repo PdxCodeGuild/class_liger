@@ -1,0 +1,22 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    
+    <h1>Pollster</h1>
+
+    <form action="" method="POST">
+        <input type="text" name="poll-text" placeholder="Enter Poll Question">
+        
+        <fieldset>
+            <label for="number-of-choices">
+                <p>
+                    How many choices?
+                </p>
+                <input type="number" name="number-of-choices" id="number-of-choices">
+            </label>
+        </fieldset>
+
+        <input type="submit" value="Submit">
+    </form>
+
+{% endblock content %}
