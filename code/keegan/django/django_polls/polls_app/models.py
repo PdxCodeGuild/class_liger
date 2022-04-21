@@ -23,7 +23,7 @@ class Choice(models.Model):
     # ForeignKey(Model, on_delete_option)
     # models.CASCADE means that when a question is deleted,
     # the deletion 'cascades' onto any Choice objects belonging to it
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name="choices")
 
     text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)

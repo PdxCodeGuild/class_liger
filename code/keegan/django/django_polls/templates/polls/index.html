@@ -1,22 +1,48 @@
 {% extends 'layout/base.html' %}
 
 {% block content %}
-    
-    <h1>Pollster</h1>
 
-    <form action="" method="POST">
-        <input type="text" name="poll-text" placeholder="Enter Poll Question">
-        
-        <fieldset>
-            <label for="number-of-choices">
-                <p>
-                    How many choices?
-                </p>
-                <input type="number" name="number-of-choices" id="number-of-choices">
-            </label>
-        </fieldset>
+<h1>Pollster</h1>
 
-        <input type="submit" value="Submit">
-    </form>
+<!-- polls_app:create_question comes from the urls.py file and represents
+the values of the app_name and path name variables -->
+<form action="{% url 'polls_app:create_question' %}" method="POST">
+    <input type="text" name="question-text" placeholder="Enter Poll Question">
+
+    <fieldset>
+        <label for="choice-count">
+            <p>
+                How many choices?
+            </p>
+            <input type="number" name="choice-count" id="choice-count">
+        </label>
+    </fieldset>
+
+    <!-- include the csrf_token for security -->
+    {% csrf_token %}
+
+    <input type="submit" value="Submit">
+</form>
+
+
+{% for question in questions %}
+
+    <div class="poll">
+        <h1>{{ question.text }}</h1>
+        <small>Voting is {{ question.status }}</small>
+
+        <ul class="choices">
+            {% for choice in question.choices.all %}
+                <li class="choice">
+                    {{choice.votes}} - {{ choice.text }}
+                    <a href="">Vote</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+{% endfor %}
+
+
 
 {% endblock content %}

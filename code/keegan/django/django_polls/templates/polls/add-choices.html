@@ -1,0 +1,21 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    
+    <div class="poll">
+        <h1>Lorem, ipsum dolor.</h1>
+        <h3>Choices</h3>
+
+        <form action="">
+            {% for choice_number in choice_count %}
+                <div class="choice">
+                    <span class="choice-label">{{ choice_number }}</span>
+                    <input type="text" name="">
+                </div>
+            {% endfor %}
+
+            <input type="submit" value="Submit"/>
+        </form>
+    </div>
+
+{% endblock content %}

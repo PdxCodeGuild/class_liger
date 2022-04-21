@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
+@import url('polls.css');
+
 *{
     font-family: 'Roboto Slab', serif;
 }
 
 .container {
     background-color: lightslategray;
+    padding-bottom: 100px;
 
     min-height: 100vh;
     width: 100%;
@@ -13,6 +16,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+a {
+    text-decoration: none;
 }
 
 h1 {
