@@ -35,12 +35,18 @@ the values of the app_name and path name variables -->
             {% for choice in question.choices.all %}
                 <li class="choice">
                     {{choice.votes}} - {{ choice.text }}
-                    <a href="">Vote</a>
+                    <!-- link to the vote view function -->
+                    <!-- attach the choice.id to the request -->
+                    <!-- /vote/2 -->
+                    <a href="{% url 'polls_app:vote' choice.id %}">Vote</a>
                 </li>
             {% endfor %}
         </ul>
 
     </div>
+    <!-- provide a fallback if the questions list is empty -->
+    {% empty %}
+    <h1>No Questions</h1>
 {% endfor %}
 
 

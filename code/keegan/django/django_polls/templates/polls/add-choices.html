@@ -3,16 +3,24 @@
 {% block content %}
     
     <div class="poll">
-        <h1>Lorem, ipsum dolor.</h1>
+        <h1>{{ question.text }}</h1>
         <h3>Choices</h3>
 
-        <form action="">
+        <form action="{% url 'polls_app:add_choices' %}" method="POST">
             {% for choice_number in choice_count %}
                 <div class="choice">
-                    <span class="choice-label">{{ choice_number }}</span>
-                    <input type="text" name="">
+                    <label for="choice-{{choice_number}}" class="choice-label">{{ choice_number }}</label>
+                    <input type="text" name="choice-{{choice_number}}" id="choice-{{choice_number}}">
                 </div>
             {% endfor %}
+
+            <!-- Include the CSRF Token for security -->
+            {% csrf_token %}
+
+            <!-- Include the id of the question that was created on the previous page -->
+            <!-- So the newly created choices can be associated with it -->
+            <input type="hidden" name="question-id" value="{{question.id}}">
+
 
             <input type="submit" value="Submit"/>
         </form>
