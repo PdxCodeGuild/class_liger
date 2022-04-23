@@ -9,100 +9,224 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--------------- Bootstrap bundles------------ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <!-- ---------------Devicon------------------------------- -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
     <title>Personal Portfolio</title>
+
 </head>
 
 <body>
     <!-- -------------Navbar Sections------------- -->
-    <div class="row navbar">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://c8.alamy.com/zooms/9/42a17f39eee8418daeaadc1d5ce359ba/2ba53jx.jpg" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav mb-2 mb-lg-0">
+                    <a class="nav-link active" aria-current="page" style="color: aliceblue;" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" style="color: aliceblue;" href="#">About
+                        Me</a>
+                    <a class="nav-link active" aria-current="page" style="color: aliceblue;" href="#">Skills</a>
+                    <a class="nav-link active" aria-current="page" style="color: aliceblue;" href="#">Portfolio</a>
+                    <a class="nav-link active" aria-current="page" style="color: aliceblue;" href="#">Contact
+                        Me</a>
+                    <button class="btn btn-primary">Login</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!---------- Information About Me----------- -->
+    <div class="about-me mt-5">
         <div class="col-11 mx-auto">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#">
-                    <img src="https://c8.alamy.com/zooms/9/42a17f39eee8418daeaadc1d5ce359ba/2ba53jx.jpg" alt="">
-                </a>
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="aliceblue"
-                            class="bi bi-list" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 
-                                1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 
-                                0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 
-                                0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-                        </svg>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                            <a class="nav-link active" aria-current="page" style="color: aliceblue;" href="#">Home</a>
-                            <a class="nav-link active" aria-current="page" style="color: aliceblue;" href="#">About
-                                Me</a>
-                            <a class="nav-link active" aria-current="page" style="color: aliceblue;" href="#">Skills</a>
-                            <a class="nav-link active" aria-current="page" style="color: aliceblue;"
-                                href="#">Portfolio</a>
-                            <a class="nav-link active" aria-current="page" style="color: aliceblue;" href="#">Contact
-                                Me</a>
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="about-img" src="{{url_for('static', filename='images/IMG-20170420-WA0003.jpg')}}"
+                        alt="">
+                </div>
+                <div class="col-md-6">
+                    <p class="myname">
+                    <h1 class="display-1 mb-5 mt-2">Clement Buadu</h2>
+                        </p>
+                        <p class="text mb-5 display-5">
+                            Full-Stack Developer in <span>MD</span>
+                        </p>
+                        <p class="h3 mb-5">
+                            I'm a developer focusing front & back end developing, creating user-friendly Websites. I'm
+                            passionate about building an excellent software that improves and brings happeners to the
+                            lives of others around the world....
+                        </p>
+                        <div class="line"></div>
+                        <!-- <section class="row mt-3">
+                            <h3>Personal Information</h3>
+                            <div class="col-md-6">
+                                <p class="page">
+                                    Clement Buadu is my name, I'm originally from Ghana West Africa. l have been in the
+                                    United State Of America for over ten years now. I served US Army for tens years and
+                                    currently serving as Maryland Army National Guard. I also worked at Good Samaritan
+                                    Hospital as a nursing assistant before joing the service. Full-Stack is an exciting
+                                    and ever-changing field in our world today. It is an intriguing profession with a
+                                    broad spectrum of opportunities. There are many exciting developments and advances
+                                    in areas such as Web developer, Software engineering etc. With Full-Stack
+                                    Developing, the possibilities for my future are exciting and endless.
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="page">
+                                    I want to be a part of the Fulll-Stack Developers team that brings joy to an
+                                    individual private and commecial companies through Website Design and Developments.
+                                    I find it very interesting to learn more about the Full-Stack Developing, and I am
+                                    looking forward to becoming a part of a professional Developers. My potential to
+                                    excel has always been to strive for excellence. I plan to challenge myself with a
+                                    rigorous plan of study in the Full Stack Developer program. My long term goal is to
+                                    acquire a position that will allow me to work with the public. Ultimately, it will
+                                    bring me a sense of pride, knowing that I have made a difference in someone else's
+                                    life...
+                                </p>
+                            </div>
+                        </section> -->
+                        <button class="btn btn-danger mt-4">Download CV/Resume/Cover-Letter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -----------Experience------------------ -->
+    <div class="row-exp mt-5">
+        <div class="col-11 mx-auto">
+            <div class="row">
+                <h2>My Experience</h2>
+                <!-- ----All Cards in Exp -->
+                <div class="col-md-4 mt-5 mb-5">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                            <h4 class="card-title">Education</h4>
+                            <li>
+                                PDX Code Guild
+                            </li>
+                            <li>
+                                PharmD-> University of Maryland Eastern Shore(UMES)- (In progress)
+                            </li>
+                            <li>
+                                Baltimore City Community College
+                            </li>
+                            <li>
+                                G.E.D (Maryland)
+                            </li>
 
-                            <button class="btn btn-primary">Login</button>
+                            <li>
+                                Cape-Coast Polytechnic Institute (H.N.D in Acct)- Ghana
+                            </li>
+                            <li>
+                                Mozano Senior High School-(Ghana)
+                            </li>
+
+                            <a href="#" class="btn btn-danger">Read More</a>
                         </div>
                     </div>
                 </div>
-            </nav>
-        </div>
-    </div>
-
-    <!-- ----------Slider Navbar----------- -->
-    <div class="row-slider">
-        <div class="col-10 mx-auto">
-            <div class="row">
-                <section class="col-md-4 cb-image">
-                    <img src="https://olympics.com/Images/Static/country/flag/4x3/gh.svg" alt="">
-                </section>
-                <section class="col-md-8">
-                    <p class="name">My Name</p>
-                    <h3 class="job-tittle">Python-Developer</h3>
-                    <h3 class="location">State</h3>
-                    <p class="work-exp">Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit. Doloremque
-                        ducimus aliquid vel? lore Lorem ipsum dolor
-                        sit amet consectetur adipisicing elit. Deleniti
-                        fugiat delectus, inventore sapiente blanditiis modi
-                        explicabo consequuntur commodi excepturi eos?
-                    </p>
-                </section>
-
+                <div class="col-md-4 mt-5 mb-5">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                            <h4 class="card-title">Skills</h4>
+                            <div class="card-text">
+                                <i class="devicon-html5-plain-wordmark portfolio-icon" title="HTML5"></i>
+                                <i class="devicon-css3-plain-wordmark portfolio-icon" title="CSS3"></i>
+                                <i class="devicon-flask-original portfolio-icon" title="FLASK"></i>
+                                <i class="devicon-javascript-plain portfolio-icon" title="JAVASCRIPT"></i>
+                                <i class="devicon-django-plain-wordmark portfolio-icon" title="DJANGO"></i>
+                                <i class="devicon-python-plain-wordmark portfolio-icon" title="PYTHON"></i>
+                                <i class="devicon-pycharm-plain portfolio-icon" title="PYCHARM"></i>
+                                <i class="devicon-github-original-wordmark portfolio-icon" title="GITHUB"></i>
+                                <i class="devicon-git-plain-wordmark portfolio-icon" title="GIT"></i>
+                                <i class="devicon-bash-plain portfolio-icon" title="BASH"></i>
+                            </div>
+                            <!-- <a href="#" class="btn btn-danger">Read More</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-5 mb-5">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                            <h4 class="card-title">Work History</h4>
+                            <p class="card-text">
+                                I work and have experience ten years in US Army and currently Maryland Army National
+                                Guard. My leadership skills and unrelenting attitude develop a great sense of teamwork,
+                                loyalty, and initiative in my subordinates. My enthusiasm and dedication inspire my
+                                peers to rise above themselves to accomplish all tasks or missions.
+                            </p>
+                            <a href="#" class="btn btn-danger">Read More</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-
+        </div>
+    </div>
+    <!------------------- My Contact Informations------------------------- -->
+    <div class="row-contact mt-5">
+        <div class="col-11 mx-auto">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="display-2 mb-5 mt-2">My Projects</h2>
+                    <div class="project" style="font-size: 22px;">
+                        <li>Mini Capstone</li>
+                        <li>Company Home</li>
+                        <li>Django</li>
+                        <li>And Many More Python Projects</li>
+                    </div>
+                    <h3 class="color mt-5 mb-4">Contact Me</h3>
+                    <section class="row icon">
+                        <p><i class="bi bi-telephone-fill text-danger"></i>+1000-000-0000</p>
+                    </section>
+                    <section class="row icon">
+                        <p><i class="bi bi-envelope-fill text-danger"></i>email.addres@gmail.com</p>
+                    </section>
+                    <section class="row icon mb-4">
+                        <p><i class="bi bi-geo-alt-fill text-danger"></i>
+                            3 Street City State Zipcode
+                        </p>
+                    </section>
+                </div>
+                <div class="col-md-6">
+                    <p class="reachout">Send Me <span class="reached">Message</span>Here</p>
+                    <div class="mb-3 mt-4">
+                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3 mt-5">
+                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-danger mt-5">Submit</button>
+                </div>
+            </div>
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script> -->
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> -->
+    <!-- -------------Footer--------------------------------------------- -->
+    <div class="row footer">
+        <div class="col-11">
+            <div class="row">
+                <section class="col-md-4">
+                    <img src="https://newsghana.com.gh/wp-content/uploads/2017/05/ghana-v-usa-1402955641.jpg" alt="">
+                    <a class="create justify-content-center">Created by <span>@Cbuadu</span></a>
+                </section>
+            </div>
+        </div>
+    </div>
 
 </body>
 
