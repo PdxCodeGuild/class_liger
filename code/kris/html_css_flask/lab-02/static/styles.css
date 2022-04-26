@@ -1,0 +1,50 @@
+body{
+    margin: 0;
+    background-color: aqua;
+}
+header{
+    font-family: sans-serif;
+    margin: 25px
+    
+}
+.container{
+    display: flex;
+}
+.box{
+    height: 50px;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 27%;
+    background-color: gainsboro;
+
+}
+.topnav{
+    background-color: navy;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 75px;
+    border-radius: 30%;
+    height: 75px;
+    
+}
+
+.sidenav{
+    width: 30vw;
+    background-color: chartreuse;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    border: 5px solid black;
+    
+}
+
+.content{
+    width: 70vw;
+    background-color: blueviolet;
+}
