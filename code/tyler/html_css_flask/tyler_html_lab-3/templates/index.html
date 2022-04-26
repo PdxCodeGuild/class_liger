@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='company_styles.css')}}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Bootstrap Company</title>
+  </head>
+  <body class="bg-img">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#">Schedule</a>
+            <a
+              class="nav-link disabled"
+              href="#"
+              tabindex="-1"
+              aria-disabled="true"
+              >Disabled</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <h1>Indoor skatepark is here!</h1>
+    <section class="container">
+      <div class="row">
+        <div class="col-12 col-lg-4 col-md-4" style="background-color: rgba(197,146,57, 0.8)">
+          <h3>Teams and Pros</h3>
+          <p>
+            olor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Est placerat in egestas
+            erat imperdiet sed. Ac orci phasellus egestas tellus rutrum. Sed augue
+            lacu
+          </p>
+        </div>
+        <div
+          class="col-12 col-lg-4 offset-lg-4 col-md-4 offset-md-4" style="background-color: rgba(197,146,57, 0.8)">
+          <h3>Skate Park Info</h3>
+          <p>
+            olor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Est placerat in egestas
+            erat imperdiet sed. Ac orci phasellus egestas tellus rutrum. Sed augue
+            lacu
+          </p>
+        </div>
+      </div>
+      <div class="row min-vh-50"></div>
+      <div class="row position-fixed bottom-0 w-100">
+        <div class="col-6 bg-dark" style="color:aliceblue">FAQ</div>
+        <div class="col-6 bg-dark" style="color:aliceblue">Waiver</div>
+      </div>
+    </section>
+  </body>
+</html>
