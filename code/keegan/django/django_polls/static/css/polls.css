@@ -1,0 +1,35 @@
+.poll {
+    background-color: lightseagreen;
+    border-radius: 5px;
+    width: 50vw;
+    margin-top: 25px;
+    
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choices {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choices .choice {
+    background-color: lightsteelblue;
+    padding: 15px;
+    width: 40%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.choice-label {
+    font-size: 2rem;
+}

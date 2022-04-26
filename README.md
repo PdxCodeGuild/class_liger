@@ -1,4 +1,4 @@
-a# Class Liger
+# Class Liger
 
 Instructor:
 
@@ -10,9 +10,9 @@ keegan@pdxcodeguild.com
 
 Weeks 1, 2, 3, 4, 5: Python
 
-**Weeks 6, 7: HTML/CSS/Flask**
+Weeks 6, 7: HTML/CSS/Flask
 
-Weeks 8, 9, 10, 11: Django
+**Weeks 8, 9, 10, 11: Django**
 
 Weeks 12, 13, 14, 15: Javascript
 
@@ -52,6 +52,15 @@ Weeks 16, 17, 18: Capstone project
 | 03         | <a href="2 Flask + HTML + CSS\labs\03 Company.md">Company Home</a>                  | 04/22    |
 | 04         | <a href="2 Flask + HTML + CSS\labs\04 Personal Portfolio.md">Personal Portfolio</a> | 04/22    |
 | 05         | <a href="2 Flask + HTML + CSS\labs\05 Burrito Order Form.md">Burrito Order Form</a> | 04/28    |
+
+</details>
+
+</details>
+<details open>
+  <summary>Django</summary>
+
+| Lab Number | Title                                                                               | Due Date |
+| ---------- | ----------------------------------------------------------------------------------- | -------- |
 
 </details>
 
@@ -212,4 +221,20 @@ Corrections will be made only to that particular branch.
 <li><a href="http://coolors.co/">coolors.co Color Picker</a></li>
 <li><a href="http://color.adobe.com/">Adobe.com Color Picker</a></li>
 </ul>
+</details>
+
+
+<details>
+  <summary>Django</summary>
+  <ul>
+  <li>
+    <details>
+      <summary>Folder Structure</summary>
+      <p>
+      <img src="images/screenshots/django_file_structure.png" width=800>
+      </p>
+    </details>
+    </li>
+    <li><a href="https://peps.python.org/pep-3333/">PEP3333 - WSGI - Web Server Gateway Interface</a></li>
+    </ul>
 </details>
