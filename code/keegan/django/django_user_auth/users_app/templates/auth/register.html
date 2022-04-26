@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="{% url 'users_app:register' %}" method="POST">
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username">
+    <br />
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password">
+
+    <br/>
+    {% csrf_token %}
+    <input type="submit" id="submit" value="Register">
+</form>
+
+
+{% endblock content %}
