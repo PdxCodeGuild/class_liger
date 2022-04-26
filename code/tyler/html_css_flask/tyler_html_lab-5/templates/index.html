@@ -13,11 +13,85 @@
     <link rel="stylesheet" href="burrito_styles.css" />
   </head>
   <body>
-    <header>
-      <div class="row">
-        <div class="col-12 bg-primary">Burrito Builder</div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Pricing</a>
+            <a
+              class="nav-link disabled"
+              href="#"
+              tabindex="-1"
+              aria-disabled="true"
+              >Disabled</a
+            >
+          </div>
+        </div>
       </div>
-      <div class="col-12 bg-secondary border-black h-30%"> dkjfnvkjadfbn kjfvbkjdafb hello world</div>
-    </header>
+    </nav>
+    <section class="container">
+      <div class="col-8 col-4 bg-light h-50 justify-content-center">
+        <h1>Let's build your burrito!</h1>
+        <h2>Select your tortilla</h2>
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            id="radio1"
+            name="optradio"
+            value="option1"
+            unchecked
+          />White Flour
+          <label class="form-check-label" for="radio1"></label>
+        </div>
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            id="radio1"
+            name="optradio"
+            value="option1"
+            unchecked
+          />Wheat Flour
+          <label class="form-check-label" for="radio1"></label>
+        </div>
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            id="radio1"
+            name="optradio"
+            value="option1"
+            unchecked
+          />Spinach
+          <label class="form-check-label" for="radio1"></label>
+        </div>
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            id="radio1"
+            name="optradio"
+            value="option1"
+            unchecked
+          />Corn
+          <label class="form-check-label" for="radio1"></label>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
