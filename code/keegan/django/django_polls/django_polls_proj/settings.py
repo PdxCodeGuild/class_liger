@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # install our app
+    'users_app',
     'polls_app',
 ]
 
@@ -126,3 +127,7 @@ STATICFILES_DIRS = [str(BASE_DIR / 'static')]
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# define the custom user model
+AUTH_USER_MODEL = 'users_app.User'
+

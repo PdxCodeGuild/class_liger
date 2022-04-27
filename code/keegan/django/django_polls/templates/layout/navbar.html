@@ -1,0 +1,14 @@
+<nav>
+
+    {% if request.user.is_authenticated %}
+
+    <a href="#" class="nav-link">My Account</a>
+    <a href="{% url 'users_app:logout' %}" class="nav-link">Log Out</a>
+    {% else%}
+
+    <a href="{% url 'users_app:register' %}"  class="nav-link">Register</a>
+    <a href="{% url 'users_app:login' %}" class="nav-link">Log In</a>
+
+
+    {% endif %}
+</nav>

@@ -40,6 +40,7 @@ def create_question(request):
     # shorthand version to create a database object
     # .create() saves automatically so .save() isn't required
     new_question = Question.objects.create(
+        user=request.user, # associate the question with the user creating it
         text=question_text
     )
 
