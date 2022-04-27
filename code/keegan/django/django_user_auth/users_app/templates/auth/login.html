@@ -3,8 +3,8 @@
 {% block content %}
 
 
-<h1>Register</h1>
-<form action="{% url 'users_app:register' %}" method="POST">
+<h1>Log In</h1>
+<form action="{% url 'users_app:login' %}" method="POST">
     <label for="username">Username</label>
     <input type="text" name="username" id="username">
     <br />
@@ -13,11 +13,11 @@
 
     <br/>
     {% csrf_token %}
-    <input type="submit" id="submit" value="Register">
+    <input type="submit" id="submit" value="Log In">
 </form>
 
-<!-- Link to login route -->
-<p>Have an account? <a href="{% url 'users_app:login' %}">Log In</a></p>
+<!-- link to register route -->
+<p>Need an account? <a href="{% url 'users_app:register' %}">Register</a></p>
 
 
 {% endblock content %}

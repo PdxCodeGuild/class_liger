@@ -16,6 +16,16 @@
 <body>
     <div class="container">
 
+        <!-- if there are messages attached to the request, render them here -->
+        {% if messages %}
+        
+            {% for message in messages %}
+                {{message}}
+            {% endfor %}
+
+        {% endif %}
+
+        
         {% block content %}
 
         {% endblock content %}
