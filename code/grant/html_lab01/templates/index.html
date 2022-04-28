@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- use special Flask syntax to link stylesheet -->
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section class="container" id="section-1">
+        <h1>The Life and Death of Barney</h1>
+
+        <blockquote>
+            Everybody grows, and that's a *VERY* good thing we all do.
+            <br />
+            <cite>- Barney The Purple Dinosaur</cite>
+        </blockquote>
+    </section>
+
+    <section class="container" id="section-2">
+
+        <h2 class="caption"></h2>
+        <div class="card">
+            <img src="{{url_for('static', filename='images/barney_1.jpg')}}">
+
+            <p> Barney is an American Bred Purple Tyrannosaurus Rex. He was born in Dallas Texas to Sheryl Leach in
+                1988.
+                However, he currently lives in all of our imaginations. Barney lived to convey educational messages
+                through song and dance with a friendly and optimistic attitude.
+                He fell ill on November 2nd, 2010. However, that didn't stop him from trying to make a comeback before
+                his untimely passing in 2010. Rumours say that overwork played a major part in his short life.
+                In his prime, Barney had a few Hit singles such as "Barney is a Dinosaur" and "I Love You". Despite
+                being a carnivorous type dinosaur, Barney liked many foods like fruits and vegetables, but his Favorite
+                is a peanut butter and jelly sandwich with a glass of milk.
+            </p>
+            <a href="https://en.wikipedia.org/wiki/Barney_%26_Friends#Characters_and_cast">Learn More</a>
+        </div>
+    </section>
+
+    <!-- <section class="container" id="section-3">
+            
+
+
+        < </section>   -->
+    <div class="container" id=section-3>
+
+        <h2 class="caption" id=list-title>Known Residences</h2>
+        <ul>
+            <li>Dallas, Texas</li> <img src="{{url_for('static', filename='images/barney_2.png')}}">
+
+            <li>The imagination</li>
+
+            <li>Barney's House</li>
+            <!-- <img src="{{url_for('static', filename='images/barney_1.jpg')}}"> -->
+        </ul>
+    </div>
+    </section>
+
+    <section>
+        <div class="container" id=section-4>
+
+            <img src="{{url_for('static', filename='images/barney_3.jpg')}}">
+
+        </div>
+    </section>
+
+    <section>
+        <div class="container" id=section-5>
+
+            <img src="{{url_for('static', filename='images/barney_main.jpg')}}">
+
+
+            <!-- <img src="{{url_for('static', filename='images/barney_1.jpg')}}"> -->
+
+        </div>
+    </section>
+
+    <section class="container" id=section-6>
+        <div class="card" id=footer>
+            <!-- <section> -->
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <footer>9 April 2022</footer>
+
+            <!-- </section> -->
+
+
+
+        </div>
+    </section>

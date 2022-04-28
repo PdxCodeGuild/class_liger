@@ -1,0 +1,16 @@
+h1 {
+  color: purple;
+}
+
+/* Change the style of the h1 for screens greater than 500px */
+@media screen and (min-width: 500px) {
+  h1 {
+    color: teal;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    color: limegreen;
+  }
+}
