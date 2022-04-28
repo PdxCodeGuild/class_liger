@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
 
 from .models import Question, Choice
@@ -93,6 +93,78 @@ def vote(request, choice_id):
     # save the changes
     choice.save()
 
-    # redirect to the index url for the polls_app
-    # to reuse the logic from the index() view
-    return redirect(reverse('polls_app:index'))
+    context = {
+        'question': choice.question
+    }
+
+    return render(request, 'polls/detail.html', context)
+
+
+def detail(request, question_id):
+    question = get_object_or_404(Question, id=question_id)
+
+    context = {
+        'question': question
+    }
+
+    return render(request, 'polls/detail.html', context)
+
+
+def update(request, question_id):
+
+    # on GET request, render the form with the current values
+    # for the question and its choices
+    if request.method == 'GET':
+        question = get_object_or_404(Question, id=question_id)
+
+        context = {
+            'question': question
+        }
+
+        
+        return render(request, 'polls/edit.html', context)
+
+    # when the form is submitted, use the values from the form
+    # to target the appropriate objects from the database
+    # and update them with the values from the form
+    elif request.method == 'POST':
+
+        # get the form data from the request
+        form = request.POST
+
+        # get the question_text from the form
+        new_question_text = form.get('question-text')
+
+
+        # find the question in the database
+        question = get_object_or_404(Question, id=question_id)
+
+        # update the question
+        question.text = new_question_text
+
+        # save the question
+        question.save()
+
+
+        # loop through the form to find the choices
+        # update the choices
+        for key in form.keys():
+            if key.startswith('choice-'):
+                # isolate the number at the end of the name
+                # convert it to an integer to act as the choice_id
+                choice_id = int(key.split('-')[1])
+
+                # find the choice in the database
+                choice = Choice.objects.get(id=choice_id)
+
+                # update the choice text with the value from the form
+                choice.text = form.get(key)
+
+                # save the choice
+                choice.save()
+
+        context = {
+            'question': question
+        }
+
+        return render(request, 'polls/detail.html', context)

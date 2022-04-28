@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import (
     authenticate, 
     # change the names of login and logout to
@@ -6,6 +6,8 @@ from django.contrib.auth import (
     login as django_login,
     logout as django_logout
 )
+
+# from django.http import Http404
 
 # middleware for adding messages to templates
 from django.contrib import messages
@@ -85,3 +87,22 @@ def logout(request):
     django_logout(request)
 
     return redirect('polls_app:index')
+
+
+def detail(request, username):
+
+    # try:
+    #     # use the username to find the appropriate user in the database
+    #     user = User.objects.get(username=username)
+
+    # except User.DoesNotExist:
+    #     raise Http404('"No User matches the given query."')
+
+    # return the user object if found, otherwise raise 404 error
+    user = get_object_or_404(User, username=username)
+
+    context = {
+        'user': user,
+    }
+
+    return render(request, 'users/detail.html', context)
