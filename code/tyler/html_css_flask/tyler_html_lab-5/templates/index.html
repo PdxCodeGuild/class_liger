@@ -10,12 +10,15 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="burrito_styles.css" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">Burrito Builder</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -30,66 +33,179 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
-            <a class="nav-link" href="#">Features</a>
-            <a class="nav-link" href="#">Pricing</a>
-            <a
-              class="nav-link disabled"
-              href="#"
-              tabindex="-1"
-              aria-disabled="true"
-              >Disabled</a
-            >
+            <a class="nav-link" href="#">Featured Creations</a>
+            <a class="nav-link" href="#">Coupons</a>
           </div>
         </div>
       </div>
     </nav>
-    <section class="container">
-      <div class="col-8 col-4 bg-light h-50 justify-content-center">
-        <h1>Let's build your burrito!</h1>
-        <h2>Select your tortilla</h2>
-        <div class="form-check">
-          <input
-            type="radio"
-            class="form-check-input"
-            id="radio1"
-            name="optradio"
-            value="option1"
-            unchecked
-          />White Flour
-          <label class="form-check-label" for="radio1"></label>
+    <section class="container col-12">
+      <div class="row">
+        <div class="col-6 bg-light">
+          <h1>Let's build your burrito!</h1>
+          <h2>Select your tortilla</h2>
+          <div class="form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="radio1"
+              name="optradio"
+              value="option1"
+              unchecked
+            />White Flour
+            <label class="form-check-label" for="radio1"></label>
+          </div>
+          <div class="form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="radio1"
+              name="optradio"
+              value="option1"
+              unchecked
+            />Wheat Flour
+            <label class="form-check-label" for="radio1"></label>
+          </div>
+          <div class="form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="radio1"
+              name="optradio"
+              value="option1"
+              unchecked
+            />Spinach
+            <label class="form-check-label" for="radio1"></label>
+          </div>
+          <div class="form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="radio1"
+              name="optradio"
+              value="option1"
+              unchecked
+            />Corn
+            <label class="form-check-label" for="radio1"></label>
+          </div>
+          <h2>Select your rice</h2>
+          <div class="form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="radio1"
+              name="optradio"
+              value="option1"
+              unchecked
+            />White Rice
+            <label class="form-check-label" for="radio1"></label>
+          </div>
+          <div class="form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="radio1"
+              name="optradio"
+              value="option1"
+              unchecked
+            />Brown Rice
+            <label class="form-check-label" for="radio1"></label>
+          </div>
+          <h2>Choice of Beans</h2>
+          <div class="form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="radio1"
+              name="optradio"
+              value="option1"
+              unchecked
+            />Black Beans
+            <label class="form-check-label" for="radio1"></label>
+          </div>
+          <div class="form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="radio1"
+              name="optradio"
+              value="option1"
+              unchecked
+            />Pinto Beans
+            <label class="form-check-label" for="radio1"></label>
+          </div>
         </div>
-        <div class="form-check">
+        <div class="col-6 bg-light">
+          <h2>Pick your Protein</h2>
+          <div class="form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="radio1"
+              name="optradio"
+              value="option1"
+              unchecked
+            />Carnitas
+            <label class="form-check-label" for="radio1"></label>
+          </div>
+          <div class="form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="radio1"
+              name="optradio"
+              value="option1"
+              unchecked
+            />Chicken
+            <label class="form-check-label" for="radio1"></label>
+          </div>
+          <div class="form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="radio1"
+              name="optradio"
+              value="option1"
+              unchecked
+            />Sofritas
+            <label class="form-check-label" for="radio1"></label>
+          </div>
+          <div class="form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="radio1"
+              name="optradio"
+              value="option1"
+              unchecked
+            />None
+            <label class="form-check-label" for="radio1"></label>
+          </div>
+          <h2>Optional Ingredients</h2>
           <input
-            type="radio"
-            class="form-check-input"
-            id="radio1"
-            name="optradio"
-            value="option1"
-            unchecked
-          />Wheat Flour
-          <label class="form-check-label" for="radio1"></label>
-        </div>
-        <div class="form-check">
+            type="checkbox"
+            class="btn-check"
+            id="btn-check"
+            autocomplete="off"
+          />
+          <label class="btn" for="btn-check">Cheese</label>
           <input
-            type="radio"
-            class="form-check-input"
-            id="radio1"
-            name="optradio"
-            value="option1"
-            unchecked
-          />Spinach
-          <label class="form-check-label" for="radio1"></label>
-        </div>
-        <div class="form-check">
-          <input
-            type="radio"
-            class="form-check-input"
-            id="radio1"
-            name="optradio"
-            value="option1"
-            unchecked
-          />Corn
-          <label class="form-check-label" for="radio1"></label>
+            type="checkbox"
+            class="btn-check"
+            id="btn-check"
+            autocomplete="off"
+          />
+          <label class="btn" for="btn-check">Sour Cream</label>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1"
+              >Delivery Instructions</label
+            >
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="4"
+            ></textarea>
+          </div>
         </div>
       </div>
     </section>
