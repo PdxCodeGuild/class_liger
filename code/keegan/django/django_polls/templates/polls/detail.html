@@ -4,6 +4,7 @@
 
 <div class="poll">
     <h1>{{ question.text }}</h1>
+    <a href="{% url 'polls_app:delete' question.id %}">Delete this poll</a>
     <small>Voting is {{ question.status }}</small>
     <small>Created by: {{ question.user.username }}</small>
 
