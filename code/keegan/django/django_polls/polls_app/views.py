@@ -8,6 +8,40 @@ def index(request):
     # through the Question model's 'objects' manager
     questions = Question.objects.all()
 
+    # slice the queryset
+    # questions = questions[2:]
+
+    # order the questions using various fields
+    # questions = questions.order_by('-text')
+    questions = questions.order_by('-pub_date')
+
+    # filter out the questions that don't belong to the current user
+    # questions = questions.filter(user=request.user).order_by('pub_date')
+
+    # filter with multiple fields
+    # questions = questions.filter(user=request.user, text='Favorite day of the week')
+
+    # get questions from a set of ids
+    # questions = questions.filter(id__in=[4,6,8])
+
+    # __gt is "greater than"
+    # questions = questions.filter(id__gt=6)
+
+    # __gte is "greater than or equal to"
+    # questions = questions.filter(id__gte=6)
+
+    # __lt is "less than"
+    # questions = questions.filter(id__lt=6)
+
+    # __lte is "less than or equal to"
+    # questions = questions.filter(id__lte=6)
+
+    # find all the questions whose text starts with "favorite"
+    # questions = questions.filter(text__istartswith="favorite")
+
+    # find the questions whose choices contain the given text
+    # questions = questions.filter(choices__text__icontains='python')
+
     context = {
         'questions': questions
     }
@@ -168,3 +202,11 @@ def update(request, question_id):
         }
 
         return render(request, 'polls/detail.html', context)
+
+
+def delete(request, question_id):
+    question = Question.objects.get(id=question_id)
+
+    question.delete()
+
+    return redirect('polls_app:index')
