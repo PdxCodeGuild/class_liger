@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    background-color: #86E7B8;
+}
+
+.container {
+
+}
+
+pre {
+    font-size: 1.5rem;
+}
+
+.row {
+    background-color: #F2F5DE;
+    height: 600px;
+    border-bottom: 4px solid black;
+    padding: 25px;
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+    background-color: #FFA69E;
+    margin: 10px;
+}
+
+#row-2 {
+    display: flex;
+}
+
+#row-3 {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+#row-4 {
+    display: flex;
+    gap: 20px;
+}
+
+#row-5 {
+    display: flex;
+    justify-content: space-between;
+}
+
+#row-6 {
+    display: flex;
+    justify-content: space-around;
+}
+
+#row-7 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#row-8 {
+    display: flex;
+    justify-content: center;
+}
+
+#row-9 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#row-10 {
+    display: flex;
+    align-items: center;
+}
+
+#row-11 {
+    display: flex;
+    align-items: flex-end;
+}
+
+#row-12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#row-13 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#row-14 {
+    display: flex;
+}
+
+#row-14 .box-2 {
+    align-self: center;
+}
+
+/* -------------------------------------------- */
+
+#flexbox-layout .row {
+    padding: 0;
+    display: flex;
+}
+
+#side-nav {
+
+    background-color: #FFA69E;
+    width: 20%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+
+}
+
+a {
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+}
+
+#top-nav {
+    background-color: lightblue;
+    padding: 20px 0px;
+    width: 90%;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#content {
+    width: 80%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    height: 500px;
+    width: 500px;
+    background-color: lightsalmon;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    margin-top: 20px;
+}
+
+.boxes {
+    display: flex;
+    justify-content: space-around;
+}
+
+.boxes .box {
+    background-color: teal;
+    height: 50px;
+    width: 50px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: auto;
+
+    width: 100%;
+}
+
+button {
+    align-self: flex-start;
+
+    margin: 15px;
+}
