@@ -1,0 +1,58 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<h1>Pollster</h1>
+
+{% if request.user.is_authenticated %}
+    
+<!-- polls_app:create_question comes from the urls.py file and represents
+    the values of the app_name and path name variables -->
+    <form action="{% url 'polls_app:create_question' %}" method="POST">
+        <input type="text" name="question-text" placeholder="Enter Poll Question">
+        
+        <fieldset>
+            <label for="choice-count">
+                <p>
+                    How many choices?
+                </p>
+                <input type="number" name="choice-count" id="choice-count">
+            </label>
+        </fieldset>
+        
+        <!-- include the csrf_token for security -->
+        {% csrf_token %}
+        
+        <input type="submit" value="Submit">
+    </form>
+{% endif %}
+
+
+{% for question in questions %}
+
+    <div class="poll">
+        <h1>{{ question.text }}</h1>
+        <small>Voting is {{ question.status }}</small>
+        <small>Created by: {{ question.user.username }}</small>
+
+        <ul class="choices">
+            {% for choice in question.choices.all %}
+                <li class="choice">
+                    {{choice.votes}} - {{ choice.text }}
+                    <!-- link to the vote view function -->
+                    <!-- attach the choice.id to the request -->
+                    <!-- /vote/2 -->
+                    <a href="{% url 'polls_app:vote' choice.id %}">Vote</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+    <!-- provide a fallback if the questions list is empty -->
+    {% empty %}
+    <h1>No Questions</h1>
+{% endfor %}
+
+
+
+{% endblock content %}

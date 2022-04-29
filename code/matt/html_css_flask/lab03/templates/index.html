@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet"
+              href="{{ url_for('static', filename='normalize.css') }}"/>
+        <link rel="stylesheet"
+              href="{{ url_for('static', filename='styles.css') }}"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+              rel="stylesheet"
+              integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+              crossorigin="anonymous"/>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <title>SpaceX</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-xxl navbar-dark text-white pt-4 pb-4 fixed-top">
+            <div class="container-fluid d-xxl-flex justify-content-between">
+                <div class="mx-auto mb-2">
+                    <svg version="1.1"
+                         x="0px"
+                         y="0px"
+                         width="225"
+                         height="50"
+                         viewBox="0 0 380 50">
+                        <title>SpaceX Logo</title>
+                        <g class="letter_s">
+                        <path fill="white"
+                              d="M37.5,30.5H10.9v-6.6h34.3c-0.9-2.8-3.8-5.4-8.9-5.4H11.4c-5.7,0-9,2.1-9,6.7v4.9c0,4,3.4,6.3,8.4,6.3h26.9v7H1.5 c0.9,3.8,3.8,5.8,9,5.8h27.1c5.7,0,8.5-2.2,8.5-6.9v-4.9C46.1,33.1,42.8,30.8,37.5,30.5z">
+                        </path>
+                        </g>
+                        <g class="letter_p">
+                        <path fill="white"
+                              d="M91.8,18.6H59v30.7h9.3V37.5h24.2c6.7,0,10.4-2.3,10.4-7.7v-3.4C102.8,21.4,98.6,18.6,91.8,18.6z M94.8,28.4 c0,2.2-0.4,3.4-4,3.4H68.3l0.1-8h22c4,0,4.5,1.2,4.5,3.3V28.4z">
+                        </path>
+                        </g>
+                        <g class="letter_a">
+                        <polygon fill="white"
+                        points="129.9,17.3 124.3,24.2 133.8,37.3 114,37.3 109.1,42.5 137.7,42.5 142.6,49.3 153.6,49.3 	">
+                        </polygon>
+                        </g>
+                        <g class="letter_c">
+                        <path fill="white"
+                              d="M171.4,23.9h34.8c-0.9-3.6-4.4-5.4-9.4-5.4h-26c-4.5,0-8.8,1.8-8.8,6.7v17.2c0,4.9,4.3,6.7,8.8,6.7h26.3 c6,0,8.1-1.7,9.1-5.8h-34.8V23.9z">
+                        </path>
+                        </g>
+                        <g class="letter_e">
+                        <polygon fill="white"
+                        points="228.3,43.5 228.3,34.1 247,34.1 247,28.9 218.9,28.9 218.9,49.3 260.4,49.3 260.4,43.5 	"></polygon>
+                        <rect fill="white" x="219.9" y="18.6" width="41.9" height="5.4"></rect>
+                        </g>
+                        <g class="letter_x">
+                        <path fill="white"
+                              d="M287.6,18.6H273l17.2,12.6c2.5-1.7,5.4-3.5,8-5L287.6,18.6z"></path>
+                        <path fill="white"
+                              d="M308.8,34.3c-2.5,1.7-5,3.6-7.4,5.4l13,9.5h14.7L308.8,34.3z"></path>
+                        </g>
+                        <g class="letter_swoosh">
+                        <path fill="white"
+                              d="M399,0.7c-80,4.6-117,38.8-125.3,46.9l-1.7,1.6h14.8C326.8,9.1,384.3,2,399,0.7L399,0.7z"></path>
+                        </g>
+                    </svg>
+                </div>
+                <button type="button"
+                        class="navbar-toggler text-light"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse mx-xxl-auto d-xxl-flex justify-content-between ps-xxl-5"
+                     id="navbarCollapse">
+                    <div class="navbar-nav text-end">
+                        <a href="https://www.spacex.com/vehicles/falcon-9/"
+                           class="nav-item nav-link active text-white">Falcon
+                        9</a>
+                        <a href="https://www.spacex.com/vehicles/falcon-heavy/"
+                           class="nav-item nav-link active text-white">Falcon
+                        Heavy</a>
+                        <a href="https://www.spacex.com/vehicles/dragon/"
+                           class="nav-item nav-link active text-white">Dragon</a>
+                        <a href="https://www.spacex.com/vehicles/starship/"
+                           class="nav-item active nav-link active text-white">Starship</a>
+                        <a href="https://www.spacex.com/human-spaceflight/"
+                           class="nav-item active nav-link active text-white">Human
+                        Spaceflight</a>
+                        <a href="https://www.spacex.com/rideshare/"
+                           class="nav-item active nav-link active text-white">Rideshare</a>
+                    </div>
+                    <div class="navbar-nav text-end">
+                        <a href="#" class="nav-item nav-link active text-white">Mission</a>
+                        <a href="#" class="nav-item nav-link active text-white">Launches</a>
+                        <a href="#" class="nav-item nav-link active text-white">Shop</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Picture 1-->
+        <div class="contianer-fluid align-items-lg-end text-white">
+            <div class="bg-image d-flex align-items-lg-end"
+                 style=" background-position: center center; background-size: cover; background-image: url('https://www.spacex.com/static/images/backgrounds-2022/ax-1/post-launch/Homepage_Axiom_1_Docking_DESKTOP.jpg'); height: 100%; height: 844px;  ">
+                <div class="row mb-5">
+                    <div class="col-4 d-flex align-items-lg-end align-items-end m-5 pb-5">
+                        <div>
+                            <div class="card"
+                                 style="background-color: transparent;
+                                        border: none;
+                                        width: 50vw;">
+                                <div class="card-body">
+                                    <h4 class="card-title">Current Mission</h4>
+                                    <h2 class="card-text">AX-1 Mission</h2>
+                                    <a href="https://www.spacex.com/launches/ax-1/"
+                                       class="btn btn-outline-light btn"
+                                       style="cursor: pointer;
+                                              transition: color 1s cubic-bezier(0.25, 1, 0.25, 1), background-color 1s cubic-bezier(0.25, 1, 0.25, 1);
+                                              min-width: 130px;
+                                              padding: 15px 50px;
+                                              margin: 30px 0 0;
+                                              border: 2px solid white;
+                                              border-radius: rem;
+                                              display: inline-block;
+                                              color: white;
+                                              text-decoration: none;
+                                              overflow: hidden;
+                                              font-size: 14px;
+                                              line-height: 24px;
+                                              font-family: D-DIN-Medium, Arial, Verdana, sans-serif;">Know more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Picture 2 -->
+        <div class="contianer-fluid align-items-lg-end text-white">
+            <div class="bg-image d-flex align-items-lg-end"
+                 style=" background-position: center center; background-size: cover; background-image: url('https://www.spacex.com/static/images/backgrounds-2022/nrol-85/post-launch/4.17.22_NROL-85_DESKTOP_Homepage.jpg'); height: 100%; height: 844px; ">
+                <div class="row mb-5">
+                    <div class="col-4 d-flex align-items-lg-end align-items-end m-5 pb-5">
+                        <div>
+                            <div class="card"
+                                 style="background-color: transparent;
+                                        border: none;
+                                        width: 50vw;">
+                                <div class="card-body">
+                                    <h4 class="card-title">Recent Mission</h4>
+                                    <h2 class="card-text">nrol-85 Mission</h2>
+                                    <a href="https://www.spacex.com/launches/nrol-85/"
+                                       class="btn btn-outline-light btn"
+                                       style="cursor: pointer;
+                                              transition: color 1s cubic-bezier(0.25, 1, 0.25, 1), background-color 1s cubic-bezier(0.25, 1, 0.25, 1);
+                                              min-width: 130px;
+                                              padding: 15px 50px;
+                                              margin: 30px 0 0;
+                                              border: 2px solid white;
+                                              border-radius: 0rem;
+                                              display: inline-block;
+                                              color: white;
+                                              text-decoration: none;
+                                              overflow: hidden;
+                                              font-size: 14px;
+                                              line-height: 24px;
+                                              font-family: D-DIN-Medium, Arial, Verdana, sans-serif;">Re-Watch</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Picture 3 -->
+        <div class="contianer-fluid align-items-lg-end text-white">
+            <div class="bg-image d-flex align-items-lg-end"
+                 style=" background-position: center center; background-size: cover; background-image: url('https://www.spacex.com/static/images/backgrounds-2022/transporter-4/post-launch/Transporter-4_homepage_desktop.jpg'); height:100%; height: 844px; ">
+                <div class="row mb-5">
+                    <div class="col-4 d-flex align-items-lg-end align-items-end m-5 pb-5">
+                        <div>
+                            <div class="card"
+                                 style="background-color: transparent;
+                                        border: none;
+                                        width: 50vw;">
+                                <div class="card-body">
+                                    <h4 class="card-title">Recent Launch</h4>
+                                    <h2 class="card-text">Transporter-4 Mission</h2>
+                                    <a href="https://www.spacex.com/launches/transporter-4/"
+                                       class="btn btn-outline-light btn"
+                                       style="cursor: pointer;
+                                              transition: color 1s cubic-bezier(0.25, 1, 0.25, 1), background-color 1s cubic-bezier(0.25, 1, 0.25, 1);
+                                              min-width: 130px;
+                                              padding: 15px 50px;
+                                              margin: 30px 0 0;
+                                              border: 2px solid white;
+                                              border-radius: 0rem;
+                                              display: inline-block;
+                                              color: white;
+                                              text-decoration: none;
+                                              overflow: hidden;
+                                              font-size: 14px;
+                                              line-height: 24px;
+                                              font-family: D-DIN-Medium, Arial, Verdana, sans-serif;">Re-Watch</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Picture 4 -->
+        <div class="contianer-fluid align-items-lg-end text-white">
+            <div class="bg-image d-flex align-items-lg-end"
+                 style=" background-position: center center; background-size: cover; background-image: url('https://www.spacex.com/static/images/backgrounds-2022/sl4-12/post-launch/Starlink-4-12_desktop_homepage.jpg'); height: 100%; height: 844px; max: width 1400px;">
+                <div class="row mb-5">
+                    <div class="col-4 d-flex align-items-lg-end align-items-end m-5 pb-5">
+                        <div>
+                            <div class="card"
+                                 style="background-color: transparent;
+                                        border: none;
+                                        width: 50vw;">
+                                <div class="card-body">
+                                    <h4 class="card-title">Recent Launch</h4>
+                                    <h2 class="card-text">
+                                        Starlink Mission
+                                    </h2>
+                                    <a href="https://www.spacex.com/launches/sl4-12/"
+                                       class="btn btn-outline-light btn"
+                                       style="cursor: pointer;
+                                              transition: color 1s cubic-bezier(0.25, 1, 0.25, 1), background-color 1s cubic-bezier(0.25, 1, 0.25, 1);
+                                              min-width: 130px;
+                                              padding: 15px 50px;
+                                              margin: 30px 0 0;
+                                              border: 2px solid white;
+                                              border-radius: 0rem;
+                                              display: inline-block;
+                                              color: white;
+                                              text-decoration: none;
+                                              overflow: hidden;
+                                              font-size: 14px;
+                                              line-height: 24px;
+                                              font-family: D-DIN-Medium, Arial, Verdana, sans-serif;">Re-Watch</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Picture 5 -->
+        <div class="contianer-fluid align-items-lg-end text-white">
+            <div class="bg-image d-flex align-items-lg-end"
+                 style=" background-position: center center; background-size: cover; background-image: url('https://www.spacex.com/static/images/backgrounds-2022/starship-update/S20_Chopstick_Stack_Desktop.jpg'); height: 100%; height: 844px;   ">
+                <div class="row mb-5">
+                    <div class="col-4 d-flex align-items-lg-end align-items-end m-5 pb-5">
+                        <div>
+                            <div class="card"
+                                 style="background-color: transparent;
+                                        border: none;
+                                        width: 50vw;">
+                                <div class="card-body">
+                                    <h2 class="card-text">
+                                        Starship Update
+                                    </h2>
+                                    <a href="https://www.spacex.com/updates/#starship-update"
+                                       class="btn btn-outline-light btn"
+                                       style="cursor: pointer;
+                                              transition: color 1s cubic-bezier(0.25, 1, 0.25, 1), background-color 1s cubic-bezier(0.25, 1, 0.25, 1);
+                                              min-width: 130px;
+                                              padding: 15px 50px;
+                                              margin: 30px 0 0;
+                                              border: 2px solid white;
+                                              border-radius: 0rem;
+                                              display: inline-block;
+                                              color: white;
+                                              text-decoration: none;
+                                              overflow: hidden;
+                                              font-size: 14px;
+                                              line-height: 24px;
+                                              font-family: D-DIN-Medium, Arial, Verdana, sans-serif;">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Picture 6 -->
+        <div class="contianer-fluid align-items-lg-end text-white">
+            <div class="bg-image d-flex align-items-lg-end"
+                 style=" background-position: center top; background-size: cover; background-image: url('https://www.spacex.com/static/images/backgrounds-2021/hls-resized-2.jpg'); height: 100%; height: 844px;   ">
+                <div class="row mb-5">
+                    <div class="col-4 d-flex align-items-lg-end align-items-end m-5 pb-5">
+                        <div>
+                            <div class="card"
+                                 style="background-color: transparent;
+                                        border: none;
+                                        width: 50vw;
+                                        max-height: 35vw;">
+                                <div class="card-body">
+                                    <h2 class="card-text">
+                                        Starship to Land Nasa astronauts on the moon
+                                    </h2>
+                                    <a href="https://www.spacex.com/updates/#starship-moon-announcement"
+                                       class="btn btn-outline-light btn"
+                                       style="cursor: pointer;
+                                              transition: color 1s cubic-bezier(0.25, 1, 0.25, 1), background-color 1s cubic-bezier(0.25, 1, 0.25, 1);
+                                              min-width: 130px;
+                                              padding: 15px 50px;
+                                              margin: 30px 0 0;
+                                              border: 2px solid white;
+                                              border-radius: 0rem;
+                                              display: inline-block;
+                                              color: white;
+                                              text-decoration: none;
+                                              overflow: hidden;
+                                              font-size: 14px;
+                                              line-height: 24px;
+                                              font-family: D-DIN-Medium, Arial, Verdana, sans-serif;">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="bg-black mb-5">
+            <div class="row">
+                <div class="col-md-4 mt-3 ps-3">
+                    <p class="text-light">
+                        Matt's Rendition of SpaceX &copy; 2022
+                    </p>
+                </div>
+                <div class="col-md-8 d-flex align-content-center justify-content-left mt-3 pb-5">
+                    <p>
+                        <a href="#" class="active text-white" style="text-decoration: none">Twitter</a>
+                        <a href="#" class="active text-white" style="text-decoration: none">YouTube</a>
+                        <a href="#" class="active text-white" style="text-decoration: none">Instagram</a>
+                        <a href="#" class="active text-white" style="text-decoration: none">Flickr</a>
+                        <a href="#" class="active text-white" style="text-decoration: none">LinkedIn</a>
+                        <a href="#" class="active text-white" style="text-decoration: none">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </body>s
+</html>

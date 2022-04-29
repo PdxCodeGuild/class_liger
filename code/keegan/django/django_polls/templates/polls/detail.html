@@ -1,0 +1,26 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<div class="poll">
+    <h1>{{ question.text }}</h1>
+    <small>Voting is {{ question.status }}</small>
+    <small>Created by: {{ question.user.username }}</small>
+
+    <ul class="choices">
+        {% for choice in question.choices.all %}
+        <li class="choice">
+            {{choice.votes}} - {{ choice.text }}
+            <!-- link to the vote view function -->
+            <!-- attach the choice.id to the request -->
+            <!-- /vote/2 -->
+            <a href="{% url 'polls_app:vote' choice.id %}">Vote</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+</div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1>Register</h1>
+<form action="{% url 'users_app:register' %}" method="POST">
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username">
+    <br />
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password">
+
+    <br/>
+    {% csrf_token %}
+    <input type="submit" id="submit" value="Register">
+</form>
+
+<!-- Link to login route -->
+<p>Have an account? <a href="{% url 'users_app:login' %}">Log In</a></p>
+
+
+{% endblock content %}
