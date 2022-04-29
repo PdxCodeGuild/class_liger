@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    background-color: aqua;
+}
+header{
+    font-family: sans-serif;
+    margin: 25px
+    
+}
+.container{
+    display: flex;
+}
+.box{
+    height: 50px;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 27%;
+    background-color: gainsboro;
+
+}
+.topnav{
+    background-color: navy;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 75px;
+    border-radius: 30%;
+    height: 75px;
+    
+}
+
+.sidenav{
+    width: 20vw;
+    background-color: chartreuse;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    padding: 15px;
+    border: 5px solid black;
+    
+}
+.sidenav-item{
+    border: 5px dotted black;
+    padding: 15px;
+
+
+}
+
+.content{
+    width: 80vw;
+    background-color: blueviolet;
+    display: flex;
+    flex-wrap: wrap; 
+    padding: 25px;
+
+
+}
+.article{
+    width: 200px;
+    padding: 25px;
+    
+
+    
+}
+    
