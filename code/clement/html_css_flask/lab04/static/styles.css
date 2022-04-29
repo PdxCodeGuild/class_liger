@@ -1,0 +1,139 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;500&family=PT+Sans&family=Raleway:wght@400;500&display=swap');
+
+body {
+    background-color: aqua;
+    height: 100vh;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+.navbar-brand img {
+    width: 100px; 
+} 
+
+.about-img {
+    width: 50%;
+    border-radius: 25%;
+    border: solid gold 5px;
+}
+.name {
+    font-size: 35px;
+}
+
+.job-tittle {
+    font-size: 80px;
+    font-family: 'Oswald' sans-serif;
+    align-items: center;
+    color: blue;
+}
+.location {
+    font-size: 50px;
+    font-family: 'Raleway' sans-serif;
+    align-items: center;
+    color: blue;
+}
+
+.work-exp {
+    align-items: center;
+    color: rgba(1, 11, 20, 0.725);
+    font-size: 30px;
+    font-family: 'Raleway' sans-serif;
+}
+@media (min-width: 414px) {
+    .job-tittle {
+        font-size: 30px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .location {
+        font-size: 20px;
+    }
+    
+}
+.myname {
+    font-size: 25px;
+    font-family: 'oswald' sans-serif;
+}
+.text {
+    font-family: 'oswald' sans-serif;
+    
+}
+
+.card-title{
+    border-radius: 5px;
+    align-items: center;
+}
+.text span {
+    font-family: 'oswald' sans-serif;
+    color: red;
+}
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: red;
+}
+.phone-num {
+    margin-left: 10px;
+
+}
+.color {
+    font-size: 20px;
+    font-family: 'oswald' sans-serif;
+    color: red;
+}
+.reached{
+    color: red;
+    font-size: 30px;
+    margin-right: 2px;
+    font-family: 'oswald' sans-serif;
+}
+.reachout {
+    font-size: 30px;
+    font-family: 'oswald' sans-serif;
+}
+.form-label{
+    color: rgb(255, 255, 240);
+    font-size: 20px;
+    font-family: 'Raleway' sans-serif;
+}
+/* ----------Footer Section------------------ */
+.footer {
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: 25px;
+    align-items: center;
+    display: flex;
+}
+.footer img {
+    height: 9vh;
+    border-radius: 50%;
+}
+.create span {
+    color: red;
+   
+}
+
+/* -----------------Little problems here----------------- */
+.footer a {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+/* ----------Card Section------------------ */
+.card-body li {
+    font-size: 22px;
+}
+
+.card-body .card-text {
+    font-size: 21px;
+}
+
+/* --------------ICONS-------------- */
+
+.portfolio-icon {
+    font-size: 6rem;
+}
