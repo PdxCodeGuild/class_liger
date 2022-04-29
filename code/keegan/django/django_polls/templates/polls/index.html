@@ -32,6 +32,8 @@
 
     <div class="poll">
         <h1>{{ question.text }}</h1>
+        <h3>Question #{{question.id}}</h3>
+        <h4>Published on: {{question.pub_date}}</h4>
         <small>Voting is {{ question.status }}</small>
         <small>Created by: {{ question.user.username }}</small>
 
