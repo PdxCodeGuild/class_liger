@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-e+o1em=#ryq=3mpduwz&0ngu5&!4_*(uwlxfeqh+mxpae8(w5-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # install our app
+    'users_app',
     'polls_app',
 ]
 
@@ -109,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Los_Angeles'
 
 USE_I18N = True
 
@@ -126,3 +127,7 @@ STATICFILES_DIRS = [str(BASE_DIR / 'static')]
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# define the custom user model
+AUTH_USER_MODEL = 'users_app.User'
+

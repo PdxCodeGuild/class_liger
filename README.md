@@ -59,8 +59,9 @@ Weeks 16, 17, 18: Capstone project
 <details open>
   <summary>Django</summary>
 
-| Lab Number | Title                                                                               | Due Date |
-| ---------- | ----------------------------------------------------------------------------------- | -------- |
+| Lab Number | Title                                             | Due Date |
+| ---------- | ------------------------------------------------- | -------- |
+| 01         | <a href="3 Django/labs/01 Todo.md">To Do List</a> | 05/09    |
 
 </details>
 
@@ -223,7 +224,6 @@ Corrections will be made only to that particular branch.
 </ul>
 </details>
 
-
 <details>
   <summary>Django</summary>
   <ul>
@@ -236,5 +236,6 @@ Corrections will be made only to that particular branch.
     </details>
     </li>
     <li><a href="https://peps.python.org/pep-3333/">PEP3333 - WSGI - Web Server Gateway Interface</a></li>
+    <li><a href="https://github.com/perennialAutodidact/django_guides/blob/master/custom_user_model.md">Keegan's Quick Start and User Model guide</a></li>
     </ul>
 </details>
