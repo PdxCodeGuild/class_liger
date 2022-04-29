@@ -1,0 +1,46 @@
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+
+body{
+  text-align: center;
+  align-items: center;
+  font-family: Raleway, sans-serif;
+  color: black;
+  background-image: url("https://www.turismoroma.it/sites/default/files/Colonna%20Antonina.JPG");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+p {
+  background-color:lightgray ;
+  margin: 1vw;
+  text-align:justify;
+  color :black;
+  padding:1%
+}
+
+img{
+  border: 5px solid lightblue;
+  border-radius: 5%
+}
+
+ul{
+  color:chartreuse;
+  display: inline-block;
+  list-style-type: upper-roman;
+}
+
+h2 {
+  color: black;
+}
+
+h3 {
+  color:floralwhite
+}
+
+figure{
+  background-color:black ;
+  color:goldenrod;
+  font-style: oblique;        
+}

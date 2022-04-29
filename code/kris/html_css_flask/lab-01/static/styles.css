@@ -1,0 +1,25 @@
+body {
+    background-color: aqua;
+
+}
+
+p {
+    margin: 200;
+    border: 5px solid black;
+    padding: 25px;
+    background-color: greenyellow
+}
+
+ul {
+    border: 2px dashed red;
+    padding: 10px;
+    background-color: limegreen;
+    list-style: none
+}
+li {
+    margin-bottom: 20px;
+}
+
+img {
+    border-radius: 25%;
+}

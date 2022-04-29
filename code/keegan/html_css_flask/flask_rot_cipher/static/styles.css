@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Fredericka+the+Great&family=Raleway:wght@200;400;800&family=BIZ+UDPMincho&family=Raleway:wght@400;500&display=swap");
+/*
+font-family: 'Amatic SC', cursive;
+font-family: 'Fredericka the Great', cursive;
+font-family: 'Raleway', sans-serif; 
+font-family: 'BIZ UDPMincho', serif;
+*/
+
+body {
+    font-family: Raleway, sans-serif;
+}
