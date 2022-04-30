@@ -1,0 +1,52 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-5">
+        <!-- HEADER -->
+        <div class="
+            col-12 col-lg-10 
+            d-flex 
+            align-items-center justify-content-center
+            justify-content-lg-start
+            ">
+            <h1 class="display-3">
+                Random dad joke:
+            </h1>
+        </div>
+
+        <!-- NEW JOKE BUTTON -->
+        <div class="col-12 col-lg-2 d-flex align-items-center justify-content-center">
+            <a href="{{ url_for('index') }}">
+                <button class="btn btn-success">
+                    <i class="bi bi-arrow-repeat"></i>
+                    New Joke
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <!-- JOKE CONTENT BOX -->
+    <div class="row my-5 mx-3 shadow">
+        <!-- JOKE TEXT -->
+        <div class="col-12 p-3 border border-1">
+            {{ context['joke_text'] }}
+        </div>
+
+        <!-- JOKE LINKS -->
+        <div class="col-6 d-flex justify-content-center align-items-center p-3 border border-1 border-top-0">
+            <a href="" class="link-primary text-decoration-none">
+                <i class="bi bi-link-45deg"></i>
+                Permalink
+            </a>
+        </div>
+        <div
+            class="col-6 d-flex justify-content-center align-items-center p-3 border border-1 border-top-0 border-start-0">
+            <a href="" class="link-primary text-decoration-none">
+                <i class="bi bi-twitter"></i>
+                Share on Twitter
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <title>CSS Grid Demo</title>
+</head>
+<body>
+    
+    <section class="container">
+
+<pre>
+    #grid-1 {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: auto auto auto;
+    }
+</pre>
+        <div class="grid" id="grid-1">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+        </div>
+
+
+
+<pre>
+    #grid-2 {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: 50px 200px 50px;
+    }
+</pre>
+        <div class="grid" id="grid-2">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+        </div>
+
+
+<pre>
+    #grid-3 {
+        display: grid;
+        gap: 15px;
+        grid-template-rows: 50px 200px 50px;
+        grid-template-columns: auto auto auto;
+    }
+</pre>
+        <div class="grid" id="grid-3">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+        </div>
+
+
+
+<pre>
+    #grid-4 {
+        display: grid;
+        gap: 15px;
+        grid-template-rows: 50px 200px 50px;
+        grid-template-columns: 50px 200px 50px;
+    }
+</pre>
+        <div class="grid" id="grid-4">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+        </div>
+
+        
+<pre>
+    #grid-5 {
+        display: grid;
+        gap: 15px;
+        grid-template-rows: 50px 300px;
+        grid-template-columns: 250px 250px 250px;
+    }
+</pre>
+        <div class="grid" id="grid-5">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+        </div>
+
+
+<pre>
+    #grid-6 {
+        display: grid;
+        gap: 15px;
+        grid-template-rows: 50px 300px;
+        grid-template-columns: 250px 250px 250px;
+    }
+</pre>
+        <div class="grid" id="grid-6">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+        </div>
+
+
+
+<pre>
+    #grid-7 {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: auto auto auto auto;
+    }
+
+    #grid-7 .item-1 {
+        grid-column: 1 / 4;
+    }
+
+    #grid-7 .item-2 {
+        grid-column: 4;
+        grid-row: 1 / 5;
+    }
+
+    #grid-7 .item-12 {
+        grid-column: 1 / 5;
+    }
+</pre>
+        <div class="grid" id="grid-7">
+            <div class="grid-item item-1">1</div>
+            <div class="grid-item item-2">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+            <div class="grid-item">10</div>
+            <div class="grid-item">11</div>
+            <div class="grid-item item-12">12</div>
+        </div>
+
+
+
+
+<pre>
+    #grid-8 {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: auto auto auto auto auto auto;
+    }
+    
+    #grid-8 .item-8 {
+        grid-column: 2 / 6;
+        grid-row: 1 / 5;
+    }
+</pre>
+        <div class="grid" id="grid-8">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item item-8">8</div>
+            <div class="grid-item">9</div>
+            <div class="grid-item">10</div>
+            <div class="grid-item">11</div>
+            <div class="grid-item">12</div>
+            <div class="grid-item">13</div>
+            <div class="grid-item">14</div>
+            <div class="grid-item">15</div>
+        </div>
+
+
+<pre>
+    #grid-9 {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: auto auto auto auto auto auto;
+    }
+    
+    #grid-9 .item-8 {
+        grid-area: 1 / 2 / 5 / 6
+    }
+
+    /* grid-area syntax: row-start / column-start / row-end / column-end */
+</pre>
+        <div class="grid" id="grid-9">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item item-8">8</div>
+            <div class="grid-item">9</div>
+            <div class="grid-item">10</div>
+            <div class="grid-item">11</div>
+            <div class="grid-item">12</div>
+            <div class="grid-item">13</div>
+            <div class="grid-item">14</div>
+            <div class="grid-item">15</div>
+        </div>
+
+
+<pre>
+    #grid-10 {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: 1fr 50px 2fr 1fr;
+    }
+</pre>
+        <div class="grid" id="grid-10">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+        </div>
+
+
+<pre>
+
+    #grid-11 {
+        display: grid;
+        gap: 15px;
+        grid-template-areas:
+            'header header header header header header'
+            'menu main main main main aside'
+            'menu footer footer footer footer footer'
+    }
+    
+    #grid-11 .header {
+        /* name this element's grid area 'header' */
+        grid-area: header;
+    }
+    #grid-11 .menu {
+        /* name this element's grid area 'menu' */
+        grid-area: menu;
+        /* height: 600px; */
+    }
+    #grid-11 .main {
+        /* name this element's grid area 'main' */
+        grid-area: main;
+    }
+    #grid-11 .aside {
+        /* name this element's grid area 'aside' */
+        grid-area: aside;
+    }
+    #grid-11 .footer {
+        /* name this element's grid area 'footer' */
+        grid-area: footer;
+    }
+</pre>
+        <div class="grid" id="grid-11">
+            <div class="grid-item header">Header</div>
+            <div class="grid-item menu">Menu</div>
+            <div class="grid-item main">Main</div>
+            <div class="grid-item aside">Aside</div>
+            <div class="grid-item footer">Footer</div>
+        </div>
+
+    </section>
+    
+</body>
+</html>

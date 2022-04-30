@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Blog</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='styles.css') }}"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <img src=https://picsum.photos/300 alt="randomly generated picture"
+      width="25%">
+    </header>
+
+    <section class="container" id="flexbox-layout">
+      <h1>Flexbox Blog</h1>
+      <nav id="top-nav">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Contact Us</a>
+      </nav>
+      <div class="row">
+        <aside id="side-nav">
+          <a href="">Post 1</a>
+          <a href="">Post 2</a>
+          <a href="">Post 3</a>
+        </aside>
+
+        <div id="content">
+          <article class="post">
+            <img src="https://picsum.photos/200?random=1" alt="" />
+            <span>Post 1</span>
+
+            <div class="boxes">
+              <div class="box">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo,
+                  ad impedit? Perferendis consequatur tempora eligendi! A error
+                  magni delectus, accusantium ad facilis beatae, officiis
+                  aspernatur dignissimos reiciendis exercitationem aliquid
+                  quaerat?
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="post2">
+            <img src="https://picsum.photos/200?random=2" alt="" />
+            <span>Post 2</span>
+            <div class="boxes">
+              <div class="box">
+                <p>
+                  Sit ullam ab molestiae ea quos molestias corporis error
+                  similique, perspiciatis eligendi. In minus possimus non veniam
+                  expedita sequi? Dolor, odit similique. Natus facilis magni,
+                  accusantium molestias blanditiis maiores inventore accusamus.
+                  Pariatur!
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="post3">
+            <img src="https://picsum.photos/200" alt="" />
+            <span>Post 3</span>
+            <div class="boxes">
+              <div class="box">
+                <p>
+                  Aliquid, iusto quidem ipsam et maxime similique autem
+                  reiciendis. Consequuntur, voluptatum? Est eveniet aliquid id
+                  nobis laudantium quasi harum nostrum saepe amet!
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <footer>Sant'Orsola &copy; April 2022</footer>
+  </body>
+</html>
