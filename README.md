@@ -62,6 +62,7 @@ Weeks 16, 17, 18: Capstone project
 | Lab Number | Title                                             | Due Date |
 | ---------- | ------------------------------------------------- | -------- |
 | 01         | <a href="3 Django/labs/01 Todo.md">To Do List</a> | 05/09    |
+| 02         | <a href="3 Django/labs/02 Blog.md">Blog</a>       | 05/13    |
 
 </details>
 
