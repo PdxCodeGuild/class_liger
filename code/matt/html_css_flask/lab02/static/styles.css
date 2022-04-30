@@ -1,0 +1,170 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+body {
+  margin: 0;
+  background-color: bisque;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+
+}
+
+header{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+h1 {
+  height: 100%;
+  width: 100%;
+  background-color: bisque;
+  margin: 30px 0px;
+}
+
+.row {
+background-color: #f2f5de;
+height: 600px;
+border-bottom: 4px solid black;
+padding: 25px;
+}
+
+/* .box{
+  height: 50px;
+  width: 50px;
+  background-color: orange;
+  margin: 10px
+} */
+
+#flexbox-layout .row{
+  padding: 0;
+  display:flex;
+}
+
+#side-nav{
+
+  background-color: #656565;
+  width: 15%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+
+  /* padding-top: 25px; */
+
+}
+
+a {
+  font-size: 1.25rem;
+  color:aliceblue;
+  text-decoration: none;
+
+}
+
+
+span{
+
+  font-size: 1.25rem;
+  color:DodgerBlue;
+  
+}
+
+#top-nav {
+
+  background-color: lightblue;
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-evenly;
+
+
+}
+
+#content{
+width: 90%;
+
+display: flex;
+flex-direction: column;
+/* align-items: center; */
+}
+
+.post {
+  height: 600px;
+  width: 29.8%;
+  background-color: antiquewhite;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-left: 4px solid black;
+  border-right: 4px solid black;
+}
+
+
+.post2 {
+  height: 600px;
+  width: 29.5%;
+  background-color: antiquewhite;
+  
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 30%;
+
+  border-right: 4px solid black;
+
+}
+
+.post3 {
+  height: 600px;
+  width: 29.8%;
+  background-color: antiquewhite;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 0%;
+
+  border-right: 4px solid black;
+}
+
+img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.boxes {
+  display:flex;
+  /* flex-direction: row; */
+  justify-content: space-around;
+}
+
+.boxes .box{
+  height: 90%;
+  width: 75%;
+  background-color: #ffb639;
+  margin: 3px;
+  padding: 2%
+}
+
+footer {
+
+  font-family: 'Square Peg', cursive;
+  font-size: 1.25rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
