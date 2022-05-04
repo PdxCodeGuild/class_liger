@@ -1,0 +1,31 @@
+
+
+
+
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="border-bottom:4px solid aliceblue ">
+    <div class="container-fluid">
+        <a href="{% url 'todo_app:main_view' %}" class="navbar-brand">Task Manager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbutton">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse mx-3" id="navbutton">
+            <ul class="navbar-nav gap-3 ">
+                <li class="nav-item  ">
+                    <a href="{% url 'todo_app:main_view' %}" method="GET" class="nav-link text-light" style="font-weight:bold">HOME</a>
+                </li>
+                <li class="nav-item  ">
+                    <a href="{% url 'todo_app:list_todos' %}" method="GET" class="nav-link text-light" style="font-weight:bold">TASK LIST</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+
+
+</nav>
