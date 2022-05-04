@@ -19,37 +19,10 @@ body {
 }
 
 .user-input, .form-label, legend {
+  font-size:20px;
   font-weight: 600;
 }
 
-
-
-@media screen and (max-width: 1000px) {
-  header {
-      max-width: 1000px;
-
-      font-size: 40px;
-      line-height: 40px;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  header {
-      max-width: 500px;
-      font-size: 30px;
-      line-height: 30px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-
-  header {
-      max-width: 500px;
-      
-      font-size: 25px;
-      line-height: 25px;
-  }
-}
 
 hr {
   margin-top: 0.5rem;
