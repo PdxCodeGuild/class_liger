@@ -12,6 +12,6 @@ app_name = 'todo_app'
 
 urlpatterns = [
     path('', views.main_view, name='main_view'),
-    path('todos/', views.list_todos, name='list_todos'),
-    path('add/', views.add_todo, name='add_todo')
+    path('add', views.save_todo_items, name='save_todo_items'),
+    path('list', views.list_todos, name='list_todos')
 ]
