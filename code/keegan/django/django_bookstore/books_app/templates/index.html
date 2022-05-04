@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- BOOTSTRAP CSS/JS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <title>Books</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="text-center">Books</h1>
+
+        <div class="row">
+
+            <div class="col-12 col-lg-4 offset-lg-4">
+                <form action="{% url 'books_app:add_book' %}" method="POST" class="d-flex flex-column gap-3">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Author">Author</label>
+                        <input type="text" id="author" name="author" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genres">Genres</label>
+                        <input type="text" id="genres" name="genres" class="form-control">
+                        <small class="form-text text-muted">Enter multiple, space-separated genres</small>
+                    </div>
+
+                    {% csrf_token %}
+
+                    <button type="submit" class="btn btn-primary w-50 mx-auto">Add</button>
+
+                </form>
+            </div>
+
+            <div class="col-12 col-lg-6 offset-lg-3 mt-5">
+
+                <table class="table table-striped">
+
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Genres</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for book in books %}
+
+                        <tr>
+                            <th scope="row">{{book.id}}</th>
+                            <td>{{book.title}}</td>
+                            <td>{{book.author}}</td>
+                            <td>
+                                {% for genre in book.genres.all %}
+                                    <div class="badge bg-info">{{genre}}</div>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
