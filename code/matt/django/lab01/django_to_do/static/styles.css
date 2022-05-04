@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Fredericka+the+Great&family=Raleway:wght@200;400;800&family=BIZ+UDPMincho&family=Raleway:wght@400;500&display=swap");
+
+header {
+    font-family: "Raleway", sans-serif;
+    font-size: 70px;
+    font-weight: 400;
+}
+
+li {
+
+    font-family: "Raleway", sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+
