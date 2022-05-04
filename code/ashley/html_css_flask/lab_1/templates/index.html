@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+        <title>Homer Simpson Bio</title>
+    </head>
+
+    <body>
+        <section class="container" id="section-1">
+
+        <h1>Homer Simpson</h1>
+        
+        <p id="1"> Homer Jay Simpson was born on May 12, 1956. He works as a safety inspector/chemist at Springfield Nuclear Power Plant. He is married to 
+            Marge Bouvier and together they have 3 children: Bart, Lisa and Maggie. Homer and his family have lived in Springfield their entire lives.
+            Homer was raised on a farm by his parents Abraham and Mona Simpson. Some of his favorite places include Kwik-E-Mart, Krusty Burger and Moe's.
+            His favorite things to eat are hamburgers, hotdogs and doughnuts and he loves to top off his meal with a Duff Beer. His favorite TV character
+            is Krusty the Clown and his best friend is Moe Sizlack. Homer is known for his emotional outbursts and is very envious of his neighbors, especially
+            the Fladers family.
+        
+        </p>
+
+        <div class="card" id="card-1">
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='images/Homer_Simpson.png')}}" alt="My Image">
+                <blockquote>
+                    "Three little sentences that will get you through life. Number 1: Cover for me. Number 2: Oh good idea, Boss! Number 3: It was like that when I got here."
+                    <cite><b>- Homer Simpson</b></cite>
+                </blockquote>
+            
+            </div>
+            
+        </div>
+
+        <div class= "card" id="card-2">
+            <h2>Places lived</h2>
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='images/Springfield.png')}}" alt="My Image">
+                <blockquote>
+                    <ul>
+                        <li>Springfield</li>
+                    </ul>
+                </blockquote>
+        
+            </div>
+        </div>
+
+        <div class="card" id="card-3">
+            For more information on Homer Simpson, visit https://en.wikipedia.org/wiki/Homer_Simpson
+        </div>
+
+        </section>
+
+        <section class="container" id="section-2">
+
+        </section>
+
+    </body>
+</html>

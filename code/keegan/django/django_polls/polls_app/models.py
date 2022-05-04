@@ -1,4 +1,5 @@
 from django.db import models
+from users_app.models import User
 
 STATUS_CHOICES = [
     ('open', 'Open'),
@@ -6,6 +7,8 @@ STATUS_CHOICES = [
 ]
 
 class Question(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="questions")
+
     # add a field for the question text
     text = models.CharField(max_length=200)
 
@@ -23,7 +26,7 @@ class Choice(models.Model):
     # ForeignKey(Model, on_delete_option)
     # models.CASCADE means that when a question is deleted,
     # the deletion 'cascades' onto any Choice objects belonging to it
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name="choices")
 
     text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@100&family=Libre+Bodoni:ital@1&display=swap');
+body {
+    min-height: 100vh;
+    background-color: #4d2b35;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.wrapper > * {
+    padding: 10px;
+    /* flex: 1 100%; */
+}
+
+h1 {
+    font-size: 80px;
+    font-family: Libre Bodoni;
+    text-align: center;
+}
+footer {
+    font-size: 25px;
+    font-family: Libre Bodoni;
+}
+
+.row {
+    display: flex;
+    background-color: #915a69;
+    height: 50px;
+    border-bottom: 4px solid #4d2b35;
+    padding: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    text-transform:uppercase;
+    text-align: center;
+    margin: 0;
+    padding: 15px 4px 17px 0;
+  }
+  ul li {
+    font: Libre Bodoni;
+    display: inline-block;
+    margin-right: -5px;
+    position: relative;
+    padding: 15px 20px;
+    background: #e3dad1;
+    color:black;
+  }
+
+.sidebar a {
+    text-transform:uppercase;
+    text-align: center;
+    font: Libre Bodoni;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    display: flex;
+    background: #e3dad1;
+    color:black;
+}
+
+
+.sidebar {
+    display: flex;
+    min-width: 120px;
+    background-color: #915a69;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; 
+}
+
+.content{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.box {
+    display: flex;
+    height: 300px;
+    background-color: #e3dad1;
+    margin: 10px;
+    color: #4d2b35;
+    font-size: x-large;
+    justify-content: center;
+    align-items: center;
+}
+

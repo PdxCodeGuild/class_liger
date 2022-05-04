@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'D-DIN Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('D-DIN Regular'), url('D-DIN.woff') format('woff');
+  }
+
+@font-face {
+  font-family: 'D-DIN Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('D-DIN Bold'), url('D-DIN.woff') format('woff');
+  }
+
+@font-face {
+  font-family: 'D-DIN Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('D-DIN Medium'), url('D-DIN.woff') format('woff');
+  }
+
+* {
+  font-family:D-DIN-Regular, Arial, Verdana, sans-serif
+}
+
+.nav-item {
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 28px;
+  font-family: D-DIN-Bold, Arial, Verdana, sans-serif;
+}
+
+.card {
+  text-transform: uppercase;
+  word-wrap: break-word;
+  word-break:normal;
+  word-break: break-word
+}
+
+.card-title{
+  font-size: 1rem;
+  font-family: D-DIN-Regular, Arial, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+
+}
+
+.card-text{
+  font-family: D-DIN-Bold, Arial, Verdana, sans-serif;
+  max-width: 90%;
+  margin-left: 0;
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1500px) {
+  .card-text {
+width: 547px;
+
+}
+
+
+@media screen and (max-width: 1000px) {
+        .card-text {
+    max-width: 400px;
+    
+    font-size:40px;
+    line-height: 40px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+      .card-text {
+    max-width: 300px;
+
+    font-size:30px;
+    line-height:30px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+      .card-text {
+    max-width: 250px;
+
+    font-size:25px;
+    line-height:25px;
+
+    }
+}}
