@@ -128,3 +128,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Override user model with custom user model
 AUTH_USER_MODEL = 'users_app.User'
+
+# Tell Django where to redirect for logging in
+LOGIN_URL = '/login/'

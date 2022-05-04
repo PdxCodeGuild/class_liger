@@ -21,7 +21,27 @@
 </head>
 <body>
 
+    
+    {% include 'layout/_navbar.html' %}
+    
     <main class="container">
+        <!-- render message if they exist -->
+        {% if messages %}
+            
+            {% for message in messages %}
+            <div class="row">
+                <div class="col-12 col-lg-6 offset-lg-3">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+    
+        {% endif %}
+
+
         {% block content %}
         
         {% endblock content %}

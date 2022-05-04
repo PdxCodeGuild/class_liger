@@ -3,9 +3,9 @@
 {% block content %}
     
 
-<h1 class="h1 text-center mt-5">Register</h1>
+<h1 class="h1 text-center mt-5">Log In</h1>
 
-<form action="{% url 'users_app:register' %}" method="POST" class="d-flex flex-column align-items-center gap-3">
+<form action="{% url 'users_app:login' %}" method="POST" class="d-flex flex-column align-items-center gap-3">
     <!-- Include all fields -->
     <!-- {{ form }} -->
 
@@ -34,9 +34,11 @@
 
     {% csrf_token %}
 
-    <button type="submit" class="btn btn-success">Register</button>
+    <button type="submit" class="btn btn-success">Log In</button>
 
-    <p>Have an account? <a href="{% url 'users_app:login' %}" class="link-primary text-decoration-none">Log In</a></p>
+    <p>Need an account? <a href="{% url 'users_app:register' %}" class="link-primary text-decoration-none">Register</a></p>
 </form>
+
+
 
 {% endblock content %}

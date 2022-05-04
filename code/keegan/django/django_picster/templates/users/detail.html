@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+<!-- include the static variable for images -->
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12 col-lg-8 offset-lg-2 d-flex flex-column gap-3 align-items-center pt-5">
+        <h1 class="h1">{{user.username}}</h1>
+
+        <!-- user's avatar -->
+        <img src="{% static 'images/default_avatar.jpg' %}" alt="{{user.username}}'s avatar"
+            class="rounded-circle shadow" height="250" width="250">
+        
+        <!-- link to edit pate -->
+        <a href="{% url 'users_app:update' user.username %}" class="h3 link-secondary">
+            <i class="bi bi-pencil-square"></i>
+        </a>
+    </div>
+
+    <div class="col-8 offset-2 col-lg-4 offset-lg-4">
+        <table class="table">
+            <thead></thead>
+            <tbody>
+                <tr scope="row">
+                    <th>
+                        Email
+                    </th>
+                    <td>
+                        {{user.email}}
+                    </td>
+                </tr>
+                <tr scope="row">
+                    <th>
+                        First
+                    </th>
+                    <td>
+                        {% if user.first_name %}
+                        {{user.first_name}}
+                        {% else%}
+                        Not Provided
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr scope="row">
+                    <th>
+                        Last
+                    </th>
+                    <td>
+                        {% if user.last_name %}
+                        {{user.last_name}}
+                        {% else%}
+                        Not Provided
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr scope="row">
+                    <th>
+                        Joined
+                    </th>
+                    <td>
+                        {{user.date_joined}}
+                    </td>
+                </tr>
+
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+ 
+    <div class="row">
+        <div class="col-12 col-lg-8 offset-lg-2 d-flex flex-column align-items-center pt-5">
+            <h1 class="h1">
+                {{user.username}}
+            </h1>
+
+            <img src="{% static 'images/default_avatar.jpg' %}" alt="{{user.username}}'s avatar"
+            class="rounded-circle shadow" height="250" width="250">
+        </div>
+
+        <div class="col-10 col-lg-4 offset-lg-4">
+            <form action="{% url 'users_app:update' user.username %}" method="POST" class="d-flex flex-column gap-2">
+                {{form}}
+
+                {% csrf_token %}
+
+                <button type="submit" class="btn btn-success">Update</button>
+
+            </form>
+        </div>
+    </div>
+
+{% endblock content %}
