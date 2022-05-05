@@ -1,0 +1,34 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<h1>{{user.username}}'s profile</h1>
+<h3>{{user.email}}</h3>
+<h4>Member since: {{user.date_joined}}</h4>
+
+{% for question in user.questions.all %}
+
+<div class="poll">
+    <h1>{{ question.text }}</h1>
+    <small>Voting is {{ question.status }}</small>
+    <small>Created by: {{ question.user.username }}</small>
+
+    <ul class="choices">
+        {% for choice in question.choices.all %}
+        <li class="choice">
+            {{choice.votes}} - {{ choice.text }}
+            <!-- link to the vote view function -->
+            <!-- attach the choice.id to the request -->
+            <!-- /vote/2 -->
+            <a href="{% url 'polls_app:vote' choice.id %}">Vote</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+</div>
+<!-- provide a fallback if the questions list is empty -->
+{% empty %}
+<h1>No Questions</h1>
+{% endfor %}
+
+{% endblock content %}

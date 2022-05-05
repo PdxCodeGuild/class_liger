@@ -1,4 +1,5 @@
 from django.db import models
+from users_app.models import User
 
 STATUS_CHOICES = [
     ('open', 'Open'),
@@ -6,6 +7,8 @@ STATUS_CHOICES = [
 ]
 
 class Question(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="questions")
+
     # add a field for the question text
     text = models.CharField(max_length=200)
 

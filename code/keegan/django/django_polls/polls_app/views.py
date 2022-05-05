@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
 
 from .models import Question, Choice
@@ -7,6 +7,40 @@ def index(request):
     # get all the questions from the database
     # through the Question model's 'objects' manager
     questions = Question.objects.all()
+
+    # slice the queryset
+    # questions = questions[2:]
+
+    # order the questions using various fields
+    # questions = questions.order_by('-text')
+    questions = questions.order_by('-pub_date')
+
+    # filter out the questions that don't belong to the current user
+    # questions = questions.filter(user=request.user).order_by('pub_date')
+
+    # filter with multiple fields
+    # questions = questions.filter(user=request.user, text='Favorite day of the week')
+
+    # get questions from a set of ids
+    # questions = questions.filter(id__in=[4,6,8])
+
+    # __gt is "greater than"
+    # questions = questions.filter(id__gt=6)
+
+    # __gte is "greater than or equal to"
+    # questions = questions.filter(id__gte=6)
+
+    # __lt is "less than"
+    # questions = questions.filter(id__lt=6)
+
+    # __lte is "less than or equal to"
+    # questions = questions.filter(id__lte=6)
+
+    # find all the questions whose text starts with "favorite"
+    # questions = questions.filter(text__istartswith="favorite")
+
+    # find the questions whose choices contain the given text
+    # questions = questions.filter(choices__text__icontains='python')
 
     context = {
         'questions': questions
@@ -40,6 +74,7 @@ def create_question(request):
     # shorthand version to create a database object
     # .create() saves automatically so .save() isn't required
     new_question = Question.objects.create(
+        user=request.user, # associate the question with the user creating it
         text=question_text
     )
 
@@ -92,6 +127,86 @@ def vote(request, choice_id):
     # save the changes
     choice.save()
 
-    # redirect to the index url for the polls_app
-    # to reuse the logic from the index() view
-    return redirect(reverse('polls_app:index'))
+    context = {
+        'question': choice.question
+    }
+
+    return render(request, 'polls/detail.html', context)
+
+
+def detail(request, question_id):
+    question = get_object_or_404(Question, id=question_id)
+
+    context = {
+        'question': question
+    }
+
+    return render(request, 'polls/detail.html', context)
+
+
+def update(request, question_id):
+
+    # on GET request, render the form with the current values
+    # for the question and its choices
+    if request.method == 'GET':
+        question = get_object_or_404(Question, id=question_id)
+
+        context = {
+            'question': question
+        }
+
+        
+        return render(request, 'polls/edit.html', context)
+
+    # when the form is submitted, use the values from the form
+    # to target the appropriate objects from the database
+    # and update them with the values from the form
+    elif request.method == 'POST':
+
+        # get the form data from the request
+        form = request.POST
+
+        # get the question_text from the form
+        new_question_text = form.get('question-text')
+
+
+        # find the question in the database
+        question = get_object_or_404(Question, id=question_id)
+
+        # update the question
+        question.text = new_question_text
+
+        # save the question
+        question.save()
+
+
+        # loop through the form to find the choices
+        # update the choices
+        for key in form.keys():
+            if key.startswith('choice-'):
+                # isolate the number at the end of the name
+                # convert it to an integer to act as the choice_id
+                choice_id = int(key.split('-')[1])
+
+                # find the choice in the database
+                choice = Choice.objects.get(id=choice_id)
+
+                # update the choice text with the value from the form
+                choice.text = form.get(key)
+
+                # save the choice
+                choice.save()
+
+        context = {
+            'question': question
+        }
+
+        return render(request, 'polls/detail.html', context)
+
+
+def delete(request, question_id):
+    question = Question.objects.get(id=question_id)
+
+    question.delete()
+
+    return redirect('polls_app:index')
