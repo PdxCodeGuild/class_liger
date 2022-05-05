@@ -10,7 +10,7 @@
         <h1 class="h1">{{user.username}}</h1>
 
         <!-- user's avatar -->
-        <img src="{% static 'images/default_avatar.jpg' %}" alt="{{user.username}}'s avatar"
+        <img src="{% static user.avatar.url %}" alt="{{user.username}}'s avatar"
             class="rounded-circle shadow" height="250" width="250">
         
         <!-- link to edit pate -->
@@ -68,6 +68,21 @@
 
             </tbody>
         </table>
+    </div>
+
+    <!-- Display the users pics -->
+    <h1 class="h1 text-center">
+        Pics
+    </h1>
+
+    <div class="row">
+        <!-- loop through all the user's pics -->
+        {% for pic in user.pics.all %}
+        
+            <!-- use the pic card partial with the pic data -->
+            {% include 'pics/_card.html' with pic=pic %}
+
+        {% endfor %}
     </div>
 </div>
 

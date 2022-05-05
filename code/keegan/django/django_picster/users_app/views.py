@@ -88,7 +88,7 @@ def login(request):
         # login the authenticated user
         django_login(request, user)
 
-        return redirect('users_app:index')
+        return redirect('pics_app:index')
 
 
 @login_required # redirects to login page if request.user.is_authenticated is False
@@ -121,6 +121,14 @@ def update(request, username):
         # create a UserForm with the form data 
         # and the User instance to which to apply the changes
         form = UserForm(request.POST, instance=user)
+
+        # grab the uploaded image file from the HTML form
+        new_avatar = request.FILES.get('avatar')
+
+
+        # if a file was uploaded, add it to the form fields
+        if new_avatar:
+            form.initial['avatar'] = new_avatar
 
         # if the form is valid, update the user instance
         if form.is_valid():

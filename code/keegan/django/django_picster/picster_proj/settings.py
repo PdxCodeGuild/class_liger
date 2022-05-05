@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'users_app',
+    'pics_app',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,7 @@ AUTH_USER_MODEL = 'users_app.User'
 
 # Tell Django where to redirect for logging in
 LOGIN_URL = '/login/'
+
+
+# set the MEDIA_ROOT variable so Django knows where to upload files
+MEDIA_ROOT = 'static/'
