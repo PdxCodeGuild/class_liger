@@ -15,7 +15,8 @@ class Pic(models.Model):
 
     date_created = models.DateTimeField(auto_now_add=True)
 
-    # likes = models.ManyToManyField()
+    # list of users the have liked the Pic
+    likes = models.ManyToManyField(get_user_model(), related_name='users', blank=True)
 
     def __str__(self):
         return self.user.username + ' - ' + self.image.url

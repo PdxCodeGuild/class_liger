@@ -93,6 +93,7 @@ def login(request):
 
 @login_required # redirects to login page if request.user.is_authenticated is False
 def detail(request, username):
+
     # use the get_user_model function to find the current User model
     user = get_object_or_404(get_user_model(), username=username)
 

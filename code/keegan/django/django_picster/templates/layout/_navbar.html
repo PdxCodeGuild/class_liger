@@ -14,12 +14,9 @@
                 <!-- Authenticated User Links -->
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{% url 'pics_app:create' %}">
                         <i class="bi bi-plus-square h4 text-success"></i>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'users_app:logout' %}">Log Out</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'users_app:detail' request.user.username %}">
@@ -27,6 +24,9 @@
                         <img src="{% static user.avatar.url %}" alt="{{user.username}}'s avatar"
                             class="rounded-circle shadow" height="40" width="40">
                     </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'users_app:logout' %}">Log Out</a>
                 </li>
 
                 {% else %}
