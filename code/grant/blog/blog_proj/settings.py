@@ -1,3 +1,4 @@
+import os
 """
 Django settings for blog_proj project.
 
@@ -14,6 +15,8 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+STATIC_DIR = os.path.join(BASE_DIR, 'blog_proj/static')
+STATIC_DIR = os.path.join(BASE_DIR, 'BLOG')
 
 
 # Quick-start development settings - unsuitable for production
