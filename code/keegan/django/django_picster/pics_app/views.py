@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 
 from .models import Pic
 
@@ -53,6 +54,40 @@ def create(request):
 
 
 @login_required
+def update(request, pic_id):
+    # get the currect Pic information from the db
+    pic = get_object_or_404(Pic, id=pic_id)
+
+    if request.method == 'GET':
+        form = PicForm(instance=pic)
+
+        context = {
+            'form': form,
+            'pic': pic
+        }
+
+        return render(request, 'pics/edit.html', context)
+
+    if request.method == 'POST':
+        # instantiate the PicForm with the data from the HTTP request and the pic instance
+        form = PicForm(request.POST, instance=pic)
+
+        # if a file was submitted in the form data,
+        # add it to the PicForm's initial data
+        image = request.FILES.get('image')
+        if image:
+            form.initial['image'] = image
+
+
+        # if the form is valid, add
+        if form.is_valid():
+            form.save()
+
+        # redirect to the pics detail view, passing the pic_id as a kwarg
+        return redirect(reverse('pics_app:index'))#, kwargs={'pic_id': pic_id}))
+
+
+@login_required
 def like(request, pic_id):
     # get the pic from the database
     pic = get_object_or_404(Pic, id=pic_id)
@@ -63,5 +98,13 @@ def like(request, pic_id):
     else:
         pic.likes.remove(request.user)
 
+
+    return redirect('pics_app:index')
+
+
+def delete(request, pic_id):
+    pic = get_object_or_404(Pic, id=pic_id)
+
+    pic.delete()
 
     return redirect('pics_app:index')

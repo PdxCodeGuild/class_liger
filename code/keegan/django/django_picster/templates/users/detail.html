@@ -10,13 +10,17 @@
         <h1 class="h1">{{user.username}}</h1>
 
         <!-- user's avatar -->
-        <img src="{% static user.avatar.url %}" alt="{{user.username}}'s avatar"
-            class="rounded-circle shadow" height="250" width="250">
-        
+        <img src="{% static user.avatar.url %}" alt="{{user.username}}'s avatar" class="rounded-circle shadow"
+            height="250" width="250">
+
         <!-- link to edit pate -->
         <a href="{% url 'users_app:update' user.username %}" class="h3 link-secondary">
             <i class="bi bi-pencil-square"></i>
         </a>
+
+        <!-- include counts for pics, followers and following -->
+        {% include 'users/_follow-panel.html' with user=user %}
+
     </div>
 
     <div class="col-8 offset-2 col-lg-4 offset-lg-4">
@@ -70,7 +74,7 @@
         </table>
     </div>
 
-    
+
 </div>
 
 <!-- Display the users pics -->
@@ -80,9 +84,9 @@
 <div class="row d-flex justify-content-center pb-5" data-masonry='{"percentPosition": true }'>
     <!-- loop through all the user's pics -->
     {% for pic in user.pics.all %}
-    
-        <!-- use the pic card partial with the pic data -->
-        {% include 'pics/_card.html' with pic=pic %}
+
+    <!-- use the pic card partial with the pic data -->
+    {% include 'pics/_card.html' with pic=pic %}
 
     {% endfor %}
 </div>

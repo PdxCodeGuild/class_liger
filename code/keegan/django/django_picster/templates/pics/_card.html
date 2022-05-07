@@ -26,11 +26,11 @@
                 display edit and delete buttons -->
                 {% if request.user == pic.user %}
 
-                <a href="" class="link-secondary text-decoration-none">
+                <a href="{% url 'pics_app:update' pic.id %}" class="link-secondary text-decoration-none">
                     <i class="bi bi-pencil-square"></i>
                 </a>
 
-                <a href="" class="link-secondary text-decoration-none">
+                <a href="{% url 'pics_app:delete' pic.id %}" class="link-secondary text-decoration-none">
                     <i class="bi bi-trash3"></i>
                 </a>
 
@@ -56,7 +56,7 @@
                 </a>
 
                 <a href="" class="link-secondary text-decoration-none">
-                    <i class="bi bi-arrow-right-short"></i>
+                    <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
         </div>

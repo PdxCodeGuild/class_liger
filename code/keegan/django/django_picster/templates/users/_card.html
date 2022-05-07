@@ -1,0 +1,36 @@
+{% load static %}
+
+{% if request.user != user %}
+<div class="col-12 col-lg-6 mt-3">
+    <div class="card pt-3">
+
+        <!-- USER AVATAR AND USERNAME -->
+        <!-- user's avatar -->
+        <img src="{% static user.avatar.url %}" alt="{{user.username}}'s avatar" class="rounded-circle shadow mx-auto"
+        height="100" width="100">
+    
+    
+        <div class="card-body p-3">
+            <h1 class="h1 card-title text-muted text-center">
+                <a href="{% url 'users_app:detail' user.username %}" class="link-secondary text-decoration-none">@{{user.username}}</a>
+            </h1>
+        
+            {% include 'users/_follow-panel.html' with user=user %}
+        
+        </div>
+
+        <div class="card-footer d-flex justify-content-between">
+            
+            <!-- only allow a user to edit their own information -->
+            <a href="{% url 'users_app:update' user.username %}" class="link-secondary text-decoration-none">
+                <i class="bi bi-pencil-square"></i>
+            </a>
+
+            <a href="{% url 'users_app:detail' user.username %}" class="link-secondary text-decoration-none">
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+    
+    </div>
+</div>
+{% endif %}
