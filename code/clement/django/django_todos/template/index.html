@@ -1,0 +1,30 @@
+{% extends 'layout/base.html' %}
+
+
+{% block content %}
+
+<h1>To Do List Text</h1>
+
+
+
+<form action="{% url 'django_todo_app:save_todo_item' %}" method="POST">
+    <!-- Text input for 'text' -->
+    <input type="text" name="todo-text" placeholder="Eter todo items">
+
+    <!-- Drop down or other input for `priority`(high, medium, low) -->
+    <fieldset>
+        <label for="todo-choice">
+            <p>
+                The Choice todo_items
+            </p>
+        </label>
+
+    </fieldset>
+
+    <!-- Submit Button -->
+    <input type="submit" value="Submit">
+
+</form>
+
+
+{% endblock content %}
