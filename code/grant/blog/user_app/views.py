@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import CustomUser
-from .forms import UserForm, UserAuthForm
-# Create your views here.
+from django.contrib import messages
+from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import (
     login as django_login,
     logout as django_logout,
@@ -22,72 +23,101 @@ def base_view(request):
 def register(request):
 
     if request.method == 'GET':
-        # instantiate a blank User form
-        form = UserAuthForm()
-
-
+    
+        return render(request, 'user_app/register.html')
+    
     elif request.method == 'POST':
-        # instantiate the UserAuthForm and populate the 
-        # fields with the data from the HTML form
-        form = UserAuthForm(request.POST)
 
-        if form.is_valid():
-            # create new user object, 
-            # but don't save it to the database yet (commit=False)
-            new_user = form.save(commit=False)
+        form = request.POST
 
-            # hash the user's password
-            # using the validated form data
-            new_user.set_password(form.cleaned_data['password'])
+        print(request.POST)
 
-            # commit the changed to the database
-            new_user.save()
+        username = form.get('username')
 
-            # log in new user
-            django_login(request, new_user)
+        password = form.get('password')
 
-            return redirect('users_app:profile')
+        firstname = form.get('firstname')
 
-    
-    context = {
-        'form': form
-    }
+        lastname = form.get('lastname')
 
-    return render(request, 'user_app/register.html', context)
-    # form = request.POST
+        email = form.get('email')
 
-    # print(request.POST)
+        user = CustomUser.objects.create_user(
 
-    # for key in form:
+            firstname=firstname,
+            lastname=lastname,
+            email=email,
+            username=username,
+            password=password,
+            
+        )
 
-    #     if key.startswith('username'):
+        messages.success(request, f'Welcome, {user.username}')
 
-    #         name = form.get(key)
+        django_login(request, user)
 
-    #         CustomUser.objects.create(username=name)
-    
-    # for key in form:
-
-    #     if key.startswith('email'):
-
-    #         contact = form.get(key)
-
-    #         CustomUser.objects.create(email=contact)
-
-        
-
-    # return render(request, 'user_app/profile.html')
+        return redirect(reverse('user_app:profile', kwargs={ 'username': user.username}))    
 
 # --------------------------------------------------------
 
 def login(request):
 
-    return render(request, 'user_app/login.html')
+    if request.method == 'GET':
+
+        print('im getting a get')
+
+        return render(request, 'user_app/login.html')
+
+    elif request.method == 'POST':
+
+        form = request.POST
+
+        print(request.POST)
+
+        username = form.get('username')
+
+        password = form.get('password')
+
+        user = authenticate(request, username=username, password=password)
+
+        print(user)
+
+        if user is not None:
+
+            django_login(request, user) 
+
+        return redirect(reverse('user_app:profile', kwargs={ 'username': user.username}))
+
+
+
+
+# --------------------------------------------------------
+@login_required
+def profile(request, username):
+
+    # form = request.POST
+
+    # print('request ', form)
+
+    # username = form.get('username')
+
+    # print('username', username)
+
+    user = get_object_or_404(get_user_model(), username=username)
+
+    print('username', user)
+
+    context = {
+
+        'user': user,
+        
+    }
+
+    return render(request, 'user_app/profile.html', context)
 
 # --------------------------------------------------------
 
-def profile(request):
+def logout(request):
+    django_logout(request)
 
-    return render(request, 'user_app/profile.html')
-
-# --------------------------------------------------------
+    return redirect('user_app:base_view')
