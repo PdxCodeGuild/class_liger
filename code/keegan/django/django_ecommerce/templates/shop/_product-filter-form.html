@@ -1,0 +1,77 @@
+<div class="col-12 col-md-3 pt-5">
+    <form action="" method="POST" class="container">
+        <div class="row">
+
+            <!-- SEARCH QUERY TEXT INPUT -->
+            <fieldset class="col-12 form-group mt-3">
+                <label for="search-query" class="form-label w-100">
+                    <h5 class="h5">Query</h5>
+                    <input type="text" id="search-query" name="search-query" class="form-control">
+                </label>
+            </fieldset>
+
+
+            <!-- ORDER BY SELECT MENU -->
+            <fieldset class="col-12 form-group mt-3">
+                <label for="order-by" class="w-100">
+                    <h5 class="h5">Order By</h5>
+                    <select name="order-by" id="order-by" class="form-select">
+                        <!-- LOOP THROUGH THE ORDER_BY OPTIONS AND RENDER AN OPTION TAG FOR EACH -->
+                        {% for option in search_options.order_by_options %}
+                        <option value="{{option.value}}">{{option.label}}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+            </fieldset>
+
+
+            <!-- CATEGORY CHECKBOXES -->
+            <fieldset class="col-12 d-flex flex-column mt-3">
+                <h5 class="h5">Categories</h5>
+                <!-- LOOP THROUGH ALL THE CATEGORES AND CREATE A CHECKBOX FOR EACH -->
+                {% for category in search_options.categories %}
+
+                <label for="category-{{category.id}}">
+                    <input 
+                        type="checkbox"
+                        id="category-{{category.id}}"
+                        name="categories"
+                        value="{{category}}"
+                        checked
+                    />
+                    {{category|title}}
+                </label>
+                {% endfor %}
+            </fieldset>
+
+
+            <!-- MAX/MIN PRICE -->
+            <fieldset class="col-5 d-flex flex-column gap-2 mt-3">
+                <h5 class="h5">Price</h5>
+                <label for="min-price">Min
+                    <input type="number" id="min-price" name="min-price" class="form-control">
+                </label>
+                <label for="max-price">Max
+                    <input type="number" id="max-price" name="max-price" class="form-control">
+                </label>
+            </fieldset>
+            
+            
+            <!-- MAX/MIN RATING -->
+            <fieldset class="col-5 d-flex flex-column gap-2 mt-3">
+                <h5 class="h5">Rating</h5>
+                <label for="min-rating">Min
+                    <input type="number" id="min-rating" name="min-rating" class="form-control">
+                </label>
+                <label for="max-rating">Max
+                    <input type="number" id="max-rating" name="max-rating" class="form-control">
+                </label>
+            </fieldset>
+
+            <!-- SUBMIT BUTTON -->
+            <div class="col-4 offset-4 d-flex justify-content-center">
+                <button type="submit" class="btn btn-success mt-3">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

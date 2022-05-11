@@ -1,0 +1,44 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    
+
+<h1 class="h1 text-center mt-5">Log In</h1>
+
+<form action="{% url 'users_app:login' %}" method="POST" class="d-flex flex-column align-items-center gap-3">
+    <!-- Include all fields -->
+    <!-- {{ form }} -->
+
+
+    <!-- render the username field -->
+    <fieldset class="form-group">
+        <label for="id_username" class="form-label">{{ form.username.label }}</label>
+        {{ form.username }}
+        
+        <!-- render errors for the field if they exist -->
+        {% if form.username.errors %}
+            {{form.username.errors}}
+        {% endif %}
+    </fieldset>
+
+    <!-- render the password field -->
+    <fieldset class="form-group">
+        <label for="id_password" class="form-label">{{ form.password.label }}</label>
+        {{ form.password }}
+
+        <!-- render errors for the field if they exist -->
+        {% if form.username.errors %}
+            {{form.username.errors}}
+        {% endif %}
+    </fieldset>
+
+    {% csrf_token %}
+
+    <button type="submit" class="btn btn-success">Log In</button>
+
+    <p>Need an account? <a href="{% url 'users_app:register' %}" class="link-primary text-decoration-none">Register</a></p>
+</form>
+
+
+
+{% endblock content %}
