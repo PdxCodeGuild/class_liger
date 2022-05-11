@@ -1,5 +1,3 @@
-from telnetlib import STATUS
-from venv import create
 from django.db import models
 
 PRIORITY_CHOICES= [
@@ -11,6 +9,8 @@ PRIORITY_CHOICES= [
 class Priority(models.Model):
 
     text = models.CharField(max_length=6, choices=PRIORITY_CHOICES, default='low')
+    def __str__(self):
+        return self.text
 
 # Create your models here.
 class TodoItem(models.Model):
