@@ -42,7 +42,7 @@ Weeks 16, 17, 18: Capstone project
 | N/A        | <a href="1 Python/labs/MiniCapstone.md">Mini Capstone</a>                        | 04/01    |
 
 </details>
-<details open>
+<details>
   <summary>HTML/CSS/Flask</summary>
 
 | Lab Number | Title                                                                               | Due Date |
@@ -59,10 +59,11 @@ Weeks 16, 17, 18: Capstone project
 <details open>
   <summary>Django</summary>
 
-| Lab Number | Title                                             | Due Date |
-| ---------- | ------------------------------------------------- | -------- |
-| 01         | <a href="3 Django/labs/01 Todo.md">To Do List</a> | 05/09    |
-| 02         | <a href="3 Django/labs/02 Blog.md">Blog</a>       | 05/13    |
+| Lab Number | Title                                                     | Due Date |
+| ---------- | --------------------------------------------------------- | -------- |
+| 01         | <a href="3 Django/labs/01 Todo.md">To Do List</a>         | 05/09    |
+| 01         | <a href="3 Django/labs/02 Blog.md">Blog</a>               | 05/14    |
+| 01         | <a href="3 Django/labs/Pokedex/03 Pokedex.md">Pokedex</a> | 05/24    |
 
 </details>
 
@@ -222,14 +223,6 @@ Corrections will be made only to that particular branch.
 <li><a href="https://codingfantasy.com/games/flexboxadventure">Flexbox Adventure game</a></li>
 <li><a href="http://coolors.co/">coolors.co Color Picker</a></li>
 <li><a href="http://color.adobe.com/">Adobe.com Color Picker</a></li>
-<ul>
-CSS Libraries
-<li><a href="">Bulma.io</a> - Built based on Flexbox to be automatically responsive, nice built-in colors.  Not the most customizable.</li>
-<li><a href="https://getbootstrap.com">Bootstrap</a> - The most widely-used CSS Framework.  You can do just about anything you need to with this, but it can be a bit overbearing.</li>
-<li><a href="https://materializecss.com">Materialize</a> - Lots of cool out-of-the-box features like Parallax scrolling.  Great color choices.  But, you really have to do it the “Materialize” way to use it properly.  Not very customizable.</li>
-<li><a href="https://getskeleton.com">Skeleton CSS</a> - Incredibly lightweight.  Comes with powerful grid positioning functionality.  Meant for you to customize it more.</li>
-<li><a href="https://tachyons.io">Tachyons.io</a> - Super lightweight, responsive and has a large collection of open-source components</li>
-</ul>
 </ul>
 </details>
 
