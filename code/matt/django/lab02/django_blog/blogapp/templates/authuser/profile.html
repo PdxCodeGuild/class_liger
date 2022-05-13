@@ -1,0 +1,62 @@
+{% extends "layout/base.html" %}
+
+
+{% block content %}
+
+<div class="p-5 text-center bg-light">
+  <h1 class="mb-3 h2">{{user.username}}'s BLOGBLOGBLOG</h1>
+</div>
+
+<div class="container">
+  <section class="text-center">
+    <h4 class="my-5"><strong>{{user.username}}'s postsposts</strong></h4>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-12 mb-4">
+        <div class="card" >
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Post title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the
+                  card's content.
+                </p>
+                <a href="#!" class="btn btn-primary">Read</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-12 mb-4">
+        <div class="card" >
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Post title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the
+                card's content.
+              </p>
+              <a href="#!" class="btn btn-primary">Read</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-12 mb-4">
+        <div class="card" >
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Post title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the
+                card's content.
+              </p>
+              <a href="#!" class="btn btn-primary">Read</a>
+          </div>
+        </div>
+      </div>
+    
+    </div>  
+  </section>
+</div>
+
+
+{% endblock content %}
