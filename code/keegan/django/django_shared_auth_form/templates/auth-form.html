@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-10 offset-1 col-lg-6 offset-lg-3">
+
+        <h1 class="h1 text-center mt-5">{{form_mode|title}}</h1>
+
+        <!-- conditionally render the action attribute based on the form_mode -->
+        <form 
+            action="
+                {% if form_mode == 'register' %}
+                    {% url 'pages_app:register' %}
+                {% else %}
+                    {% url 'pages_app:login' %}
+                {% endif %}"
+            method="POST" 
+            class="d-flex flex-column align-items-center gap-3"
+        >
+
+            <!-- render the username field -->
+            <fieldset class="form-group">
+                <label for="id_username" class="form-label">Username</label>
+                <input type="text" name="username" id="username" class="form-control">
+
+            </fieldset>
+
+            <!-- render the password field -->
+            <fieldset class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" id="password" class="form-control">
+            </fieldset>
+            
+            {% if form_mode == 'register' %}
+                <!-- render the password confirmation field -->
+                <fieldset class="form-group">
+                    <label for="password2" class="form-label">Confirm Password</label>
+                    <input type="password" name="password2" id="password2" class="form-control">
+                </fieldset>
+                
+            {% endif %}
+
+            {% csrf_token %}
+
+            <button type="submit" class="btn btn-success">{{form_mode|title}}</button>
+
+            {% if form_mode == 'register' %}
+            <p>
+                Have an account? 
+                <a href="{% url 'pages_app:login' %}" class="link-primary text-decoration-none">
+                    Log In
+                </a>
+            </p>
+
+            {% else %}
+            <p>Need an account? <a href="{% url 'pages_app:register' %}"
+                    class="link-primary text-decoration-none">Register</a></p>
+
+            {% endif %}
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
