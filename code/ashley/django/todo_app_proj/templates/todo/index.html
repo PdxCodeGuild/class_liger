@@ -1,0 +1,19 @@
+
+{% extends 'layout/base.html' %}
+
+{% block content %}
+     <h1>Todo List</h1>
+
+     <button href="{% url 'todo_app:add_item' %}">
+        {% csrf_token %}
+        Click here to add new task
+     </button>
+
+    <h2>Tasks:</h2>
+    {% for item in TodoItems %}
+        <p><strong>Task: {{item.text}}</strong><br/>
+        Priority: {{item.priority.priority}}<br/>
+        <small>Added on: {{item.pub_date}}</small></p>
+        
+    {% endfor %}
+{% endblock content %}

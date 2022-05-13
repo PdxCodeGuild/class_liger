@@ -1,0 +1,30 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    <div>
+        <h1>Add new tasks below</h1>
+
+        <form action="{% url 'todo_app:add_item' %}" method="POST">
+            {% csrf_token %}
+            <fieldset>
+                <label for="new-task">
+                    <div>
+                    Type to add new task:
+                    <input type="text" name="new-task" id="new-task">
+                    </div>
+                    <div>
+                        {{form.priority}}
+                        Enter priority:
+                    <select name="priority" id="priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    </div>
+                </label>
+                <button type="submit">Add</button>
+            </fieldset> 
+        </form>
+    
+    </div>
+{% endblock content %}

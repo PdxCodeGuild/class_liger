@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+@import url(tasks.css)
+
+* {
+    font-family: 'Koulen', cursive;;
+}
+
+.container{
+    background-color: rgb(38, 156, 117);
+
+    min-height: 100vh;
+    width: 100%;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.task {
+    background-color: antiquewhite;
+    border-radius: 5px;
+    width: 50vw;
+    padding: 30px
+}
+
+h1{
+    font-size: 5rem;
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+form input{
+    padding: 10px;
+
+}
+
+form fieldset{
+    padding: 25px;
+    display: flex;
+    align-items: center;
+}
+
+p {
+    font-size: large;
+}
