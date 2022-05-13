@@ -1,4 +1,4 @@
-
+{% load static %}
 
 
 
@@ -73,24 +73,28 @@
         </button>
 
         
-        <div class="collapse navbar-collapse mx-3" id="navbutton">
+        <div class="collapse navbar-collapse mx-3 d-flex justify-content-end" id="navbutton">
             <ul class="navbar-nav gap-3 ">
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'user_app:profile' user.username %}">
+                    <img src="{% static 'images/default.jpg' %}" alt="{{user.username}}'s avatar" class="rounded-circle shadow" height="45vh" width="45vw">
+                </a>
                 <li class="nav-item  ">
-                    <a href="{% url 'user_app:base_view' %}" method="GET" class="nav-link " style="font-weight:bold" id="navtag">Home</a>
+                    <a href="{% url 'user_app:profile' user.username %}" class="nav-link" style="font-weight:bold"id="navtag">Profile</a>
                 </li>
-                <li class="nav-item  ">
-                    <a href="{% url 'user_app:login' %}" method="GET" class="nav-link " style="font-weight:bold"id="navtag">Log In</a>
+                <li class="nav-item d-flex justify-content-end ">
+                    <a href="{% url 'user_app:logout' %}"  class="nav-link " style="font-weight:bold"id="navtag">Log Out</a>
                 </li>
-                <li class="nav-item  ">
-                    <a href="" method="GET" class="nav-link" style="font-weight:bold"id="navtag">Profile</a>
+                {% else %}
+                <li class="nav-item d-flex justify-content-start">
+                    <a href="{% url 'user_app:base_view' %}"  class="nav-link " style="font-weight:bold" id="navtag">Home</a>
                 </li>
+                <li class="nav-item d-flex justify-content-start ">
+                    <a href="{% url 'user_app:login' %}"  class="nav-link " style="font-weight:bold"id="navtag">Log In</a>
+                </li>                
             </ul>
-
+            
         </div>
-    </div>
-    
-
-
-
-
+        {% endif %}
+    </div>   
 </nav>

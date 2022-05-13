@@ -10,6 +10,9 @@ from django.contrib.auth import (
     get_user_model 
 )
 
+
+
+
 def base_view(request):
 
     # context = {
@@ -95,25 +98,23 @@ def login(request):
 @login_required
 def profile(request, username):
 
-    # form = request.POST
+    if request.method == 'GET':
 
-    # print('request ', form)
+        print('GET PAGE')
 
-    # username = form.get('username')
+        user = get_object_or_404(get_user_model(), username=username)
 
-    # print('username', username)
+        print('username', user)
 
-    user = get_object_or_404(get_user_model(), username=username)
+        context = {
 
-    print('username', user)
+            'username': user,
+            
+        }
 
-    context = {
+        return render(request, 'user_app/profile.html', context)
 
-        'user': user,
-        
-    }
 
-    return render(request, 'user_app/profile.html', context)
 
 # --------------------------------------------------------
 

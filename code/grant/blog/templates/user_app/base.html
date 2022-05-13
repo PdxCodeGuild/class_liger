@@ -23,6 +23,8 @@
         <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAuHtuAIU3ewDXo2UAjEB6ALBvcQCIPHoAtnduANGbZwDYpGYAypFpAMeMawDltWIAAAAAAAAAAAAAAAAAACIiIiIiIiAAIirMzMwiIAAizMzMzMIgACzMxiLMzCAALMwiIizMIAAsxSIiIswQACzCIiIizDAALMkiIiLMcAAszCIiLMwgACzMyyTMzCAALMzMzMzCIAAswszMyCIgACzCIiIiIiAALMIiIiIiIAAsIiIiIiIgACIiIiIiIiDAAQAAwAEAAMABAADAAQAAwAEAAMABAADAAQAAwAEAAMABAADAAQAAwAEAAMABAADAAQAAwAEAAMABAADAAQAA" rel="icon" type="image/x-icon" />
         <link rel="stylesheet" href="{% static 'css/styles.css'%}">
         <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
         <title>blogsta</title>
@@ -163,20 +165,26 @@
 
 
         </section>
-        <section id="fix">
-            <div>
+        {% if request.user.is_authenticated %}
+        <section class="" id="fix">
+            <div id="fix_2"style="border-bottom: 4px solid #EC86D0;">
 
             </div>
+        
+        
+        {% else %}
+        
             <div class='pb-5 d-flex justify-content-center align-items-center'  id="signup">
                 <a type="button" href="{% url 'user_app:register' %}" method="GET" class="btn btn-outline-light"
                     style="color:#62B5E5; font-weight:bold; font-size:1.4rem;">Sign Up</a>
             </div>
         </section>
+        {% endif %}
         <section class="container-fluid ">
             <div class="row">
                 <div class="col-12 p-4 pt-3" style="background-color:#7B3785; border-bottom: 4px solid #62B5E5; ">
                     <div class="col-12 d-flex justify-content-center align-items-center">
-                        <span class="display-1 pb-5 " style="font-weight:bold" ; id="trending">Trending Posts</span>
+                        <span class="display-1 pb-5 pt-3" style="font-weight:bold" ; id="trending">Trending Posts</span>
                     </div>
                     <div class="row" data-masonry='{"percentPosition": true }'>
                         <div class="card-columns">
