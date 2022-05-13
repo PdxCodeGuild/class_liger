@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Category, Product
+from django.shortcuts import get_object_or_404, render, redirect
+from .models import Category, Product, CartItem
 from django.db.models import Q
 
 def index(request):
@@ -89,3 +89,19 @@ def index(request):
     }
 
     return render(request, 'shop/index.html', context)
+
+
+def add_to_cart(request, product_id):
+    '''add the product with the given id to the request.user's cart'''
+
+    product = get_object_or_404(Product, id=product_id)
+
+    # get the CartItem if it exists, otherwise create it
+    cart_item, created = CartItem.objects.get_or_create(product=product, cart=request.user.cart)
+
+    # increase the quantity of the cart_item in the cart
+    cart_item.quantity += 1
+
+    cart_item.save()
+
+    return redirect('shop_app:index')
