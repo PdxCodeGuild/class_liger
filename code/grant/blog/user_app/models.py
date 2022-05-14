@@ -15,13 +15,9 @@ class CustomUser(AbstractUser):
 
     user = models.IntegerField(null=True)
 
-    # USERNAME_FIELD = 'username'
-
     email = models.EmailField(unique=True)
 
     password = models.CharField(max_length=250)
-
-    # EMAIL_FIELD = 'email'
 
     def __str__(self):
 

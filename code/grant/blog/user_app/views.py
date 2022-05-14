@@ -18,7 +18,7 @@ def base_view(request):
 
     context = {
 
-        'blogposts': BlogPost.objects.all()
+        'blogposts': BlogPost.objects.all().order_by('-date_created')
     }
 
     return render(request, 'user_app/base.html', context)
@@ -34,8 +34,6 @@ def register(request):
     elif request.method == 'POST':
 
         form = request.POST
-
-        print(request.POST)
 
         username = form.get('username')
 
@@ -57,8 +55,6 @@ def register(request):
             
         )
 
-        messages.success(request, f'Welcome, {user.username}')
-
         django_login(request, user)
 
         return redirect(reverse('user_app:profile', kwargs={ 'username': user.username}))    
@@ -69,23 +65,17 @@ def login(request):
 
     if request.method == 'GET':
 
-        print('im getting a get')
-
         return render(request, 'user_app/login.html')
 
     elif request.method == 'POST':
 
         form = request.POST
 
-        print(request.POST)
-
         username = form.get('username')
 
         password = form.get('password')
 
         user = authenticate(request, username=username, password=password)
-
-        print(user)
 
         if user is not None:
 
@@ -102,11 +92,7 @@ def profile(request, username):
 
     if request.method == 'GET':
 
-        print('GET PAGE')
-
         user = get_object_or_404(get_user_model(), username=username)
-
-        print('username', user)
 
         context = {
 

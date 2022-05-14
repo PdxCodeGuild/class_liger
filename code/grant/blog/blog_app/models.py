@@ -26,7 +26,3 @@ class BlogPost(models.Model):
 # ---------------------------------------------------------
 
 
-# Profile /profile/
-# show a list of the user's own posts, only showing the title of each
-# Create Post /create/
-# form for creating a new post

@@ -16,31 +16,21 @@ from django.contrib.auth import (
 @login_required
 def create(request):
 
-    
-
     if request.method == 'GET':
-
-        print('GET PAGE-2')
 
         form = request.GET
 
         return render(request, 'blog_app/create.html' )
 
     elif request.method == 'POST':
-        
-        print('GET POST-2')
 
         form = request.POST
-
-        print(form)
 
         title = form.get('title')
 
         body = form.get('body')        
 
-        user = get_object_or_404(get_user_model(), username=request.user)
-
-        # print(request.user.posts.all())        
+        user = get_object_or_404(get_user_model(), username=request.user)      
 
         blogpost = BlogPost.objects.create(
 
@@ -51,20 +41,10 @@ def create(request):
         )
         print(blogpost.date_created, blogpost)
 
-        blogposts = BlogPost.objects.all()
-
-        print(blogposts)
-        
-
-        # context = {
-
-        #     'blogposts':user.posts.all
-        # }
-
         return redirect(reverse('user_app:profile', args=[request.user.username, ]))
 
 # ---------------------------------------------------------
 
 def base(request):
     
-    return render(request, 'blog_app/base.html')
+    return render(request, 'user_app/base.html')
