@@ -43,11 +43,17 @@
 
                 <!-- quantity -->
                 <div class="col-4 d-flex align-items-center gap-2 mt-3">
-                    <form action="" method="POST" class="d-flex align-items-center gap-2">
+                    <!-- update quantity form -->
+                    <form action="{% url 'shop_app:update_cart_item' cart_item.id %}" method="POST" class="d-flex align-items-center gap-2">
+                        {% csrf_token %}
+                        
                         <input type="number" name="quantity" value="{{cart_item.quantity}}" class="form-control">
+                    
                         <button type="submit" class="btn btn-sm btn-primary">Update</button>
                     </form>
-                    <a href="">
+
+                    <!-- delete cart item -->
+                    <a href="{% url 'shop_app:remove_from_cart' cart_item.id %}">
                         <button class="btn btn-sm btn-danger">Delete</button>
                     </a>
                 </div>
