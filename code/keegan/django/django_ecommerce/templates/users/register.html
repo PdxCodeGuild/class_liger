@@ -1,0 +1,52 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    
+
+<h1 class="h1 text-center mt-5">Register</h1>
+
+<form action="{% url 'users_app:register' %}" method="POST" class="d-flex flex-column align-items-center gap-3">
+    <!-- Include all fields -->
+    <!-- {{ form }} -->
+
+    {% comment %}
+        {% for field in form %}
+
+            <fieldset class="form-group">
+                <label for="id_{{field.label}}">{{field.label}}</label>
+                {{field}}
+            </fieldset>
+            
+        {% endfor %}
+    {% endcomment %}
+
+    <!-- render the username field -->
+    <fieldset class="form-group">
+        <label for="id_username" class="form-label">{{ form.username.label }}</label>
+        {{ form.username }}
+        
+        <!-- render errors for the field if they exist -->
+        {% if form.username.errors %}
+            {{form.username.errors}}
+        {% endif %}
+    </fieldset>
+
+    <!-- render the password field -->
+    <fieldset class="form-group">
+        <label for="id_password" class="form-label">{{ form.password.label }}</label>
+        {{ form.password }}
+
+        <!-- render errors for the field if they exist -->
+        {% if form.username.errors %}
+            {{form.username.errors}}
+        {% endif %}
+    </fieldset>
+
+    {% csrf_token %}
+
+    <button type="submit" class="btn btn-success">Register</button>
+
+    <p>Have an account? <a href="{% url 'users_app:login' %}" class="link-primary text-decoration-none">Log In</a></p>
+</form>
+
+{% endblock content %}

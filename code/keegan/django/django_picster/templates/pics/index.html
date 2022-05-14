@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <div class="row d-flex justify-content-center pb-5" data-masonry='{"percentPosition": true }'>
+        
+        {% for pic in pics %}
+            
+            <!-- render the card partial with the current pic data -->
+            {% include 'pics/_card.html' with pic=pic%}
+        
+        {% endfor %}
+
+    </div>
+
+{% endblock content %}

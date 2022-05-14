@@ -1,0 +1,83 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+
+<div class="row mt-5 pb-5">
+    <!-- USER INFO -->
+    <div class="col-12 col-lg-3 border-right">
+        <h3 class="h3">{{user.username}}</h3>
+        <h5 class="h5">{{user.email}}</h5>
+        <h5 class="h5">{{user.date_joined}}</h5>
+    </div>
+
+    <!-- USER CART -->
+    <div class="col-12 col-lg-9">
+
+        <div class="container">
+            <h1 class="h1">Cart</h1>
+            <!-- Column Labels -->
+            <div class="row">
+                <div class="col-6">
+                    <h4>Product</h4>
+                </div>
+                <div class="col-4">
+                    <h4>Quantity</h4>
+                </div>
+                <div class="col-2">
+                    <h4>Price</h4>
+                </div>
+            </div>
+
+            <!-- Product rows -->
+            <div class="row border-bottom">
+                {% for cart_item in user.cart.cart_items.all %}
+                <!-- Title and description -->
+                <div class="col-6 d-flex align-items-center gap-3  mt-3">
+                    <img src="{{cart_item.product.image_url}}" alt="{{cart_item.product.title}}" width="50">
+                    <p>
+                        {{cart_item.product.title}}
+                    </p>
+                </div>
+
+
+                <!-- quantity -->
+                <div class="col-4 d-flex align-items-center gap-2 mt-3">
+                    <form action="" method="POST" class="d-flex align-items-center gap-2">
+                        <input type="number" name="quantity" value="{{cart_item.quantity}}" class="form-control">
+                        <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                    </form>
+                    <a href="">
+                        <button class="btn btn-sm btn-danger">Delete</button>
+                    </a>
+                </div>
+
+
+                <!-- price -->
+                <div class="col-2 d-flex align-items-center lead mt-3">
+                    ${{cart_item.item_subtotal}}
+                </div>
+
+
+                {% endfor %}
+            </div>
+
+            <!-- Total price -->
+            <div class="row mt-4">
+                <div class="col-3 offset-7 d-flex justify-content-end">
+                    <h4 class="h4">Total</h4>
+                </div>
+                <div class="col-2">
+                    <h4>${{user.cart.total_price}}</h4>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+{% endblock content %}
