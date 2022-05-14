@@ -42,7 +42,7 @@ Weeks 16, 17, 18: Capstone project
 | N/A        | <a href="1 Python/labs/MiniCapstone.md">Mini Capstone</a>                        | 04/01    |
 
 </details>
-<details open>
+<details>
   <summary>HTML/CSS/Flask</summary>
 
 | Lab Number | Title                                                                               | Due Date |
@@ -59,9 +59,11 @@ Weeks 16, 17, 18: Capstone project
 <details open>
   <summary>Django</summary>
 
-| Lab Number | Title                                             | Due Date |
-| ---------- | ------------------------------------------------- | -------- |
-| 01         | <a href="3 Django/labs/01 Todo.md">To Do List</a> | 05/09    |
+| Lab Number | Title                                                     | Due Date |
+| ---------- | --------------------------------------------------------- | -------- |
+| 01         | <a href="3 Django/labs/01 Todo.md">To Do List</a>         | 05/09    |
+| 02         | <a href="3 Django/labs/02 Blog.md">Blog</a>               | 05/14    |
+| 03         | <a href="3 Django/labs/Pokedex/03 Pokedex.md">Pokedex</a> | 05/24    |
 
 </details>
 

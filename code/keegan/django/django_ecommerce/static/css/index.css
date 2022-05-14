@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&family=Varela+Round&display=swap");
+
+* {
+  font-family: "Questrial", sans-serif;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.navbar-brand {
+  font-family: "Varela Round", sans-serif;
+}
