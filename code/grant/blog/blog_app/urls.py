@@ -13,6 +13,6 @@ app_name = 'blog_app'
 urlpatterns = [
 
     path('', views.base, name='base'),
-    path('create/<str:username>', views.create, name='create'),
+    path('create/', views.create, name='create'),
 
 ] 

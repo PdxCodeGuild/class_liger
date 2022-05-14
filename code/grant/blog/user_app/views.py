@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import CustomUser
+from blog_app.models import BlogPost
 from django.contrib import messages
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
@@ -15,11 +16,12 @@ from django.contrib.auth import (
 
 def base_view(request):
 
-    # context = {
+    context = {
 
-    # }
+        'blogposts': BlogPost.objects.all()
+    }
 
-    return render(request, 'user_app/base.html')
+    return render(request, 'user_app/base.html', context)
 
 # --------------------------------------------------------
     

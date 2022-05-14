@@ -12,7 +12,7 @@ class BlogPost(models.Model):
 
     body = models.TextField()
 
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='+')
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='posts')
 
     public = models.BooleanField(default=False)
 

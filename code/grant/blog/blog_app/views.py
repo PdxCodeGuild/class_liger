@@ -1,8 +1,7 @@
 from django.shortcuts import get_object_or_404, render, redirect
 
 from django.urls.base import reverse
-from blog_app.forms import BlogForm
-
+from .models import BlogPost
 from user_app.models import CustomUser
 
 from django.contrib.auth.decorators import login_required
@@ -15,41 +14,54 @@ from django.contrib.auth import (
 
 
 @login_required
-def create(request, username):
+def create(request):
+
+    
 
     if request.method == 'GET':
 
         print('GET PAGE-2')
 
-        form = BlogForm
+        form = request.GET
 
         return render(request, 'blog_app/create.html' )
 
     elif request.method == 'POST':
-
+        
         print('GET POST-2')
 
-        form = BlogForm
+        form = request.POST
 
         print(form)
 
         title = form.get('title')
 
-        body = form.get('body')
+        body = form.get('body')        
 
-        user = get_object_or_404(get_user_model(), username=username)
+        user = get_object_or_404(get_user_model(), username=request.user)
 
+        # print(request.user.posts.all())        
+
+        blogpost = BlogPost.objects.create(
+
+            title=title,
+            body=body,
+            user=user,
+
+        )
+        print(blogpost.date_created, blogpost)
+
+        blogposts = BlogPost.objects.all()
+
+        print(blogposts)
         
 
-        context = {
+        # context = {
 
-            'title': title,
-            'body': body,
-            'username': username
+        #     'blogposts':user.posts.all
+        # }
 
-        }
-
-        return redirect(reverse('user_app:profile', context, kwargs={ 'username': username}))
+        return redirect(reverse('user_app:profile', args=[request.user.username, ]))
 
 # ---------------------------------------------------------
 

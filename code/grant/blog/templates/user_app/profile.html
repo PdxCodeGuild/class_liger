@@ -8,10 +8,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+        integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
+        async></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAuHtuAIU3ewDXo2UAjEB6ALBvcQCIPHoAtnduANGbZwDYpGYAypFpAMeMawDltWIAAAAAAAAAAAAAAAAAACIiIiIiIiAAIirMzMwiIAAizMzMzMIgACzMxiLMzCAALMwiIizMIAAsxSIiIswQACzCIiIizDAALMkiIiLMcAAszCIiLMwgACzMyyTMzCAALMzMzMzCIAAswszMyCIgACzCIiIiIiAALMIiIiIiIAAsIiIiIiIgACIiIiIiIiDAAQAAwAEAAMABAADAAQAAwAEAAMABAADAAQAAwAEAAMABAADAAQAAwAEAAMABAADAAQAAwAEAAMABAADAAQAA" rel="icon" type="image/x-icon" />
+    <link
+        href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAuHtuAIU3ewDXo2UAjEB6ALBvcQCIPHoAtnduANGbZwDYpGYAypFpAMeMawDltWIAAAAAAAAAAAAAAAAAACIiIiIiIiAAIirMzMwiIAAizMzMzMIgACzMxiLMzCAALMwiIizMIAAsxSIiIswQACzCIiIizDAALMkiIiLMcAAszCIiLMwgACzMyyTMzCAALMzMzMzCIAAswszMyCIgACzCIiIiIiAALMIiIiIiIAAsIiIiIiIgACIiIiIiIiDAAQAAwAEAAMABAADAAQAAwAEAAMABAADAAQAAwAEAAMABAADAAQAAwAEAAMABAADAAQAAwAEAAMABAADAAQAA"
+        rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
     <link rel="stylesheet" href="{% static 'css/styles.css'%}">
@@ -21,7 +26,7 @@
 <body>
 
     {% include 'user_app/navbar.html' %}
-    
+
     <div class="d-flex justify-content-center align-items-center" width="100vw" style="background-color:#EC86D0">
         <svg class="pt-5 pb-3 d-flex justify-content-center align-items-center" version="1.0"
             xmlns="http://www.w3.org/2000/svg" width="200px" viewBox="0 0 1625.000000 576.000000"
@@ -87,18 +92,53 @@ m1490 -233 c120 -40 218 -109 304 -214 126 -156 171 -288 163 -480 -8 -195
     <section class="container-fluid">
         <div class="row">
             <div class="col-12 d-flex justify-content-center align-items-center">
-                <p class="display-1"style="color:#EC86D0">
+                <p class="display-1 " style="color:#EC86D0;">
                     Welcome {{user.username.capitalize}}.
                 </p>
             </div>
             <div class="col-12 d-flex justify-content-center">
-                <a href="{% url 'blog_app:create' user.username %}">
-                    <button class="btn btn-outline mb-3"style="background-color:#62B5E5; color:white">
-                        Create A New Post
+                <a href="{% url 'blog_app:create' %}">
+                    <button class="btn btn-outline mb-3" style="background-color:#62B5E5; color:white">
+                        Create A New Rant
                     </button>
                 </a>
             </div>
-            {% include 'user_app/footer.html' %}
+            {% for post in user.posts.all %}
+            <div class="container-fluid" id='test'>
+                <div class="row d-flex justify-content-center  ">
+                    
+                    <div class="card col-8 mb-5 px-0 shadow-lg "
+                        style=" border: 2px solid black">
+                        <div class="card-header pb-1 pt-1 display-6 text-bold text-center" style="background-color:#EC86D0; border-radius:12px; border-bottom-left-radius:0; border-bottom-right-radius:0">
+                            {{ post.title }}
+                        </div>
+                        <div class="card-body text-left">
+                            <p class="card-text">{{ post.body }}</p>
+                        </div>
+                        <div class="card-footer text-center pb-0" href="#">
+                            <h6 class="small text-muted">rant by {{ post.user }} @ {{ post.date_created }}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="col-12 d-flex justify-content-center" style="border-bottom:4px solid #EC86D0">
+                {% if user.posts.all %}
+                <a href="{% url 'blog_app:create' %}">
+                    <button class="btn btn-outline mb-3" style="background-color:#62B5E5; color:white">
+                        Create A New Rant
+                    </button>
+                </a>
+            </div>
+
+            {% endif %}
+                
+                {% include 'user_app/footer.html' %}
         </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
+    async>
+    </script>
 </body>
+

@@ -82,7 +82,7 @@ m1490 -233 c120 -40 218 -109 304 -214 126 -156 171 -288 163 -480 -8 -195
     </div>
     <section class="container-fluid" style="background-color:#7B3785">
         
-        <form action="{% url 'blog_app:create' user.username %}" method="POST">
+        <form action="{% url 'blog_app:create' %}" method="POST">
             <div class="row">
                 <div class=" col-12 d-flex justify-content-center align-items-center" style="background-color:#62B5E5">
                     <div class="card mx-2 mt-3 mb-3 col-lg-8 col-md-12 col-sm-12" style="border: 2px solid black; border-radius:6px;" id="blog_card">
@@ -94,7 +94,7 @@ m1490 -233 c120 -40 218 -109 304 -214 126 -156 171 -288 163 -480 -8 -195
                             <label for="body" class="form-label"></label>
                             <textarea type="text" class="form-control" id="body" name="body" placeholder="Body"></textarea>
                         </div>
-                        {{ date_created }} {{ public }} {{ user.username }}
+                        
                         
                         
                         {% csrf_token %}
