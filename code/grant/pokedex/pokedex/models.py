@@ -31,3 +31,9 @@ class Pokemon(models.Model):
     image_back = models.CharField(max_length=70)
 
     types = models.ManyToManyField(PokemonType, related_name='type')
+
+    def __self__(self) -> str:
+
+        return f'{self.name.capitalize}'
+    class Meta:
+        verbose_name_plural = 'Pokemon'
