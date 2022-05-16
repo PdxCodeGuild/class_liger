@@ -9,9 +9,9 @@ class PokemonType(models.Model):
 
     name = models.CharField(max_length=70)
 
-    def __self__(self) -> str:
+    def __self__(self):
 
-        return f' {self.name.capitalize} Type Pokemon'
+        return {self.name.capitalize}
 
 # -----------------------------------------------------------
 
@@ -32,8 +32,8 @@ class Pokemon(models.Model):
 
     types = models.ManyToManyField(PokemonType, related_name='type')
 
-    def __self__(self) -> str:
+    def __self__(self):
 
-        return f'{self.name.capitalize}'
+        return {self.name.capitalize}
     class Meta:
         verbose_name_plural = 'Pokemon'

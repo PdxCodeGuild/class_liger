@@ -19,21 +19,14 @@ class Command(BaseCommand):
 
         for pokemon in poke_balls['pokemon']:
         
-            name = pokemon['name']
-            number = int(pokemon['number'])
-            height = float(pokemon['height'])
-            weight = float(pokemon['weight'])
-            image_front = pokemon['image_front']
-            image_back = pokemon['image_back']
+            name = pokemon.get('name')
+            number = int(pokemon.get('number'))
+            height = float(pokemon.get('height'))
+            weight = float(pokemon.get('weight'))
+            image_front = pokemon.get('image_front')
+            image_back = pokemon.get('image_back')
 
-            
-            for o in pokemon['types']:
-
-                types = o
-
-                print(types)
-        
-            pokemon = Pokemon.objects.create(
+            pokemon_obj = Pokemon.objects.create(
 
                 number = number,
                 name = name,
@@ -43,12 +36,21 @@ class Command(BaseCommand):
                 image_back = image_back,
             
             )
+            
+            for p_types in pokemon['types']:
 
-            pokemon_type, created = PokemonType.objects.get_or_create(name=types)
+                types = p_types
 
-            pokemon.types.add(pokemon_type)
+                pokemon_type, created = PokemonType.objects.get_or_create(name=types)
 
-            print(pokemon_type)
+                pokemon_obj.types.add(pokemon_type)
+
+
+
+                print(pokemon_obj.name)
+                print(pokemon_type.name)
+                print(pokemon_obj)
+                print(pokemon_type)
 
             f.close()
 

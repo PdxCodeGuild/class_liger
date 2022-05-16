@@ -271,25 +271,25 @@
 
 
     </section>
-    <section class="container-fluid d-flex justify-content-center align-items-center" id="" style="border-bottom: 4px solid #ffcb05; background-color: #3465ae">
-        <div class="row">
+    <section class="container-fluid d-flex justify-content-center align-items-center" id="" style="border-bottom: 4px solid #ffcb05;">
+        <div class="pt-4 row bg-dark">
             {% for t in pokemon_types %}
-            <div class="col-4 bg-dark text-light pt-3">
-                <div class="form-check p-0">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked>
-                <label class="form-check-label" for="defaultCheck1" >
-                    {{t.name.capitalize}}
+            <div class=" col-3 d-flex justify-content-center align-items-center bg-dark text-light">
+                <div class="form-check pt-3">
+                <input class="form-check-input " type="checkbox" value="" id="defaultCheck1" checked>
+                <label class="form-check-label " for="defaultCheck1" >
+                    {{t.name}}
                 </label>
             </div>
         </div>
         {% endfor %}
 
-        <nav class=" navbar navbar-light bg-dark pt-3 pb-3 d-flex justify-content-center align-items-center">
-            <form class="form-inline gap-2 col-6 d-flex justify-content-center align-items-center">
+        <nav class=" col-9 navbar navbar-light bg-dark pt-3 pb-3 d-flex justify-content-center align-items-center">
+            <form class="form-inline gap-2 col-9 d-flex justify-content-center align-items-center">
               <input class="form-control mr-sm-2 "style='border: 2px solid #ffcb05' type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline " type="submit"style='color:#ffcb05'>Search</button>
             </form>
-          </nav>
+        </nav>
 
 
     </section>
@@ -313,14 +313,14 @@
                                 srcset="{{ pokemon.image_back }}">
                         </div>
 
-                        <img src="" alt="" id="hover_test">
 
 
 
                     </div>
                     <h6 class="pt-2">Height: {{pokemon.height}} </h6>
                     <h6>Weight: {{pokemon.weight}} </h6>
-                    <h6>Type:{{pokemon.types}} </h6>
+                    
+                    <h6>Type:{{pokemon.types.name}} </h6>
 
                 </div>
 
