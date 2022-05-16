@@ -1,6 +1,21 @@
 {% extends 'base.html' %}
 <!-- no spaces between brackets and percent -->
 {% block content %}
-  <h1>hello world</h1>
-{% endblock %}
+<h1>hello world</h1>
+<form action="{% url 'todo_app:index' %}" method="POST">
+  <input
+    type="text"
+    name="todo_text"
+    placeholder="What do you have to do?"
+    />
+  {% csrf_token %}
+  <input type="submit" value="Submit" />
+</form>
+<div class="class col-12">
+  {% for todo in todos %}
 
+  <p>{{ todo }}</p>
+
+  {% endfor %}
+</div>
+{% endblock %}
