@@ -6,7 +6,7 @@
   {% csrf_token %}
   <input type="text" name="todo_text" placeholder="What do you have to do?" />
   <input type="submit" value="Submit" />
-  <select name="priority_name" id="priority">
+  <select name="priority" id="priority">
     <option value="low">Low</option>
     <option value="medium">Medium</option>
     <option value="high">High</option>
@@ -15,7 +15,7 @@
 <div class="class col-12 align-content middle">
   {% for todo in todos %}
 
-  <p>{{ todo }}</p>
+  <p>{{ todo }} {{todo.priority}}</p>
 
   {% endfor %}
 </div>
