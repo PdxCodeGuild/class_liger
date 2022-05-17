@@ -66,7 +66,7 @@ Weeks 16, 17, 18: Capstone project
 | 03         | <a href="3 Django/labs/Pokedex/03 Pokedex.md">Pokedex</a> | 05/24    |
 
 </details>
-<details>
+<details open>
   <summary>JavaScript</summary>
 
 | Lab Number | Title                                                     | Due Date |
