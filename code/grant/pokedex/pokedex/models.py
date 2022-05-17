@@ -1,5 +1,4 @@
 from django.db import models
-from django.forms import CharField
 
 # Create your models here.
 
@@ -9,9 +8,13 @@ class PokemonType(models.Model):
 
     name = models.CharField(max_length=70)
 
-    def __self__(self):
+    # def __self__(self):
 
-        return {self.name.capitalize}
+        # return f'{self.name.capitalize()} Type Pokemon'
+
+    def __str__(self):
+
+        return f'{self.name.capitalize()}'
 
 # -----------------------------------------------------------
 
@@ -32,8 +35,21 @@ class Pokemon(models.Model):
 
     types = models.ManyToManyField(PokemonType, related_name='type')
 
+    def __str__(self):
+
+        return f'{self.name.capitalize()}'
+
     def __self__(self):
 
-        return {self.name.capitalize}
+        return f'{self.name.capitalize()}'
     class Meta:
         verbose_name_plural = 'Pokemon'
+
+
+# class Url(models.Model):
+
+    
+
+#     def __str__(self):
+
+#         return f'audio/{{pokemon.name}}-cry.mp3'

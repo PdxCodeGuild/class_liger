@@ -37,8 +37,20 @@
         href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAEgDqAOvr6wD///8ABQAAAPHx8QDq6uoA9/f3APDw8ADp6ekA7+/vAPX19QD7+/sA9PT0AO3t7QD6+voA+fn5APLy8gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkJCQkAAAAAAAAAAAAACQIODg4OAgkAAAAAAAAABg4KCAUFCAoOBgAAAAAACQ4IEQ0LCw0RCA4JAAAAAAIKEQsHEBAHCxEKAgAAAAkOCA0HDwwMDwcNCA4JAAAEDgULEAwEBAwQCwUOBAAABAQECxAEAAAEEAsEBAQAAAEBBAQEAwMDAwQEBAEBAAAAAQEBAQMDAwMBAQEBAAAAAAEBAQEBBAQBAQMDAQAAAAAAAQEBAQEBAQEBAQAAAAAAAAABAQEBAQEBAQAAAAAAAAAAAAABAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAD4HwAA8A8AAOAHAADAAwAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAwAMAAOAHAADwDwAA+B8AAP//AAA="
         rel="icon" type="image/x-icon" />
 
+    <script>
+        var audio = $("#audio");
+    $("#hover").mouseenter(function() {
+    audio.play();
+    });
+    $("#hover").mouseleave(function() {
+    audio.pause();
+    });
+
+    </script>
+
     <title>Pokedex</title>
 </head>
+
 
 <body>
 
@@ -285,9 +297,17 @@
         {% endfor %}
 
         <nav class=" col-9 navbar navbar-light bg-dark pt-3 pb-3 d-flex justify-content-center align-items-center">
-            <form class="form-inline gap-2 col-9 d-flex justify-content-center align-items-center">
-              <input class="form-control mr-sm-2 "style='border: 2px solid #ffcb05' type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline " type="submit"style='color:#ffcb05'>Search</button>
+            <form action="{% url 'pokedex:poke_deck' %}" method="POST" class="form-inline gap-2 col-9 d-flex justify-content-center align-items-center">
+                <!-- <label for="search_query" class="form-label">
+                    <input type="text" id="search_query"class="form-control mr-sm-2 "style='border: 2px solid #ffcb05' type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline " type="submit"style='color:#ffcb05'>Search</button>
+
+                </label> -->
+                <div class="input-group">
+                    <input type="search" style='border: 2px solid #ffcb05' id="search" name="search" value="{{form_data.search}}" class="form-control rounded" placeholder="choose your starter pokemon" aria-label="Search" aria-describedby="search-addon" />
+                    <button type="submit" class="btn btn-outline"style='color:#ffcb05'>search</button>
+                </div>
+                {% csrf_token %}
             </form>
         </nav>
 
@@ -295,22 +315,27 @@
     </section>
 
     <section class="container-fluid ">
-        <div class="row  d-flex justify-content-center align-items-center" style="background-color:#3465ae; ">
+        <div class="row pt-5 d-flex justify-content-center align-items-center" style="background-color:#3465ae; ">
             {% for pokemon in poke_ball %}
-            <div class="card m-4 shadow-lg  d-flex justify-content-center align-items-center" id="poke_card"
+            
+            <div class="card m-4 shadow-lg  d-flex justify-content-center align-items-center" id="poke_card" name="{{pokemon.name}}"
                 style="background-color:#ffcb05; ">
-                <div class="card d-flex align-items-center " id="poke_card_in" style="background-color:#f9af38; ">
+                <div class="card gap-1 d-flex justify-content-center align-items-center " id="poke_card_in" style="background-color:#f9af38; ">
                     <h6 class="pt-2 ">
                         {{ pokemon.name.capitalize }} No. {{ pokemon.number }}
                     </h6>
                     <div class="card shadow d-flex justify-content-center align-items-center" id="poke_card_image"
                         style="background-color: #fa0303;">
 
-                        <div class="figure">
+                        <div class="figure" id="hover">
                             <img class="image-main" src="{{ pokemon.image_front }}" srcset="{{ pokemon.image_front }}"
                                 alt="Demo image 1">
                             <img class="image-hover" style="background-color:#fa0303" src="{{ pokemon.image_back }}"
                                 srcset="{{ pokemon.image_back }}">
+                            <audio id="audio" preload="auto">
+                                
+                                <source src="\static\audio\wartortle-cry.mp3"/>
+                            </audio> 
                         </div>
 
 
@@ -320,8 +345,10 @@
                     <h6 class="pt-2">Height: {{pokemon.height}} </h6>
                     <h6>Weight: {{pokemon.weight}} </h6>
                     
-                    <h6>Type:{{pokemon.types.name}} </h6>
-
+                    <h6 class="d-flex justify-content-center align-items-center">
+                        Type:{% for type in pokemon.types.all %}{{ type }}/ 
+                        {% endfor %}
+                    </h6>
                 </div>
 
             </div>
