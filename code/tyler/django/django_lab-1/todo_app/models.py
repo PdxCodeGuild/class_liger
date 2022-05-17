@@ -11,16 +11,16 @@ priority_options = {
 # Create your models here.
 
 
-# class Priority(models.Model):
-#     name = models.CharField(max_length=6, choices=priority_options)
+class Priority(models.Model):
+    name = models.CharField(max_length=6, choices=priority_options)
 
-#     def __str__(self):
-#         return self.name
+    def __str__(self):
+        return self.name
 
 
 class TodoItem(models.Model):
     text = models.CharField(max_length=300)
     created_date = models.DateTimeField(auto_now_add=True)
-    # priority = models.ForeignKey(Priority, on_delete=models.CASCADE)
+    priority = models.ForeignKey(Priority, on_delete=models.CASCADE)
     def __str__(self):
         return self.text
