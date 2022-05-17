@@ -3,6 +3,18 @@
 
 {% block content %}
 
+<!-- <div class="container">
+  <form action="{% url 'to_do_app:create' %}" method="POST">
+    
+    <label for="create">New Task</label>
+    <input id="text" type="text" name="create" />
+    
+    {%csrf_token %}
+    <button id="submit-button" type="submit">Submit</button>
+  </form>
+</div> -->
+
+
 <section class="container">
   <div class=" pt-5 pb-2">
     <div class="row d-flex justify-content-center align-items-center">
@@ -17,9 +29,20 @@
                         {% csrf_token %}
                         <input type="text" class="align-items-center form-control form-control-lg" name="create" id="text"
                           placeholder="Enter new task...">
-                         
+
+                          <!-- <select class="form-select form-select-lg mb-3" name="priority-level">
+                            <option selected style=" background-color: rgb(241, 239, 239);">Priority</option>
+                            <option value="l">Low</option>
+                            <option value="m">Medium</option>
+                            <option value="h">High</option> -->
+
+                            <!-- <div class="input-group">
+                              <span class="input-group-text">Priority</span>
+                              <input type="text" class="form-control form-control-lg" name="priority-rank" id="text"placeholder="Low, Medium, High...">
+                            </div> -->
+
                             <div class="form-group">
-            
+                              <!-- <label for="priority">Priority</label> -->
                               <select class="form-control form-control-lg mb-3" id="priority" name="priority-rank" >
                                 <option selected style="background-color: rgb(241, 239, 239);">Task Priority</option>
                                 <option value="high">High</option>
@@ -28,7 +51,11 @@
                               </select>
                             </div>
 
+                        <!-- <div class=" col-1 offset-5 mt-2"> -->
+
                           <button type="submit" value='Submit' class="btn btn-primary my-3 ps-5 pe-5 pt-2 pb-2">Add</button>
+
+                        <!-- </div> -->
                         
                       </form>
 
@@ -168,6 +195,8 @@
 
                       <button type="delete" value='Delete' class="btn btn-primary">
                       <a href="{% url 'to_do_app:delete' to_do_item.id %}" class="d-flex align-items-center"></a>Done</button>
+                      <!-- <button type="delete" value='Delete' class="btn btn-primary">Delete</button> -->
+                      <!-- <a href="{% url 'to_do_app:delete' to_do_item.id %}">Done!</a> -->
 
                       </li>
                 </ul>
