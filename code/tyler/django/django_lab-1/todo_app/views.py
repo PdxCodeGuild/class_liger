@@ -1,7 +1,6 @@
-from django.shortcuts import render
-from .models import TodoItem, models
+from django.shortcuts import render, redirect
 from django.urls import reverse
-from django.shortcuts import redirect
+from .models import TodoItem, models
 # Create your views here.
 
 
@@ -11,18 +10,15 @@ def index(request):
     context = {
         'todos': todos
     }
-    
 
     return render(request, 'index.html', context)
 
+
 def save_todo_item(request):
     form = request.POST
-    print(form)
-
-    list_item = form.get('todo-text')
-    todos = TodoItem.objects.create(text = todo_text)
-    context = {
-        'todos' : todos,
-    }
-    return redirect(reverse('todo_app:index'))
-
+    print("request post", request.POST)
+    list_item = form.get('todo_text')
+    print("TEST", list_item)
+    todos = TodoItem.objects.create(text=list_item)
+    print(todos)
+    return redirect(reverse( 'todo_app:index'))

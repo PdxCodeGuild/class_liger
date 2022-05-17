@@ -2,16 +2,12 @@
 <!-- no spaces between brackets and percent -->
 {% block content %}
 <h1>hello world</h1>
-<form action="{% url 'todo_app:index' %}" method="POST">
-  <input
-    type="text"
-    name="todo_text"
-    placeholder="What do you have to do?"
-    />
+<form action="{% url 'todo_app:save_todo_item' %}" method="post">
   {% csrf_token %}
+  <input type="text" name="todo_text" placeholder="What do you have to do?" />
   <input type="submit" value="Submit" />
 </form>
-<div class="class col-12">
+<div class="class col-12 align-content middle">
   {% for todo in todos %}
 
   <p>{{ todo }}</p>
