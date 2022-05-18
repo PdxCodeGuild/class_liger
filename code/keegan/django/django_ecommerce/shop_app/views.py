@@ -1,8 +1,19 @@
 from django.shortcuts import get_object_or_404, render, redirect
+from django.urls import reverse
 from .models import Category, Product, CartItem
 from django.db.models import Q
+from django.core.paginator import Paginator
 
 def index(request):
+
+    # define defaults for the page number and per_page value
+    default_per_page = 5
+    default_page_number = 1
+
+    # request.GET holds URL parameters provided in the url of a GET request
+    page_number = request.GET.get('page_number') or default_page_number
+    per_page = request.GET.get('per_page') or default_per_page
+
 
     products = Product.objects.all()
 
@@ -57,6 +68,10 @@ def index(request):
     products = products.order_by(order_by)
 
 
+    # create a page object with the remaining products
+    products_page = Paginator(products, per_page).get_page(page_number)
+
+
     # data for rendering the 'categories' checkboxes
     # and 'order by' select menu
     search_options = {
@@ -81,9 +96,10 @@ def index(request):
         "order_by": order_by,
     }
 
+
     context = {
         'search_options': search_options,
-        'products': products,
+        'products_page': products_page,
         'form_data': form_data
 
     }
@@ -105,3 +121,37 @@ def add_to_cart(request, product_id):
     cart_item.save()
 
     return redirect('shop_app:index')
+
+
+
+def remove_from_cart(request, cart_item_id):
+    cart_item = get_object_or_404(CartItem, id=cart_item_id)
+
+    cart_item.delete()
+
+    return redirect(
+        reverse(
+            "users_app:detail",
+            kwargs={'username': request.user.username}
+        )
+    )
+
+
+def update_cart_item(request, cart_item_id):
+    cart_item = get_object_or_404(CartItem, id=cart_item_id)
+
+    # get the new quantity from the form
+    updated_quantity = request.POST.get("quantity")
+
+    # update the quantity
+    cart_item.quantity = updated_quantity
+
+    # commit the changes to the database
+    cart_item.save()
+
+    return redirect(
+        reverse(
+            "users_app:detail",
+            kwargs={'username': request.user.username}
+        )
+    )
