@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'users_app',
+    'pics_app',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +129,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Override user model with custom user model
 AUTH_USER_MODEL = 'users_app.User'
+
+# Tell Django where to redirect for logging in
+# when using @login_required decorator
+LOGIN_URL = '/login/'
+
+
+# set the MEDIA_ROOT variable so Django knows where to upload files
+MEDIA_ROOT = 'static/'

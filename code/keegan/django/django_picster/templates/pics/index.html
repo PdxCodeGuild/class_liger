@@ -2,7 +2,15 @@
 
 {% block content %}
     
-    <h1>{{request.user}}</h1>
-    <h2>{{request.user.is_authenticated}}</h2>
+    <div class="row d-flex justify-content-center pb-5" data-masonry='{"percentPosition": true }'>
+        
+        {% for pic in pics %}
+            
+            <!-- render the card partial with the current pic data -->
+            {% include 'pics/_card.html' with pic=pic%}
+        
+        {% endfor %}
+
+    </div>
 
 {% endblock content %}

@@ -11,10 +11,18 @@ class UserForm(forms.ModelForm):
         model = User
 
         # include all the model's fields in the form
-        fields = '__all__'
+        # fields = '__all__'
+        fields = [
+            'first_name',
+            'last_name',
+            'avatar'
+        ]
 
         # customize the HTML widgets for each field
         widgets = {
+            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'avatar': forms.FileInput(attrs={'class': 'form-control'}),
             'username': forms.TextInput(attrs={'class': 'form-control'}),
             'password': forms.PasswordInput(attrs={'class': 'form-control'})
         }
