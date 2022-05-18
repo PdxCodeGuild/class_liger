@@ -33,14 +33,14 @@ if (x === 5) {
 // ======================================================================== //
 
 // Datatypes
-let a = 5 // number
-let b = 10.5 // number
-let c = 'Hello' // string
-let d = true // boolean
-let e = false // boolean
-let f = null // null - defined with no value
-let g = undefined // undefined - not yet defined
-let fruits = ['apple', 'banana', 'mango'] // Array
+let a = 5, // number
+  b = 10.5, // number
+  c = 'Hello', // string
+  d = true, // boolean
+  e = false, // boolean
+  f = null, // null - defined with no value
+  g = undefined, // undefined - not yet defined
+  fruits = ['apple', 'banana', 'mango'] // Array
 
 // console.log(fruits[0]) // apple
 
@@ -61,7 +61,6 @@ const key = 'firstName'
 // console.log(person[key]) // John
 // console.log(person.firstName) // John - access object attributes with dot notation
 // console.log(person.address.city) // Portland
-
 
 // ==========================================================================
 
@@ -106,3 +105,148 @@ fruits = ['apple', 'banana', 'mango']
 let randomIndex = Math.floor(Math.random() * fruits.length)
 // console.log(randomIndex, fruits[randomIndex])
 
+// ================================================================= //
+
+let game_on = false
+
+// python: not game_on
+// js: ! means 'not'
+// console.log(!game_on) // true
+
+// equality operators change in JS
+
+// beware of 'type coersion'
+// == vs ===
+
+// == allows type coersion
+// console.log(5 == '5') // true
+// console.log(0 == false) // true
+
+// === does not allow type coersion
+// console.log(5 === '5') // false
+// console.log(0 === false) // false
+
+// checking inequality
+a = 3
+b = 5
+// console.log(a !== b) // true
+
+// logical operators
+// and -> &&
+// console.log(a === 3 && b === 5) // true
+// or -> ||
+// console.log(a === 10 || b === 5) // true
+
+//conditionals
+let number = 7,
+  target = 10
+
+if (number < target) {
+  // insert a value into the output using string templating with backticks ``
+  // console.log(`${number} is less than ${target}`)
+}
+
+let temp = 90
+
+if (temp < 60) {
+  // console.log('cold')
+} else if (temp < 80) {
+  // console.log('warm')
+} else {
+  // console.log('hot')
+}
+
+// strings
+let string1 = 'ABCDEFG'
+
+// use an index to get a value
+// console.log(string1[1]) // B
+
+string1 = string1.concat(' ', 'HIJK')
+// console.log(string1) // ABCDEFG HIJK
+
+// find index of substring
+// console.log(string1.indexOf('CDE')) // 2
+
+// find if substring exists in string
+// console.log(string1.includes('CDE')) // true
+// console.log(string1.includes('XYZ')) // false
+
+// uppercase/lowercase
+// console.log('ABC'.toLowerCase()) // abc
+// console.log('xyz'.toUpperCase()) // XYZ
+
+// return a substring
+// console.log(string1.slice(1, 4)) // 'BCD'
+// console.log(string1.substring(1, 4)) // 'BCD'
+
+
+// Arrays
+let colors = [
+  'red',
+  'green',
+  'blue'
+]
+
+// get the value at an index
+// console.log(colors[1]) // green
+
+// change value at index
+colors[1] = 'yellow'
+// console.log(colors) // [ "red", "yellow", "blue" ]
+
+// get the length of the array
+// console.log(colors.length) // 3
+
+// add a color to the end of the array
+// colors.push('purple')
+// console.log(colors) // [ "red", "yellow", "blue", "purple" ]
+
+// .concat returns a new array with the added object at the end
+colors = colors.concat('purple')
+// console.log(colors) // [ "red", "yellow", "blue", "purple" ]
+
+
+// add a color to the beginning of the array
+colors.unshift('pink')
+// console.log(colors) // [ "pink", "red", "yellow", "blue", "purple" ]
+
+// remove element from the end of the array
+colors.pop()
+// console.log(colors) //[ "pink", "red", "yellow", "blue" ]
+
+// remove from the beginning of the array
+colors.shift()
+// console.log(colors) // [ "red", "yellow", "blue" ]
+
+// join elements into a string
+// console.log(colors.join(', ')) // red, yellow, blue
+
+// sort the array in ascending order
+// console.log(colors.sort()) // [ "blue", "red", "yellow" ]
+
+// copy arrays with the 'spread' operator (...)
+let colors2 = [...colors, 'teal', 'purple']
+// console.log(colors2) // [ "red", "yellow", "blue", "teal", "purple" ]
+// =============================================================== //
+
+// function add(a, b){
+//   return a + b
+// }
+
+// console.log(add(2, 10)) // 12
+
+
+// const add = function(a, b){
+//   return a + b
+// }
+
+
+
+// arrow functions
+// const add = (a, b) => {
+//   return a + b
+// }
+
+// the return value is implied if no curly brackets are used
+// const add = (a, b) => a + b
