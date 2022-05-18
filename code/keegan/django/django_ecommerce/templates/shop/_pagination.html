@@ -1,0 +1,48 @@
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="
+                page-item
+                {% if not products_page.has_previous %}
+                    disabled
+                {% endif %}
+            ">
+            <a class="page-link" href="?page_number=1" aria-label="First">
+                <span aria-hidden="true">&laquo; First</span>
+            </a>
+        </li>
+        <li class="
+                page-item
+                {% if not products_page.has_previous %}
+                    disabled
+                {% endif %}
+            ">
+            <a class="page-link" {% if products_page.has_previous %}
+                href="?page_number={{products_page.previous_page_number}}" {% endif %} aria-label="Previous">
+                <span aria-hidden="true">Prev</span>
+            </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">{{products_page.number}}</a></li>
+        <li class="
+                page-item
+                {% if not products_page.has_next %}
+                    disabled
+                {% endif %}
+            ">
+            <!-- build the link with an href that includes the number of the next page -->
+            <a class="page-link" {% if products_page.has_next %} href="?page_number={{products_page.next_page_number}}"
+                {% endif %} aria-label="Next">
+                <span aria-hidden="true">Next</span>
+            </a>
+        </li>
+        <li class="
+                page-item
+                {% if not products_page.has_next %}
+                    disabled
+                {% endif %}
+            ">
+            <a class="page-link" href="?page_number={{products_page.paginator.num_pages}}" aria-label="Last">
+                <span aria-hidden="true">Last &raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>

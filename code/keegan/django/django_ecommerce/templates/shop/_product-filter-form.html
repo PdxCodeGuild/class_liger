@@ -1,0 +1,90 @@
+<div class="col-12 col-md-3 pt-5">
+    <form action="{% url 'shop_app:index' %}" method="POST" class="container">
+        <div class="row">
+
+            <!-- SEARCH QUERY TEXT INPUT -->
+            <fieldset class="col-12 form-group mt-3">
+                <label for="search-query" class="form-label w-100">
+                    <h5 class="h5">Query</h5>
+                    <input type="text" id="search-query" name="search-query" value="{{form_data.search_query}}" class="form-control">
+                </label>
+            </fieldset>
+
+
+            <!-- ORDER BY SELECT MENU -->
+            <fieldset class="col-12 form-group mt-3">
+                <label for="order-by" class="w-100">
+                    <h5 class="h5">Order By</h5>
+                    <select name="order-by" id="order-by" class="form-select">
+                        <!-- LOOP THROUGH THE ORDER_BY OPTIONS AND RENDER AN OPTION TAG FOR EACH -->
+                        {% for option in search_options.order_by_options %}
+                        <!-- use conditional rendering to select the option from the form -->
+                        <option 
+                            value="{{option.value}}"
+                            {% if option.value == form_data.order_by %}
+                                selected
+                            {% endif %}
+                        >
+                            {{option.label}}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </label>
+            </fieldset>
+
+
+            <!-- CATEGORY CHECKBOXES -->
+            <fieldset class="col-12 d-flex flex-column mt-3">
+                <h5 class="h5">Categories</h5>
+                <!-- LOOP THROUGH ALL THE CATEGORES AND CREATE A CHECKBOX FOR EACH -->
+                {% for category in search_options.categories %}
+
+                <label for="category-{{category.id}}">
+                    <!-- use conditional rendering to check the boxes that are in the categories list -->
+                    <input 
+                        type="checkbox"
+                        id="category-{{category.id}}"
+                        name="categories"
+                        value="{{category}}"
+                        {% if category in form_data.categories %}
+                            checked
+                        {% endif %}
+                    />
+                    {{category|title}}
+                </label>
+                {% endfor %}
+            </fieldset>
+
+
+            <!-- MAX/MIN PRICE -->
+            <fieldset class="col-5 d-flex flex-column gap-2 mt-3">
+                <h5 class="h5">Price</h5>
+                <label for="min-price">Min
+                    <input type="number" id="min-price" name="min-price" value="{{form_data.min_price}}" class="form-control">
+                </label>
+                <label for="max-price">Max
+                    <input type="number" id="max-price" name="max-price" value="{{form_data.max_price}}" class="form-control">
+                </label>
+            </fieldset>
+            
+            
+            <!-- MAX/MIN RATING -->
+            <fieldset class="col-5 d-flex flex-column gap-2 mt-3">
+                <h5 class="h5">Rating</h5>
+                <label for="min-rating">Min
+                    <input type="number" id="min-rating" name="min-rating" value="{{form_data.min_rating}}" class="form-control">
+                </label>
+                <label for="max-rating">Max
+                    <input type="number" id="max-rating" name="max-rating" value="{{form_data.max_rating}}" class="form-control">
+                </label>
+            </fieldset>
+
+            {% csrf_token %}
+
+            <!-- SUBMIT BUTTON -->
+            <div class="col-4 offset-4 d-flex justify-content-center">
+                <button type="submit" class="btn btn-success mt-3">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

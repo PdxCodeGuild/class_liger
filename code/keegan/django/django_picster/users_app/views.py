@@ -88,11 +88,24 @@ def login(request):
         # login the authenticated user
         django_login(request, user)
 
-        return redirect('users_app:index')
+        return redirect('pics_app:index')
+
+
+@login_required
+def list_users(request):
+    # grab all the users from the database
+    users = get_user_model().objects.all()
+
+    context = {
+        'users': users
+    }
+
+    return render(request, 'users/list.html', context)
 
 
 @login_required # redirects to login page if request.user.is_authenticated is False
 def detail(request, username):
+
     # use the get_user_model function to find the current User model
     user = get_object_or_404(get_user_model(), username=username)
 
@@ -122,6 +135,14 @@ def update(request, username):
         # and the User instance to which to apply the changes
         form = UserForm(request.POST, instance=user)
 
+        # grab the uploaded image file from the HTML form
+        new_avatar = request.FILES.get('avatar')
+
+
+        # if a file was uploaded, add it to the form fields
+        if new_avatar:
+            form.initial['avatar'] = new_avatar
+
         # if the form is valid, update the user instance
         if form.is_valid():
             form.save()
@@ -136,6 +157,24 @@ def update(request, username):
             }
             return render(request, 'users/update.html', context)
 
+
+@login_required
+def follow(request, username):
+
+    # get the user from the database
+    user = get_object_or_404(get_user_model(), username=username)
+
+    # if the requesting user is not already in the list of followers
+    # add the user who made the request to the followers list
+    # of the user object from the db. If they are in the list, remove them
+    if request.user not in user.followers.all():
+        user.followers.add(request.user)
+
+    else:
+        user.followers.remove(request.user)
+
+
+    return redirect('users_app:list')
 
 def logout(request):
     django_logout(request)
