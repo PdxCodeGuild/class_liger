@@ -12,9 +12,9 @@ Weeks 1, 2, 3, 4, 5: Python
 
 Weeks 6, 7: HTML/CSS/Flask
 
-**Weeks 8, 9, 10, 11: Django**
+Weeks 8, 9, 10, 11: Django
 
-Weeks 12, 13, 14, 15: Javascript
+**Weeks 12, 13, 14, 15: Javascript**
 
 Weeks 16, 17, 18: Capstone project
 
@@ -56,7 +56,7 @@ Weeks 16, 17, 18: Capstone project
 </details>
 
 </details>
-<details open>
+<details>
   <summary>Django</summary>
 
 | Lab Number | Title                                                     | Due Date |
@@ -64,6 +64,13 @@ Weeks 16, 17, 18: Capstone project
 | 01         | <a href="3 Django/labs/01 Todo.md">To Do List</a>         | 05/09    |
 | 02         | <a href="3 Django/labs/02 Blog.md">Blog</a>               | 05/14    |
 | 03         | <a href="3 Django/labs/Pokedex/03 Pokedex.md">Pokedex</a> | 05/24    |
+
+</details>
+<details open>
+  <summary>JavaScript</summary>
+
+| Lab Number | Title                                                     | Due Date |
+| ---------- | --------------------------------------------------------- | -------- |
 
 </details>
 
@@ -240,4 +247,12 @@ Corrections will be made only to that particular branch.
     <li><a href="https://peps.python.org/pep-3333/">PEP3333 - WSGI - Web Server Gateway Interface</a></li>
     <li><a href="https://github.com/perennialAutodidact/django_guides/blob/master/custom_user_model.md">Keegan's Quick Start and User Model guide</a></li>
     </ul>
+</details>
+
+<details>
+  <summary>JavaScript</summary>
+  <ul>
+    <li><a href="https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets">JavaScript snippets for VS Code</a>
+    </li>
+
 </details>
