@@ -21,3 +21,7 @@ def profile(request):
         'message': 'Hi! Welcome to your profile.'
     }
     return render(request, 'auth/user_profile.html', context)
+
+def create(request):
+    
+    return render(request, 'auth/create.html')

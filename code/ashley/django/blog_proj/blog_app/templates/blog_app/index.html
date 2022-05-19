@@ -6,5 +6,11 @@
   </head>
   <body>
     <h1>{{ message }}</h1>
+    <form action="{% url 'blog_post:BlogPost' %}" method="post">
+      {% csrf_token %}
+      <input type="text" name="first_name"/>
+      <input type="text" name="last_name"/>
+      <button type="submit">save</button>
+    </form>
   </body>
 </html>
