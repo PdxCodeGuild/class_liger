@@ -13,7 +13,7 @@ def poke_deck(request):
     poke_ball = Pokemon.objects.all()
     poke_balls = ''
 
-    search = request.POST.get('search')
+    search = request.POST.get('search') or ''
 
     poketype = request.POST.getlist('poketype')
 
