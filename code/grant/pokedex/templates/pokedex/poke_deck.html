@@ -288,11 +288,14 @@
                     
                     
             </div>
-                {% endfor %}
-                <div class="input-group">
-                    <input type="search" style='border: 2px solid #ffcb05' id="search" name="search" value="{{pokemon.name}}" class="form-control rounded" placeholder="choose your starter pokemon" aria-label="Search" aria-describedby="search-addon" />
-                    <button type="submit" class="btn btn-outline"style='color:#ffcb05'>search</button>
-                </div>
+            {% endfor %}
+            <div class="input-group px-5 col-8 pt-3 pb-4 d-flex justify-content-center align-items-center">
+                <input type="search" style='border: 2px solid #ffcb05' id="search" name="search" value="{{pokemon.name}}" class="form-control rounded" placeholder="choose your starter pokemon" aria-label="Search" aria-describedby="search-addon" />
+                <button type="submit" class="btn btn-outline"style='color:#ffcb05'>search</button>
+            </div>
+            
+
+            
                 {% csrf_token %}
         </form>
 

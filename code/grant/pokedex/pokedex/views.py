@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from pokedex.models import PokemonType, Pokemon
 
@@ -47,18 +47,5 @@ def poke_deck(request):
         'pokemon_types': PokemonType.objects.all(),
         'poke_balls':poke_balls
     }
-
-
-
-        
-
-
-
-
-    # default_per_page = 10
-    # default_page_number = 1
-
-    # page_number = request.GET.get('page_number') or default_page_number
-    # per_page = request.GET.get('per_page') or default_per_page
 
     return render(request, 'pokedex/poke_deck.html', context)
