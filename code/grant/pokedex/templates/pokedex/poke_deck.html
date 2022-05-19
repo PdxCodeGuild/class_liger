@@ -275,38 +275,79 @@
 
     </section>
     <section class="container-fluid d-flex justify-content-center align-items-center" id="" style="border-bottom: 4px solid #ffcb05; font-family:fontname;">
-        <div class="pt-4 row bg-dark"style="font-family:fontname;" >
-            {% for t in pokemon_types %}
-            <div class=" col-3 d-flex justify-content-center align-items-center bg-dark text-light" style="font-family:fontname;">
-                <div class="form-check pt-4">
-                <input class="form-check-input " type="checkbox" value="" id="defaultCheck1" checked style="font-family:fontname;">
-                <label class="form-check-label " for="defaultCheck1"  style="font-family:fontname;">
-                    {{t.name.capitalize }}
-                </label>
+        <form action="{% url 'pokedex:poke_deck' %}" method="POST">
+            <div class="pt-4 row bg-dark"style="font-family:fontname;" >
+                    {% for t in pokemon_types %}
+                    <div class=" col-3 d-flex justify-content-center align-items-center bg-dark text-light" style="font-family:fontname;">
+                        <div class="form-check pt-4">
+                        <input type="checkbox" class="form-check-input "  value="{{t.name}}" id="poketype" name="poketype"  style="font-family:fontname;">
+                        <label class="form-check-label " for="poketype" value="{{t.name}}" id="poketype" name="poketype"  style="font-family:fontname;">
+                            {{t.name.capitalize }}
+                        </label>
+                    </div>
+                    
+                    
             </div>
-        </div>
-        {% endfor %}
-
-        <nav class=" col-9 navbar navbar-light bg-dark pt-3 pb-3 d-flex justify-content-center align-items-center">
-            <form action="{% url 'pokedex:poke_deck' %}" method="POST" class="form-inline gap-2 col-9 d-flex justify-content-center align-items-center">
-                <!-- <label for="search_query" class="form-label">
-                    <input type="text" id="search_query"class="form-control mr-sm-2 "style='border: 2px solid #ffcb05' type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline " type="submit"style='color:#ffcb05'>Search</button>
-
-                </label> -->
+                {% endfor %}
                 <div class="input-group">
                     <input type="search" style='border: 2px solid #ffcb05' id="search" name="search" value="{{pokemon.name}}" class="form-control rounded" placeholder="choose your starter pokemon" aria-label="Search" aria-describedby="search-addon" />
                     <button type="submit" class="btn btn-outline"style='color:#ffcb05'>search</button>
                 </div>
                 {% csrf_token %}
-            </form>
-        </nav>
+        </form>
 
 
     </section>
 
     <section class="container-fluid ">
         <div class="row pt-5 d-flex justify-content-center align-items-center" style="background-color:#3465ae; ">
+            {% if poke_balls %}
+            <div class="card m-4 shadow-lg  d-flex justify-content-center align-items-center" id="poke_card" name="{{poke_balls.name}}"
+                style="background-color:#ffcb05; ">
+                <div class="card gap-1 d-flex justify-content-center align-items-center " id="poke_card_in" style="background-color:#f9af38; ">
+                    <h6 class="pt-2 ">
+                        {{ poke_balls.name.capitalize }} No. {{ poke_balls.number }}
+                    </h6>
+                    <div class="card shadow d-flex justify-content-center align-items-center" id="poke_card_image"
+                        style="background-color: #fa0303;">
+
+                        <div class="figure" id="hover">
+                            <img class="image-main" src="{{ poke_balls.image_front }}" srcset="{{ poke_balls.image_front }}"
+                                alt="Demo image 1">
+                            <img class="image-hover" style="background-color:#fa0303" src="{{ poke_balls.image_back }}"
+                                srcset="{{ poke_balls.image_back }}">
+
+                            <!-- <script>
+                                var audio = $("#audio");
+                            $("#hover").mouseenter(function() {
+                            audio.play();
+                            });
+                            $("#hover").mouseleave(function() {
+                            audio.pause();
+                            }); -->
+                        
+                            <!-- </script> -->
+                            <audio id="audio" autoplay preload="auto">
+                                <source src="\static\audio\{{ poke_balls.name }}-cry.ogg"/>
+                                <source src="\static\audio\{{ poke_balls.name }}-cry.mp3"/>
+                            </audio> 
+                        </div>
+
+
+
+
+                    </div>
+                    <h6 class="pt-2">Height: {{poke_balls.height}} </h6>
+                    <h6>Weight: {{poke_balls.weight}} </h6>
+                    
+                    <h6 class="d-flex justify-content-center align-items-center">
+                        Type:{% for type in poke_balls.types.all %}{{ type }}/ 
+                        {% endfor %}
+                    </h6>
+                </div>
+
+            {% else %}
+
             {% for pokemon in poke_ball %}
             
             <div class="card m-4 shadow-lg  d-flex justify-content-center align-items-center" id="poke_card" name="{{pokemon.name}}"
@@ -325,7 +366,7 @@
                                 srcset="{{ pokemon.image_back }}">
 
                             <!-- <script>
-                                var audio = $("#audio")[0];
+                                var audio = $("#audio");
                             $("#hover").mouseenter(function() {
                             audio.play();
                             });
@@ -333,7 +374,7 @@
                             audio.pause();
                             }); -->
                         
-                            </script>
+                            <!-- </script> -->
                             <audio id="audio" autoplay preload="auto">
                                 <source src="\static\audio\{{ pokemon.name }}-cry.ogg"/>
                                 <source src="\static\audio\{{ pokemon.name }}-cry.mp3"/>
@@ -355,6 +396,7 @@
 
             </div>
             {% endfor %}
+            {% endif %}
 
 
 

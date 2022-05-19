@@ -11,22 +11,48 @@ from django.db.models import Q
 def poke_deck(request):
 
     poke_ball = Pokemon.objects.all()
+    poke_balls = ''
 
-    form = request.POST
+    search = request.POST.get('search')
 
-    search = form.get('search') or ''
+    poketype = request.POST.getlist('poketype')
+
+    print(f'poketype={poketype}')
+
+    if poketype:
+
+        for type in poketype:
+
+            poke_ball = poke_ball.filter(
+
+            types__name=type
+            
+            )
 
     if search:
-        
+
         poke_ball = poke_ball.filter(
-            Q(name__icontains=search) 
-        )
+
+            Q(name__icontains=search)
+        ) 
+    print(f"pokeball={poke_ball}")
+
+    if search.isdigit():
+
+        poke_balls = Pokemon.objects.get(number=search)
+     
 
     context = {
         'poke_ball':poke_ball,
         'pokemon_types': PokemonType.objects.all(),
-        'form':form,
+        'poke_balls':poke_balls
     }
+
+
+
+        
+
+
 
 
     # default_per_page = 10
