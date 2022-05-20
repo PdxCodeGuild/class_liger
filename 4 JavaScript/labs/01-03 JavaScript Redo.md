@@ -2,7 +2,7 @@
 
 ## Version 1
 
-Pick a Python lab and re-do it in JavaScript. You should first try to write them using JavaScript's `prompt` and `alert` in place of Python's `input` and `print`.
+Pick three (3) of the following Python labs and re-do them in JavaScript. You should first try to write them using JavaScript's `prompt` and `alert` in place of Python's `input` and `print`.
 
 - Random Password Generator
 - Rock, Paper, Scissors

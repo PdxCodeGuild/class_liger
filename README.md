@@ -69,8 +69,9 @@ Weeks 16, 17, 18: Capstone project
 <details open>
   <summary>JavaScript</summary>
 
-| Lab Number | Title                                                     | Due Date |
-| ---------- | --------------------------------------------------------- | -------- |
+| Lab Number      | Title                                                     | Due Date |
+| --------------- | --------------------------------------------------------- | -------- |
+| 01 - 03         | <a href="4 JavaScript\labs\01-03 JavaScript Redo.md"></a> | 06/02    |
 
 </details>
 
