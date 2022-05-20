@@ -156,6 +156,44 @@ if (temp < 60) {
   // console.log('hot')
 }
 
+
+
+// switch statements
+let choice = 'no'
+switch(choice){
+  case 'yes':
+    // console.log('You chose yes!')
+    break
+
+  case 'no':
+    // console.log('You chose no!')
+    break
+
+  default:
+    // console.log('invalid selection!')
+}
+
+
+// ternary if statements
+// if condition ? do this : (else) do this
+let q = 8
+let result = q % 2 === 0 ? 'even' : 'odd'
+// console.log(result)
+
+const data = {
+  'username': 'user1'
+}
+
+const username = data.username
+// if the value for password doesn't exist, provide a default
+const password = data.password ? data.password : 'defaultPassword'
+
+// console.log(username, password)
+
+q = null
+result = q ? q : 10
+// console.log(result) // 10
+
 // strings
 let string1 = 'ABCDEFG'
 
@@ -250,3 +288,147 @@ let colors2 = [...colors, 'teal', 'purple']
 
 // the return value is implied if no curly brackets are used
 // const add = (a, b) => a + b
+
+
+// ============================================== //
+
+// LOOPS
+
+// while loop
+let i = 0
+while (i < 10){
+  i++
+  // console.log(i)
+}
+
+
+// for loops
+// for(initialization; condition; increment){}
+for(let j = 0; j < 10; j++){
+  // console.log(j)
+}
+
+// count down from 10->1
+for(let k = 10; k > 0; k--){
+  // console.log(k)
+}
+
+// iterate over a string or array
+
+const string = 'ABCDEFG'
+i = 0
+while(i < string.length){
+  // console.log(string[i])
+  i++
+}
+
+for (j = 0; j < string.length; j++){
+  // console.log(string[j])
+}
+
+// get a NodeList of all the divs with the class 'box'
+let boxes = document.querySelectorAll('.box')
+let boxArray = Array.from(boxes)
+
+// console.log(boxes)                   // [ div.box, div.box, div.box, div.box, div.box, div.box, div.box, div.box, div.box, div.box ]
+// console.log(Array.isArray(boxes))    // false
+// console.log(boxArray)                // [ div.box, div.box, div.box, div.box, div.box, div.box, div.box, div.box, div.box, div.box ]
+// console.log(Array.isArray(boxArray)) // true
+
+// loop through the box divs and size each
+// based on its position in the array
+for(k = 0; k<boxes.length; k++){
+  let box = boxes[k]
+
+  box.style.height = `${10 * k}px`
+  box.style.width = `${10 * k}px`
+  box.style.backgroundColor = 'black'
+  box.style.margin = '10px'
+}
+
+
+// for-in will iterate over the indices of the sequence
+for(i in string) {
+  // console.log(i, string[i])
+}
+
+// for-of will iterate over the elements in the sequence
+for(let char of string){
+  // console.log(char, string.indexOf(char))
+}
+
+
+// Array methods .forEach, .map, .filter, .reduce
+
+// Array.forEach() will loop through the array
+// and call the callback function with each element
+
+let numbers = [1,2,3,4,5,6,7,8,9]
+let squares = []
+
+result = numbers.forEach((number)=>{
+  squares.push(number ** 2)
+})
+
+// console.log(result) // undefined
+// console.log(squares) // [ 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
+
+
+// .map() calls the callback function with each element and 
+// returns from the callback the new value for the element
+squares = numbers.map((number)=>{
+  return number ** 2
+})
+
+// console.log(squares) //  [ 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
+
+// use the spread operator to place all the characters in an array
+let letters = [...string]
+// console.log(letters) // [ "A", "B", "C", "D", "E", "F", "G" ]
+
+letters = letters.map(letter=>{
+  return letter + letter
+})
+// console.log(letters) // [ "AA", "BB", "CC", "DD", "EE", "FF", "GG" ]
+
+letters = letters.join('')
+// console.log(letters) // AABBCCDDEEFFGG
+
+
+// .filter() calls the callback function with each element and 
+// returns from the callback a boolean indicating if the element is to be kept or not
+
+numbers = [ 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
+// numbers = numbers.filter((number)=>{
+//   evenOrOdd = number % 2
+
+//   if(evenOrOdd === 0){
+//     return true
+//   } else {
+//     return false
+//   }
+// })
+
+// use the arrow function's intrinsic return value 
+// to return the boolean that's the result of the modulus comparison
+const evens = numbers.filter(number => number % 2 === 0)
+const odds = numbers.filter((number) => number % 2 === 1)
+
+
+// console.log(evens, odds)
+
+// .reduce() - combine the elements in the array based on a condition
+const sum = numbers.reduce((previousValue, currentValue,)=>{
+  // console.log(previousValue, currentValue)
+  return previousValue + currentValue
+})
+
+// console.log(sum) // 285
+
+numbers.map((number,index,arr)=>{
+  // console.log(number)
+  // console.log(index)
+  // console.log(arr)
+  // console.log()
+})
+
