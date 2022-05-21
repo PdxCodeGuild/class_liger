@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&family=Varela+Round&display=swap');
+@import './async-demo-1.css';
 
 * {
     font-family: 'Questrial', sans-serif;
@@ -10,7 +11,7 @@ nav ul {
     list-style: none;
 }
 
-h1 {
+h1, h4 {
     text-align: center;
 }
 
