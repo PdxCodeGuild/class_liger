@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="border-bottom:4px solid #b0c3ce;  ">
+    <div class="container-fluid">
+        <a href="{% url 'java_redo_app:base' %}" class="navbar-brand ">
+            svg goes here
+         </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbutton">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse mx-3 d-flex justify-content-end" id="navbutton">
+            <ul class="navbar-nav gap-3 ">
+                
+                <li class="nav-item  ">
+                    <a href="{% url 'java_redo_app:pw' %}" class="nav-link" style="font-weight:bold"id="navtag">PW GENERATOR</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="{% url 'java_redo_app:uc' %}"  class="nav-link " style="font-weight:bold"id="navtag">UNIT CONVERTER</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="{% url 'java_redo_app:cc' %}"  class="nav-link " style="font-weight:bold"id="navtag">CC VALIDATION</a>
+                </li>                
+            </ul>
+            
+        </div>
+        
+    </div>   
+</nav> 

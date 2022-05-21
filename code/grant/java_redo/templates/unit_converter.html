@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="container-fluid">
+    <div class="row py-4 d-flex justify-content-center align-items-center">
+        <div class="col-6 card pt-4 pb-3 gap-3 bg-dark text-light">
+            <h3 class=" d-flex justify-content-center align-items-center">Unit Conversion</h3>
+            <input type="text" id='number' placeholder='enter a number'/>
+            <div class="form-group">
+                <label class="pb-2" for="exampleFormControlSelect1">Unit Of Measurement</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option id="metres">Metres(m)</option>
+                    <option id="feet">Feet(ft)</option>
+                    <option id="miles">Miles(mi)</option>
+                    <option id="kilos">Kilometres(km)</option>
+                </select>
+            </div>
+            <button class="btn btn-outline text-light p-0" id="convert">Convert</button>
+            <div class="d-flex justify-content-center align-items-center">
+                <h6 class="text-light" id="converted_num"></h6>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
+
+<script src="{% static 'js/unit_converter.js' %}"></script>
+{% endblock content %}

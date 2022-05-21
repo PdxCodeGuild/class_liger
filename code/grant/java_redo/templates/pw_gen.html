@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<section class="container">
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-8 py-5 px-5">
+            <div class="card gap-4 p-5 bg-dark text-light d-flex justify-content-center align-items-center">
+                <input class="" type="text" id="len_pw"placeholder='Password Length'/>
+                <button class="btn btn-outline pl-3 text-light" id="gen">Generate Password</button>
+                <span class='pb-4'id="new_ps"></span>
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+</section>
+<script src="{% static 'js/pw_gen.js' %}"></script>
+{% endblock content %}
