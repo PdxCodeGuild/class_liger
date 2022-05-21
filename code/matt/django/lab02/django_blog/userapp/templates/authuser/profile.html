@@ -1,0 +1,50 @@
+
+{% extends "layout/base.html" %} 
+
+{% block content %}
+
+<div class="p-2 text-center bg-light">
+  <h1 class="mb-3 display-2">{{user.username}}'s Blog</h1>
+</div>
+
+<div class="container">
+{% comment %} 
+  {% for blogposts in blogpost %}
+  {% if blogpost.title is not None %} {% endcomment %}
+    <section class="text-center">
+      <h3 class="my-4 justify-content-center">
+        <strong>{{user.username}}'s Posts</strong>
+        <div>
+          {% include 'layout/create_blog_form.html' %}
+        </div>  
+      
+      </h3>
+      <div class="row d-flex justify-content-center">
+    {% for blogpost in blogposts %}
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card mt-4 shadow">
+            <div class="card-body">
+              <h5 class="card-title bg-primary text-light">{{blogpost.title|title}}</h5>
+              <p ><b> Posted:</b> {{blogpost.date_created}}</p>
+              <p ><b>Updated:</b> {{blogpost.date_edited}}</p>
+              <p class="card-text">{{blogpost.body|truncatewords:10}}</p>
+              <a href="#!" class="btn btn-primary">Read More</a>
+              <a href="{% url 'blog_posts_app:delete' blogpost.id %}"> <button type="delete" value='Delete' class="btn btn-danger">Delete</button>
+              </a>
+             
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+  {% comment %} {% endif %}  {% endcomment %}
+
+
+  {% comment %} <div>
+    {% include 'layout/create_blog_form.html' %}
+  </div>   {% endcomment %}
+
+</div>
+
+{% endblock content %}

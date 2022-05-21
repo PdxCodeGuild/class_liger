@@ -1,0 +1,43 @@
+
+{% extends "layout/base.html" %}
+
+
+{% block content %}
+
+<div class="p-2 text-center bg-light">
+  <h1 class="mb-3 display-2">{{user.username}}'s BLOG</h1>
+</div>
+
+<div class="container">
+  <section >
+    <h3 class="my-4 text-center"><strong>Document your adventure here</strong></h3>
+
+      <form action="{% url 'blog_posts_app:create' %}" method="post" class="d-flex flex-column align-items-center gap-3">
+
+        <fieldset class="form-group col-lg-6 col-md-12 mb-4">
+
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="title" class="form-control" id="text" placeholder="The title ...">
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group col-lg-6 col-md-12 mb-4">
+          <div class="mb-3">
+            <label for="body" class="form-label">Type here</label>
+            <textarea type="text" name="body" class="form-control" id="body" rows="5" placeholder="Your post here ..."></textarea>
+          </div>
+        </fieldset>
+        
+        {% csrf_token %}
+
+        <button type="submit" value="create" class="btn btn-success">
+          {% comment %} <a href=""> </a> {% endcomment %}
+          Post
+        </button>
+
+      </form>
+    </section>
+  </div>
+
+{% endblock content %}

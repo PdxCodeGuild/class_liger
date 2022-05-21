@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "blogapp",
+    "userapp",
+    "blog_posts_app",
 ]
 
 MIDDLEWARE = [
@@ -117,11 +118,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = "static/"
-STATICFILES_DIRS = [BASE_DIR / "blogapp" / "static"]
+STATICFILES_DIRS = [BASE_DIR / "userapp" / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-AUTH_USER_MODEL = "blogapp.User"
+AUTH_USER_MODEL = "userapp.User"

@@ -1,0 +1,8 @@
+
+   {% comment %} <a value="create" href="{% url 'blogapp:create' %}">Create Post</a>  {% endcomment %}
+   <form action="{% url 'blog_posts_app:create' %}">
+     {% csrf_token %}
+     <button type="create" value="create" class="btn btn-success">
+       Create Post
+     </button>
+   </form>

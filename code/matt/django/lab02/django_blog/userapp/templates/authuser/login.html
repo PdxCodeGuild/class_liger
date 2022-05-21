@@ -6,7 +6,7 @@
     </div>
     <div class="row my-5">
       <div class="d-flex justify-content-center">
-        <form action="{% url 'blogapp:login' %}" method="POST">
+        <form action="{% url 'userapp:login' %}" method="POST">
           <div class="mb-3">
             <label for="username" class="form-label"><b>Username</b></label>
             <input
@@ -16,11 +16,6 @@
               id="username"
               aria-describedby="username"
             />
-            {% comment %}
-            <div id="emailHelp" class="form-text">
-              We'll never share your email with anyone else.
-            </div>
-            {% endcomment %}
           </div>
           <div class="mb-3">
             <label for="password" class="form-label"><b>Password</b></label>
@@ -31,14 +26,7 @@
               id="password"
             />
           </div>
-          {% comment %}
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-            <label class="form-check-label" for="exampleCheck1"
-              >Check me out</label
-            >
-          </div>
-          {% endcomment %} {% csrf_token %}
+           {% csrf_token %}
           <button type="submit" id="submit" value="login" class="btn btn-primary">
             Log In
           </button>
@@ -46,7 +34,7 @@
       </div>
 
       <span class="my-2 text-center">
-        Need to sign up? <a href="{% url 'blogapp:register' %}">Register</a>
+        Need to sign up? <a href="{% url 'userapp:register' %}">Register</a>
       </span>
     </div>
   </div>

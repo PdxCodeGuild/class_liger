@@ -6,7 +6,7 @@
   </div>
   <div class="row my-5">
     <div class="d-flex justify-content-center">
-      <form action="{% url 'blogapp:register' %}" method="POST">
+      <form action="{% url 'userapp:register' %}" method="POST">
         <div class="mb-3">
           <label for="username" class="form-label"><b>Username</b></label>
           <input
@@ -31,14 +31,8 @@
             id="password"
           />
         </div>
-        {% comment %}
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1"
-            >Check me out</label
-          >
-        </div>
-        {% endcomment %} {% csrf_token %}
+
+        {% csrf_token %}
         <button
           type="submit"
           id="submit"
@@ -49,7 +43,7 @@
         </button>
       </form>
     </div>
-    <span class="my-5 text-center">Need to sign in? <a href="{% url 'blogapp:login' %}">Log In</a> </span>
+    <span class="my-5 text-center">Need to sign in? <a href="{% url 'userapp:login' %}">Log In</a> </span>
   </div>
 </div>
 
