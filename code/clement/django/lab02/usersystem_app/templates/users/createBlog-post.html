@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Create_Post</title>
+</head>
+
+<body>
+    <form action="{% url 'blog_app:create' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="myfield" />
+        <button type="create btn btn-danger">create</button>
+    </form>
+</body>
+
+</html>
