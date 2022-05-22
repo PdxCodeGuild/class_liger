@@ -3,16 +3,15 @@
 {% load static %}
 
 {% block content %}
-<section class="container">
-    <div class="row d-flex justify-content-center align-items-center">
-        <div class="col-8 py-5 ">
-            <div class="card gap-4 p-5 bg-dark text-light d-flex justify-content-center align-items-center">
-                <h3 class="d-flex justify-content-center align-items-center">Card Validation</h3>
-                <input class="" type="text" id="card_number"placeholder='16 Digit Card Number'/>
-                <button class="btn btn-outline pl-3 text-light" id="validate">Validate</button>
-                <span class='pb-4'id="is_valid"></span>
+<section class="container-fluid" style="background-color:#f682b6">
+    <div class="row py-4 d-flex justify-content-center align-items-center">
+        <div class="col-8 card pt-4 pb-3 gap-3 bg-dark text-light">
 
-            </div>
+            <h3 class="d-flex justify-content-center align-items-center text-light">Card Validation</h3>
+            <input class="" type="text" id="card_number" placeholder='16 Digit Card Number' />
+            <button class="btn btn-outline pl-3 text-light" id="validate">Validate</button>
+            <span class='pb-4' id="is_valid"></span>
+
 
 
         </div>
