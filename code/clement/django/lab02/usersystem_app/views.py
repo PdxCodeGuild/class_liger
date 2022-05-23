@@ -8,8 +8,10 @@ from django.contrib.auth import (
 )
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+
 from .models import Usersystem
 from django.http import HttpResponse
+
 
 # Create your views here.
 def register(request):
@@ -73,15 +75,15 @@ def profile(request):
     return render(request, 'users/profile.html')
 
 
-
-
-
-def create_post(request):
+def create(request):
     form = request.POST
-    post = form.get('blogpost')
+    # post_text = form.get('blogpost-text')
 
-    new_usersystem = Usersystem.objects.create(
-
-
+    new_blogpost = Usersystem.objects.create(
+        user= request.usersystem
+       
     )
-
+    context = {
+        'blogpost': new_blogpost,
+    }
+    return render (request, 'users/createBlog_post.html', context)
