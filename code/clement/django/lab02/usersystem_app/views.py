@@ -80,7 +80,7 @@ def create(request):
     # post_text = form.get('blogpost-text')
 
     new_blogpost = Usersystem.objects.create(
-        user= request.usersystem
+        user= request.user
        
     )
     context = {
