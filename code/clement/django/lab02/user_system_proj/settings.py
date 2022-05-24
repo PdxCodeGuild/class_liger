@@ -129,5 +129,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Overriding the old/defult user model. 
 AUTH_USER_MODEL = 'usersystem_app.Usersystem'
 
+
 # Django will redirect when @login_required decorator is needed
 LOGIN_URL = '/login/'

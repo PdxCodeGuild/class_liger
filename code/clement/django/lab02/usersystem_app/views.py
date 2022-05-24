@@ -75,15 +75,4 @@ def profile(request):
     return render(request, 'users/profile.html')
 
 
-def create(request):
-    form = request.POST
-    # post_text = form.get('blogpost-text')
-
-    new_blogpost = Usersystem.objects.create(
-        user= request.user
-       
-    )
-    context = {
-        'blogpost': new_blogpost,
-    }
-    return render (request, 'users/createBlog_post.html', context)
+#

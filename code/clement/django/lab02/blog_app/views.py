@@ -1,31 +1,34 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
-from .models import Usersystem
+
+
+from .models import Usersystem, BlogPost
 
 # Create your views here.
+@login_required
+def profile(request):
+
+    return render(request, 'users/profile.html')
 
 def create(request):
-    form = request.POST
-    # post_text = form.get('blogpost-text')
+    if request.method == 'POST':
+        form = request.POST
+        blogpost_title = form.get('blogpost_title')
+        blogpost_body = form.get('blogpost_body')
+        print(request.user)
 
-    new_blogpost = Usersystem.objects.create(
-        user= request.user
-       
-    )
-    context = {
-        'blogpost': new_blogpost,
-    }
-    return render (request, 'users/createBlog_post.html', context)
+        new_blogpost = BlogPost.objects.create(
+            user=request.user,
+            title=blogpost_title,
+            body = blogpost_body
 
-def create(request):
-    form = request.POST
-    # post_text = form.get('blogpost-text')
+        )
+        context = {
+            'blogpost': new_blogpost,
+        }
+        return redirect(request, 'createBlog-post.html', context)
 
-    new_blogpost = Usersystem.objects.create(
-        user= request.user
-       
-    )
-    context = {
-        'blogpost': new_blogpost,
-    }
-    return render (request, 'users/createBlog_post.html', context)
+    else:
+        return render(request, 'createBlog-post.html')

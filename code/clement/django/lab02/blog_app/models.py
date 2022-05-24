@@ -11,6 +11,7 @@ class BlogPost(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_edited = models.DateTimeField(auto_now=True)
     public = models.BooleanField(max_length=200, default=True)
+    
 
     def __str__(self):
         return self.title

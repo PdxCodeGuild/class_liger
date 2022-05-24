@@ -6,15 +6,15 @@
 <h1>Register Here</h1>
 
 <form action="{% url 'usersystem_app:register' %}" method="POST">
-    <label for="username" class="mt-2 mb-2">Username</label>
+    <label for="username" class="mt-2 mb-2 fw-bold lead">Username</label>
     <input type="text" name="username" id="username">
-    <label for="password" class="mt-2 mb-2">Password</label>
+    <label for="password" class="mt-2 mb-2 fw-bold lead">Password</label>
     <input type="password" name="password" id="password">
 
     {%csrf_token%}
         
    
-    <input type="submit" id="submit" value="Register" class="btn btn-success mt-3">
+    <input type="submit" id="submit" value="Register" class="btn btn-success mt-3 fw-bold">
 </form>
 
 
