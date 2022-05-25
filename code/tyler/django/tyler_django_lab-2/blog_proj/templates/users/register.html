@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
 <h1>Register</h1>
-<form action="{% url 'users_app:users/register' %}" method="POST">
+<form action="{% url 'users_app:register' %}" method="POST">
   <label for="username">Username</label>
   <input type="text" name="username" id="username" />
 

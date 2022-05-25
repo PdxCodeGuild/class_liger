@@ -3,6 +3,8 @@ from django.urls import reverse
 from django.contrib.auth import (
     authenticate, login as django_login, logout as django_logout)
 from django.contrib import messages
+
+from blog_app.models import BlogPost
 from .models import CustomUser
 from django.contrib.auth.decorators import login_required
 
@@ -15,13 +17,13 @@ def register(request):
     elif request.method == 'POST':
         form = request.POST
         username = form.get('username')
-        password = form.get('Password')
+        password = form.get('password')
         new_user = CustomUser.objects.create_user(
             username=username,
             password=password
         )
 
-        return render(request, 'users/login.html')
+        return render(request, 'users/profile.html')
 
 
 def login(request):
@@ -32,6 +34,7 @@ def login(request):
         username = form.get('username')
         password = form.get('password')
         user = authenticate(request, username=username, password=password)
+        print(user)
         if user is not None:
             django_login(request, user)
             messages.success(request, 'Welcome!')
@@ -44,4 +47,14 @@ def login(request):
 
 @login_required
 def profile(request):
-    return render(request, 'users/profile.html')
+    messages.success(request, 'Welcome!')
+    post = BlogPost.objects.filter(user=request.user)
+    context = {
+        'posts': post
+    }
+    return render(request, 'users/profile.html', context)
+
+
+def logout(request):
+    django_logout(request)
+    return render(request, 'users/login.html')

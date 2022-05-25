@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+<div class="d-flex col-12 justify-content-center">
+  <div class="card">
+    <form action="{%url 'blog_app:create_post'%}" method="POST">
+      <label for="blog_title">Title</label>
+      <input type="text" name="blog_title" id="blog_title" />
+      <br />
+      <label for="blog_body">Body</label>
+      <input type="text" name="blog_body" id="blog_body" />
+      <input type="Submit" value="Post" />
+      {% csrf_token %}
+    </form>
+  </div>
+</div>
+{% endblock content %}

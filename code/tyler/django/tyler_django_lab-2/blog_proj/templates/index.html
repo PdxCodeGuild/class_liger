@@ -2,10 +2,24 @@
 
 <h1>Hello World!</h1>
 
-
-
-
-
-
-
+<form action="{%url 'blog_app:write_post' %}" method="link">
+  <a href="http://127.0.0.1:8000/blog/create_post.html/">
+    {% csrf_token %}
+    <button>Make a post</button>
+  </a>
+</form>
+<br />
+<form action="{%url 'users_app:profile' %}" method="link">
+  <a href="http://127.0.0.1:8000/users/profile.html/">
+    {% csrf_token %}
+    <button>My Profile</button>
+  </a>
+</form>
+<button>
+  <a href="{%url 'users_app:login' %}"> login </a>
+</button>
+<br />
+<button>
+  <a href="{% url 'users_app:register' %}"> register for an account </a>
+</button>
 {% endblock content %}

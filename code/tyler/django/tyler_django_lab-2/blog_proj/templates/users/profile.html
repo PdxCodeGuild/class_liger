@@ -1,5 +1,31 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Profile</h1>
+<form action="{%url 'blog_app:write_post' %}" method="link">
+  <a href="http://127.0.0.1:8000/blog/create_post.html/">
+    {% csrf_token %}
+    <button>Make a post</button>
+  </a>
+</form>
+<div class="container">
+  <div class="row">
+    <h1>Profile</h1>
 
+    <div
+      class="d-flex flex-column col-12 col-lg-6 offset-lg-3"
+      style="height: 50vh"
+    >
+      <div class="row">
+        {% for post in posts %}
+        <div class="card h-auto col-12 mx-auto justify-content-center">
+          <h1>{{ post.title }}</h1>
+          <br />
+          <p>{{ post.body }}</p>
+          <cite>{{post.user}}</cite>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <a href="{%url 'users_app:logout' %}"> logout </a>
+  </div>
+</div>
 {% endblock content %}
