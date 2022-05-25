@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+from django.http import JsonResponse # to return JSON in an HTTP response
 
 from .models import Pic
 
@@ -89,6 +90,7 @@ def update(request, pic_id):
 
 @login_required
 def like(request, pic_id):
+
     # get the pic from the database
     pic = get_object_or_404(Pic, id=pic_id)
 
@@ -98,8 +100,18 @@ def like(request, pic_id):
     else:
         pic.likes.remove(request.user)
 
+    # return JSON data with the pic id and a boolean indicating if the 
+    # requesting user is in the list of likes for the pic
+    return JsonResponse({
+        # boolean indicating if the requesting user is in the list of likes
+        'isLiked': request.user in pic.likes.all(),
+        # number of users that have liked the pic
+        'likeCount': pic.likes.count()
+    })
 
-    return redirect('pics_app:index')
+
+    # if using django to submit the request:
+    # return redirect('pics_app:index')
 
 
 def delete(request, pic_id):

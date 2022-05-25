@@ -39,21 +39,23 @@
 
             <div class="d-flex gap-2">
                 Likes: 
-                <span id="like-count">{{ pic.likes.all.count }}</span>
+                <span id="like-count-{{pic.id}}">{{ pic.likes.all.count }}</span>
                 
                 <!-- the heart icon will call the like view with the pic id -->
-                <a href="{% url 'pics_app:like' pic.id %}" class="link-secondary text-decoration-none">
+                <span
+                  class="link-secondary text-decoration-none"
+                >
                     
                     <!-- if the logged in user is in the list of 
                         users that has liked the post, fill in the heart icon -->
                     {% if request.user in pic.likes.all %}
-                    <i class="bi bi-heart-fill text-danger"></i>
+                    <i class="like bi bi-heart-fill text-danger" id="like-{{pic.id}}"></i>
                     {% else %}
-                    <i class="bi bi-heart"></i>
+                    <i class="like bi bi-heart" id="like-{{pic.id}}"></i>
                         
                     {% endif %}
                     
-                </a>
+                    </span>
 
                 <a href="" class="link-secondary text-decoration-none">
                     <i class="bi bi-arrow-right"></i>
