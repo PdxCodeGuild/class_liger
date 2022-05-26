@@ -8,3 +8,10 @@ def events_demo_1(request):
 
 def events_demo_2(request):
     return render(request, 'events-demo-2.html')
+
+def async_demo_1(request):
+    return render(request, 'async-demo-1.html')
+
+def async_demo_2(request):
+    return render(request, 'async-demo-2.html')
+

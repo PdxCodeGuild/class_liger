@@ -3,6 +3,7 @@ from django.urls import reverse
 from .models import Category, Product, CartItem
 from django.db.models import Q
 from django.core.paginator import Paginator
+from django.http import JsonResponse
 
 def index(request):
 
@@ -138,20 +139,29 @@ def remove_from_cart(request, cart_item_id):
 
 
 def update_cart_item(request, cart_item_id):
+
     cart_item = get_object_or_404(CartItem, id=cart_item_id)
 
     # get the new quantity from the form
     updated_quantity = request.POST.get("quantity")
 
     # update the quantity
-    cart_item.quantity = updated_quantity
+    cart_item.quantity = int(updated_quantity)
 
     # commit the changes to the database
     cart_item.save()
 
-    return redirect(
-        reverse(
-            "users_app:detail",
-            kwargs={'username': request.user.username}
-        )
-    )
+    return JsonResponse({
+        'itemSubtotal': cart_item.item_subtotal(),
+        'cartTotal': request.user.cart.total_price(),
+        'cartItemCount': request.user.cart.item_count()
+    })
+
+
+    # if using Django's request/response cycle:
+    # return redirect(
+    #     reverse(
+    #         "users_app:detail",
+    #         kwargs={'username': request.user.username}
+    #     )
+    # )
