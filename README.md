@@ -63,7 +63,7 @@ Weeks 16, 17, 18: Capstone project
 | ---------- | --------------------------------------------------------- | -------- |
 | 01         | <a href="3 Django/labs/01 Todo.md">To Do List</a>         | 05/09    |
 | 02         | <a href="3 Django/labs/02 Blog.md">Blog</a>               | 05/14    |
-| 03         | <a href="3 Django/labs/Pokedex/03 Pokedex.md">Pokedex</a> | 05/24    |
+| 03         | <a href="3 Django/labs/03 Pokedex/03 Pokedex.md">Pokedex</a> | 05/24    |
 
 </details>
 <details open>
