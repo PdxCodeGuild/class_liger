@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    
+    <section id="async-demo-1">
+        <button id="button">Random User</button>
+
+        <div class="container">
+            <div class="modal">
+                <h1>Loading...</h1>
+            </div>
+
+            <div class="card">
+
+                <h1 id="username">Username</h1>
+
+                <h4>Full Name</h4>
+                <p id="full-name">First Last</p>
+
+                <h4>Email</h4>
+                <p id="email">Email</p>
+
+                <h4>Phone</h4>
+                <p id="phone">phone </p>
+
+                <h4>Address</h4>
+                <p id="address">address</p>
+
+                <a href="" id="website-link">website</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="{% static 'js/async-demo-1.js' %}"></script>
+
+{% endblock content %}

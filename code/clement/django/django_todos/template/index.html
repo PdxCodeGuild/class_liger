@@ -1,0 +1,63 @@
+{% extends 'layout/base.html' %}
+
+
+{% block content %}
+
+<h1>Todo List Text</h1>
+
+<div class="row">
+    <div class="col-12 col-lg-4 offset-lg-4">
+
+        <form action="{% url 'django_todo_app:save_todo_item' %}" method="POST">
+            <!-- Text input for 'text' -->
+            <input type="text" name="todo-text" placeholder="Enter next items" class="form-control">
+
+            <!-- Drop down or other input for `priority`(high, medium, low) -->
+            <fieldset>
+                <label for="todo-priority">
+                    <h1 class="mt-5">Priority</h1>
+
+                </label>
+                <select name="priority-text" class="form-select w-100" id="todo-priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+
+            </fieldset>
+            {%csrf_token%}
+
+            <!-- Submit Button -->
+            <input type="submit" value="Submit" class="btn btn-danger mt-3 mb-5">
+
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-lg-4 offset-lg-4">
+
+
+        <ul class="list-group">
+            {% for item in todoitem %}
+            <li class="list-group-item g-10 d-flex justify-content-between">{{item}}
+                <span class="
+                        badge
+                        {% if 'low' in item.priority.text %}
+                            bg-success
+                            {% elif 'medium' in item.priority.text %}
+                            bg-warning
+                            {% elif 'high' in item.priority.text %}
+                            bg-danger
+                        {% endif %}
+
+                    ">
+                    {{item.priority.text|title}}
+                </span>
+            </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+</div>
+{% endblock content %}
