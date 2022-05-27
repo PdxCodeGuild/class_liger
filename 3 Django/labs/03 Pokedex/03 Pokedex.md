@@ -34,8 +34,9 @@ Write a [custom management command](../docs/01%20Django%20Overview.md#custom-man
 
 ## Part 3
 
-Write a `view`, `route` and `template` to show a list of pokemon on the front page. You can either show all the information as a table, or show only their name and icon and link to a detail page with all their information. Use `<img src="...">` to display their front and back image.
+Write a `view`, `route` and `template` to show a list of pokemon on the front page. You can either show all the information as a table, or show only their name and icon and link to a detail page with all their information. Use `<img src="...">` to display their front and back image. Create a search bar to filter by `name` and `type`.
 
+Write a `view`, `route` and `template` to show a list of pokemon on the front page. You can either show all the information as a table, or show only their name and icon and link to a detail page with all their information. Use `<img src="...">` to display their front and back image. Create a form to filter Pokemon by `name` or `type`.
 
 ## Part 4 (optional)
 

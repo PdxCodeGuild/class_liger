@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <section id="vue-app">
+        <h1>[[ headerText ]]</h1>
+        
+        <h2>
+            <!-- hook up buttons to call increment and decrement when they are clicked -->
+            <button v-on:click="increment">++</button>
+            <button v-on:click="decrement">- -</button> <br/>
+            <p>
+
+                The number [[ counter ]] is 
+                
+                <!-- conditionally render whether the counter number is even or odd -->
+                <span v-if="counter % 2 === 0">Even</span>
+                <span v-else-if="counter % 2 === 1">Odd</span>
+            </p>
+        </h2>
+
+
+        <h2>
+            <!-- generate a new random number on click -->
+            <button v-on:click="generateRandomNumber">Random Number!</button> <br/>
+
+            <!-- if the randomNumber is not null -->
+            <p v-if="randomNumber">
+                The random number [[ randomNumber ]] is
+
+                <!-- conditionally render result -->
+                <span v-if="randomNumber < 5">less than 5</span>
+                <span v-else-if="randomNumber === 5">equal to 5</span>
+                <span v-else="randomNumber > 5">greater than 5</span>
+
+            </p>
+
+            <p v-if="generatedNumbers.length > 0">
+                Previously generated numbers:
+                |
+                <!-- v-for will repeat the given element until the condition is met -->
+                <span v-for="number in generatedNumbers"> [[ number ]] |</span>
+            </p>
+
+        </h2>
+
+        <pre v-if="!userData">Loading...</pre>
+        <pre v-else>[[ userData ]]</pre>
+
+    </section>
+
+    <script src="{% static 'js/vueIntro.js' %}"></script>
+
+{% endblock content %}

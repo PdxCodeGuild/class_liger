@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&family=Varela+Round&display=swap');
+@import './async-demo-1.css';
+
+* {
+    font-family: 'Questrial', sans-serif;
+}
+
+nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+}
+
+#events-demo-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#events-demo-2 {
+    background-color: grey;
+    min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+
+    /* to allow the add button to hover over the top */
+    position: relative;
+}
+
+#events-demo-2 #add-box-button {
+    height: 50px;
+    width: 50px;
+    padding: 60px;
+
+    background-color: lightgray;
+    border: 5px solid black;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 3rem;
+
+    /* position the button above the boxes in the middle */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* shift left and up 50% of width and height */
+    transform: translate(-50%, -50%);
+
+    user-select: none;
+
+}
+
+#plus-sign{
+    transition: all .1s ease-in-out;
+}
+
+.grow {
+    transform: scale(1.5)
+    }
