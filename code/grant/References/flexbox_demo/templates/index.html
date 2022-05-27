@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Flexbox Demo</title>
+    
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles_2.css') }}">
+    </head>
+    <body>
+       
+        <section class="container" id="flexbox-details">
+            <pre>   display: block;
+            </pre>
+            <div class="row">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+
+            <pre>   display: flex;
+            </pre>
+            <div class="row" id="row-2">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+
+<pre>   
+    display: flex;
+    flex-wrap: wrap;
+</pre>
+            <div class="row" id="row-3">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+
+<pre>
+    display: flex;
+    gap: 20px;
+</pre>
+            <div class="row" id="row-4">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+<pre>
+    display: flex;
+    justify-content: space-between;
+</pre>
+            <div class="row" id="row-5">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+<pre>
+    display: flex;
+    justify-content: space-around;
+</pre>
+            <div class="row" id="row-6">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+<pre>
+    display: flex;
+    justify-content: space-evenly;
+</pre>
+            <div class="row" id="row-7">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+<pre>
+    display: flex;
+    justify-content: center;
+</pre>
+            <div class="row" id="row-8">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+<pre>
+    display: flex;
+    justify-content: flex-end;
+</pre>
+            <div class="row" id="row-9">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+<pre>
+    display: flex;
+    align-items: center;
+</pre>
+            <div class="row" id="row-10">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+
+<pre>
+    display: flex;
+    align-items: flex-end;
+</pre>
+            <div class="row" id="row-11">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+
+<pre>
+    display: flex;
+    justify-content: center;
+    align-items: center;
+</pre>
+            <div class="row" id="row-12">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+
+<pre>
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+</pre>
+            <div class="row" id="row-13">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+
+<pre>
+    .box-2 {
+        align-self: flex-end;
+    }
+</pre>
+            <div class="row" id="row-14">
+                <div class="box"></div>
+                <div class="box box-2"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+
+        </section>
+
+
+        <section class="container" id="flexbox-layout">
+            <h1>Layout</h1>
+            <div class="row">
+                <nav id="side-nav">
+
+                    <a href="">Article 1</a>
+                    <a href="">Article 2</a>
+                    <a href="">Article 3</a>
+
+                </nav>
+                <div id="content">
+                    <nav id="top-nav">
+                        <a href="">Home</a>
+                        <a href="">About</a>
+                        <a href="">Contact</a>
+                    </nav>
+                    
+                    <div class="card">
+                        <img src="https://picsum.photos/200" alt="Image">
+
+                        <div class="boxes">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </div>
+
+                        <div class="button-container">
+                            <a href="https://www.google.com">
+                                <button>Click me</button>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+    </body>
+</html>

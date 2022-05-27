@@ -1,0 +1,29 @@
+#async-demo-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#async-demo-1 > .container {
+    display: flex;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+}
+
+#async-demo-1 h4, #async-demo-1 p{
+    margin: 10px 0;
+}
+
+#async-demo-1 .modal {
+    background-color: white;
+    
+    height: 100vh;
+    width: 100%;
+    
+    position: absolute;
+}
+
+

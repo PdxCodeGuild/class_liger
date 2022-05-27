@@ -1,0 +1,35 @@
+body {
+    background-image: url(https://c.tenor.com/AJBv6U1rfkQAAAAC/background-image-galaxy.gif);
+}
+/* -----------Nasa Logo----------------  */
+.logo img {
+    height: 100px;
+}
+.image img {
+    height: 70px;
+}
+
+.container .row {
+    background: black;   
+}
+ 
+.container .navbar {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* ------------images-------------- */
+.layout-image {
+    width: 100%;
+}
+
+/* ----------Paragraph Pages--------------------- */
+
+.page {
+    color: black;
+    background: white;
+}
+@media (min-width: 768px) {
+    .col-md-4{
+        width: unset;
+    }  
+}

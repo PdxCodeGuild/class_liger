@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <div class="row" data-masonry='{"percentPosition": true }'>
+
+
+        {% for user in users %}
+
+            <!-- include the user card partial with the current user data -->
+            {% include 'users/_card.html' with user=user %}
+            
+        {% endfor %}
+
+    </div>
+
+{% endblock content %}

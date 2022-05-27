@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap');
+
+body {
+    font-family: Raleway, sans-serif;
+    margin: 0;
+}
+
+.container {
+    min-height: 100vh;
+    background-color: #46351D;
+    padding: 100px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+.card {
+    max-width: 90vw;
+
+    display: flex;
+    flex-direction: column;
+
+    /* so position:absolute children are positioned relative to this div */
+    position: relative;
+}
+
+.card-body {
+    background-color: #839D9A;
+    /* padding: 50px 25px; */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-icon {
+    background-color: #25597E;
+    height: 80px;
+    width: 80px;
+    border-radius: 10px;
+
+    /* box-shadow: x-offset y-offset radius color */
+    box-shadow: 0 0 15px #23264C;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* float the div above its parent */
+    position: absolute;
+    top: -40px;
+    left: 25px;
+
+    font-size: 3rem;
+    color: #BFD2BF;
+}
+
+.card-footer {
+    background-color: #738D8A;
+    padding: 25px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+a {
+    color: #BFD2BF;
+
+    text-decoration: none;
+}
+
+/* change card widths on medium screens */
+@media screen and (min-width: 768px) {
+    .card {
+        max-width: 60vw;
+    }
+}
+
+/* switch the flexbox direction on large screens to make 3 card columns */
+@media screen and (min-width: 1200px) {
+    .container {
+        padding: 25px;
+
+        flex-direction: row;
+        gap: 25px;
+    }
+}

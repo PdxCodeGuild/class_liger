@@ -1,0 +1,34 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    
+    <div class="poll">
+        <h1>{{ question.text }}</h1>
+        
+        <form action="{% url 'polls_app:update' question.id %}" method="POST">
+            
+            <!-- field for editing the question text -->
+            <label for="question-text">
+                <h3>
+                    Question Text:
+                </h3>
+            </label>
+            <input type="text" name="question-text" value="{{question.text}}">
+            
+            <h3>Choices</h3>
+            <!-- render fields to edit each choice -->
+            {% for choice in question.choices.all %}
+                <div class="choice">
+                    <!-- populate the name, value and id attributes with values from the choice object -->
+                    <input type="text" name="choice-{{choice.id}}" value="{{choice.text}}" id="choice-{{choice.id}}">
+                </div>
+            {% endfor %}
+
+            <!-- Include the CSRF Token for security -->
+            {% csrf_token %}
+
+            <input type="submit" value="Submit"/>
+        </form>
+    </div>
+
+{% endblock content %}
