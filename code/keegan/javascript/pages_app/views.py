@@ -15,3 +15,6 @@ def async_demo_1(request):
 def async_demo_2(request):
     return render(request, 'async-demo-2.html')
 
+def vue_intro(request):
+    return render(request, 'vue-intro.html')
+
