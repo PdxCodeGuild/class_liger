@@ -1,0 +1,42 @@
+<div class="col-12 col-md-3 mx-5 pt-5">
+    <form action="{% url 'pokedex_app:index.html' %}" method="POST" class="row gap-5">
+
+        {{ form_data }}
+
+        <!-- POKEMON SEARCH TEXT INPUT -->
+        <fieldset class="col-12 form-group">
+            <label for="pokemon-search" class="form-label">
+                <h4 class="h4"></h4>
+                <input type="text" id="pokemon-search" name="pokemon-search" value="{{form_data.pokemon_search}}"
+                    class="form-control">
+            </label>
+        </fieldset>
+
+        <!-- CHECKBOXES FOR POKEMONS -->
+        <fieldset class="col-12 d-flex flex-column">
+            <h4 class="h4">Pokemons</h4>
+
+            <!-- Create a form to filter Pokemon by name or type.
+                 Loop through all Pokemons & create a checkbox for each. -->
+            {% for pokemon in pokemon_search.pokemons %}
+            <label for="pokemon-{{pokemon.id}}">
+                <input 
+                    type="checkbox" 
+                    name="pokemons" 
+                    value="{{pokemon}}">
+
+                    {% if pokemon in form_data.pokemons %}
+                        checked
+                    {% endif %}
+                {{pokemon|title}}
+            </label>
+            {% endfor %}
+        </fieldset>
+
+        {% csrf_token %}
+
+        <div class="col-4 offset-4 d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+</div>
