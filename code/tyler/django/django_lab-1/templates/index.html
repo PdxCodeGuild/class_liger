@@ -1,22 +1,49 @@
 {% extends 'base.html' %}
 <!-- no spaces between brackets and percent -->
 {% block content %}
-<h1>hello world</h1>
-<form action="{% url 'todo_app:save_todo_item' %}" method="post">
-  {% csrf_token %}
-  <input type="text" name="todo_text" placeholder="What do you have to do?" />
-  <input type="submit" value="Submit" />
-  <select name="priority" id="priority">
-    <option value="low">Low</option>
-    <option value="medium">Medium</option>
-    <option value="high">High</option>
-  </select>
-</form>
-<div class="class col-12 align-content middle">
-  {% for todo in todos %}
+<div class="background">
 
-  <p>{{ todo }} {{todo.priority}}</p>
-
-  {% endfor %}
+  <div class="container">
+    <div class="row col-12">
+      <div class=" col-4 offset-4 mx-auto">
+        <h1>Today's Priorities</h1>
+      <form action="{% url 'todo_app:save_todo_item' %}" method="post">
+        {% csrf_token %}
+        <input
+        type="text"
+        name="todo_text"
+        placeholder="What do you have to do?"
+        />
+        <select name="priority" id="priority">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        <input type="submit" value="Add Prio" />
+      </div>
+    </form>
+    <br />
+    <div class="container">
+      <div class="row col-12 flex-wrap">
+          <div class="col-6 justify-content-center">
+            <h2>Things to do</h2>
+            {% for todo in todos %}
+            
+            <div class="card">{{ todo }}</div>
+            <br />
+            {% endfor %}
+          </div>
+          <div class="col-6 justify-content-center">
+            <h2>Importance Level</h2>
+            {% for todo in todos %}
+            <div class="card text-capitalize  ">{{todo.priority}}</div>
+            <br />
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-{% endblock %}
+  {% endblock %}
+  

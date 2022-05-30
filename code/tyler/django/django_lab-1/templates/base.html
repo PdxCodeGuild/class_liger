@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tyler's Todo</title>
+    <link rel="stylesheet" href="{% static 'normalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'index.css' %}" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,6 +16,6 @@
     />
   </head>
   <body>
-    <div class="class flex container">{% block content %} {% endblock %}</div>
+    {% block content %} {% endblock %}
   </body>
 </html>
