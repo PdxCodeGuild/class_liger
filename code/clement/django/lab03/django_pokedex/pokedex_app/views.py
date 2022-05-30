@@ -10,28 +10,40 @@ def index (request):
 
     # Applying various filters base on my form data
     # And pull values out from the form data
-    if request.POST:
-        pokemon_search =request.POST.get('pokemon-search') or [pokemon.types for pokemon in Pokemon.objects.all()]
-        pokemons =request.POST.getlist('pokemons') or ''
+   
+    pokemon_search =request.POST.get('pokemon-search') or [pokemon.types for pokemon in Pokemon.objects.all()]
+    pokemons =request.POST.getlist('pokemons') or ''
 
 
-        if pokemon_search:
-            # Using Q object to search within the title & discription fields for pokemon_search
-            pokemons = pokemons.filter(
-                Q(title_icontains=pokemon_search) | Q(discription_icontains=pokemon_search)
-                )
+    if pokemon_search:
+        # Using Q object to search within the title & discription fields for pokemon_search
+        pokemons = pokemons.filter(
+            Q(title__icontains=pokemon_search) | Q(discription__icontains=pokemon_search)
+            )
 
+    pokemons=Pokemon.objects.filter(types__name__in=PokemonType)
 
-    pokemons=pokemons.filter(name_type_in=pokemons)
+    pokemon_search_option = {
+        'pokemons': [pokemon.types for pokemon in Pokemon.objects.all()],
+        'search_by_option': [
+            {'label': 'name(A-Z)', 'value':'type'},
+            {'label': 'name(A-G)', 'value':'type'},
+            {'label': 'name(H-N)', 'value':'type'},
+            {'label': 'name(O-T)', 'value':'type'},
+            {'label': 'name(U-Z)', 'value':'type'},
+            {'label': 'name(Z-A)', 'value':'-type'},
 
+        ]
+    }
    
     pokemon_search = {
         'pokemons': [pokemon.types for pokemon in Pokemon.objects.all()]
     }
 
     form_data = {
-       ' pokemon_search':pokemon_search, 
-       ' pokemons': pokemons
+       'pokemon_search':pokemon_search, 
+       'pokemons': pokemons,
+       'pokemon_search_option': pokemon_search_option
     }
 
 
@@ -39,10 +51,11 @@ def index (request):
         'pokemon_search':pokemon_search,
         'pokemons':pokemons,
         'form_data':form_data,
+        'pokemon_search_option': pokemon_search_option,
     }
 
 
-    return render(request, 'poked_app/base.html', context)
+    return render(request, 'pokedex/index.html', context)
 
 
 

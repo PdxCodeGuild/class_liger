@@ -21,7 +21,7 @@ class Pokemon(models.Model):
     urls = models.CharField(max_length=300)
 
 
-    types = models.ManyToManyField(PokemonType, related_name='pokemon')
+    types = models.ManyToManyField(PokemonType, related_name='pokemons')
 
     def __str__(self):
         return self.name
