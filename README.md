@@ -72,6 +72,7 @@ Weeks 16, 17, 18: Capstone project
 | Lab Number      | Title                                                                    | Due Date |
 | --------------- | ------------------------------------------------------------------------ | -------- |
 | 01 - 03         | <a href="4 JavaScript\labs\01-03 JavaScript Redo.md">JavaScript Redo</a> | 06/02    |
+| 04              | <a href="4 JavaScript\labs\04 ToDoList.md">To Do List</a>                | 06/15    |
 
 </details>
 
