@@ -66,13 +66,10 @@ def login(request):
 
 def logout(request):
     blog_logout(request)
-    return redirect('usersystem_app:profile')
+    return redirect('usersystem_app:login')
 
 
 @login_required
 def profile(request):
 
-    return render(request, 'users/profile.html')
-
-
-#
+    return render(request, 'users/index.html')
