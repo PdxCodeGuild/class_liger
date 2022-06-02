@@ -1,69 +1,22 @@
-<div class="col-12 col-md-3 mx-5 pt-5">
-    <form action="{% url 'pokedex_app:index.html' %}" method="POST" class="row gap-5">
+<div class="bg-dark">
+    <div class="col-12 col-md-3 mx-4 pt-3">
+        <form action="{% url 'pokedex_app:index' %}" method="POST" class="row gap-1">
 
-        {{ form_data }}
+            <!-- {{ form_data }} -->
 
-        <!-- POKEMON SEARCH TEXT INPUT -->
-        <fieldset class="col-12 form-group">
-            <label for="pokemon-search" class="form-label W-100">
-                <h4 class="h4">Pokemon Query</h4>
-                <input type="text" id="pokemon-search" name="pokemon-search" value="{{form_data.pokemon_search}}"
-                    class="form-control">
-            </label>
-        </fieldset>
+            <!-- POKEMON SEARCH TEXT INPUT -->
+            <fieldset class="col-8 form-group">
+                <label for="pokemon-search" class="form-label">
+                    <h4 class="h4">Pokemon Search</h4>
+                    <input type="text" id="pokemon-search" name="pokemon-search" class="form-control">
+                </label>
+            </fieldset>
 
-        <!-- Search_By_option Selection Menu -->
+            {% csrf_token %}
 
-        <fieldset class="col-12 form-group mt-3">
-            <label for="search_by_option" class="w-100">
-                <h4 class="h4">search_by_option</h4>
-                <select name="search_by_option" id="search_by_option" class="form-select">
-                    {% for optin in pokemon_search_options.search_by_options %}
-
-                    <!-- Conditional rendering to select options from the form -->
-                    <option 
-                        name="{{option.name}}"
-
-                        {% for option.name == form_data.search_by_option %}
-                            selected
-                        {% endfor %}
-                    >
-                        {{option.label}}
-                    </option>
-
-                    {% endfor %}
-                </select>
-            </label>
-
-        </fieldset>
-
-        <!-- CHECKBOXES FOR POKEMONS -->
-        <fieldset class="col-12 d-flex flex-column mt-3">
-            <h4 class="h4">Pokemons</h4>
-
-            <!-- Create a form to filter Pokemon by name or type.
-                 Loop through all Pokemons & create a checkbox for each. -->
-            {% for pokemon in pokemon_search.pokemons %}
-            <label for="pokemon-{{pokemon.id}}">
-                
-                <!-- Conditional rendering to select options from the form -->
-                <input 
-                    type="checkbox" 
-                    name="pokemons" 
-                    value="{{pokemon}}"
-                />
-                {% if pokemon in form_data.pokemons %}
-                checked
-                {% endif %}
-                {{pokemon|title}}
-            </label>
-            {% endfor %}
-        </fieldset>
-
-        {% csrf_token %}
-
-        <div class="col-4 offset-4 d-flex justify-content-center">
-            <button type="submit" class="btn btn-primary">Search</button>
-        </div>
-    </form>
+            <div class="col-4 offset-4 d-flex justify-content-center mx-auto">
+                <button type="submit" class="btn btn-success">Search</button>
+            </div>
+        </form>
+    </div>
 </div>

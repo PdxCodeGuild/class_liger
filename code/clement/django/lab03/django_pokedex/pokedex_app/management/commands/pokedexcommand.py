@@ -50,7 +50,7 @@ class Command(BaseCommand):
                 pokemontype, created = PokemonType.objects.get_or_create(name=name)
 
                 # still inside the loop, add the PokemonType object to the list of types for the current Pokemon object in the pokemon variable
-                print(pokemontype.name, created)
+                
                 pokemon.types.add(pokemontype)
 
 

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,17 +21,9 @@
 
 <body>
 
-    <main class="container-fluid">
-        {% block content %}
-            
-        {% endblock content %}
-        <!-- <p>pokedex</p>
-    {% for pokemon in pokemons %}
-    <h1>
-        {{ pokemon.name|title }}
-    </h1>
-    {% endfor %} -->
-    </main>
+    {% block content %}
+        
+    {% endblock content %}
 
 </body>
 
