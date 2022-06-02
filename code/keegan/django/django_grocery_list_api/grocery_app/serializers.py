@@ -12,9 +12,11 @@ class GroceryItemSerializer(serializers.ModelSerializer):
         # OR
 
         # specify a list of fields
-        # fields = ['name', 'quantity']
+        # fields = ['name']
 
 
-class GroceryItemCreateSerializer(GroceryItemSerializer):
+class GroceryItemNameOnlySerializer(GroceryItemSerializer):
     class Meta(GroceryItemSerializer.Meta):
-        fields=['name', 'quantity']
+        fields = ['name']
+
+

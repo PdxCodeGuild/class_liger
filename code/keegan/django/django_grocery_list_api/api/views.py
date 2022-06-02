@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from grocery_app.models import GroceryItem
-from grocery_app.serializers import GroceryItemSerializer, GroceryItemCreateSerializer
+from grocery_app.serializers import GroceryItemSerializer, GroceryItemNameOnlySerializer
 
 @api_view(['GET'])
 def grocery_retrieve(request, grocery_item_id=None):
@@ -21,7 +21,9 @@ def grocery_retrieve(request, grocery_item_id=None):
         # serialize the queryset
         # many=True will allow multiple instances of GroceryItem
         serializer = GroceryItemSerializer(grocery_items, many=True)
-
+        response.data = {
+            'groceryItems': serializer.data
+        }
     # find and serialize the single item
     else:
         # use the grocery_item_id to find the desired item
@@ -53,24 +55,64 @@ def grocery_retrieve(request, grocery_item_id=None):
 def grocery_create(request):
     response = Response()
 
-    data = request.data
-
     # initialize the serializer with the data from the request
-    serializer = GroceryItemCreateSerializer(data=response.data)
-
-    print(serializer.initial_data)
-
+    serializer = GroceryItemSerializer(data=request.data)
 
     # check if the request data is valid for creating a new object
     if serializer.is_valid():
-        message = 'valid'
+        # create the database object
+        serializer.save()
+        response.data = {
+            'groceryItem': serializer.data
+        }
     else:
-        message = serializer.errors
-
-    response.data = {
-        'message': message
-    }
+        response.data = {
+            'error': serializer.errors
+        }
+        response.status_code = status.HTTP_400_BAD_REQUEST
 
     return response
 
+
+@api_view(['POST'])
+def grocery_update(request, grocery_item_id):
+    response = Response()
+
+    # get the grocery item from the database
+    grocery_item = GroceryItem.objects.filter(id=grocery_item_id).first()
+
+    # initialize the serializer, combining the grocery_item instance
+    # with the new data
+    # instance is the current grocery_item
+    # data is the incoming data
+    # partial indicates that we are updating, not creating
+    serializer = GroceryItemSerializer(instance=grocery_item, data=request.data, partial=True)
+
+    if serializer.is_valid():
+        serializer.save()
+        response.data = {
+    'groceryItem': serializer.data
+        }
+    else:
+        response.data = {
+            'error': serializer.errors
+        }
+        response.status_code = status.HTTP_400_BAD_REQUEST
+
+    return response
+
+
+
+@api_view(['DELETE'])
+def grocery_delete(request, grocery_item_id):
+    response = Response()
     
+    grocery_item = get_object_or_404(GroceryItem, id=grocery_item_id)
+
+    grocery_item.delete()
+
+    response.data = {
+        'message': 'Deleted successfully!'
+    }
+
+    return response
