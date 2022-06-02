@@ -7,9 +7,14 @@ class GroceryItemSerializer(serializers.ModelSerializer):
         model = GroceryItem
         
         # include all fields
-        # fields = '__all__'
+        fields = '__all__'
 
         # OR
 
         # specify a list of fields
-        fields = ['name', 'id', 'in_cart']
+        # fields = ['name', 'quantity']
+
+
+class GroceryItemCreateSerializer(GroceryItemSerializer):
+    class Meta(GroceryItemSerializer.Meta):
+        fields=['name', 'quantity']

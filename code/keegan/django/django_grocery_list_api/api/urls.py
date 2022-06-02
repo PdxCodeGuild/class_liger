@@ -5,5 +5,7 @@ from . import views
 app_name = 'api'
 
 urlpatterns = [
-    path('grocery-list/', views.grocery_list, name='grocery_list')
+    path('grocery-items/', views.grocery_retrieve, name='retreive'),
+    path('grocery-items/<int:grocery_item_id>', views.grocery_retrieve, name='retreive'),
+    path('grocery-items/create/', views.grocery_create, name='create')
 ]
