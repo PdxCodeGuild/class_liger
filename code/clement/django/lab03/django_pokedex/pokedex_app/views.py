@@ -19,18 +19,8 @@ def index(request):
                 types__name__icontains=pokemon_search)
         )
 
-    pokemon_options = {
-        'pokemons': [pokemon.types for pokemon in Pokemon.objects.all()],
-        'search_by_option': [
-            {'label': 'name(A-Z)', 'value': 'name'},
-            {'label': 'type(A-Z)', 'value': 'type'},
-
-        ]
-    }
-
     form_data = {
         'pokemon_search': pokemon_search,
-        'pokemon_option': pokemon_options,
 
     }
 
@@ -38,7 +28,6 @@ def index(request):
         'pokemon_search': pokemon_search,
         'pokemons': pokemons,
         'form_data': form_data,
-        'pokemon_option': pokemon_options,
 
     }
 
