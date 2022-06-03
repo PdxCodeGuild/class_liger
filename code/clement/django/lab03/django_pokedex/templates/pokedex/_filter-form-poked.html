@@ -1,8 +1,6 @@
 <div class="col-12 col-md-3 mx-4 pt-4">
     <form action="{% url 'pokedex_app:index' %}" method="POST" class="row gap-1">
 
-        <!-- {{ form_data }} -->
-
         <div class="card shadow bg-dark">
             <!-- POKEMON SEARCH TEXT INPUT -->
             <fieldset class="col-12 form-group bg-darck mt-1">
@@ -26,7 +24,7 @@
             </fieldset>
             {% csrf_token %}
 
-            <div class="col-4 offset-4 d-flex justify-content-center mx-auto mt-4 mb-2">
+            <div class="col-4 offset-4 d-flex justify-content-center mt-4 mb-2">
                 <button type="submit" class="btn btn-success">Search</button>
             </div>
         </div>
