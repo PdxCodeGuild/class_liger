@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<section id="grocery-list-app" class="container">
+    {% csrf_token %}
+    <h1 class="text-center">[[ headerText ]]</h1>
+    <div class="row">
+        <div class="col-4 offset-4">
+            <!-- LOOP TO DISPLAY GROCERY ITEMS -->
+            <div class="list-group mt-5">
+                <div v-if="loading" class="d-flex justify-content-center">
+                    <div class="spinner-border text-info" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <div v-else>
+                    <div v-for="groceryItem in groceryItems"
+                        class="list-group-item d-flex justify-content-between gap-2">
+
+                        <!-- grocery item fields -->
+                        <div class="d-flex justify-content-between w-100">
+                            <span>
+                                [[ groceryItem.name ]]
+                            </span>
+
+                            <span class="mx-4">
+                                [[ groceryItem.quantity ]]
+                            </span>
+                        </div>
+
+                        <!-- crud buttons -->
+                        <!-- increment/decrement quantity -->
+                        <button class="btn btn-sm">
+                            <i class="bi bi-dash-square"></i>
+                        </button>
+                        <button class="btn btn-sm">
+                            <i class="bi bi-plus-square"></i>
+                        </button>
+
+                        <!-- toggle cart status -->
+                        <button v-if="groceryItem.in_cart" class="btn btn-sm btn-success">
+                            <i class="bi bi-cart-check"></i>
+                        </button>
+                        <button v-else class="btn btn-sm">
+                            <i class="bi bi-cart"></i>
+                        </button>
+
+                        <!-- delete button -->
+                        <button class="btn btn-sm btn-danger" v-on:click="deleteGroceryItem(groceryItem.id)">
+                            <i class="bi bi-x-circle"></i>
+                        </button>
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<script src="{% static 'js/groceryList.js' %}"></script>
+
+
+{% endblock content %}

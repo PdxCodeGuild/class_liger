@@ -7,6 +7,11 @@ from rest_framework import status
 from grocery_app.models import GroceryItem
 from grocery_app.serializers import GroceryItemSerializer, GroceryItemNameOnlySerializer
 
+
+def index(request):
+    return render(request, 'vue-index.html')
+
+
 @api_view(['GET'])
 def grocery_retrieve(request, grocery_item_id=None):
     # create a blank JSON response
@@ -111,7 +116,15 @@ def grocery_delete(request, grocery_item_id):
 
     grocery_item.delete()
 
+    # get the updated list of grocery items
+    grocery_items = GroceryItem.objects.all()
+
+    # serialize the queryset
+    # many=True will allow multiple instances of GroceryItem
+    serializer = GroceryItemSerializer(grocery_items, many=True)
+
     response.data = {
+        'groceryItems': serializer.data,
         'message': 'Deleted successfully!'
     }
 
