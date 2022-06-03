@@ -14,6 +14,10 @@ from django.http import HttpResponse
 
 
 # Create your views here.
+def index(request):
+    return render(request, 'users/index.html')
+
+
 def register(request):
     if request.method == 'GET':
         return render(request, 'users/register.html')
@@ -72,4 +76,4 @@ def logout(request):
 @login_required
 def profile(request):
 
-    return render(request, 'users/index.html')
+    return render(request, 'users/profile.html')

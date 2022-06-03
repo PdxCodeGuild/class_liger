@@ -1,0 +1,31 @@
+{% load static %}
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <ul class="navbar-nav">
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+
+                <a class="nav-link" href="{% url 'usersystem_app:index' %}">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'usersystem_app:logout' %}">Logout</a>
+
+            </li>
+
+            {% else %}
+            <li class="nav-item">
+
+                <a class="nav-link" href="{% url 'usersystem_app:login' %}">Login</a>
+
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link" href="{% url 'usersystem_app:register' %}">Register</a>
+
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
