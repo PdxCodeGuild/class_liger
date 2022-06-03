@@ -17,7 +17,7 @@
     <title>Tyler's Blog</title>
   </head>
   <body>
-    {% for message in messages %}
+    {% include 'navbar.html' %} {% for message in messages %}
     <div class="alert alert-info">{{message}}</div>
     {% endfor %} {% block content %} {% endblock content %}
   </body>

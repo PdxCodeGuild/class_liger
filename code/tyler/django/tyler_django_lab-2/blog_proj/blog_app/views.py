@@ -19,21 +19,10 @@ def create_post(request):
     elif request.method == 'POST':
 
         form = request.POST
-        title = form.get('blog_title')
-        body = form.get('blog_body')
+        title = form.get('blog-title')
+        body = form.get('blog-body')
         user = request.user
         post = BlogPost.objects.create(user=user,
                                        title=title, body=body)
 
         return redirect(reverse('users_app:profile'))
-
-
-@login_required
-def write_post(request):
-    if request.method == 'link':
-        return render(request, 'blog_app:create_post')
-
-
-def profile_link(request):
-    if request.method == 'link':
-        return redirect(reverse('users/profile.html'))

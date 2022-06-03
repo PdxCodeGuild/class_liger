@@ -8,7 +8,7 @@ from users_app.models import CustomUser
 class BlogPost(models.Model):
     title = models.CharField(max_length=30)
     body = models.TextField()
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, related_name='blogposts', on_delete=models.CASCADE)
     public = models.BooleanField(default=False)
     date_created = models.DateTimeField(auto_now_add=True)
     date_edited = models.DateTimeField(auto_now_add=True)

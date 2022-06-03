@@ -8,5 +8,6 @@
   {%csrf_token%}
   <input type="submit" value="submit" />
 </form>
+Need an account? <a href="{% url 'users_app:register' %}"> Create one here</a>
 
 {% endblock content %}

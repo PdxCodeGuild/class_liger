@@ -38,7 +38,7 @@ def login(request):
         if user is not None:
             django_login(request, user)
             messages.success(request, 'Welcome!')
-            return render(request, 'users/profile.html')
+            return redirect(reverse('users_app:profile'))
         else:
             messages.error(
                 request, 'Incorrect username and/or password. Please try again.')
@@ -47,7 +47,6 @@ def login(request):
 
 @login_required
 def profile(request):
-    messages.success(request, 'Welcome!')
     post = BlogPost.objects.filter(user=request.user)
     context = {
         'posts': post

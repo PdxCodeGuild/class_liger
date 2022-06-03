@@ -1,15 +1,28 @@
 {% extends 'base.html' %} {% block content %}
-<div class="d-flex col-12 justify-content-center">
-  <div class="card">
-    <form action="{%url 'blog_app:create_post'%}" method="POST">
-      <label for="blog_title">Title</label>
-      <input type="text" name="blog_title" id="blog_title" />
-      <br />
-      <label for="blog_body">Body</label>
-      <input type="text" name="blog_body" id="blog_body" />
-      <input type="Submit" value="Post" />
-      {% csrf_token %}
-    </form>
+<!-- <div class="d-flex col-12 justify-content-center"> -->
+<!-- <div class="card"> -->
+<form action="{%url 'blog_app:create_post'%}" method="POST">
+  <div class="mb-3">
+    <label for="blog-title" class="form-label">Blog title</label>
+    <input type="text" class="form-control" name="blog-title" id="blog-title" />
   </div>
-</div>
+  <div class="mb-3">
+    <label for="blog-body" class="form-label">Blog post </label>
+    <textarea
+      class="form-control"
+      id="blog-body"
+      name="blog-body"
+      rows="3"
+    ></textarea>
+  </div>
+  {% csrf_token %}
+  <input type="Submit" value="Post" />
+</form>
+<!-- </div>
+</div> -->
 {% endblock content %}
+<!-- <label for="blog-title">Title</label>
+<input type="text" name="blog-title" id="blog-title" />
+<br />
+<label for="blog-body">Body</label>
+<input type="text" name="blog-body" id="blog-body" /> -->
