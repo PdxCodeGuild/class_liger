@@ -1,16 +1,25 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-
 
 
 from .models import Usersystem, BlogPost
 
 # Create your views here.
+
+
 @login_required
 def profile(request):
+    blogpost = BlogPost.objects.all()
 
-    return render(request, 'users/profile.html')
+    blog_posts = BlogPost.objects.filter(user__icontains=blogpost)
+
+    context = {
+        'blogpost': blogpost,
+    }
+
+    return render(request, 'users/profile.html', context)
+
 
 def create(request):
     if request.method == 'POST':
@@ -22,7 +31,7 @@ def create(request):
         new_blogpost = BlogPost.objects.create(
             user=request.user,
             title=blogpost_title,
-            body = blogpost_body
+            body=blogpost_body
 
         )
         context = {

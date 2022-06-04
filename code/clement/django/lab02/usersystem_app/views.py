@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_list_or_404
 
 from django.contrib.auth import (
     authenticate,
@@ -20,6 +20,14 @@ def index(request):
 
 def register(request):
     if request.method == 'GET':
+
+        # username = get_object_or_404(usermane, user=username_id)
+        # try:
+        #     username = User.objects.get(username=usernsme)
+
+        # except Username.DoesExist:
+        #     raise Http404('"The user already exist, please login"')
+
         return render(request, 'users/register.html')
 
     elif request.method == 'POST':

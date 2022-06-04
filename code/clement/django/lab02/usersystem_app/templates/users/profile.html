@@ -2,15 +2,14 @@
 
 {% block content %}
 
-    {% for blogpost in request.user.blogposts.all %}
+{% for blogpost in request.user.blogposts.all %}
 
-        <p>
-            
-            {{blogpost}}
-            
-        </p>
-        
-    {% endfor  %}
+<p>
+
+    {{blogpost}}
+
+</p>
+
+{% endfor %}
 
 {% endblock content %}
-
