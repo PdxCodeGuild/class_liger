@@ -4,11 +4,19 @@
 
 {% for blogpost in request.user.blogposts.all %}
 
-<p>
 
-    {{blogpost}}
+<div class="card col-4 offset-4 p-2">
 
-</p>
+    <span class="border border-success border-4" style="background-color:
+     aqua; border-radius: 10px;">
+        <h5>
+            {{blogpost}}
+        </h5>
+
+    </span>
+</div>
+
+
 
 {% endfor %}
 

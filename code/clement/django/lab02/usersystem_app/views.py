@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, get_list_or_404
+from django.shortcuts import render, redirect
+
+from django.db import IntegrityError
 
 from django.contrib.auth import (
     authenticate,
@@ -21,13 +23,6 @@ def index(request):
 def register(request):
     if request.method == 'GET':
 
-        # username = get_object_or_404(usermane, user=username_id)
-        # try:
-        #     username = User.objects.get(username=usernsme)
-
-        # except Username.DoesExist:
-        #     raise Http404('"The user already exist, please login"')
-
         return render(request, 'users/register.html')
 
     elif request.method == 'POST':
@@ -36,11 +31,18 @@ def register(request):
         password = form.get('password')
         print(form)
 
-# use the form data to create a new user object (use the create_user method instead of the create method)
-        new_usersystem = Usersystem.objects.create_user(
-            username=username,
-            password=password,
-        )
+        try:
+            # use the form data to create a new user acct and
+            # also if the does not exist then create one.
+            new_usersystem = Usersystem.objects.create_user(
+                username=username,
+                password=password,
+            )
+        # Catch any error if the user already have an acct
+        except IntegrityError:
+            messages.error(
+                request, '"The user already exist, please the login page"')
+            return redirect('usersystem_app:register')
 
         # login the new user (using django's login function)
         messages.success(request, f'Welcome, {new_usersystem.username}')

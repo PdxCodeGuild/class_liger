@@ -37,7 +37,7 @@ def create(request):
         context = {
             'blogpost': new_blogpost,
         }
-        return redirect(request, 'createBlog-post.html', context)
+        return redirect('usersystem_app:profile')
 
     else:
         return render(request, 'createBlog-post.html')

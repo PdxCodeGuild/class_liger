@@ -2,16 +2,20 @@
 
 
 
-<nav class="navbar navbar-expand-lg bg-dark">
+<nav class="navbar navbar-expand-lg bg-dark w-100">
     <div class="container-fluid">
         <ul class="navbar-nav">
             {% if request.user.is_authenticated %}
             <li class="nav-item">
 
-                <a class="nav-link text-light" href="{% url 'usersystem_app:index' %}">Profile</a>
+                <a class="nav-link text-light" href="{% url 'usersystem_app:profile' %}">Profile</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-light" href="{% url 'usersystem_app:logout' %}">Logout</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="{% url 'blog_app:create' %}">Create</a>
 
             </li>
 
