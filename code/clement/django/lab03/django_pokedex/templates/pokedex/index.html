@@ -1,0 +1,49 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<h1 class="h1 text-center">POKEDEX</h1>
+
+<div class="row d-flex">
+
+    <!-- include your filter form here -->
+    {% block pokedex-form %}
+
+    {% include 'pokedex/_filter-form-poked.html' %}
+
+    {% endblock pokedex-form %}
+
+
+    <!-- rendering card for each pokemon in list -->
+    {% for pokemon in pokemons %}
+
+    <div class="col-12 md-6 col-lg-4">
+
+        <div class="card mt-4 shadow bg-dark">
+            <h2 class="text-center text-light">
+
+                {{pokemon.name|title}}
+
+            </h2>
+
+            <h6 class="text-center text-light">
+
+                {% for type in pokemon.types.all %}
+                {{type|title}}
+                {% endfor %}
+
+            </h6>
+
+            <img src="{{ pokemon.image_front }}" alt="{{ pokemon.name }}" class="card-img-top mx-auto my-0"
+                style="width:5rem;">
+            <img src="{{ pokemon.image_back }}" alt="{{ pokemon.name }}" class="card-img-top mx-auto my-0"
+                style="width:5rem;">
+            <h4 class="text-center text-light">{{pokemon.weight}}dl - {{pokemon.height}}" - {{pokemon.number}}</h4>
+        </div>
+        <div class="card mt-4 shadow">
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+{% endblock content %}
