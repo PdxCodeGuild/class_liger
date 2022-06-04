@@ -6,10 +6,25 @@
 {% block content %}
 
 <section id="grocery-list-app" class="container">
-    {% csrf_token %}
+
+
     <h1 class="text-center">[[ headerText ]]</h1>
     <div class="row">
         <div class="col-4 offset-4">
+
+            <!-- submit the form, prevent the default action
+                and substitue the createGroceryItem method -->
+            <form v-on:submit.prevent="createGroceryItem">
+                <input type="text" v-model="newItemText" placeholder="Add Item" name="new-item-name" class="form-control" />
+
+                <input type="number" v-model="newItemQuantity" name="new-item-quantity" class="form-control mt-2" />
+
+                {% csrf_token %}
+
+                <!-- The form button will trigger the create method -->
+                <button class="btn btn-sm btn-primary mt-3">Add</button>
+            </form>
+
             <!-- LOOP TO DISPLAY GROCERY ITEMS -->
             <div class="list-group mt-5">
                 <div v-if="loading" class="d-flex justify-content-center">
@@ -34,18 +49,18 @@
 
                         <!-- crud buttons -->
                         <!-- increment/decrement quantity -->
-                        <button class="btn btn-sm">
+                        <button class="btn btn-sm" v-on:click="updateGroceryItem(groceryItem, 'decrement')">
                             <i class="bi bi-dash-square"></i>
                         </button>
-                        <button class="btn btn-sm">
+                        <button class="btn btn-sm" v-on:click="updateGroceryItem(groceryItem, 'increment')">
                             <i class="bi bi-plus-square"></i>
                         </button>
 
                         <!-- toggle cart status -->
-                        <button v-if="groceryItem.in_cart" class="btn btn-sm btn-success">
+                        <button v-if="groceryItem.in_cart" class="btn btn-sm btn-success" v-on:click="updateGroceryItem(groceryItem, 'toggleInCart')">
                             <i class="bi bi-cart-check"></i>
                         </button>
-                        <button v-else class="btn btn-sm">
+                        <button v-else class="btn btn-sm" v-on:click="updateGroceryItem(groceryItem, 'toggleInCart')">
                             <i class="bi bi-cart"></i>
                         </button>
 

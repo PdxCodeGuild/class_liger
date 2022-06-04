@@ -21,7 +21,7 @@ def grocery_retrieve(request, grocery_item_id=None):
     # serialize all grocery items if no grocery_item_id is passed
     if not grocery_item_id:
         # get all the GroceryItems
-        grocery_items = GroceryItem.objects.all()
+        grocery_items = GroceryItem.objects.all().order_by('in_cart')
 
         # serialize the queryset
         # many=True will allow multiple instances of GroceryItem
@@ -67,8 +67,11 @@ def grocery_create(request):
     if serializer.is_valid():
         # create the database object
         serializer.save()
+
+        grocery_items = GroceryItem.objects.all().order_by('in_cart')
+        
         response.data = {
-            'groceryItem': serializer.data
+            'groceryItems': GroceryItemSerializer(grocery_items, many=True).data
         }
     else:
         response.data = {
@@ -79,7 +82,7 @@ def grocery_create(request):
     return response
 
 
-@api_view(['POST'])
+@api_view(['PUT'])
 def grocery_update(request, grocery_item_id):
     response = Response()
 
@@ -91,12 +94,16 @@ def grocery_update(request, grocery_item_id):
     # instance is the current grocery_item
     # data is the incoming data
     # partial indicates that we are updating, not creating
-    serializer = GroceryItemSerializer(instance=grocery_item, data=request.data, partial=True)
+    serializer = GroceryItemSerializer(
+        instance=grocery_item, data=request.data, partial=True
+    )
 
     if serializer.is_valid():
         serializer.save()
+        grocery_items = GroceryItem.objects.all().order_by('in_cart')
+        
         response.data = {
-    'groceryItem': serializer.data
+            'groceryItems': GroceryItemSerializer(grocery_items, many=True).data
         }
     else:
         response.data = {
@@ -117,7 +124,7 @@ def grocery_delete(request, grocery_item_id):
     grocery_item.delete()
 
     # get the updated list of grocery items
-    grocery_items = GroceryItem.objects.all()
+    grocery_items = GroceryItem.objects.all().order_by('in_cart')
 
     # serialize the queryset
     # many=True will allow multiple instances of GroceryItem
