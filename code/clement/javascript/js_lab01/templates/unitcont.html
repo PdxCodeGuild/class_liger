@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<p>unit convector</p>
+<form>
+    <input id="distance" type="text">
+    <label for="units">Unit Convector:</label>
+    <select id="units" name="units">
+        <option value="feet">feet</option>
+        <option value="mile">mile</option>
+        <option value="meter">meter</option>
+        <option value="kilometer">kilometer</option>
+    </select>
+    <button id="submit">submit</button>
+
+</form>
+{% endblock content %}
