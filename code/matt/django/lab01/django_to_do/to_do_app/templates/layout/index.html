@@ -1,0 +1,223 @@
+{% extends 'layout/base.html' %} 
+
+
+{% block content %}
+
+<!-- <div class="container">
+  <form action="{% url 'to_do_app:create' %}" method="POST">
+    
+    <label for="create">New Task</label>
+    <input id="text" type="text" name="create" />
+    
+    {%csrf_token %}
+    <button id="submit-button" type="submit">Submit</button>
+  </form>
+</div> -->
+
+
+<section class="container">
+  <div class=" pt-5 pb-2">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col">
+        <div class="card" id="" style=" background-color: rgb(241, 239, 239);">
+          <div class="card-body" >
+            <div class="pb-2">
+              <div class="card">
+                <div class="card-body" >
+                  <div class="form" style="position:static">
+                      <form action="{% url 'to_do_app:create' %}" method="POST" class="col-12"> 
+                        {% csrf_token %}
+                        <input type="text" class="align-items-center form-control form-control-lg" name="create" id="text"
+                          placeholder="Enter new task...">
+
+                          <!-- <select class="form-select form-select-lg mb-3" name="priority-level">
+                            <option selected style=" background-color: rgb(241, 239, 239);">Priority</option>
+                            <option value="l">Low</option>
+                            <option value="m">Medium</option>
+                            <option value="h">High</option> -->
+
+                            <!-- <div class="input-group">
+                              <span class="input-group-text">Priority</span>
+                              <input type="text" class="form-control form-control-lg" name="priority-rank" id="text"placeholder="Low, Medium, High...">
+                            </div> -->
+
+                            <div class="form-group">
+                              <!-- <label for="priority">Priority</label> -->
+                              <select class="form-control form-control-lg mb-3" id="priority" name="priority-rank" >
+                                <option selected style="background-color: rgb(241, 239, 239);">Task Priority</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                              </select>
+                            </div>
+
+                        <!-- <div class=" col-1 offset-5 mt-2"> -->
+
+                          <button type="submit" value='Submit' class="btn btn-primary my-3 ps-5 pe-5 pt-2 pb-2">Add</button>
+
+                        <!-- </div> -->
+                        
+                      </form>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<hr class="my-4">
+
+<section class="container">
+  <div class=" py-1">
+    <div class="row ">
+      <div class="col-5">
+        <div class="card" id="" style=" background-color: rgb(241, 239, 239);">
+          <div class="card-body" >
+            <section class = "container">
+              <div class="d-flex flex-row justify-content-around">
+                <h3 class="card-title"><b>Task</b></h3>
+              </div>
+            </section>
+
+            {% for to_do_item in to_do_items %}
+            {% if to_do_item.text is not None %}
+
+              <section class="container">
+                <ul class="row list-group list-group-horizontal rounded-0 bg-transparent">
+             
+                      <li
+                      class="d-flex justify-content-between align-items-center ps-3 pe-3 py-2 rounded-0 border-0 bg-transparent">
+                     
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="defaultCheck1" data-checkbox="true">
+                          <label class="form-check-label" for="defaultCheck1" 
+                            >{{ to_do_item.text }} 
+                          </label>
+                        </div>      
+                      </li>
+                </ul>
+              </section>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-3">
+        <div class="card" id="" style=" background-color: rgb(241, 239, 239);">
+          <div class="card-body" >
+            <section class = "container">
+              <div class="d-flex flex-row justify-content-around">
+                <h3 class="card-title"><b>Created</b></h3>
+              </div>
+            </section>
+
+            {% for to_do_item in to_do_items %}
+            {% if to_do_item.text is not None %}
+
+
+              <section class="container">
+                <ul class="row list-group list-group-horizontal rounded-0 bg-transparent">
+             
+                      <li
+                      class="d-flex justify-content-center align-items-center ps-5 pe-3 py-2 rounded-0 border-0 bg-transparent">
+
+                        <div class="">
+                          {{to_do_item.created_date|date:"d M y"}}
+                        </div>
+
+                      </li>
+                </ul>
+
+              </section>
+
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-2">
+        <div class="card" id="" style=" background-color: rgb(241, 239, 239);">
+          <div class="card-body" >
+            <section class = "container">
+              <div class="d-flex flex-row justify-content-around">
+                <h3 class="card-title"><b>Priority</b></h3>
+              </div>
+            </section>
+
+            {% for to_do_item in to_do_items %}
+            {% if to_do_item.text is not None %}
+
+              <section class="container">
+                <ul class="row list-group list-group-horizontal rounded-0 bg-transparent">
+                      <li
+                      class="d-flex justify-content-center align-items-center ps-5 pe-3 py-2 rounded-0 border-0 bg-transparent">
+
+                        <div class="">
+                          {{to_do_item.priority}}
+                        </div>
+
+                      </li>
+                </ul>
+
+              </section>
+
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-2">
+        <div class="card" id="" style=" background-color: rgb(241, 239, 239);">
+          <div class="card-body" >
+            <section class = "container">
+              <div class="d-flex flex-row justify-content-between">
+                <h3 class="card-title"><b>Complete</b></h3>
+              </div>
+            </section>
+
+            {% for to_do_item in to_do_items %}
+            {% if to_do_item.text is not None %}
+
+              <section class="container">
+                <ul class="row list-group list-group-horizontal rounded-0 bg-transparent">
+                      <li
+                      class="d-flex justify-content-center align-items-center ps-5 pe-3 py-2 rounded-0 border-0 bg-transparent">
+
+                      <button type="delete" value='Delete' class="btn btn-primary">
+                      <a href="{% url 'to_do_app:delete' to_do_item.id %}" class="d-flex align-items-center"></a>Done</button>
+                      <!-- <button type="delete" value='Delete' class="btn btn-primary">Delete</button> -->
+                      <!-- <a href="{% url 'to_do_app:delete' to_do_item.id %}">Done!</a> -->
+
+                      </li>
+                </ul>
+
+              </section>
+
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</section>
+
+
+
+
+{% endblock content %}
+
+

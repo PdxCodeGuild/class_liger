@@ -1,0 +1,27 @@
+
+
+
+
+
+
+{% extends 'todo_app/base.html' %}
+
+{% block content %}
+        <section class="container-fluid" id="todo" >
+            <div class="row">
+                <div class="col-12 px-1 pt-3 ">
+                    <div class="col-lg-3 pt-5 d-flex justify-content-center align-items-center">
+                        <div class="">
+                            <ul class="">
+                                {% for todo in todos %}
+                                <a href="#"
+                                    class="card p-2 bg-dark text-light mb-2 d-flex justify-content-center align-items-center"
+                                    style="text-decoration:none; font-weight:bold; border:4px solid aliceblue ">{{ todo.text }} - priority is {{ todo.priority }}</a>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock content %}

@@ -11,6 +11,7 @@ from django.contrib import messages
 
 from django.contrib.auth.decorators import login_required
 
+from shop_app.models import Product
 
 def index(request):
     return render(request, 'pics/index.html')
@@ -110,7 +111,8 @@ def detail(request, username):
     user = get_object_or_404(get_user_model(), username=username)
 
     context = {
-        'user': user
+        'user': user,
+        'products': Product.objects.all()[:5]
     }
 
     return render(request, 'users/detail.html', context)

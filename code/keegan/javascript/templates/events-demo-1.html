@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <section id="events-demo-1">
+
+        <h1>JS Events</h1>
+        
+        <div class="form-container">
+            <form>
+                <input type="text" name="text" id="text-input">
+                <input type="submit" value="Submit">
+            </form>
+
+            <p>Submitted Text:
+                <span id="submitted-text"></span>
+            </p>
+        </div>
+
+    </section>
+
+    <script src="{% static 'js/eventsDemo1.js' %}"></script>
+
+{% endblock content %}
