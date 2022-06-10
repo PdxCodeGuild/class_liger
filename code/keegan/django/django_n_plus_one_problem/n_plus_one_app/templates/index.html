@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{query_count}} queries were made</h1>
+
+    {% for user in users %}
+    
+        <h2>{{user.username}}</h2>
+
+        {% for blogpost in user.blogposts.all %}
+            <h4>
+                {{blogpost.title}}
+            </h4>
+
+
+            {% for comment in blogpost.comments.all %}
+                <p>{{comment.name}}</p>
+            {% endfor %}
+        {% endfor %}
+
+    {% endfor %}
+
+
+</body>
+</html>
