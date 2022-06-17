@@ -1,0 +1,106 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="text-center pb-2">
+
+    <div class="container">
+        {% if not project_done %}
+        <h2 class="text-center">Projects</h2>
+        <table class="table table-striped table-border table-hover table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Due Date</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for project in projects %}
+
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <th>{{project.Subject}}</th>
+                    <th>{{project.title}}</th>
+                    <th>{{project.description}}</th>
+                    <th>{{project.due_date}}</th>
+                    <td>
+                        <a href="#">
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" {% if project.is_finished %}
+                                    checked {% endif %}>
+
+                                <label class="form-check-label text-light" for="flex-column">
+                                    Mark as Completed
+                                </label>
+                            </div>
+                        </a>
+                    </td>
+                    <td><a href="{% url 'study_app:delete_proj' project.id %}"><i class="bi bi-trash bi-2"></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+
+        <h3>All projects are completed</h3>
+
+        {% endif %}
+
+        <a href="{% url 'study_app:projects'  %}" class="btn btn-danger">Project</a>
+        <br><br>
+        {% if not homework_done %}
+        <h2 class="text-center">Homework</h2>
+    </div>
+    <table class="table table-striped table-border table-hover table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Due Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for homework in homeworks %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <th>{{homework.Subject}}</th>
+                <th>{{homework.title}}</th>
+                <th>{{homework.description}}</th>
+                <th>{{homework.due_date}}</th>
+                <td>
+                    <a href="#">
+                        <div class="form-check">
+                            {% if homework.is_finished == True %}
+                            <input type="form-check" type="checkbox" value="" checked>
+                            {% else %}
+                            <input type="form-check" type="checkbox" value="">
+                            {% endif %}
+                            <label class="form-check-label text-dark" for="flex-column">
+                                Mark as Completed
+                            </label>
+                        </div>
+                    </a>
+                </td>
+                <td><a href="#"><i class="bi bi-trash bi-2"></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+
+    <h3>All homework are completed</h3>
+    {% endif %}
+    <a href="#" class="btn btn-danger flex-column text-align-center">Homework</a>
+</div>
+
+{% endblock content %}

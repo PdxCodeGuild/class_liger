@@ -1,0 +1,29 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<h1 class="text-center">Register</h1>
+<form action="{% url 'study_app:register' %}" method="POST" class="col-4 offset-4 d-flex flex-column align-item-center">
+    {{form}}
+    <!-- <label for="username">Username</label>
+    <input type="text" name="username" id="username">
+    <br />
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password">
+    <br>
+    <label for="password">Confirm Password</label>
+    <input type="password" name="password" id="password"> -->
+
+    <br />
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Register</button>
+</form>
+
+<!-- Link to Sign In Route -->
+<div class="col-4 offset-4 align-item-center mt-3">
+    <h6>Have an account? <a href="{% url 'study_app:login' %}" class="text-decoration-none link-primary">Sign In</a>
+    </h6>
+</div>
+
+{% endblock content %}

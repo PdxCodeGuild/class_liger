@@ -1,0 +1,47 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        {% for project in projects %}
+
+        <div class="col-md-3 pt-5">
+            <a class="text-decoration-none" href="{% url 'study_app:projdetail' project.id %}">
+                <div class="card">
+                    <div class="card-header bg-primary text-dark">{{project.title}}</div>
+                    <div class="card-body">{{project.description}}</div>
+                    <div class="card-footer mt-auto"><a href="{% url 'study_app:delete_proj' project.id %}">
+                            <i class="bi bi-trash"></i></a>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+        <br><br>
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+
+            <form method="POST" class=" d-flex flex-column" action="{% url 'study_app:projects' %}">
+                {% csrf_token %}
+
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Create Project</legend>
+                </fieldset>
+                {{form}}
+                <div class="form-group">
+                    <button class="btn btn-success" type="submit">
+                        Create
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

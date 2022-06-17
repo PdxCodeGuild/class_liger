@@ -1,0 +1,27 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+
+<h1 class="h1 text-center mt-3">Log In</h1>
+<form action="{% url 'study_app:login' %}" method="POST" class="col-4 offset-4 d-flex flex-column align-item-center">
+
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username">
+    <br />
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password">
+
+    <br />
+    {% csrf_token %}
+    <button class="btn btn-success" type="submit">Login</button>
+</form>
+
+<!-- link to register route -->
+<div class="col-4 offset-4 align-item-center mt-3">
+    <h6>New Student Register here? <a href="{% url 'study_app:register' %}"
+            class="text-decoration-none link-warning">Create Account</a></h6>
+</div>
+
+
+{% endblock content %}

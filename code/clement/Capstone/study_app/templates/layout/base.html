@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- BOOTSTRAP BUNDLE -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+        crossorigin="anonymous"></script>
+
+    <!--BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+    <!-- NORMALIZE CSS -->
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+    <title>Capstone_Study-App</title>
+</head>
+
+<body>
+
+
+    {% include 'layout/navbar.html' %}
+    <div class="container">
+
+        {% if message %}
+
+        {% for message in messages %}
+        <div class="arlet arlet-{{message.tags}}">{{message}}</div>
+        {% endfor %}
+
+        {% endif %}
+
+
+
+        {% block content %}
+
+        {% endblock content %}
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'study_app:homepage' %}">Students Study App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'study_app:homepage' %}">Home</a>
+                </li>
+
+                {% if request.user.is_authenticated %}
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'study_app:profile' %}">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'study_app:logout' %}">Logout</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Resources
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Books Store</a></li>
+                        <li><a class="dropdown-item" href="#">Dictionary</a></li>
+                        <li><a class="dropdown-item" href="#">Homework</a></li>
+                        <li><a class="dropdown-item" href="{% url 'study_app:projects' %}">Projects</a></li>
+                        <li><a class="dropdown-item" href="#">Media/Videos</a></li>
+                        <li><a class="dropdown-item" href="#">Wikipedia</a></li>
+                        <li><a class="dropdown-item" href="#">Flash Cards</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                {% else %}
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'study_app:login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'study_app:register' %}">Register</a>
+                </li>
+
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

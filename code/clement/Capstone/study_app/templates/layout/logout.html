@@ -1,0 +1,13 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block content %}
+<div class="border-top pt-3 text-center">
+    <h6>Your logout is successful</h6>
+    <small class="text-muted">
+
+        <a class="btn btn-danger" href="{% url 'study_app:login' %}">Login Again</a>
+
+    </small>
+</div>
+
+{% endblock content %}
