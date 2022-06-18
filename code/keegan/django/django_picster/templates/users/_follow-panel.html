@@ -1,0 +1,49 @@
+<!-- DISPLAY PICS, FOLLOWERS AND FOLLOWING COUNTS -->
+
+{% if request.user != user %}
+<div class="d-flex justify-content-center">
+<!-- If the user is looking at another users page,
+        display the follow badge, otherwise hide it -->
+
+    <!-- change the badge color and text based on if the user is following -->
+    <a href="{% url 'users_app:follow' user.username %}">
+
+        {% if request.user in user.followers.all %}
+        <div class="badge bg-warning">Following</div>
+        
+        {% else %}
+        <div class="badge bg-success">Follow</div>
+        
+        {% endif %}
+    </a>
+</div>
+{% endif %}
+
+
+
+<div class="d-flex justify-content-around">
+    <div>
+        <strong class="ps-2">
+            Pics:
+        </strong>
+        <span class="lead">
+            {{ user.pics.all.count }}
+        </span>
+    </div>
+    <div>
+        <strong class="ps-2">
+            Followers:
+        </strong>
+        <span class="lead">
+            {{ user.followers.all.count }}
+        </span>
+    </div>
+    <div>
+        <strong class="ps-2">
+            Following:
+        </strong>
+        <span class="lead">
+            {{ user.following.all.count }}
+        </span>
+    </div>
+</div>

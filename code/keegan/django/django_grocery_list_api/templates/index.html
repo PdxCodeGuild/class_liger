@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1 class="text-center">Grocery List</h1>
+
+    <div class="row">
+        <div class="col-4 offset-4">
+
+            <form action="{% url 'grocery_app:add_item' %}" method="POST">
+                <input type="text" placeholder="Add Item" name="new-item-name" class="form-control" />
+
+                <input type="number" value="1" name="new-item-quantity" class="form-control mt-2" />
+
+                {% csrf_token %}
+
+                <button type="submit" class="btn btn-sm btn-primary mt-3">Add</button>
+            </form>
+
+            <div class="list-group mt-5">
+
+                <!-- create a list item for each item -->
+                {% for item in groceries %}
+                <div class="list-group-item d-flex justify-content-between gap-2">
+
+                    <!-- item fields -->
+                    <div class="d-flex justify-content-between w-100">
+                        <span>
+                            {{ item.name }}
+                        </span>
+
+                        <span class="mx-4">
+                            {{ item.quantity }}
+                        </span>
+                    </div>
+
+                    <a href="{% url 'grocery_app:decrement_quantity' item.id %}" class="text-decoration-none">
+                        <button class="btn btn-sm">
+                            <i class="bi bi-dash-square"></i>
+                        </button>
+                    </a>
+                    <a href="{% url 'grocery_app:increment_quantity' item.id %}" class="text-decoration-none">
+                        <button class="btn btn-sm">
+                            <i class="bi bi-plus-square"></i>
+                        </button>
+                    </a>
+                    <!-- add to cart button -->
+                    {% if item.in_cart %}
+                    <a href="{% url 'grocery_app:toggle_cart_status' item.id %}">
+                        <button class="btn btn-sm btn-success">
+                            <i class="bi bi-cart-check"></i>
+                        </button>
+                    </a>
+                    {% else %}
+                    <a href="{% url 'grocery_app:toggle_cart_status' item.id %}">
+                        <button class="btn btn-sm">
+                            <i class="bi bi-cart"></i>
+                        </button>
+                    </a>
+                    {% endif %}
+                    <a href="{% url 'grocery_app:delete_item' item.id %}">
+                        <button class="btn btn-sm btn-danger">
+                            <i class="bi bi-x-circle"></i>
+                        </button>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

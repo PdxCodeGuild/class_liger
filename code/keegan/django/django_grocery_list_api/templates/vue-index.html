@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<section id="grocery-list-app" class="container">
+
+
+    <h1 class="text-center">[[ headerText ]]</h1>
+    <div class="row">
+        <div class="col-4 offset-4">
+
+            <!-- submit the form, prevent the default action
+                and substitue the createGroceryItem method -->
+            <form v-on:submit.prevent="createGroceryItem">
+                <input type="text" v-model="newItemText" placeholder="Add Item" name="new-item-name" class="form-control" />
+
+                <input type="number" v-model="newItemQuantity" name="new-item-quantity" class="form-control mt-2" />
+
+                {% csrf_token %}
+
+                <!-- The form button will trigger the create method -->
+                <button class="btn btn-sm btn-primary mt-3">Add</button>
+            </form>
+
+            <!-- LOOP TO DISPLAY GROCERY ITEMS -->
+            <div class="list-group mt-5">
+                <div v-if="loading" class="d-flex justify-content-center">
+                    <div class="spinner-border text-info" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <div v-else>
+                    <div v-for="groceryItem in groceryItems"
+                        class="list-group-item d-flex justify-content-between gap-2">
+
+                        <!-- grocery item fields -->
+                        <div class="d-flex justify-content-between w-100">
+                            <span>
+                                [[ groceryItem.name ]]
+                            </span>
+
+                            <span class="mx-4">
+                                [[ groceryItem.quantity ]]
+                            </span>
+                        </div>
+
+                        <!-- crud buttons -->
+                        <!-- increment/decrement quantity -->
+                        <button class="btn btn-sm" v-on:click="updateGroceryItem(groceryItem, 'decrement')">
+                            <i class="bi bi-dash-square"></i>
+                        </button>
+                        <button class="btn btn-sm" v-on:click="updateGroceryItem(groceryItem, 'increment')">
+                            <i class="bi bi-plus-square"></i>
+                        </button>
+
+                        <!-- toggle cart status -->
+                        <button v-if="groceryItem.in_cart" class="btn btn-sm btn-success" v-on:click="updateGroceryItem(groceryItem, 'toggleInCart')">
+                            <i class="bi bi-cart-check"></i>
+                        </button>
+                        <button v-else class="btn btn-sm" v-on:click="updateGroceryItem(groceryItem, 'toggleInCart')">
+                            <i class="bi bi-cart"></i>
+                        </button>
+
+                        <!-- delete button -->
+                        <button class="btn btn-sm btn-danger" v-on:click="deleteGroceryItem(groceryItem.id)">
+                            <i class="bi bi-x-circle"></i>
+                        </button>
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<script src="{% static 'js/groceryList.js' %}"></script>
+
+
+{% endblock content %}

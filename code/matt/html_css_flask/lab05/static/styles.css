@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Fredericka+the+Great&family=Raleway:wght@200;400;800&family=BIZ+UDPMincho&family=Raleway:wght@400;500&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Square+Peg&display=swap");
+
+header {
+  background-color: #b12500;
+
+  font-family: "Bangers", cursive;
+  font-size: 70px;
+  font-weight: 400;
+}
+
+.container {
+  max-width: 100%
+}
+
+body {
+  font-family: Raleway, sans-serif;
+}
+
+.user-input, .form-label, legend {
+  font-size:20px;
+  font-weight: 600;
+}
+
+
+hr {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 0;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+}

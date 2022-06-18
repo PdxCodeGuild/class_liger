@@ -1,0 +1,74 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<h1 class="h1 text-center">eCommerce App</h1>
+
+
+<div class="row d-flex">
+    <div class="col-12 d-flex justify-content-center">
+        {% include 'shop/_pagination.html' with products_page=products_page %}
+    </div>
+
+    <!-- include the filter form -->
+    {% include 'shop/_product-filter-form.html' %}
+
+    <!-- RENDER CARD FOR EACH PRODUCT IN THE LIST -->
+    {% for product in products_page %}
+
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card mt-4 shadow">
+
+            <!-- PRODUCT IMAGE -->
+            <img src="{{ product.image_url }}" alt="{{product.title}}" class="card-img-top mx-auto my-4"
+                style="width:10rem;">
+
+
+
+
+            <!-- CARD BODY -->
+            <div class="card-body">
+                <h5 class="card-title">{{product.title}}</h5>
+
+                <p class="d-flex">
+                    Rated {{product.rating}} / 5 by {{product.rating_count}} users
+                </p>
+
+                <h3 class="h3">${{product.price}}</h3>
+
+                <p class="card-text">
+                    <!-- LIMIT DESCRIPTION TO 20 WORDS -->
+                    {{ product.description|truncatewords:20 }}
+                </p>
+
+                <p class="card-text">
+                    {% for category in product.categories.all %}
+
+                <div class="badge bg-info p-2 my-1">
+                    <!-- format the product categories in TitleCase with the |title filter -->
+                    {{ category.title|title }}
+                </div>
+                {% endfor %}
+                </p>
+            </div>
+            <!-- END CARD BODY -->
+
+
+
+
+
+            <!-- CARD FOOTER -->
+            <div class="card-footer bg-secondary d-flex justify-content-end">
+                <a href="{% url 'shop_app:add_to_cart' product.id %}" class="link-light h4">
+                    <i class="bi bi-cart-plus"></i>
+                </a>
+            </div>
+            <!-- END CARD FOOTER -->
+
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

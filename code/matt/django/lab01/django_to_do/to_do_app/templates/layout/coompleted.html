@@ -1,0 +1,23 @@
+{% extends 'layout/base.html' %} 
+
+
+{% block content %}
+
+<h2>Completed Items</h2>
+<ul>
+{% for item in completed_item %}
+    <li class="completed_item">
+        {{ item.text_description}}
+        <form action="{% url 'grocery:mark_complete' item.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Incomplete</button>
+        </form>
+        <form action="{% url 'grocery:delete' item.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
