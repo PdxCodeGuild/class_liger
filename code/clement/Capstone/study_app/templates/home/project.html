@@ -5,15 +5,24 @@
 
 <div class="container">
     <div class="row">
+        <h1 class="text-center mb-0 pt-2 text-light">My Projects</h1>
         {% for project in projects %}
 
-        <div class="col-md-3 pt-5">
+        <div class="col-md-3 pt-5 mb-32">
             <a class="text-decoration-none" href="{% url 'study_app:projdetail' project.id %}">
                 <div class="card">
-                    <div class="card-header bg-primary text-dark">{{project.title}}</div>
-                    <div class="card-body">{{project.description}}</div>
+                    <div class="card-header bg-primary text-light">{{project.title}}</div>
+                    <div class="card-body text-dark">
+                        <p>
+
+                            {{project.description}}
+                        </p>
+                        </div>
+                    <div class="card-body text-dark">{{project.due_date}}</div>
+                    <div class="card-body text-dark d-flex">{{project.is_finished}}</div>
                     <div class="card-footer mt-auto"><a href="{% url 'study_app:delete_proj' project.id %}">
-                            <i class="bi bi-trash"></i></a>
+                            <i class="bi bi-trash"></i>
+                        </a>
                     </div>
                 </div>
             </a>
@@ -25,13 +34,13 @@
 <br><br>
 <div class="container">
     <div class="row">
-        <div class="col-12 col-md-6 col-lg-4">
+        <div class="col-12 col-md-6 col-lg-4 text-light p-4">
 
-            <form method="POST" class=" d-flex flex-column" action="{% url 'study_app:projects' %}">
+            <form method="POST" class=" d-flex flex-column pt-4" action="{% url 'study_app:projects' %}">
                 {% csrf_token %}
 
                 <fieldset class="form-group">
-                    <legend class="border-bottom mb-4">Create Project</legend>
+                    <legend class="border-bottom mb-2 mt-1 text-light">Create Project</legend>
                 </fieldset>
                 {{form}}
                 <div class="form-group">
@@ -43,5 +52,6 @@
         </div>
     </div>
 </div>
+
 
 {% endblock content %}

@@ -1,21 +1,54 @@
-{% extends 'layout/base.html' %}
+{% extends 'layout/base.html' %} 
 {% load static %}
 
 
 {% block content %}
-<section class="text-center container">
-    <div class="container">
-        <div class="content-section p-0 mt-5">
-            <div class="m-3">
-                <h2>{{project.title}}</h2>
+<div class="container d-flex flex-column align-items-center mb-3">
+    <h1>PROJECT INFO</h1>
+    <div class="card text-bg-secondary" style="width: 50vw;">
+        
+
+        <div class="card-header">{{project.title}}</div>
+        <div class="card-body">
+            <p class="card-text">{{project.description}}</p>
+            <div class="card-footer bg-transparent">
+                Due Date: {{project.due_date}}
+                <p>
+
+                    Is finished: {{project.is_finished}}
+                </p>
+                
             </div>
-            <hr class="p-0 m-0">
-            <p class="description m-5 p-5">
-                {{project.description}}
-            </p>
-            <hr>
         </div>
     </div>
-</section>
+    <a href="{% url 'study_app:addresources' project.id %}" class="btn btn-success mt-3">Add Resources</a>
+
+
+      <h3 class="mt-5">RESOURCES</h3>
+        <div class="d-flex flex-wrap gap-3 justify-content-center mb-4">
+
+          {% for resource in project.resources.all %}
+    
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h4 class="card-title">{{resource.name}}</h4>
+                    <h6 class="card-subtitle mb-2">Author: {{resource.author}}</h6>
+                    <p class="card-text">
+                        Date Published: {{resource.date_published}}
+                    </p>
+                    <p>
+                        Resources Type: {{resource.resources_type}}
+                    </p>
+                        Price: ${{resource.price}}
+                    </p>
+                    <a href="{{resource.url}}" class="card-link text-decoration-none">Link</a>
+                </div>
+            </div>
+        
+            {% endfor %}
+        </div>
+  
+
+</div>
 
 {% endblock content %}

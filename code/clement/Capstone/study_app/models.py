@@ -1,12 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.forms import CharField
 
 
-# Create your models here.
+
+#=============== Projects models===============
 
 class Project(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='project')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='projects')
     title = models.CharField(max_length=250)
     description = models.TextField(max_length=300)
     due_date = models.DateField(null=True)
@@ -16,6 +16,7 @@ class Project(models.Model):
         return self.title
 
 
+#=============== Resources models===============
 class Resource(models.Model):
     name   = models.CharField(max_length=250)
     author = models.CharField(max_length=250)
@@ -25,10 +26,21 @@ class Resource(models.Model):
     date_published = models.DateField(null=True)
     
     # This ManyToManyField will allow many Projects, each user can create many projects.
-    subjects = models.ManyToManyField(Project, related_name='resource')
+    projects = models.ManyToManyField(Project, related_name='resources')
 
     def __str__(self):
         return self.name
+
+
+#=============== Flash Cards models===============
+
+class FlashCard(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='flashcards')
+    question   = models.CharField(max_length=250)
+    answer   = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.answer
 
 
 

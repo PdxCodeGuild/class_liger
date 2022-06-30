@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/flashjs.css' %}">
+    <title>FlashCard Game</title>
+</head>
+
+<body id="body">
+     <div id="flash" class="d-flex justify-content-center flex-column">
+        Let Play FlashCard Game!
+    </div> 
+    <div class="container">
+        <div class="control">
+            <button id="start-btn" class="start-btn btn">Start</button>
+        </div>
+        <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="show-answer" class="btn-grid">
+                <button id="show-ans" class="show-ans btn-1">Show Answer</button>
+        </div>
+        <div id="post-response" class="hide">
+            <div class="show-answer">
+                Did you get right?
+            </div>
+            <div id="answer-buttons" class="btn-grid">
+                <button id="yes" class="btn" onclick="incrementScore()">Yes</button>
+                <button id="no" class="btn">No</button> 
+            </div>
+        </div>
+        <div id="next-question" class="hide">
+            <button id="next-btn" class="next-btn btn">Next</button>
+        </div>
+    </div>
+</div>
+<div class="score" id="game">
+    <h1>Score</h1>
+    <p class="score-text" id="score">0</p>
+</div>
+
+<script src="{% static 'js/flashcards.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+{% extends 'layout/base.html' %} 
+{% load static %} 
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    {% for resource in resources %}
+
+    <div class="col-md-3 pt-5">
+      <a class="text-decoration-none"
+        href="{% url 'study_app:resourcedetail' project.id %}">
+        <div class="card">
+          <div class="card-header bg-primary text-dark">{{resource.name}}</div>
+          <div class="card-body bg-primary text-dark">{{resource.author}} {{resource.price}} {{resource.resources_type}} {{resource.url}} {{resource.date_published}}
+            
+          </div>
+          
+          <div class="card-footer mt-auto">
+            <a href="{% url 'study_app:deleteresource' resource.id %}">
+              <i class="bi bi-trash"></i>
+            </a>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+    <br /><br />
+  </div>
+</div>
+<br /><br />
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4">
+      <form
+        method="POST"
+        class="d-flex flex-column"
+        action="{% url 'study_app:resource' %}"
+      >
+        {% csrf_token %}
+
+        <fieldset class="form-group">
+          <legend class="border-bottom mb-4">Add Resources</legend>
+        </fieldset>
+        {{form}}
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}

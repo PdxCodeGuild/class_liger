@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+
+
+*, *::before, ::after {
+    font-size: xx-large;
+    box-sizing: border-box;
+    font-family: "Times New Roms", sans-serif;
+}
+
+
+body{
+    
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    --hue: var(--hue-neutral);
+    background-color: hsl(var(--hue), 100%, 35%);
+}
+
+
+.container{
+    width: 800px;
+    padding: 20px;
+    max-width: 80%;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 4px;
+    background-color: aliceblue;
+}
+
+.btn-grid {
+    display: grid;
+    /* grid-template-columns: 2; */
+}
+.btn{
+    background-color: aqua;
+    border: 4px solid;
+    padding: 5px 10px;
+    border-radius: 8px;
+    outline: none;
+    margin: 5px;
+}
+.btn:hover{
+    border-color: blue;
+    transform:scale(1.05)
+}
+
+
+.start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10;
+    
+}
+
+.control{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hide {
+    display: none;
+}
+
+/* =============================================== */
+
+body.yes {
+    --hue: var(--hue-yes);
+    
+}
+
+body.no{
+    --hue: var(--hue-no);
+}
+
+
+ .btn-1{
+    background-color: #00755e;
+    padding: auto;
+    border-radius: 15px;
+ }
+    
+
+
+:root{
+    --hue-no: 0;
+    --hue-yes: 145;
+    --hue-neutral: 200; 
+}
+
+.score{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: azure;
+    font-family:'Yellowtail&display', sans-serif;
+    font-size: 50px;
+}
+.score-text{
+    padding: 0;
+    margin: 0;
+    font-size: 120px;
+    font-family:'Yellowtail&display', sans-serif;
+}

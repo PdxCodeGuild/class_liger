@@ -1,0 +1,32 @@
+{% extends 'layout/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<section class="text-center container">
+    <div class="container">
+        <div class="content-section p-0 mt-5">
+            <div class="m-3">
+                <h2>{{resource.name}}</h2>
+            </div>
+            <hr class="p-0 m-0">
+            <div class="author m-5 p-5">{{resource.author}}</div>
+            <hr>
+            <hr class="p-0 m-0">
+            <div class="author m-5 p-5">{{resource.price}}</div>
+            <hr>
+            <hr class="p-0 m-0">
+            <div class="author m-5 p-5">{{resource.resources_type}}</div>
+            <hr>
+            <hr class="p-0 m-0">
+            <div class="author m-5 p-5">{{resource.url}}</div>
+            <hr>
+            <hr class="p-0 m-0">
+            <div class="author m-5 p-5">{{resource.date_published}}</div>
+            <hr>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
