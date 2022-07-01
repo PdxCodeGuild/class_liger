@@ -43,6 +43,7 @@ function startGame(){
     startButton.classList.add('hide')
     currentQuestionIndex = 0
     score = 0
+    scoreText.innerHTML = score
     cleanUp()
     questionContainerElement.style.display = 'inline'
     showAns.addEventListener('click', ()=>{
@@ -59,6 +60,7 @@ function cleanUp() {
 function showQuestion(){
     let question = shuffledQuestions[currentQuestionIndex]
     questionElement.innerText = question.question
+
     yes.addEventListener('click', ()=>{
         body.style.backgroundColor = "#00ff7f"
         displayNext()
@@ -87,6 +89,7 @@ function resetState(){
         startButton.innerText = 'Restart'
         startButton.classList.remove('hide')
     }
+    
     // =========================== //
     showAns.innerText = "Show Answer"
     optionContainer.style.display = "none"
@@ -107,6 +110,7 @@ function incrementScore(){
         score += 10
         scoreWasIncreased = true
         scoreText.innerHTML = score
+        
         
     }
 }
