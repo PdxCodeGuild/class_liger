@@ -6,29 +6,21 @@
 <div class="container d-flex flex-column align-items-center mb-3">
     <h1>PROJECT INFO</h1>
     <div class="card text-bg-secondary" style="width: 50vw;">
-        
-
         <div class="card-header">{{project.title}}</div>
         <div class="card-body">
             <p class="card-text">{{project.description}}</p>
             <div class="card-footer bg-transparent">
                 Due Date: {{project.due_date}}
                 <p>
-
                     Is finished: {{project.is_finished}}
-                </p>
-                
+                </p> 
             </div>
         </div>
     </div>
-    <a href="{% url 'study_app:addresources' project.id %}" class="btn btn-success mt-3">Add Resources</a>
-
-
-      <h3 class="mt-5">RESOURCES</h3>
+    <a href="{% url 'study_app:addresources' project.id %}" class="btn btn-success mt-5">Add Resources</a>
+      <h3 class="m-4">RESOURCES</h3>
         <div class="d-flex flex-wrap gap-3 justify-content-center mb-4">
-
           {% for resource in project.resources.all %}
-    
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h4 class="card-title">{{resource.name}}</h4>
@@ -47,8 +39,6 @@
         
             {% endfor %}
         </div>
-  
-
 </div>
 
 {% endblock content %}

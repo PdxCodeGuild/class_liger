@@ -1,0 +1,32 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container text-center">
+    <h2>Dictionary</h2>
+    <p>Find words pronunciations and their meanings</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" class="btn btn-danger" value="Submit">
+    </form><br>
+    <div class="content-section p-0 mt-5">
+        <div class="custom-header">
+            <h2>input</h2>
+            <h5>phonetics</h5>
+            <audio id="player" src=""></audio>
+            <div><i class="bi bi-volume-up-fill"></i></div>
+        </div>
+        <hr class="p-0 m-0">
+        <p class="float-left">
+            
+            <h4>Definition: definition</h4>
+            <h4>Example: example</h4>
+        </p>
+        Synonyms:
+        <hr>
+    </div>
+</div>
+    
+{% endblock content %}

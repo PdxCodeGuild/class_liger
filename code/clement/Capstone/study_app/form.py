@@ -62,7 +62,8 @@ class RegisterForm(forms.ModelForm):
         }
 
 
-
+class DictionaryForm(forms.Form):
+    text = forms.CharField(max_length=100, label="Please enter your world: ")
 
 
    

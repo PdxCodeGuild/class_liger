@@ -3,18 +3,18 @@
 {% block content %}
 
 
-<h1 class="text-center">Register</h1>
+<h1 class="text-center">REGISTER</h1>
 <form action="{% url 'study_app:register' %}" method="POST" class="col-4 offset-4 d-flex flex-column align-item-center">
     {{form}}
    
     {% csrf_token %}
-    <button class="btn btn-danger mt-4" type="submit">Register</button>
+    <button class="btn-2 btn-danger mt-4" style="--clr:#ff1867" type="submit"><span>REGISTER</span><i></i></button>
 </form>
 
 <!-- Link to Sign In Route -->
 <div class="col-4 offset-4 align-item-center mt-3">
-    <h6>Have an account? <a href="{% url 'study_app:login' %}" class="text-decoration-none link-primary">Sign In</a>
-    </h6>
+    <h5>Have an account? <a href="{% url 'study_app:login' %}" class="text-decoration-none link-danger">Sign In</a>
+    </h5>
 </div>
 
 {% endblock content %}

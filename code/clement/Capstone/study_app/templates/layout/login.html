@@ -3,29 +3,29 @@
 {% block content %}
 
 
-<h1 class="h1 text-center mt-3">Log In</h1>
+<h1 class="h1 text-center m-5">LOG IN</h1>
 <form action="{% url 'study_app:login' %}" method="POST" class="row g-3 offset-4 d-flex flex-column align-item-center">
 
     <div class="col-md-6">
-        <label for="username" class="form-label">Username</label>
+        <label for="username" class="form-label"><h2>Username</h2></label>
         <input type="text" name="username" class="form-control" id="username">   
     </div>
 
     <div class="col-md-6">
-        <label for="password" class="form-label">Password</label>
+        <label for="password" class="form-label"><h2>Password</h2></label>
         <input type="password" name="password" class="form-control" id="password">
     </div>
 
     {% csrf_token %}
     <div class="col-lg-6 text-center">
-        <button class="btn btn-success" type="submit">Login</button>  
+        <button class="btn-1 btn-success" style="--clr:#00ffff" type="submit"><span>LOGIN</span><i></i></button>  
     </div>
 </form>
 
 <!-- link to register route -->
 <div class="col-4 offset-4 align-item-center mt-3">
-    <h6>New Student Register here? <a href="{% url 'study_app:register' %}"
-            class="text-decoration-none link-danger">Create Account</a></h6>
+    <h5>New Student Register here? <a href="{% url 'study_app:register' %}"
+            class="text-decoration-none link-danger">Create Account</a></h5>
 </div>
 
 {% endblock content %}

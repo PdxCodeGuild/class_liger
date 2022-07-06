@@ -4,7 +4,7 @@ from django.contrib.auth import (authenticate, login
 as django_login, logout as django_logout)
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
-from . form import Project, Resource, ProjectForm, ResourceForm,RegisterForm
+from . form import Project, Resource, ProjectForm, ResourceForm,RegisterForm,DictionaryForm
 
 
 # =============================================================================================
@@ -207,3 +207,10 @@ def addresources(request, project_id):
 
 def flashcards(request):
     return render(request, 'layout/flashcards.html')
+
+def dictionary(request):
+    form = DictionaryForm()
+    context= {
+        'form': form
+    }
+    return render(request, 'home/dictionary.html', context)

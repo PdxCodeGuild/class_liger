@@ -1,5 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 
+.h1{
+    font-size: 50px;
+    margin-top: 0;
+}
+.btn-grid {
+    display: grid;
+}
+
+.hide {
+    display: none;
+}
+
+.flash:hover{
+    cursor: pointer;
+    color: #534b4f;
+}
+
+#yes, #no, #show-ans, #question{
+    margin: 20px;
+}
+.show-answer{
+    margin: 20px;
+}
+
+:root{
+    --hue-no: 0;
+    --hue-yes: 145;
+    --hue-neutral: 200; 
+}
+
+
+.start-btn, .next-btn {
+    padding: 10;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    
+}
+
+body.no{
+    --hue: var(--hue-no);
+   
+}
+body.yes {
+    --hue: var(--hue-yes);
+}
+
+.btn:hover{
+    cursor: pointer;
+    border-color: blue;
+    transform:scale(1.05);
+}
+
+.control{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ .btn-1{
+     padding: auto;
+     border-radius: 15px;
+     background-color: #00755e;
+ }
+
+ 
+.btn{
+    margin: 5px;
+    outline: none;
+    border: 4px solid;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: aqua;
+}
+
+.score-text{
+    margin: 0;
+    padding: 0;
+    font-size: 120px;
+    font-family:'Yellowtail&display', sans-serif;
+}
+    
 
 *, *::before, ::after {
     font-size: xx-large;
@@ -9,7 +91,6 @@
 
 
 body{
-    
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -21,89 +102,68 @@ body{
     background-color: hsl(var(--hue), 100%, 35%);
 }
 
+.flash:hover:before{
+    left: 0;
+    right: 0;
+    opacity: 1;
+    z-index: -1;
+    transition: 0.9s all ease;
+}
+
+.flash:before{
+    top: 0;
+    left:50%;
+    right:50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    position: absolute; 
+    transition: 0.9s all ease;
+    background-color: #ff4f00;
+}
+
 
 .container{
-    width: 800px;
+    width:800px;
+    display:flex;
     padding: 20px;
     max-width: 80%;
+    margin-left: 80px;
+    align-items: center;
     border-radius: 15px;
-    box-shadow: 0 0 10px 4px;
+    margin-bottom: 60px;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 10px 10px;
     background-color: aliceblue;
 }
 
-.btn-grid {
-    display: grid;
-    /* grid-template-columns: 2; */
-}
-.btn{
-    background-color: aqua;
-    border: 4px solid;
-    padding: 5px 10px;
-    border-radius: 8px;
+
+.flash{
+    z-index: 1;
+    margin-top: 15px;
     outline: none;
-    margin: 5px;
-}
-.btn:hover{
-    border-color: blue;
-    transform:scale(1.05)
-}
-
-
-.start-btn, .next-btn {
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 10;
-    
-}
-
-.control{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.hide {
-    display: none;
-}
-
-/* =============================================== */
-
-body.yes {
-    --hue: var(--hue-yes);
-    
-}
-
-body.no{
-    --hue: var(--hue-no);
-}
-
-
- .btn-1{
-    background-color: #00755e;
-    padding: auto;
-    border-radius: 15px;
- }
-    
-
-
-:root{
-    --hue-no: 0;
-    --hue-yes: 145;
-    --hue-neutral: 200; 
+    font-size: 50px;
+    color: #ff4f00;
+    position: relative;
+    transition: ease-out 0.3s;
+    font-family: 'Lucida Sans', 
+    'Lucida Sans Regular', 'Lucida Grande',
+     'Lucida Sans Unicode', Verdana, sans-serif; 
 }
 
 .score{
-    text-align: center;
+    width: 800px;
     display: flex;
-    flex-direction: column;
+    padding: 20px;
     color: azure;
+    max-width: 80%;
+    font-size: 80px;
+    margin-top: 30px;
+    margin-left: 80px;
+    text-align: center;
+    flex-direction: column;
     font-family:'Yellowtail&display', sans-serif;
-    font-size: 50px;
 }
-.score-text{
-    padding: 0;
-    margin: 0;
-    font-size: 120px;
-    font-family:'Yellowtail&display', sans-serif;
-}
+
+

@@ -6,13 +6,29 @@ const questions = [
         "answer": "16"
     },
     {
+        "question":"What type of animal was Harambe, who was shot after a child fell into it&#039;s enclosure at the Cincinnati Zoo?",
+        "answer":"Gorilla",
+    },
+    {
         "question": "What is 2+2?",
         "answer": "4"
     },
     {
         "question": "What is 4*5?",
         "answer": "20"
+    },
+    {
+        "question":"What is the defining characteristic of someone who is described as hirsute?","answer":"Hairy",
+    },
+    {
+        "question":"What is the weight of a Gold Bar in Fallout: New Vegas?",
+        "answer": "35 Pounds"
+    },
+    {
+        "question": "Which of these is the name of a Japanese system of alternative medicine, literally meaning &quot;finger pressure&quot;?",
+        "answer":"Shiatsu",
     }
+    
 ]
 
 const startDiv = document.getElementById("control")
@@ -44,74 +60,63 @@ function startGame(){
     currentQuestionIndex = 0
     score = 0
     scoreText.innerHTML = score
-    cleanUp()
+    scoreWasIncreased = false
+    shuffledQuestions = questions.sort(()=> Math.random() - .5)
     questionContainerElement.style.display = 'inline'
-    showAns.addEventListener('click', ()=>{
-        showAnswer(currentQuestionIndex)
-    })
+    nextButton.classList.remove('hide')
     showQuestion()
 }
 
-function cleanUp() {
-    shuffledQuestions = questions.sort(()=> Math.random() - .5)
-}
+showAns.addEventListener('click', ()=>{
+showAns.innerHTML = shuffledQuestions[currentQuestionIndex].answer
+optionContainer.style.display = "inline"
+})
+
+yes.addEventListener('click', ()=>{
+    body.style.backgroundColor = "#00755e"
+    nextQtn.style.display = "inline"
+    incrementScore()
+})
+no.addEventListener('click', ()=>{
+    body.style.backgroundColor = "#ae2029"
+    nextQtn.style.display = "inline"
+})
 
 
 function showQuestion(){
     let question = shuffledQuestions[currentQuestionIndex]
     questionElement.innerText = question.question
 
-    yes.addEventListener('click', ()=>{
-        body.style.backgroundColor = "#00ff7f"
-        displayNext()
-    })
-    no.addEventListener('click', ()=>{
-        body.style.backgroundColor = "#d40000"
-        displayNext()
-    })
-}
-nextQtn.addEventListener('click', ()=> {
-    currentQuestionIndex++
-    resetState()
-})
-
-function displayNext() {
-    nextQtn.style.display = "inline"
     
-} 
-
+}
+nextQtn.addEventListener('click', resetState)
 function resetState(){
+    currentQuestionIndex += 1
     // =========================== //
     if (currentQuestionIndex > questions.length - 1){
-        nextButton.classList.remove('hide')
+        nextButton.classList.add('hide')
+        startButton.innerText = 'Restart'
+        startButton.classList.remove('hide') 
 
     }else{
-        startButton.innerText = 'Restart'
-        startButton.classList.remove('hide')
+        showAns.innerText = "Show Answer"
+        optionContainer.style.display = "none"
+        nextQtn.style.display = "none"
+        scoreWasIncreased = false
+        body.style.backgroundColor = "#414a4c" 
+        nextButton.classList.remove('hide')
+        showQuestion()
     }
     
     // =========================== //
-    showAns.innerText = "Show Answer"
-    optionContainer.style.display = "none"
-    nextQtn.style.display = "none"
-    scoreWasIncreased = false
-    showQuestion()
-    body.style.backgroundColor = "#ff8f00" 
 }
 
-function showAnswer() { 
-    console.log(currentQuestionIndex)
-    showAns.innerHTML = shuffledQuestions[currentQuestionIndex].answer
-    optionContainer.style.display = "inline"
-}
 
 function incrementScore(){
     if (!scoreWasIncreased){
         score += 10
         scoreWasIncreased = true
-        scoreText.innerHTML = score
-        
-        
+        scoreText.innerHTML = score       
     }
 }
 

@@ -4,25 +4,14 @@
 
 {% block content %}
 <div class="resources">
-    <h2>Add Resources</h2>
+    <h2 class="text-center mt-5">ADD RESOURCES</h2>
 
     <form action="{% url 'study_app:addresources' project.id %}" method="POST">
-        <label for="addresource">Add Resources </label>
+        <label for="addresource">Resources</label>
        {{form}}
 
         {% csrf_token %}
-        <input class="btn btn-danger" type="submit">
+        <input class="btn btn-danger mt-4" type="submit">
     </form>
 </div>
-
-
-    
 {% endblock content %}
-
-
-<!-- add a button to the project detail page that links to the form for creating a resource
-The button will send the project id to the view responsible for processing the form using a url parameter
-include the project id in the context dictionary when the template with the form is rendered
-create an input field in the form with a type of "hidden", name of "project-id" and the project id from the context dictionary as the value
-in the view for processing the form, use the project id to find the project with that id in the database
-create and add the resource to the project and include the -->

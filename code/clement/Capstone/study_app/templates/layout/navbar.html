@@ -26,12 +26,12 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="{% url 'study_app:resource' %}">Resources</a></li>
-                        <li><a class="dropdown-item" href="#">Dictionary</a></li>
+                        <li><a class="dropdown-item" href="{% url 'study_app:dictionary' %}">Dictionary</a></li>
                         <li><a class="dropdown-item" href="#">Homework</a></li>
                         <li><a class="dropdown-item" href="{% url 'study_app:projects' %}">Projects</a></li>
                         <li><a class="dropdown-item" href="#">Media/Videos</a></li>
                         <li><a class="dropdown-item" href="#">Wikipedia</a></li>
-                        <li><a class="dropdown-item" href="#">Flash Cards</a></li>
+                        <li><a class="dropdown-item" href="{% url 'study_app:flashcards' %}">Flash Cards</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>

@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col-md-3">
-            <a class="card-link text-decoration-none text-dark" href ="#">
+            <a class="card-link text-decoration-none text-dark" href ="{% url 'study_app:projects' %}">
                 <div class="card mt-4">
                     <img src="{% static 'images/a.jpg' %}" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -24,7 +24,7 @@
             </a>
         </div>
         <div class="col-md-3">
-            <a class="card-link text-decoration-none text-dark" href ="#">
+            <a class="card-link text-decoration-none text-dark" href ="{% url 'study_app:resource' %}">
                 <div class="card mt-4">
                     <img src="{% static 'images/p.jpg' %}" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -39,7 +39,7 @@
             </a>
         </div>
         <div class="col-md-3">
-            <a class="card-link text-decoration-none text-dark" href="#">
+            <a class="card-link text-decoration-none text-dark" href="{% url 'study_app:dictionary' %}">
                 <div class="card mt-4">
                     <img src="{% static 'images/dictionary.jpg' %}" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -53,7 +53,7 @@
             </a>
         </div>
         <div class="col-md-3">
-            <a class="card-link text-decoration-none text-dark" href ="#">
+            <a class="card-link text-decoration-none text-dark" href ="{% url 'study_app:flashcards' %}">
                 <div class="card mt-4">
                     <img src="{% static 'images/flashcard.jpg' %}" class="card-img-top" alt="...">
                     <div class="card-body">
