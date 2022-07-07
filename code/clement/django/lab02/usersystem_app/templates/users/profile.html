@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+    {% for blogpost in request.user.blogposts.all %}
+
+        <p>
+            
+            {{blogpost}}
+            
+        </p>
+        
+    {% endfor  %}
+
+{% endblock content %}
+

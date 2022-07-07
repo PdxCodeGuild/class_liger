@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1 class="mt-3">REGISTER HERE</h1>
+
+<form action="{% url 'usersystem_app:register' %}" method="POST">
+    <span class="border border-success border-5 mt-4">
+        <label for="username" class="mt-2 mb-2 fw-bold lead p-2">
+            <h4>Username</h4>
+            <input type="text p-2" name="username" id="username">
+        </label>
+        <label for="password" class="mt-2 mb-2 fw-bold lead p-2">
+            <h4>Password</h4>
+            <input type="password" name="password" id="password">
+        </label>
+    </span>
+
+    {%csrf_token%}
+
+
+    <input type="submit" id="submit" value="Register" class="btn btn-success mt-3 fw-bold">
+</form>
+
+
+{% endblock content %}

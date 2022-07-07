@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+{% for blogpost in request.user.blogposts.all %}
+
+
+<div class="card col-4 offset-4 p-2">
+
+    <span class="border border-success border-4" style="background-color:
+     aqua; border-radius: 10px;">
+        <h5>
+            {{blogpost}}
+        </h5>
+
+    </span>
+</div>
+
+
+
+{% endfor %}
+
+{% endblock content %}

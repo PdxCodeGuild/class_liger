@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Radio+Canada:wght@300;500;600&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+/* body{
+    margin: 0px;
+    padding: 0px; */
+/* } */
+
+.container{
+    background-color: rgb(130, 130, 161);
+    min-height: 100vh;
+    /* width: 100%; */
+   
+}
+
+h1{
+    font-size: 2rem;
+    text-align: center;
+}
+
+form input{
+    padding: 5px;
+}
+
+form{
+   gap: 20px;
+    flex-direction: column;
+}

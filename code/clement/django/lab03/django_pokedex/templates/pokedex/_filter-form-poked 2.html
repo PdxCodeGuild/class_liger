@@ -1,0 +1,36 @@
+<div class="col-12 col-md-3 mx-4 pt-4">
+    <form action="{% url 'pokedex_app:index' %}" method="POST" class="row gap-1">
+
+        <!-- {{ form_data }} -->
+
+        <div class="card shadow bg-dark">
+            <!-- POKEMON SEARCH TEXT INPUT -->
+            <fieldset class="col-12 form-group bg-darck mt-1">
+                <label for="pokemon-search" class="form-label">
+                    <h3 class="h3 text-light">Pokemon Search</h3>
+                    <input type="text" id="pokemon-search" name="pokemon-search" class="form-control">
+                </label>
+            </fieldset>
+            <fieldset class="col-12">
+                <h5 class="text-light">Pokemon Options</h5>
+                <hr class="text-light">
+
+                <div class="form-check form-switch text-light">
+                    <input class="form-check-input" type="checkbox" id="pokemon-{{pokemon.id}}">
+                    <label class="form-check-label" for="pokemon-{{pokemon.id}}">Search by Name</label>
+                </div>
+                <div class="form-check form-switch text-light">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Search by Type</label>
+                </div>
+            </fieldset>
+            {% csrf_token %}
+
+            <div class="col-4 offset-4 d-flex justify-content-center mx-auto mt-4 mb-2">
+                <button type="submit" class="btn btn-success">Search</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
