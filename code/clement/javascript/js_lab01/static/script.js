@@ -1,7 +1,7 @@
-var input = document.getElementById('input');
-var result = document.getElementById('result');
-var inputType = document.getElementById('inputType');
-var resultType = document.getElementById('resultType');
+const input = document.getElementById('input');
+const result = document.getElementById('result');
+const inputType = document.getElementById('inputType');
+const resultType = document.getElementById('resultType');
 var inputTypeValue, resultTypeValue;
 
 input.addEventListener('keyup', myResult);
