@@ -1,24 +1,76 @@
+var input = document.getElementById('input');
+var result = document.getElementById('result');
+var inputType = document.getElementById('inputType');
+var resultType = document.getElementById('resultType');
+var inputTypeValue, resultTypeValue;
 
-// arlet is use to create a popup notification in the browser
-// alert('Hello World')
+input.addEventListener('keyup', myResult);
+inputType.addEventListener('change', myResult);
+resultType.addEventListener('change', myResult);
 
-let units = {
-    feet: 0.3048,
-    mile: 1609.34,
-    meter: 1,
-    kilometers: 1000,
+inputTypeValue = inputType.value;
+resultTypeValue = resultType.value;
 
+
+function myResult (){
+    inputTypeValue = inputType.value;
+    resultTypeValue = resultType.value;
+
+    if(inputTypeValue === "kilometer" && resultTypeValue === "meter"){
+        result.value = Number(input.value)*1000
+
+    }else if(inputTypeValue === "meter" && resultTypeValue === "kilometer"){
+        result.value = Number(input.value)*0.001
+
+    }else if(inputTypeValue === "meter" && resultTypeValue === "meter"){
+        result.value = input.value
+
+    }else if(inputTypeValue === "kilometer" && resultTypeValue === "kilometer"){
+        result.value = input.value
+
+    }else if(inputTypeValue === "kilometer" && resultTypeValue === "feet"){
+        result.value = Number(input.value)*3280.84
+
+    }else if(inputTypeValue === "feet" && resultTypeValue === "kilometer"){
+        result.value = Number(input.value)*0.0003048
+
+    }
+
+    if(inputTypeValue === "meter" && resultTypeValue === "mile"){
+        result.value = Number(input.value)*0.0006214
+
+    }else if(inputTypeValue === "mile" && resultTypeValue === "meter"){
+        result.value = Number(input.value)*1609.34
+
+    }else if(inputTypeValue === "mile" && resultTypeValue === "mile"){
+        result.value = input.value
+
+    }else if(inputTypeValue === "mile" && resultTypeValue === "kilometer"){
+        result.value = Number(input.value)*1.60934
+        
+    }else if(inputTypeValue === "kilometer" && resultTypeValue === "mile"){
+        result.value = Number(input.value)*0.621371
+    }
+
+
+    if(inputTypeValue === "mile" && resultTypeValue === "feet"){
+        result.value = Number(input.value)*5280
+
+    }else if(inputTypeValue === "feet" && resultTypeValue === "feet"){
+        result.value = input.value
+
+    }else if(inputTypeValue === "feet" && resultTypeValue === "mile"){
+        result.value = Number(input.value)*0.000189394
+
+    }else if(inputTypeValue === "feet" && resultTypeValue === "meter"){
+        result.value = Number(input.value)*0.3048
+
+    }else if(inputTypeValue === "meter" && resultTypeValue === "feet"){
+        result.value = Number(input.value)*3.28084
+
+    }
+    
+  
 }
 
-let distance = document.querySelector("Enter a distance in feet (ft)?\n")
-
-let distance_input = int(distance)
-
-const total = distance_input * units["meter"]
-
-let measurement = document.querySelector("Enter a distance in units; feet, miles meter & kilometer.\n")
-
-const result = units[measurement] * distance
-
-    // alert(result)
 
