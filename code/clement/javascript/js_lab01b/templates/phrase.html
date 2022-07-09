@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<select id="number-phrase">
+
+    <h1>Number To Phrase<h1>
+        <div class="form-container">
+            <form id="form">
+                <label for="num">Enter Your Number</label>
+                <input type="number" id="num" name="num">
+                <input type="submit" value="submit">
+            </form>
+        </div>
+
+</select>
+
+
+
+<script src="{% static 'script.js' %}"></script>
+
+{% endblock content %}
+
