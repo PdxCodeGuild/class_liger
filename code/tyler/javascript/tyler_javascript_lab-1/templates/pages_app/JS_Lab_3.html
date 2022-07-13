@@ -1,3 +1,11 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
-    Hello Lab 3 ROT13
+<div class="container col-12 justify-content-middle">
+  <h1>Hello ROT13</h1>
+  <div class="d-flex">
+    <button type="button" class="btn btn-primary" onclick="rot13()">
+      Encrypt a Message
+    </button>
+  </div>
+</div>
+<script src="{% static 'js/Lab_3.js' %}"></script>
 {% endblock content %}

@@ -2,7 +2,6 @@
 
 console.log("Hello Javascript World!");
 
-let password = document.querySelector("#password");
 
 function generate_password() {
   let characters =
@@ -15,6 +14,5 @@ function generate_password() {
     );
   }
   text = "Your password is " + Password;
-  // console.log(Password);
   document.getElementById("password").innerHTML = Password
 }
