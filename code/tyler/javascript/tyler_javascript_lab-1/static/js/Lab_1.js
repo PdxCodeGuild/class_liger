@@ -1,4 +1,4 @@
-// Password generator
+alert("Password generator")
 
 console.log("Hello Javascript World!");
 
@@ -13,6 +13,6 @@ function generate_password() {
       Math.floor(Math.random() * characters.length)
     );
   }
-  text = "Your password is " + Password;
-  document.getElementById("password").innerHTML = Password
+    text = "Your password is: " + "(" + Password + ")";
+  document.getElementById("password").innerHTML = text
 }
