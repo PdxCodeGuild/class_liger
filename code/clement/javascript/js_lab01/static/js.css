@@ -14,53 +14,93 @@ body{
 /* =====================Unit Converter============================== */
 
 .unity-converter{
-    width: 600px;
-    height: 300px;
-    background-color: gray;
-    position: absolute;
-    left: 50%;
-    margin-top: 60px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: large;
-    transform: translate(-50%, 50%);
-    box-shadow: 0px 0px 15px 14px black;
+    display: grid;
+    height: 100vh;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    align-items: center;
     color: greenyellow;
+    background-color: gray;
+    box-shadow: 0px 0px 15px 14px #e6e6fa;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .converter{
-    text-align: center;
     margin: 20px 0px;
-}
-
-#input{
-    height: 40px;
-    margin-left: 110px;
     text-align: center;
-   
 }
 
-#result{
+#input, #result,
+#inputType, #resultType
+{
     height: 40px;
+    width: 400px;
+    display: flex;
+    padding: 25px;
+    outline: none;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-left: 660px;
+    font-size: inherit;
     text-align: center;
-    
+    border-radius: 20px;
+    font-family: inherit;
+    flex-direction: reverse;
+  
+}
+.span, h4{
+    margin: 0;
+    margin-left: 50px;
+    text-align: center;
+    font-weight: bolder;
 }
 
-#inputType, #resultType{
-    width: 200px;
-    height: 30px;
-    margin-left: 100px;
-    color: gold;
+#input:hover, #result:hover{
+    border-color: #ff00ff;
+
+}
+#input:focus, #result:focus{
+    border-color: #ff00ff;
+
 }
 
-#resultType{
-    margin-left: 13px;
+
+
+ #inputType, #resultType{
+    margin-top: 0px; 
+    color: #e62020;
 }
 
+
+/* ==========================Navbar================================ */
 nav ul {
     display: flex;
     gap: 15px;
     list-style: none;
+    background: #66ff00;
+    box-shadow: 0 0 0 5px #ff00ff;
+    border-radius: 25px;
+    font-family:'Times New Roman', Times, serif;
+    overflow: hidden;
 } 
+
+ul li{
+    width: 150px;
+    list-style: none;
+}
+
+ul li a{
+    display: block;
+    padding: 15px;
+    text-align: center;
+    padding: 5px;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
 /* ==================Number To Phrase================================= */
 
 .wrapper{
@@ -149,8 +189,9 @@ nav ul {
     position: relative;
     align-items: center;
     left: 70px;
-    margin: auto;
-    box-shadow: inset 0 0 10px whitesmoke, 
+    margin-top: 50px;
+    box-shadow: 
+    inset 0 0 10px whitesmoke, 
     inset 0 0 15px whitesmoke,
     inset 0 0 25px whitesmoke,
     inset 4px 6px 40px whitesmoke;
@@ -198,93 +239,129 @@ nav ul {
     transform: scale(1.3);
 }
 
-check for errors
-#todoItem.complete p{
-    text-decoration: line-through;
-    color: #e6e8fa;
-}
-
-.title{
-    font-size: 30px;
-    color: #e6e8fa;
-    margin: 40px 0 0 20px;
-    letter-spacing: 2px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-/* 
-.todo-container{
-    height: 70vh;
-    max-width: 800px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 20px;
-    box-shadow: 0 20px 60px #e6e8fa;
-    border-radius: 10px;
-    margin-left: 450px;
+/* =========================TODOS==================== */
+ 
+ .todolist-container{ 
     position: relative;
-
-}
-
-.addTacks{
-    width: 100%;
+    padding: 10px;
     display: flex;
-    padding: 10px 0;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(138deg, #6e7f80 20%, #414a4c 80%);
+
+}  
+
+.addTodo{
+    padding: 60px 80px 10px 10px;
+    width: 100%;
+      
 }
 
-#todoInput{
-    width: 90%;
-    color: #ff0000;
-    border: none;
-    border-bottom: 4px solid #ff0000;
-    padding: 10px;
-    font-size: 22px;
-    outline: none;
-    background-color: none;
-    border-radius: 20px;
-} 
 
-.toDobutton{
-    margin: 0 10px;
-    background: #222;
-    color: #e6e8fa;
-    font-size: larger;
-    text-transform: uppercase;
-    padding: 10px;
-    border: none;
-    outline: none;
+header {
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+
+}
+header h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #848482;
+   
+}
+
+
+:root{
+    --famous: #ff00ff;
+    --fashion: #f400a1;
+}
+#toDoInput{
+   background-color: #848482;
+   padding: 1rem;
+   border-radius: 1rem;
+   margin-right: 1rem;
+   color: #e6e8fa;
+   font-size: 1.5rem;
+   border: solid #ccff00;
+}
+
+#toDoInput::placeholder{
+    color: #91a3b0;
+}
+
+#submitTacks{
+    color: #ff00ff;
+    font-size: 1.5rem;
+    font-weight: 600;
     cursor: pointer;
-    border-radius: 8px;
+    transition: 0.5s;
+    border-radius: 10px;
+    padding: 5px;
+    border: solid #ccff00;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right,var(--famous),var(--fashion));
 }
 
-.Completed, .notCompleted{
-    margin: 6px 0;
-    padding: 25px;
+#submitTacks:active{
+    transform: scale(0.5);
 }
 
-h3{
-    font-size: larger;
+main{
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tackslist{
+    padding: 1rem;
+}
+
+.tackslist h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #848482;
+    margin-left: 10px;
     text-transform: uppercase;
-    text-align: center;
-    color: #e6e8fa;
 }
+
+#todos{
+    margin-left: 20px;
+}
+
+.Completed, .unCompleted{
+    margin: 10px;
+    margin-bottom: 60px;
+  
+}
+
 ol{
     list-style: none;
     counter-reset: count;
 }
 
+
 ol li{
-    padding: 20px;
-    margin: 5px 0;
-    background: #ff3800;
+    display: flex;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    background-color: #414a4c;
     font-size: large;
     counter-increment: count;
+    border: 3px solid #ff1493;
+    justify-content: space-between;
+    
 }
 
-#Tacks{
-    background: #8fbc8f;
+ol.Completed li{
+    background-color: #414a4c;
+    border: 3px solid #ccff00;
 }
 
 ol li::before{
@@ -301,72 +378,15 @@ ol li::before{
 
 }
 
-#btnTodo{
-    float: right;
-    padding: 6px;
+
+.bi{
+    padding: 7px; 
+    color: #ff0000;
     font-size: large;
-    line-height: 30px;
-    margin-right: 15px;
-    background: none;
+    background-color: #414a4c;
     border: none;
     outline: none;
-    cursor: pointer;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .todolist{
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    gap: 10px;
-}
-
-#toDo-input{
-    padding: 15px;
-    border: 4px solid #ff0000;
-    border-radius: 10px;
-    align-self: center;
-    align-items: center;
-    font-size: 18px;
+    cursor: pointer; 
+    appearance: none;
     outline: none;
-}
-#addList{
-    border: none;
-    border-radius: 20px;
-    background-color: blue;
-    outline: none;
-    font-size: larger;
-    color: #e6e8fa;
-}
-
-#todoTacks{
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 20px 60px #e6e8fa;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px;
-    background-color: #e6e8fa;
-    
-
-}
-#todoItem{
-    font-size: large;
-    color: #e6e8fa;
-    letter-spacing: 2px;
-} */
+ } 

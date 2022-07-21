@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="todolist-container">
+    <header>
+        <h1>Create Your Todo List</h1>
+        <div class="addTodo">
+            <input type="text" id="toDoInput" class="check-input" placeholder="Add Your Tacks Here....">
+            <button id="submitTacks" class="check-btn">Add Tacks</button>
+        </div>
+    </header>
+    <main class="tackslist">
+        <ol class="unCompleted">
+            <h3>Uncompleted Tacks</h3>
+        </ol>
+        <ol class="Completed">
+            <h3>Completed Tacks</h3>
+        </ol>
+    </main>
+</div>
+
+
+<script src="{% static 'todo.js' %}"></script>
+{% endblock content %}

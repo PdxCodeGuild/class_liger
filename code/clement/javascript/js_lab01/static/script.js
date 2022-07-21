@@ -12,7 +12,7 @@ inputTypeValue = inputType.value;
 resultTypeValue = resultType.value;
 
 
-function myResult (){
+function myResult(){
     inputTypeValue = inputType.value;
     resultTypeValue = resultType.value;
 
@@ -67,10 +67,7 @@ function myResult (){
 
     }else if(inputTypeValue === "meter" && resultTypeValue === "feet"){
         result.value = Number(input.value)*3.28084
-
     }
-    
-  
 }
 
 
