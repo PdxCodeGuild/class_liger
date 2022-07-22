@@ -1,0 +1,14 @@
+.container {
+  background-color: grey;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.border {
+  flex-direction: column;
+  display: flex;
+}
