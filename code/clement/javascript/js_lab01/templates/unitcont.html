@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<div class="unity-converter">
+    <h1 class="converter">Unit Converter</h1>
+    <input id="input" type="text" placeholder="Enter your distance here">
+    <span class="span">===</span>
+    <input id="result" type="text" placeholder="Result">
+    <br>
+    <h4 class="h4">Select A Unit You Want To Convert!</h4>
+    <select id="inputType">
+        <option value="feet">feet</option>
+        <option value="mile">mile</option>
+        <option value="meter">meter</option>
+        <option value="kilometer">kilometer</option>
+    </select>
+
+    <select id="resultType">
+        <option value="feet">feet</option>
+        <option value="mile">mile</option>
+        <option value="meter">meter</option>
+        <option value="kilometer">kilometer</option>
+    </select>
+
+    
+    
+    <script src="{% static 'script.js' %}"></script>
+</div>
+
+{% endblock content %}

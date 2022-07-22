@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="wrapper">
+        <div class="form-container">
+            <header class="header">Convert Number To Phrase<header>
+            <form id="form">
+                <input type="numberInput" id="numberInput" name="numberInput"
+                    placeholder="Enter Your Number">
+                <button type="submit" class="btn" value="submit">Submit</button>
+            </form>
+        </div>
+        <div id="form1">
+            <h4>Result: <span id="phraseResult">Example</span></h4>
+        </div>
+    </div>
+<script src="{% static 'phrase.js' %}"></script>
+
+{% endblock content %}

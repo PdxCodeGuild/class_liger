@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&family=Varela+Round&display=swap');
+
+
+body{
+    background-image: radial-gradient(gray, black, red);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Questrial', sans-serif;
+}
+/* =====================Unit Converter============================== */
+
+.unity-converter{
+    display: grid;
+    height: 100vh;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    align-items: center;
+    color: greenyellow;
+    background-color: gray;
+    box-shadow: 0px 0px 15px 14px #e6e6fa;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.converter{
+    margin: 20px 0px;
+    text-align: center;
+}
+
+#input, #result,
+#inputType, #resultType
+{
+    height: 40px;
+    width: 400px;
+    display: flex;
+    padding: 25px;
+    outline: none;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-left: 660px;
+    font-size: inherit;
+    text-align: center;
+    border-radius: 20px;
+    font-family: inherit;
+    flex-direction: reverse;
+  
+}
+.span, h4{
+    margin: 0;
+    margin-left: 50px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+#input:hover, #result:hover{
+    border-color: #ff00ff;
+
+}
+#input:focus, #result:focus{
+    border-color: #ff00ff;
+
+}
+
+
+
+ #inputType, #resultType{
+    margin-top: 0px; 
+    color: #e62020;
+}
+
+
+/* ==========================Navbar================================ */
+nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    background: #66ff00;
+    box-shadow: 0 0 0 5px #ff00ff;
+    border-radius: 25px;
+    font-family:'Times New Roman', Times, serif;
+    overflow: hidden;
+} 
+
+ul li{
+    width: 150px;
+    list-style: none;
+}
+
+ul li a{
+    display: block;
+    padding: 15px;
+    text-align: center;
+    padding: 5px;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+/* ==================Number To Phrase================================= */
+
+.wrapper{
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(#36454f 50%, #1a2421 50%);
+}
+
+.form-container{
+    display: flex;
+    padding: 50px 35px;
+    background: #e6e8fa;
+    flex-direction: column;
+    width: 440px;
+    border-radius: 15px 0px 15px 0px;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+.header{
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 28px;
+    color: #ff0000;
+}
+
+#form input{
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    height: 50px;
+}
+
+.btn{
+    height:40px;
+    width: 100%;
+    border: none;
+    color: #ffff;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: x-large;
+    border-radius: 15px;
+    background: green;
+}
+
+.btn:hover{
+    transform: scale(1.3);
+}
+
+#form1{
+    background: #e6e8fa;
+    height:10vh;
+    padding: 25px 40px 30px;
+
+    width: 440px;
+    margin-top: 50px;
+    
+    font-size: x-large;
+    border-radius: 0px 15px 0px 15px;
+    
+}
+
+#phraseResult{
+    font-size: x-large;
+    margin-left: 10px;
+    color: #ff0000;
+    
+}
+
+/* ==================Password Generator================================== */
+
+.container{
+    width: 35%;
+    height: 300px;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    left: 70px;
+    margin-top: 50px;
+    box-shadow: 
+    inset 0 0 10px whitesmoke, 
+    inset 0 0 15px whitesmoke,
+    inset 0 0 25px whitesmoke,
+    inset 4px 6px 40px whitesmoke;
+    border-radius: 35px;
+    background-image: linear-gradient(40deg, grey, black, #e6e8fa);
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+
+}
+
+.password-container{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+#text-input{
+    box-shadow: 
+    inset 0 0 4px black,
+    inset 0 0 4px black,
+    inset 0 0 5px black,
+    inset 0 0 4px black,;
+    border-radius: 10px;
+    height: 45px;
+    align-items: center;
+    align-self: center;
+    transform: scale(1.4);
+    padding: 10px;
+    
+}
+
+#button{
+    background-color: rgb(23, 24, 24);
+    color: #e6e8fa;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid #ff0000;
+    cursor: pointer;
+    margin-top: 20px;
+    align-self: center;
+    transform: scale(1.4);
+}
+
+#button:hover{
+    transform: scale(1.3);
+}
+
+/* =========================TODOS==================== */
+ 
+ .todolist-container{ 
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(138deg, #6e7f80 20%, #414a4c 80%);
+
+}  
+
+.addTodo{
+    padding: 60px 80px 10px 10px;
+    width: 100%;
+      
+}
+
+
+header {
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+
+}
+header h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #848482;
+   
+}
+
+
+:root{
+    --famous: #ff00ff;
+    --fashion: #f400a1;
+}
+#toDoInput{
+   background-color: #848482;
+   padding: 1rem;
+   border-radius: 1rem;
+   margin-right: 1rem;
+   color: #e6e8fa;
+   font-size: 1.5rem;
+   border: solid #ccff00;
+}
+
+#toDoInput::placeholder{
+    color: #91a3b0;
+}
+
+#submitTacks{
+    color: #ff00ff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 10px;
+    padding: 5px;
+    border: solid #ccff00;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right,var(--famous),var(--fashion));
+}
+
+#submitTacks:active{
+    transform: scale(0.5);
+}
+
+main{
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tackslist{
+    padding: 1rem;
+}
+
+.tackslist h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #848482;
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+
+#todos{
+    margin-left: 20px;
+}
+
+.Completed, .unCompleted{
+    margin: 10px;
+    margin-bottom: 60px;
+  
+}
+
+ol{
+    list-style: none;
+    counter-reset: count;
+}
+
+
+ol li{
+    display: flex;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    background-color: #414a4c;
+    font-size: large;
+    counter-increment: count;
+    border: 3px solid #ff1493;
+    justify-content: space-between;
+    
+}
+
+ol.Completed li{
+    background-color: #414a4c;
+    border: 3px solid #ccff00;
+}
+
+ol li::before{
+    content: counter(count);
+    background: #e6e6fa;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 60%;
+    display: inline-block;
+    line-height: 2rem;
+    text-align: center;
+    color: black;
+    margin-right: 0.6px;
+
+}
+
+
+.bi{
+    padding: 7px; 
+    color: #ff0000;
+    font-size: large;
+    background-color: #414a4c;
+    border: none;
+    outline: none;
+    cursor: pointer; 
+    appearance: none;
+    outline: none;
+ } 
