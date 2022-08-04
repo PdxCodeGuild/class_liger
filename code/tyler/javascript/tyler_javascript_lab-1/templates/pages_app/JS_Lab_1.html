@@ -1,20 +1,16 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
-<div class="container col-12 d-flex justify-content-center">
-  <div class=" col-12">
+<div class="container col-12 d-flex justify-content-middle">
+  <div class="col-6">
     <h1>Hello Password generator</h1>
-    <div class="col-12">
-      <button
-        type="button"
-        class="btn btn-primary"
-        onclick="generate_password()"
-      >
-        Generate Password
-      </button>
-      <p id="password"></p>
-      <script src="{% static 'js/Lab_1.js' %}"></script>
-    </div>
 
     <!-- Lab 1 is the password generator -->
+  </div>
+  <div class="col-6">
+    <button type="button" class="btn btn-primary" onclick="generate_password()">
+      Generate Password
+    </button>
+    <p id="password"></p>
+    <script src="{% static 'js/Lab_1.js' %}"></script>
   </div>
 </div>
 {% endblock content %}
