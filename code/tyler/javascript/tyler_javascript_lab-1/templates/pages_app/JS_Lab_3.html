@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container d-flex col-12 justify-content-middle">
+  <h1>Hello Unit Converter</h1>
+  <div class="col-6">
+    <button type="button" class="btn btn-primary" onclick="convert()">
+      Convert Feet to Meters
+    </button>
+    <br />
+    <script src="{% static 'js/Lab_3.js' %}"></script>
+  </div>
+  <div class="col-6">
+    <p id="Units"></p>
+  </div>
+</div>
+{% endblock content %}
